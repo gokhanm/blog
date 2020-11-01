@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Citrix on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/citrix/</link>
+    <description>Recent content in Citrix on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Nov 2013 15:22:04 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/citrix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Citrix Xenserver Üzerinde Hotfix Güncellemesi</title>
+      <link>https://www.gokhanmankara.com/2013/11/citrix-xenserver-uzerinde-hotfix-guncellemesi/</link>
+      <pubDate>Sun, 24 Nov 2013 15:22:04 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/11/citrix-xenserver-uzerinde-hotfix-guncellemesi/</guid>
+      <description>Citrix’in XenServer 6.2 ve sonrasında open source olacağını, RedHat daki gibi, XenCenter üzerinden güvenlik güncelleştirmeleri vb işlemlerin lisans satın alınması durumunda yapılabileceğini duyurmasından itibaren, XenCenter üzerinde kullanamadığınız bir çok özelliği kullanma imkanı doğdu. Kullanamadığınız bir özellik olarak XenCenter üzerinden hostların hotfix güncellemelerini yapamıyorsunuz. Eğer lisansınız mevcut ise XenCenter üzerinden Tools &amp;gt; Install Update bölümüne gelerek, indirdiğiniz güncellemeyi ve güncellenecek hosttu seçtikten sonra otomatik güncellemesini sağlayabilirsiniz. Bu tabi lisans almanız durumunda size verilen nimetlerden biri.</description>
+    </item>
+    
+    <item>
+      <title>Citrix Xenserverda Iso Disk Alanı Oluşturma</title>
+      <link>https://www.gokhanmankara.com/2013/05/citrix-xenserverda-iso-disk-alani-olusturma/</link>
+      <pubDate>Thu, 02 May 2013 11:15:23 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/05/citrix-xenserverda-iso-disk-alani-olusturma/</guid>
+      <description>Sürekli Vmware ESX kullanan biri, Citrix XenServer kullanmaya başladığında ilk bocalayacağı nokta, VDSe isoyu nerden mount edeceğim olacaktır. Citrix XenServerda VDSlere iso mount edebilmek için NFS olarak bir disk eklemeli yada Windows File Sharing ( CIFS ) denen iso depo alanı oluşturabilirsiniz. Bunun yanında mevcut local diskinizde bir klasör oluşturup içerisine iso dosyalarını yükleyerek, bu klasörü bir iso depo alanı olarak da gösterebilirsiniz.
+Local diskinizde bir klasör oluşturup, bu klasörü iso depo alanı olarak nasıl kullanacağımıza bakalım.</description>
+    </item>
+    
+  </channel>
+</rss>

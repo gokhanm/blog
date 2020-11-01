@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mail Sunucusu Kurulumu on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/mail-sunucusu-kurulumu/</link>
+    <description>Recent content in Mail Sunucusu Kurulumu on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Aug 2011 14:06:53 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/mail-sunucusu-kurulumu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Sun, 21 Aug 2011 14:06:53 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</guid>
+      <description>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.
+Postfix Kurulumu # yum install postfix  komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Split Kullanımı on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/split-kullan%C4%B1m%C4%B1/</link>
+    <description>Recent content in Split Kullanımı on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Apr 2010 11:42:35 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/split-kullan%C4%B1m%C4%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Split - Dosyalari Parçalara Bölmek</title>
+      <link>https://www.gokhanmankara.com/2010/04/split-dosyalari-parcalara-bolmek/</link>
+      <pubDate>Sun, 18 Apr 2010 11:42:35 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/04/split-dosyalari-parcalara-bolmek/</guid>
+      <description>Elinizde büyük bir dosya var ve siz bunu hotfile yada rapid gibi sitelere yüklemek istiyorsunuz yalnız dosyanız çok büyük. Ne yapmanız gerekir diye düşünürken imdadınıza “split” komutu yetişiyor. Bu komut ile dosyanızı istediğiniz boyuttaki parçalara bölebilirsiniz.
+$ split -b 10000k deneme.tar blok  deneme.tar.gz dosyasını 10Mb parçalar halinde blok adı altında split komutu size parçalara bölecektir.
+Tekrar birleştirmek için ise
+$ cat blok* &amp;gt; deneme.tar  komutunu vererek tekrar tek parça haline getirebilirsiniz.</description>
+    </item>
+    
+  </channel>
+</rss>

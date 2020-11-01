@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Head Kullanımı on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/head-kullan%C4%B1m%C4%B1/</link>
+    <description>Recent content in Head Kullanımı on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Aug 2010 14:59:22 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/head-kullan%C4%B1m%C4%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Küçük Notlar - Head Ve Tail Komutu</title>
+      <link>https://www.gokhanmankara.com/2010/08/kucuk-notlar-head-ve-tail-komutu/</link>
+      <pubDate>Fri, 20 Aug 2010 14:59:22 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/08/kucuk-notlar-head-ve-tail-komutu/</guid>
+      <description>Bağzı durumlarda büyük boyuttaki dosyaların baştan ilk 6-7 satırını yada sondan 6-7 satırını okumamız gerekebilir. Bu durumlar head ve tail komutlarını kullanarak baştan ve sondan istediğimiz kadar satırın konsolda gözükmesini sağlayabiliriz.
+Örnek çıktı dosyası olarak DIR_COLORS içindeki ilk 5 satırın çıktısını görüyorsunuz.
+$head -5 /etc/DIR_COLORS # Configuration file for the color ls utility # Synchronized with coreutils 8.5 dircolors # This file goes in the /etc directory, and must be world readable.</description>
+    </item>
+    
+  </channel>
+</rss>

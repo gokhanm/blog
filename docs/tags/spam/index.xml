@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spam on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/spam/</link>
+    <description>Recent content in Spam on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Sep 2013 10:39:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/spam/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postfix - Mail Çıkıs İp Adresini Değiştirme</title>
+      <link>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</link>
+      <pubDate>Sun, 15 Sep 2013 10:39:00 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</guid>
+      <description>Postfix için mail çıkış ( outgoing ) ip adresini değiştirme istediğinizde, google aralamarında en çok karşınıza çıkan main.cf deki inet_interfaces satırına yeni mail çıkış ip adresini yazmak yada smtp_bind_address şeklinde bir satır ekleyerek yeni mail çıkış ip adresini belirtmeniz şeklindedir. Main.cf dosyasında yapmış olduğunuz bu işlem ile postfix gelecek olan mailleri ( incoming mail ) sadece bu ip adresinden dinleyecektir. Sonuçta mail çıkış ip adresimiz değişmemiş olacaktır.
+Mail çıkış ip adresini değiştirmek için master.</description>
+    </item>
+    
+    <item>
+      <title>Nagios Bildirimlerini Smtp Auth İle Göndermek</title>
+      <link>https://www.gokhanmankara.com/2013/04/nagios-bildirimlerini-smtp-auth-ile-gondermek/</link>
+      <pubDate>Fri, 26 Apr 2013 11:23:07 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/04/nagios-bildirimlerini-smtp-auth-ile-gondermek/</guid>
+      <description>Nagios, standart olarak unix sistemlerde kullanılan mail (sembolik link olarak mailx’e bağlanmıştır) programı ile bildirimleri stmp auth özelliğini kullanmadan direk olarak commands.cfg dosyasında tanımlanan mail adresini gönderir.
+Maillerin terminal üzerinden gönderildiği, spam maillerin hiç olmadığı yada en azından günümüzdeki gibi spam mail gönderimlerinin normal mail gönderimlerine nazaran 2 katından bile fazla olmadığı zamanlarda ( Çağrı Ersen’nin syslogs sitesinde yayınladığı istatistik buna çok güzel bir örnek ), insanların mail gönderimlerinde spama düşme endişeleri olmadığı için rahatlıkla kullandıkları bir uygulama olan mail, bugün sistem yöneticilerin spam filtrelerine takılma endişelerinden dolayı, farklı arayışlar içine itmiştir.</description>
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Kuyruğu Queue İşlemleri</title>
+      <link>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</link>
+      <pubDate>Sat, 25 Aug 2012 11:48:02 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</guid>
+      <description>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir. Bu durumda mailleriniz kuyrukta birikmekte, göndermiş olduğunuz maillerin geç gitmesi gibi sorunlarla karşılaşılmakta.
+Kuyrukta biriken mailleri görmek için,
+# mailq  Kuyrukta biriken maillerin çokluğu acaba sunucudan spam mı yapılıyor endişesi doğurabilir. Bu durumda kuyrukta biriken maillerin id lerini görerek içeriklerini okuyabiliriz.</description>
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Başlığına Göre Filtreleme</title>
+      <link>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</link>
+      <pubDate>Tue, 26 Jun 2012 11:56:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</guid>
+      <description>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.
+Mail sunucularının hemen hemen hepsinde spam mailleri engellemek için RBL ( Realtime Blockhole List ) ler kullanılır. Bunlara örnek olarak Spamhaus , Spamcop ve ayrıca greylist olarak postgrey verilebilir.
+Postfix’de mail başlığına göre filtreleme yapmak için,
+main.cf dosyasının içerisinde bulunan aşağıdaki satırın başındaki “#” işareti kaldırarak aktfi etmeniz gerekir.
+header_checks = regexp:/etc/postfix/maps/header_checks  Daha sonra postfix dizininin ( elle derleme esnasında başka bir yere kurulum yapmadı iseniz /etc/postfix in altındadır ) içinde bulunan header_checks dosyasını açarak engellemek istediğiniz mail başlığını yazmanız gerekmektedir.</description>
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Adres Bazlı Engelleme</title>
+      <link>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</link>
+      <pubDate>Sat, 17 Sep 2011 14:00:46 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</guid>
+      <description>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.
+Bunun için;
+# cd /etc/postfix # vi sender_access  sender_access dosyasına engelemek istediğiniz mail adresini aşağıdaki formatta yazıyorsunuz.
+info@domain.com REJECT  Daha sonra postmap komutu ile database ini oluşturuyorsunuz.
+# postmap hash:sender_access  Main.cf dosyasına mail geldiğinde sender_access dosyasını kontrol etmesi için ;
+submission_recipient_restrictions = check_sender_access hash:/etc/postfix/sender_access,permit  kuralını yazıyoruz.
+Değişikliğini yaptığımız main.cf dosyasını kaydedip postfix’e restart atıyoruz.</description>
+    </item>
+    
+  </channel>
+</rss>

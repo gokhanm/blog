@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Queue on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/queue/</link>
+    <description>Recent content in Queue on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Aug 2012 11:48:02 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/queue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postfix - Mail Kuyruğu Queue İşlemleri</title>
+      <link>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</link>
+      <pubDate>Sat, 25 Aug 2012 11:48:02 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</guid>
+      <description>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir. Bu durumda mailleriniz kuyrukta birikmekte, göndermiş olduğunuz maillerin geç gitmesi gibi sorunlarla karşılaşılmakta.
+Kuyrukta biriken mailleri görmek için,
+# mailq  Kuyrukta biriken maillerin çokluğu acaba sunucudan spam mı yapılıyor endişesi doğurabilir. Bu durumda kuyrukta biriken maillerin id lerini görerek içeriklerini okuyabiliriz.</description>
+    </item>
+    
+  </channel>
+</rss>

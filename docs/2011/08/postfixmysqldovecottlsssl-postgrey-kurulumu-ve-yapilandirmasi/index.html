@@ -1,0 +1,1140 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması</title>
+    <meta name="author" content="Gökhan MANKARA">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://www.gokhanmankara.com/favicon.png">
+    
+
+    
+    <meta name="description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.
+Postfix Kurulumu # yum install postfix  komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.">
+    <meta property="og:description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.
+Postfix Kurulumu # yum install postfix  komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması">
+    <meta property="og:url" content="2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi">
+    <meta property="og:site_name" content="Gökhan MANKARA">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gökhan MANKARA">
+    <meta name="twitter:description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.
+Postfix Kurulumu # yum install postfix  komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.">
+    
+      <meta name="twitter:creator" content="@gokhanmankara">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/d5d65b23744b836690ba8e789bbf1656?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://www.gokhanmankara.com/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-10446851-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://www.gokhanmankara.com/">Gökhan MANKARA</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://www.gokhanmankara.com/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/d5d65b23744b836690ba8e789bbf1656?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Gökhan MANKARA</h4>
+        
+          <h5 class="sidebar-profile-bio">Golang, Python, Blogger, Linux Fan</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.gokhanmankara.com/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.gokhanmankara.com/category">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Category</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.gokhanmankara.com/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.gokhanmankara.com/arsiv">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Arşiv</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/gokhanm" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/gokhanmankara" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/gokhanmankara/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.gokhanmankara.com/hakkimda">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Hakkımda</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.gokhanmankara.com/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2011-08-21T14:06:53&#43;03:00">
+        
+  
+  
+  
+  
+    2011, Aug 21
+  
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://www.gokhanmankara.com/categories/postfix">Postfix</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<p>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.</p>
+
+<h2 id="postfix-kurulumu">Postfix Kurulumu</h2>
+
+<pre><code class="language-sh"># yum install postfix
+</code></pre>
+
+<p>komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır. Sonuçta herşey tamam olsa bile postfixin mysqle bağlanamamasından dolayı mail sunucusu çalışmayacaktır.</p>
+
+<p>Postfixi mysql desteği ile kurmak için yum.repo.d üzerinde bir kaç düzenleme yapmamız gerekiyor.CentOS-Base.repo dosyasının base,update ve centosplus kısımlarını aşağıdaki gibi düzenledikten sonra postfix kurulumu yapıldığında mysql desteği gelmiş olacaktır.</p>
+
+<pre><code class="language-sh"># nano /etc/yum.repos.d/CentOS-Base.repo
+
+[base]
+
+exclude=postfix
+
+[update]
+
+exclude=postfix
+
+[centosplus]
+
+enabled=1
+
+includepkgs=postfix
+</code></pre>
+
+<pre><code class="language-sh"># yum install postfix
+# postconf -m
+btree
+cidr
+environ
+hash
+ldap
+mysql
+nis
+pcre
+pgsql
+proxy
+regexp
+static
+unix
+</code></pre>
+
+<p>Postfix kurulumumuz tamam şimdi main.cf dosyasını düzenlememiz gerekiyor.</p>
+
+<pre><code class="language-sh"># nano /etc/postfix/main.cf
+
+smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+
+append_dot_mydomain = no
+#delay_warning_time = 4h
+myhostname = mail.domain.com
+myorigin = domain.com
+mydestination = localhost
+mynetworks = 127.0.0.0/8
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+</code></pre>
+
+<p>myhostname ve myorigin kısımlarını kendi domaininize göre düzenlemeyi unutmayınız.</p>
+
+<h2 id="mysql-yapılandırması">MySQL Yapılandırması</h2>
+
+<p>Birçok sunucuda mysql kurulu olarak gelmektedir. İlk kez kuracak iseniz;</p>
+
+<pre><code class="language-sh"># yum install mysql-server mysql-client
+</code></pre>
+
+<p>Artık database oluşturmaya geldi. Postfix,dovecot ve postfix admin için sadece bir db oluşturmanız yeterli. Oluşturulan databasede postfix ve dovecot sql komutu olan SELECT, postfix admin ise SELECT, UPDATE  ve INSERT komutlarını kullanacak.</p>
+
+<pre><code class="language-sh"># mysql -uroot -p
+
+mysql&gt; CREATE DATABASE db_ismi;
+mysql&gt; GRANT ALL PRIVILEGES ON db_ismi.* TO ‘kullanıcı_adı’@’localhost’ IDENTIFIED BY ‘şifre’;
+mysql&gt; quit;
+</code></pre>
+
+<h2 id="sanal-kullanıcılar">Sanal Kullanıcılar</h2>
+
+<p>Yazının en başında da dediğimiz gibi sanal kullanıcıları mysql üzerinde tutacağız. Bunun postfix main.cf dosyasına bir kaç satır eklememiz gerekiyor.</p>
+
+<pre><code class="language-sh"># Virtual mailbox settings
+
+virtual_mailbox_domains = mysql:$config_directory/mysql_virtual_domains_maps.cf
+virtual_mailbox_base = /var/vmail
+virtual_mailbox_maps = mysql:$config_directory/mysql_virtual_mailbox_maps.cf
+virtual_alias_maps = mysql:$config_directory/mysql_virtual_alias_maps.cf
+virtual_minimum_uid = 150
+virtual_uid_maps = static:150
+virtual_gid_maps = static:8
+virtual_transport = dovecot
+dovecot_destination_recipient_limit = 1
+# SASL Authentication
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_exceptions_networks = $mynetworks
+smtpd_sasl_security_options = noanonymous
+broken_sasl_auth_clients = yes
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+</code></pre>
+
+<p>Sanal kullanıcıların mailbox larını /var/vmail altında tutacağız bunun için vmail kullanıcısı ve mail adında bir group oluşturmamız gerekiyor.</p>
+
+<pre><code class="language-sh"># useradd -r -u 150 -g mail -d /var/vmail -s /sbin/nologin -c “Virtual mailbox” vmail
+
+# mkdir /var/vmail
+# chmod 770 /var/vmail/
+# chown vmail:mail /var/vmail/
+</code></pre>
+
+<p>Ayrıca sadece izin verilmiş kullanıcıların mail atabilmesi için main.cf dosyasına rule yazmamız gerekiyor.</p>
+
+<pre><code class="language-sh">smtpd_recipient_restrictions =
+
+permit_mynetworks
+permit_sasl_authenticated
+reject_unauth_destination
+permit
+</code></pre>
+
+<h2 id="postfix-mysql-ayarları">Postfix Mysql Ayarları</h2>
+
+<p>Postfixin mysql de kayıtlı bulunan bilgilerin nerede ve nasıl okuması gerektiğini tanımlamamız gerekiyor. Bunun için /etc/postfix altına birkaç dosya oluşturup düzenlememiz gerekiyor.</p>
+
+<pre><code class="language-sh"># nano /etc/postfix/mysql_virtual_alias_maps.cf
+
+user = db_kullanıcı_adi
+password = şifre
+hosts = localhost
+dbname = db_ismi
+
+query = SELECT goto FROM alias WHERE address=’%s’ AND active = ’1′
+
+# nano /etc/postfix/mysql_virtual_domains_maps.cf
+
+user = db_kullanıcı_adi
+password = şifre
+hosts = localhost
+dbname = db_ismi
+query = SELECT domain FROM domain WHERE domain=’%s’ AND backupmx = ’0′ AND active = ’1′
+
+# nano /etc/postfix/mysql_virtual_mailbox_limit_maps.cf
+
+user = db_kullanıcı_adi
+password = şifre
+hosts = localhost
+dbname = db_ismi
+query = SELECT quota FROM mailbox WHERE username=’%s’ AND active = ’1′
+
+# nano /etc/postfix/mysql_virtual_mailbox_maps.cf
+
+user = db_kullanıcı_adi
+password = şifre
+hosts = localhost
+dbname = db_ismi
+
+query = SELECT CONCAT(domain,’/’,maildir) FROM mailbox WHERE username=’%s’ AND active = ’1′
+</code></pre>
+
+<h2 id="dovecot-kurulumu-ve-ayarları">Dovecot Kurulumu ve Ayarları</h2>
+
+<p>IMAP ve Pop için dovecot kullanacağız.</p>
+
+<pre><code class="language-sh"># yum install dovecot
+</code></pre>
+
+<p>Postfix in dovecot ile anlaşa bilmesi için postfix master.cf dosyasının en altına aşağıdaki satırı eklememiz gerekiyor.</p>
+
+<pre><code class="language-sh">dovecot unix – n n – – pipe flags=DRhu user=vmail:mail argv=/usr/lib/dovecot/deliver -d $(recipient)
+</code></pre>
+
+<p>Dovecot kurulumundan sonra /etc/dovecot.conf dosyasını aşağıdaki şekilde düzenlememiz gerekiyor.</p>
+
+<p>Dovecot.conf dosyasında ssl ve dovecot-sql.conf ayarlamalarını bilerleyen kısımlarda anlatacağım.</p>
+
+<pre><code class="language-sh">## Dovecot configuration file
+#
+#
+# imap imaps pop3 pop3s (use imaps and pop3s if configured for SSL)
+protocols = imap pop3
+#
+# Uncomment the ssl_listen statements and comment out listen if using SSL
+protocol imap {
+listen = *:143
+# ssl_listen = *:993
+}
+protocol pop3 {
+listen = *:110
+# ssl_listen = *:995
+}
+#
+log_timestamp = “%Y-%m-%d %H:%M:%S ”
+syslog_facility = mail
+#
+# Uncomment these if using SSL
+ssl_cert_file = /etc/ssl/domain.com/mailserver/mail-cert.pem
+ssl_key_file = /etc/ssl/domain.com/mailserver/mail-key.pem
+ssl_ca_file = /etc/ssl/domain.com/ca/mycompany.pem
+ssl_verify_client_cert = yes
+ssl_parameters_regenerate = 168
+verbose_ssl = no
+#
+# Where the mailboxes are located
+mail_location = maildir:/var/vmail/%d/%u
+#
+mail_extra_groups = mail
+mail_debug = no
+first_valid_uid = 150
+last_valid_uid = 150
+maildir_copy_with_hardlinks = yes
+#
+protocol imap {
+login_executable = /usr/libexec/dovecot/imap-login
+mail_executable = /usr/libexec/dovecot/imap
+imap_max_line_length = 65536
+}
+protocol pop3 {
+login_executable = /usr/libexec/dovecot/pop3-login
+mail_executable = /usr/libexec/dovecot/pop3
+pop3_uidl_format = %08Xu%08Xv
+}
+#
+auth_verbose = no
+auth_debug = no
+auth_debug_passwords = no
+#
+auth default {
+mechanisms = plain
+passdb sql {
+args = /etc/dovecot-sql.conf
+}
+userdb sql {
+args = /etc/dovecot-sql.conf
+}
+user = nobody
+socket listen {
+master {
+path = /var/run/dovecot/auth-master
+mode = 0660
+user = vmail
+group = mail
+}
+client {
+path = /var/spool/postfix/private/auth
+mode = 0660
+user = postfix
+group = postfix
+}
+}
+#
+# If you want client certificates, use these lines
+# ssl_require_client_cert = yes
+# ssl_username_from_cert = yes
+}
+</code></pre>
+
+<p>Dovecotun sql ile konuşabilmesi için dovecot-sql.conf adında bir dosya oluştup içeriğini aşağıdaki gibi ayarlıyoruz.</p>
+
+<pre><code class="language-sh"># nano /etc/dovecot-sql.conf
+
+driver = mysql
+
+connect = host=localhost dbname=db_ismi user=db_kullanıcı_ismi password=şifre
+
+default_pass_scheme = MD5
+
+user_query = SELECT ‘/var/vmail/%d/%n’ as home, ‘maildir:/var/vmail/%d/%n’ as mail, 150 AS uid, 8 AS gid, concat(‘dirsize:storage=’, quota) AS quota FROM mailbox WHERE username = ‘%u’ AND active = ’1′
+
+password_query = SELECT username as user, password, ‘/var/vmail/%d/%n’ as userdb_home, ‘maildir:/var/vmail/%d/%n’ as userdb_mail, 150 as userdb_uid, 8 as userdb_gid FROM mailbox WHERE username = ‘%u’ AND active = ’1′
+
+# chmod 600 /etc/dovecot-sql.conf
+# chown vmail /etc/dovecot-sql.conf
+</code></pre>
+
+<p>dovecot ayarları bitti SSL için düzenlemeyi daha sonra yapacağız.</p>
+
+<h2 id="postfix-admin-kurulumu-ve-yapılandırması">Postfix admin Kurulumu ve Yapılandırması</h2>
+
+<p>Postfix adminin düzgün çalışabilmesi için bir web sunucusuna ( apache vb.) ve php kurulumuna ihtiyacınız bulunuyor. Bunların olduğunu düşünerek postfix admin kurulumunun ardından imap hatası aırsanız aşağıdaki komutu çalıştırarak php-imap I kurmanız gerekiyor.</p>
+
+<pre><code class="language-sh"># yum install php-imap
+</code></pre>
+
+<p>Ben postfixadmini bir domainin altında çalıştıracağım için postfixadmin kurulum dosyalarını /var/www/html/domain.com altında barındıracağım.</p>
+
+<p>Artık postfix admini kurabiliriz.</p>
+
+<p><a href="http://sourceforge.net/projects/postfixadmin/">http://sourceforge.net/projects/postfixadmin/</a></p>
+
+<p>Yukarıdaki adres yardımıyla postfixadminin son sürümünü indirin.</p>
+
+<pre><code class="language-sh"># tar xvfz postfixadmin-2.3.3.tgz
+</code></pre>
+
+<p>Sıkıştırılmış  dosyayı açtıktan sonra config.inc.php dosyasını düzenlememiz gerekiyor.</p>
+
+<pre><code class="language-sh">$CONF[‘postfix_admin_url’] = ‘/var/www/domain.com/postfixadmin/’;
+
+$CONF[‘postfix_admin_path’] = ‘http://localhost/postfixadmin’;
+$CONF[‘database_host] = ‘localhost’;
+$CONF[‘database_user’] = ‘db_kullanıcı_adi’;
+$CONF[‘database_password’] = ‘şifre’;
+$CONF[‘database_name’] = ‘db_ismi’;
+</code></pre>
+
+<h2 id="tls-ve-ssl-kurulumu">TLS ve SSL kurulumu</h2>
+
+<p>self-signed sertifikas kurulumu anlatılacak olup. Mail programları üzerinden ilk bağlantınızda güvenilmeyen ssl uyarısı almanız kaçılımazdır.</p>
+
+<p>İlk once ssl sertifikasını tutacağımız yeri belirleyip. Bu klasörün içerisine pem dosyalarını oluşturacağız.</p>
+
+<pre><code class="language-sh"># mkdir -p /etc/ssl/domain.com/mailserver/
+
+# cd /etc/ssl/domain.com/mailserver/
+# openssl genrsa 1024 &gt; mail-key.pem
+# chmod 400 mail-key.pem
+# openssl req -new -x509 -nodes -sha1 -days 365 -key mail-key.pem &gt; mail-cert.pem
+</code></pre>
+
+<p>Mail-cert.pem sertifikası için bir kaç soru soracak bunların içerisinden Common Name (eg, YOUR name) için istenen bilgi sunucu bilginiz ile aynı yapmanız tavsite ediliyor. Örneğin mail.domain.com</p>
+
+<h2 id="dovecot-ssl-yapılandırması">Dovecot SSL yapılandırması</h2>
+
+<p>SSL tanımlamaları bittikten sonra bu bilgileri dovecot ve postfix e tanımlamamız gerekiyor. Ki bunu daha önceden dovecot.conf dosyasını düzenlerken ssl bilgilerinide düzenlemiştik.</p>
+
+<pre><code class="language-sh">protocols
+
+ssl_listen
+ssl_cert_file
+ssl_key_file
+ssl_parameters_regenerate = 168
+verbose_ssl = no
+````
+
+Dovecot şu an 993 ssl port isteklerine cevap verecektir.Aşağıdaki gibi bir log çıktısı görünecektir.
+
+```sh
+dovecot: imap-login: Login: user=, method=PLAIN, rip=127.0.1.1, lip=127.0.1.1, TLS
+</code></pre>
+
+<p>Postfix TLS ayarları için main.cf dosyasına aşağıdaki bilgileri girmemiz gerekiyor.</p>
+
+<pre><code class="language-sh">smtpd_tls_cert_file = /etc/ssl/domain.com/mailserver/mail-cert.pem
+
+smtpd_tls_key_file = /etc/ssl/domain.com/mailserver/mail-key.pem
+smtpd_tls_session_cache_database = btree:/var/spool/postfix/smtpd_tls_session_cache
+smtpd_tls_security_level = may
+smtpd_tls_received_header = no
+smtpd_tls_loglevel = 0
+tls_random_source = dev:/dev/urandom
+</code></pre>
+
+<h2 id="postgrey-yapılandırması-ve-kurulumu">Postgrey Yapılandırması ve Kurulumu</h2>
+
+<p>Herkez spamlardan nefret eder ve bunları engellemek için bir çok yöntem denemektedir. Postfix ile en çok kullanılan spam engelleme aracı olan postgreyi kurup, yapılandıracağız.</p>
+
+<pre><code class="language-sh"># yum install postgrey
+</code></pre>
+
+<p>Postfrey için postfixe smtpd_recipient_restrictions kuralı yazarken son kural olan permit ten önce yazmaya dikkat ediyoruz. Buda postfix mailleri dovecota iletmeden once postgreyin elinden geçerek spam olarak iletilmesini engelleyecektir.</p>
+
+<pre><code class="language-sh">check_policy_service inet:127.0.0.1:60000
+
+main.cf dosyasına ekleyeceğimiz rule;
+
+smtpd_recipient_restrictions =
+
+permit_mynetworks
+permit_tls_all_clientcerts
+#permit_sasl_authenticated
+reject_non_fqdn_hostname
+reject_non_fqdn_sender
+reject_non_fqdn_recipient
+reject_unauth_destination
+reject_unauth_pipelining
+reject_invalid_hostname
+#reject_unknown_sender_domain
+#reject_unknown_hostname
+reject_rbl_client zen.spamhaus.org
+reject_rbl_client bl.spamcop.net
+reject_rbl_client cbl.abuseat.org
+reject_rbl_client dnsbl.njabl.org
+reject_rbl_client dnsbl.sorbs.net
+reject_rhsbl_sender dsn.rfc-ignorant.org
+check_policy_service inet:127.0.0.1:60000
+permit
+
+#
+smtpd_data_restrictions =
+reject_unauth_pipelining,
+reject_multi_recipient_bounce,
+permit
+</code></pre>
+
+<p>Burada reject_non_fqdn kısımlarını isterseniz kullanmaya bilirsiniz. Bu kurallar ters isim güncellemesi olmayan domainlerden mail gelmesini engelleyecektir. Buda mail spam olmasa bile engellenmesi demektir.</p>
+
+<p>main.cf dosyasına yazdığımız check_policy_service inet:127.0.0.1:60000 kuralının çalışabilmesi için postgreye  inet:127.0.0.1:60000 i dinlemesini sölememiz gerekiyor. Bunu içinde aşağıdaki adımı uygulayabilirsiniz.</p>
+
+<pre><code class="language-sh"># nano /etc/init.d/postgrey
+</code></pre>
+
+<p>Dosyasını açarak,</p>
+
+<p><strong>OPTIONS=”–unix=$SOCKET”</strong>  şeklinde yazılmış satırı <strong>OPTIONS=”–inet=127.0.0.1:60000 -d”</strong> şekilde değiştirmeniz gerekiyor.</p>
+
+<pre><code class="language-sh"># /etc/init.d/postgrey restart
+</code></pre>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://www.gokhanmankara.com/tags/dovecot/">dovecot</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.gokhanmankara.com/tags/mail-sunucusu-kurulumu/">mail sunucusu kurulumu</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.gokhanmankara.com/tags/postfix/">postfix</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.gokhanmankara.com/tags/postfixadmin/">postfixadmin</a>
+
+  <a class="tag tag--primary tag--small" href="https://www.gokhanmankara.com/tags/postgrey/">postgrey</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/" data-tooltip="Gnome 3 - Masaüstüne İkon Ekleme">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/" data-tooltip="Postfix - Mail Adres Bazlı Engelleme">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Gökhan MANKARA. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/" data-tooltip="Gnome 3 - Masaüstüne İkon Ekleme">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/" data-tooltip="Postfix - Mail Adres Bazlı Engelleme">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/d5d65b23744b836690ba8e789bbf1656?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Gökhan MANKARA</h4>
+    
+      <div id="about-card-bio">Golang, Python, Blogger, Linux Fan</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Turkey/Istanbul
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/">
+                <h3 class="media-heading">Openvpn Kurulum Scripti</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.
+Bu işlemleri uzun uzun uğraşmayıp, hazır bir script ile yapmak isteyenler için, centos,fedora ve debian için openvpn kurulum scriptini kullanarak kolayca openvpn, eas-rsa ayarlarını yapıp, belirlediği bir isimde ovpn dosyasını elde edebilir.
+Aşağıdaki komutlar ile scripti indirip, çalıştırdığınızda size birkaç soru soracaktır,
+# wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh # chmod +x openvpn-install.sh # ./openvpn-install.sh  İlk önce OpenVPN nin dinleyeceği ip adresini belirtiyorsunuz.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/">
+                <h3 class="media-heading">Login Sonrası Screen Oturumlarını Görme</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum. Sunucuya her login olduğumda screen’nin açık oturumlarını görebilmek için .bash_profile dosyasına ( RedHat tabanlı sistemler için) aşağıdaki scripti ekledim. Bu sayede sunucuya ssh üzerinden her bağlandığımda açık oturumları görebiliyorum.
+if which screen &gt;/dev/null; then screen -q -ls if [ $? -ge 10 ]; then screen -ls fi fi  Last login: Sun Aug 30 05:45:37 2015 from 192.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/08/screen-komutu-kullanimi/">
+                <h3 class="media-heading">Screen Komutu Kullanımı</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Screen komutu, linux sunucunuza ssh bağlantısı yaptıktan sonra birden fazla shell oturumları oluşturmanızı sağlar. Screen komutu kullanarak yeni bir shell oturumu açtığınızda, screen arkada yeni bir process oluşturur, eğer siz oturumdan Ctrl + a + d kombinasyonu ile ayrılsanız (detached ) bile screen komutu arkada oturumu çalıştırmaya devam eder ve daha sonra sizin aynı oturuma bağlanmasınıza olanak sağlar.
+Screen komutu en çok, uzun sürecek bir scriptin terminal kapansa bile sonlanmamasını sağlamak için kullanılmaktadır.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/">
+                <h3 class="media-heading">Python - Gitlab Email Sender</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.
+#!/usr/bin/env python __author__ = &quot;Gokhan MANKARA &lt;gokhan@mankara.org&quot; import gitlab import sqlite3 as sql import requests import smtplib import os import email.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/">
+                <h3 class="media-heading">Xenserver&#39;da Sanal Sunucuların Görünmemesi</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">XenServer host sunucudaki elektrik kesintisi yada benzer fiziksel sorunlar sebebiyle, storage üzerindeki sanal makineler kapanmadan bilgisayar resetlenebilir, kapanabilir veya fiziksel arıza yüzüden hiç açılmayabilir. Bu durumda ilgili host bilgisayar kapanmadan önce üzerinde çalışan sanal makineler Xencenter arayüzünde kaybolur. Haliyle sanal makineyi başka bir host bilgisayara taşımak da mümkün olmaz. Peki bu durumdan nasıl kurtulunur.
+Pool üzerindeki bir host bilgisayarın konsoluna bağlandıktan sonra “xe host-list” komutu işletilir. Havuzdaki host makineler listelenir. Düşen host makine tespit edilip id, sonraki komutta kullanılmak üzere alınır.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/">
+                <h3 class="media-heading">Python Watchdog İle Dizin İzleme</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti. Cron’a ekleyerekte arka planda sürekli çalışmasını sağlayabilirsiniz. Cron kullanımı hakkında bilginiz yok ise, bu yazımı inceleyebilirsiniz.
+./check_dir.py /home/gokhan/Desktop  Mail içeriği,
+/home/gokhan/Desktop/file-5.22-1.fc22.src.rpm deleted: file-5.22-1.fc22.src.rpm  #!/usr/bin/env python3.4 __author__ = 'Gokhan MANKARA &lt;gokhan@mankara.org&gt;' import time import sys import smtplib import socket from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText from watchdog.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/">
+                <h3 class="media-heading">Sudo Komutlarının Loglanması</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız. Önceki yazıda sudoers dosyasına kullanıcıyı eklemiştik, bu yazıda sudoers.d altına kullanıcıları oluşturacağız.
+# vi /etc/sudoers.d/gokhan  gokhan ALL=(ALL) NOPASSWD: LOG_INPUT: LOG_OUTPUT: ALL Defaults iolog_dir=/var/log/sudo-io/%{user}  gokhan kullanıcısına şifresiz olarak sudo komutu çalıştırma yetkisi vermiş olduk. iolog_dir dizinini oluşturmamıza gerek yok, default olarak dizin oluşacaktır.
+sudo-io dizinine baktığınızda birden fazla dosya oluştuğunu görürsünüz.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/">
+                <h3 class="media-heading">Zfsonlinux Ram Kullanımı</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.
+Modprobe.d altında zfs.conf adında bir dosya oluşturuyoruz. Bu conf dosyasına zfs’in kullanım parametlerini gireceğiz. Bu yazıda zfs’in kullanmasını istediğimi max ram miktarını 8Gb olarak ayarlayacağız.
+# vi /etc/modprobe.d/zfs.conf options zfs zfs_arc_max=8589934592  Ayarların aktif olabilmesi için sistemi yeniden başlatmamız gerekiyor.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/">
+                <h3 class="media-heading">Maildeki Ekli Dosyayı İndiren Python Script</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.
+#!/usr/bin/env python import email import getpass import imaplib import os detach_dir = '.' # directory where to save attachments (default: current) user = &quot;username&quot; pwd = &quot;password&quot; # connecting to the gmail imap server m = imaplib.IMAP4_SSL(&quot;mail.domain.com&quot;) m.login(user, pwd) m.select(&quot;INBOX&quot;) # here you a can choose a mail box like INBOX instead # use m.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/">
+                <h3 class="media-heading">Zfsonlinux Kurulumu Ve Yapılandırması</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.
+ Veri bütünlüğü Basit depolama yönetimi Her şeyi online olarak yapabilmesi  Bsd sistemlerde default olarak gelen zfs dosya sistemini, zfsonlinux kurarak linux sistemlerde de kullanma imkanı bulabiliyoruz.
+Zfsonlinux Kurulumu Redhat tabanlı işletim sistemi için zfsonlinux download sayfasından 6 ve 7 dağıtımları için gerekli rpm repolarını indirebilirsiniz. Bu yazıda Centos 6 için kurulum yapılacaktır.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         58 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://www.gokhanmankara.com/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://www.gokhanmankara.com/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/www.gokhanmankara.com\/2011\/08\/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi\/';
+          
+            this.page.identifier = '\/2011\/08\/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'gokhanblog';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Header Checks on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/header-checks/</link>
+    <description>Recent content in Header Checks on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jun 2012 11:56:10 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/header-checks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postfix - Mail Başlığına Göre Filtreleme</title>
+      <link>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</link>
+      <pubDate>Tue, 26 Jun 2012 11:56:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</guid>
+      <description>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.
+Mail sunucularının hemen hemen hepsinde spam mailleri engellemek için RBL ( Realtime Blockhole List ) ler kullanılır. Bunlara örnek olarak Spamhaus , Spamcop ve ayrıca greylist olarak postgrey verilebilir.
+Postfix’de mail başlığına göre filtreleme yapmak için,
+main.cf dosyasının içerisinde bulunan aşağıdaki satırın başındaki “#” işareti kaldırarak aktfi etmeniz gerekir.
+header_checks = regexp:/etc/postfix/maps/header_checks  Daha sonra postfix dizininin ( elle derleme esnasında başka bir yere kurulum yapmadı iseniz /etc/postfix in altındadır ) içinde bulunan header_checks dosyasını açarak engellemek istediğiniz mail başlığını yazmanız gerekmektedir.</description>
+    </item>
+    
+  </channel>
+</rss>

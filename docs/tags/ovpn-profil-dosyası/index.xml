@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ovpn Profil Dosyası on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/ovpn-profil-dosyas%C4%B1/</link>
+    <description>Recent content in Ovpn Profil Dosyası on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Mar 2014 11:25:01 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/ovpn-profil-dosyas%C4%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenVPN için ovpn profil dosyası hazırlama</title>
+      <link>https://www.gokhanmankara.com/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama/</link>
+      <pubDate>Mon, 24 Mar 2014 11:25:01 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama/</guid>
+      <description>OpenVPN kurulum scripti için tıklayınız.
+ Vpn seçenekleri içerisinde ücretli, ücretsiz bir çok vpn seçeneği bulunmakta. Bunlardan ücretsiz olanlar insanın gözünde bilgilerimi ( şifre vb. ) kaydediyor mu acaba endişesi yaratırken, ücretli olanlar da ücretsizler gibi aynı endişeleri yaratabilir. Ek olarak bu hizmetler de bir çok müşteriye hizmet verdikleri için trafik vb. limitlemeler mevcut.
+Bu tür endişeleri taşımamak ve herhangi bir limitlemeden etkilenmemek için, 5 dolara alacağınız bir sanal sunucuya ( vds ) openvpn kurarak, akıllı telefonunuzdan, bilgisayarınızdan farklı sertifikalar ile endişe duymadan bağlanabilirsiniz.</description>
+    </item>
+    
+  </channel>
+</rss>

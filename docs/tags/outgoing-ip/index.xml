@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outgoing Ip on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/outgoing-ip/</link>
+    <description>Recent content in Outgoing Ip on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Sep 2013 10:39:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/outgoing-ip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postfix - Mail Çıkıs İp Adresini Değiştirme</title>
+      <link>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</link>
+      <pubDate>Sun, 15 Sep 2013 10:39:00 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</guid>
+      <description>Postfix için mail çıkış ( outgoing ) ip adresini değiştirme istediğinizde, google aralamarında en çok karşınıza çıkan main.cf deki inet_interfaces satırına yeni mail çıkış ip adresini yazmak yada smtp_bind_address şeklinde bir satır ekleyerek yeni mail çıkış ip adresini belirtmeniz şeklindedir. Main.cf dosyasında yapmış olduğunuz bu işlem ile postfix gelecek olan mailleri ( incoming mail ) sadece bu ip adresinden dinleyecektir. Sonuçta mail çıkış ip adresimiz değişmemiş olacaktır.
+Mail çıkış ip adresini değiştirmek için master.</description>
+    </item>
+    
+  </channel>
+</rss>

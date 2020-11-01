@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cron on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/cron/</link>
+    <description>Recent content in Cron on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Jun 2010 10:55:57 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/cron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Crontab Kullanımı ve Örnek Crontab Uygulaması</title>
+      <link>https://www.gokhanmankara.com/2010/06/crontab-kullanimi-ve-ornek-crontab-uygulamasi/</link>
+      <pubDate>Fri, 18 Jun 2010 10:55:57 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/crontab-kullanimi-ve-ornek-crontab-uygulamasi/</guid>
+      <description>Linux ve Unix sistemlerde kullanılan crontab, belirlediğiniz bir zaman yada zaman diliminde belirlediğiniz komut, script yada uygulamanın çalışmasını sağlarsınız.
+Cron girdilerinin /etc/crontab dosyasının düzenlenerek uygulanır.
+ Crontab’ın editlenmesi;  $crontab -e   Crontab’da yapılacak işlerin listelenmesi;  $crontab -l   Crontab’da işlerin silinmesi;  $crontab -r  Bir crontab dosyası aşağıdaki gibi yazılır.
+* * * * * /calıstirilacak/komut/yada/script  &amp;ldquo;*&amp;rdquo; ile gösterilen yerler zaman yada tarih değerlerinin kullanılmasında kullanılır.</description>
+    </item>
+    
+  </channel>
+</rss>

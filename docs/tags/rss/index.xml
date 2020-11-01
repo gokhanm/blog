@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rss on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/rss/</link>
+    <description>Recent content in Rss on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Mar 2013 11:38:42 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Reader&#39;dan Sonra...</title>
+      <link>https://www.gokhanmankara.com/2013/03/google-readerdan-sonra/</link>
+      <pubDate>Sun, 24 Mar 2013 11:38:42 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/03/google-readerdan-sonra/</guid>
+      <description>Google Reader’ın yaşam hayatına son verileceğinin duyurulmasından sonra, rss kullanıcıları birçok alternatifleri araştırmaya başladı.
+Ben de bu alternatiflerden, bizzat kullandığım, rss hizmeti veren sitelerin yanında kendi sunucunuza kurabileceğiniz birkaç alternatifi paylaşmak istedim.
+Selfoss Kendi rss’imi kendim yönetmek istiyorum diyenler için oldukça güzel bir Rss Feed Scripti. Web tabanlı ve mobile olarak çok rahat kullanabileceğiniz bir arayüze sahip. Mysql, Postgresql ve Sqlite databaselerini destekleyen script aynı zamanda Google Reader’dan alacağınız OPML ile Rsslerinizi yükleme imkanıda sunmakta.</description>
+    </item>
+    
+  </channel>
+</rss>

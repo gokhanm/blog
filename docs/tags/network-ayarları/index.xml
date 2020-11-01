@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network Ayarları on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/network-ayarlar%C4%B1/</link>
+    <description>Recent content in Network Ayarları on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Oct 2014 11:05:13 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/network-ayarlar%C4%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bonding Network Interface Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</link>
+      <pubDate>Sat, 25 Oct 2014 11:05:13 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</guid>
+      <description>RedHat tabanlı işletim sistemlerinde iki veya daha fazla ethernet interface olması durumunda bonding network interface kullanarak, ethernetlerin load balance bond, round-robin bond ya da fault tolerant bond şeklinde çalışması sağlanabilmektedir. Bu sayede bir interface down olması durumunda sunucuya erişim ikinci interface üzerinden devam edecektir.
+Sunucumuzun bond interface ayarlarını aşağıdaki ip adresine göre yapacağız.
+ Bond Interface Oluşturma # vi /etc/sysconfig/network-scripts/ifcfg-bond0  DEVICE=bond0 IPADDR=172.16.41.10 NETMASK=255.255.255.0 GATEWAY=172.16.41.1 ONBOOT=yes BOOTPROTO=none USERCTL=no  Eth0 ve Eth1 Interfacelerin Düzenlenmesi #vi /etc/sysconfig/network-scripts/ifcfg-eth0  DEVICE=eth0 ONBOOT=yes BOOTPROTO=none HWADDR=00:1F:29:E6:EB:2A USERCTL=no MASTER=bond0 SLAVE=yes  #vi /etc/sysconfig/network-scripts/ifcfg-eth1  DEVICE=eth1 ONBOOT=yes BOOTPROTO=none HWADDR=00:26:55:35:24:FF USERCTL=no MASTER=bond0 SLAVE=yes  eth0 e eth1 interfacelerindeki mac adreslerinin bulunması, hangi interface’in down olduğunu anlamanız açısından faydalı olacaktır.</description>
+    </item>
+    
+  </channel>
+</rss>

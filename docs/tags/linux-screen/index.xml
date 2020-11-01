@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux Screen on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/linux-screen/</link>
+    <description>Recent content in Linux Screen on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Aug 2015 13:37:30 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/linux-screen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Screen Komutu Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2015/08/screen-komutu-kullanimi/</link>
+      <pubDate>Sun, 02 Aug 2015 13:37:30 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/08/screen-komutu-kullanimi/</guid>
+      <description>Screen komutu, linux sunucunuza ssh bağlantısı yaptıktan sonra birden fazla shell oturumları oluşturmanızı sağlar. Screen komutu kullanarak yeni bir shell oturumu açtığınızda, screen arkada yeni bir process oluşturur, eğer siz oturumdan Ctrl + a + d kombinasyonu ile ayrılsanız (detached ) bile screen komutu arkada oturumu çalıştırmaya devam eder ve daha sonra sizin aynı oturuma bağlanmasınıza olanak sağlar.
+Screen komutu en çok, uzun sürecek bir scriptin terminal kapansa bile sonlanmamasını sağlamak için kullanılmaktadır.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Screen List on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/screen-list/</link>
+    <description>Recent content in Screen List on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Aug 2015 17:36:13 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/screen-list/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Login Sonrası Screen Oturumlarını Görme</title>
+      <link>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</link>
+      <pubDate>Sun, 30 Aug 2015 17:36:13 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</guid>
+      <description>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum. Sunucuya her login olduğumda screen’nin açık oturumlarını görebilmek için .bash_profile dosyasına ( RedHat tabanlı sistemler için) aşağıdaki scripti ekledim. Bu sayede sunucuya ssh üzerinden her bağlandığımda açık oturumları görebiliyorum.
+if which screen &amp;gt;/dev/null; then screen -q -ls if [ $? -ge 10 ]; then screen -ls fi fi  Last login: Sun Aug 30 05:45:37 2015 from 192.</description>
+    </item>
+    
+  </channel>
+</rss>

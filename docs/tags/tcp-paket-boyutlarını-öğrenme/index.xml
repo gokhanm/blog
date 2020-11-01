@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tcp Paket Boyutlarını Öğrenme on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/tcp-paket-boyutlar%C4%B1n%C4%B1-%C3%B6%C4%9Frenme/</link>
+    <description>Recent content in Tcp Paket Boyutlarını Öğrenme on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Jun 2010 10:52:27 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/tcp-paket-boyutlar%C4%B1n%C4%B1-%C3%B6%C4%9Frenme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Küçük Notlar - $cat /proc/net/dev</title>
+      <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-cat-procnetdev/</link>
+      <pubDate>Sun, 20 Jun 2010 10:52:27 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-cat-procnetdev/</guid>
+      <description>``sh $ cat /proc/net/dev
+ ```sh Inter-| Receive | Transmit face |bytes packets errs drop fifo frame compressed multicast|bytes packets errs drop fifo colls carrier compressed p2p1: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 lo: 42800 516 0 0 0 0 0 0 42800 516 0 0 0 0 0 0 wlp2s0: 532613005 380157 0 0 0 0 0 0 25444897 228607 0 0 0 0 0 0  komutu ile giden ve gelen paketlerin boyutlarını öğrenebilirsiniz.</description>
+    </item>
+    
+  </channel>
+</rss>

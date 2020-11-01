@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Küçük Notlar on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/k%C3%BC%C3%A7%C3%BCk-notlar/</link>
+    <description>Recent content in Küçük Notlar on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jun 2014 11:01:34 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/k%C3%BC%C3%A7%C3%BCk-notlar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Küçük Notlar - Ssh Ile Çift Tire Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2014/06/kucuk-notlar-ssh-ile-cift-tire-kullanimi/</link>
+      <pubDate>Sun, 01 Jun 2014 11:01:34 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/06/kucuk-notlar-ssh-ile-cift-tire-kullanimi/</guid>
+      <description>SSH üzerinde çalışırken, başka bir uzak sunucuda, sunucuya dosya indirmek yada bir klasörün içeriğini görmek için ssh komutundan sonra çift tire ( double dash ) koyarak, sunucuya ssh bağlantısı ile giriş yapmadan uzak sunucuda komut çalıştırabilirsiniz.
+Küçük Notlar - Ssh Ile Çift Tire Kullanımı SSH üzerinde çalışırken, başka bir uzak sunucuda, sunucuya dosya indirmek yada bir klasörün içeriğini görmek için ssh komutundan sonra çift tire ( double dash ) koyarak, sunucuya ssh bağlantısı ile giriş yapmadan uzak sunucuda komut çalıştırabilirsiniz.</description>
+    </item>
+    
+    <item>
+      <title>Kullanıcıları Varsayılan Olarak Home Dizini Olmadan Oluşturma</title>
+      <link>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</link>
+      <pubDate>Fri, 14 Feb 2014 13:24:30 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</guid>
+      <description>Centos’da değişik amaçlar için adduser komutu ile başka bir parametre girmeden oluşturduğunuz kullanıcılarda, home dizinini varsayılan olarak oluşturmak istemiyor iseniz, aşağıdaki yöntem ile bunu sağlayabilirsiniz.
+# vi /etc/login.defs  login.defs dosyasında CREATE_HOME satırı varsayılan olarak yes şeklindedir. CREATE_HOME no diyerek kaydederseniz, varsayıılan olarak home dizini yaratılmayacaktır.
+CREATE_HOME no  Klasik olarak parametre kullanarak aşağıdaki komut ile “login.defs” dosyasında değişiklik yapmadan, home dizini oluşturmayabilir, ayrıca kullanıcının login olmasını da engelleyebilirsiniz.
+# adduser -M -s /sbin/nologin gokhan  </description>
+    </item>
+    
+    <item>
+      <title>Shc İle Bash Shell Script Şifreleme</title>
+      <link>https://www.gokhanmankara.com/2014/02/shc-ile-bash-shell-script-sifreleme/</link>
+      <pubDate>Wed, 12 Feb 2014 13:29:40 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/02/shc-ile-bash-shell-script-sifreleme/</guid>
+      <description>SHC, binary formatında scriptlerinizi şifrelemeye yarayan bir programcık. Yazdığınız bash scriptleri şifreleyerek kodların okunamamasını sağlayabilirsiniz.
+SHC’nin kurulumuna bakacak olursak,
+Sisteminizde “make” kurulu değilse, kurmanız gerekecektir.
+ # wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz # tar -xvf shc-3.8.9.tgz # cd shc-3.8.9 # make  SHC kullanımı;
+shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f script  Basit bir script oluşturarak shc ile scripti şifreleyelim,
+#!/bin/bash echo -n &amp;quot;İsminiz nedir?</description>
+    </item>
+    
+    <item>
+      <title>Gnome 3 - Masaüstüne İkon Ekleme</title>
+      <link>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</link>
+      <pubDate>Sat, 23 Jul 2011 14:31:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</guid>
+      <description>Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.x deki gibi masaüstüne klasör, kısayol vb ikonları ekleyememek oluşuydu.Bunun üstesinden gelmek için Fedora depolarında olan gnome-tweak-tool adındaki küçük programı kurmanız gerekiyor.
+Gnome-tweak-tool Kurulumu Kurulum oldukça basit. Aşağıdaki komut ile fedora deposundan programı kurabiliyorsunuz.
+# su -c &amp;quot;yum install gnome-tweak-tool&amp;quot;  Program kurulumundan sonra aplications kısmından
+ search alanına gnome yazarak çıkan sonuçlardan Tweak Advanced Settings uygulamasını çalıştırıyoruz.</description>
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - $cat /proc/net/dev</title>
+      <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-cat-procnetdev/</link>
+      <pubDate>Sun, 20 Jun 2010 10:52:27 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-cat-procnetdev/</guid>
+      <description>``sh $ cat /proc/net/dev
+ ```sh Inter-| Receive | Transmit face |bytes packets errs drop fifo frame compressed multicast|bytes packets errs drop fifo colls carrier compressed p2p1: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 lo: 42800 516 0 0 0 0 0 0 42800 516 0 0 0 0 0 0 wlp2s0: 532613005 380157 0 0 0 0 0 0 25444897 228607 0 0 0 0 0 0  komutu ile giden ve gelen paketlerin boyutlarını öğrenebilirsiniz.</description>
+    </item>
+    
+  </channel>
+</rss>

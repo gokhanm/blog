@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zfs Kurulumu on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/zfs-kurulumu/</link>
+    <description>Recent content in Zfs Kurulumu on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Feb 2015 10:45:52 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/zfs-kurulumu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Zfsonlinux Kurulumu Ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Tue, 10 Feb 2015 10:45:52 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</guid>
+      <description>Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.
+ Veri bütünlüğü Basit depolama yönetimi Her şeyi online olarak yapabilmesi  Bsd sistemlerde default olarak gelen zfs dosya sistemini, zfsonlinux kurarak linux sistemlerde de kullanma imkanı bulabiliyoruz.
+Zfsonlinux Kurulumu Redhat tabanlı işletim sistemi için zfsonlinux download sayfasından 6 ve 7 dağıtımları için gerekli rpm repolarını indirebilirsiniz. Bu yazıda Centos 6 için kurulum yapılacaktır.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Host on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/host/</link>
+    <description>Recent content in Host on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Mar 2015 13:54:53 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/host/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Xenserver&#39;da Sanal Sunucuların Görünmemesi</title>
+      <link>https://www.gokhanmankara.com/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/</link>
+      <pubDate>Tue, 31 Mar 2015 13:54:53 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/</guid>
+      <description>XenServer host sunucudaki elektrik kesintisi yada benzer fiziksel sorunlar sebebiyle, storage üzerindeki sanal makineler kapanmadan bilgisayar resetlenebilir, kapanabilir veya fiziksel arıza yüzüden hiç açılmayabilir. Bu durumda ilgili host bilgisayar kapanmadan önce üzerinde çalışan sanal makineler Xencenter arayüzünde kaybolur. Haliyle sanal makineyi başka bir host bilgisayara taşımak da mümkün olmaz. Peki bu durumdan nasıl kurtulunur.
+Pool üzerindeki bir host bilgisayarın konsoluna bağlandıktan sonra “xe host-list” komutu işletilir. Havuzdaki host makineler listelenir. Düşen host makine tespit edilip id, sonraki komutta kullanılmak üzere alınır.</description>
+    </item>
+    
+  </channel>
+</rss>

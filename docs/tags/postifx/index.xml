@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postifx on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/postifx/</link>
+    <description>Recent content in Postifx on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Sep 2013 10:39:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/postifx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Postfix - Mail Çıkıs İp Adresini Değiştirme</title>
+      <link>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</link>
+      <pubDate>Sun, 15 Sep 2013 10:39:00 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</guid>
+      <description>Postfix için mail çıkış ( outgoing ) ip adresini değiştirme istediğinizde, google aralamarında en çok karşınıza çıkan main.cf deki inet_interfaces satırına yeni mail çıkış ip adresini yazmak yada smtp_bind_address şeklinde bir satır ekleyerek yeni mail çıkış ip adresini belirtmeniz şeklindedir. Main.cf dosyasında yapmış olduğunuz bu işlem ile postfix gelecek olan mailleri ( incoming mail ) sadece bu ip adresinden dinleyecektir. Sonuçta mail çıkış ip adresimiz değişmemiş olacaktır.
+Mail çıkış ip adresini değiştirmek için master.</description>
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Kuyruğu Queue İşlemleri</title>
+      <link>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</link>
+      <pubDate>Sat, 25 Aug 2012 11:48:02 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</guid>
+      <description>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir. Bu durumda mailleriniz kuyrukta birikmekte, göndermiş olduğunuz maillerin geç gitmesi gibi sorunlarla karşılaşılmakta.
+Kuyrukta biriken mailleri görmek için,
+# mailq  Kuyrukta biriken maillerin çokluğu acaba sunucudan spam mı yapılıyor endişesi doğurabilir. Bu durumda kuyrukta biriken maillerin id lerini görerek içeriklerini okuyabiliriz.</description>
+    </item>
+    
+  </channel>
+</rss>

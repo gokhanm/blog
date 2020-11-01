@@ -1,0 +1,15 @@
+# About Widget config
+[about]
+title = "Gökhan MANKARA"                            # default: .Site.Title
+description = ""                      # default: .Site.Params.info.description
+#logo = "/images/logo.png"             # default: "/images/logo.png"
+
+# Sidebar Menu Widget config
+[sidebar_menu]
+title = "Gökhan MANKARA"                            # default: ""
+mirror = ""                           # default: ""
+
+# Social Menu Widget config
+[social_menu]
+title = ""                            # default: ""
+platforms = ["github","twitter","email","gitlab","linkedin"]

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Single Mode on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/single-mode/</link>
+    <description>Recent content in Single Mode on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Apr 2013 11:33:31 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/single-mode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nix Sistemlerde Single Mod Şifre Koruması</title>
+      <link>https://www.gokhanmankara.com/2013/04/nix-sistemlerde-single-mod-sifre-korumasi/</link>
+      <pubDate>Fri, 12 Apr 2013 11:33:31 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/04/nix-sistemlerde-single-mod-sifre-korumasi/</guid>
+      <description>Single Modu çok sık kullanmasakta, sistemde bir sorun olduğunda, root şifresinin resetlenmesi gerektiğinde sıklıkla baş vurduğumuz bir çalışma seviyesidir (runlevel) Fiziksel olarak erişim sağlanabilen her sunucu single modda açılarak sunucuya izinsiz erişim sağlayıp, sunucu üzerinde her türlü müdale sağlanılabilir.
+Bu tür erişimlere bir nebze olsada engel olmak için, sunucunuzun single modda açılması sırasında root şifresinin girilmesini zorunlu hale getirebilirsiniz.
+Centos/RedHat/SL için;
+/etc/sysconfig/init dosyasını herhangi bir editör ile açarak, en altta bulunan SINGLE satırını aşağıdaki şekilde değiştirmek yeterli olacaktır</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zfs on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/zfs/</link>
+    <description>Recent content in Zfs on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Mar 2015 14:42:03 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/zfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Zfsonlinux Ram Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/</link>
+      <pubDate>Sat, 14 Mar 2015 14:42:03 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/</guid>
+      <description>Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.
+Modprobe.d altında zfs.conf adında bir dosya oluşturuyoruz. Bu conf dosyasına zfs’in kullanım parametlerini gireceğiz. Bu yazıda zfs’in kullanmasını istediğimi max ram miktarını 8Gb olarak ayarlayacağız.
+# vi /etc/modprobe.d/zfs.conf options zfs zfs_arc_max=8589934592  Ayarların aktif olabilmesi için sistemi yeniden başlatmamız gerekiyor.</description>
+    </item>
+    
+    <item>
+      <title>Zfsonlinux Kurulumu Ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Tue, 10 Feb 2015 10:45:52 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</guid>
+      <description>Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.
+ Veri bütünlüğü Basit depolama yönetimi Her şeyi online olarak yapabilmesi  Bsd sistemlerde default olarak gelen zfs dosya sistemini, zfsonlinux kurarak linux sistemlerde de kullanma imkanı bulabiliyoruz.
+Zfsonlinux Kurulumu Redhat tabanlı işletim sistemi için zfsonlinux download sayfasından 6 ve 7 dağıtımları için gerekli rpm repolarını indirebilirsiniz. Bu yazıda Centos 6 için kurulum yapılacaktır.</description>
+    </item>
+    
+  </channel>
+</rss>

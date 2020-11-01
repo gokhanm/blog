@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sunucu on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/sunucu/</link>
+    <description>Recent content in Sunucu on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Feb 2014 12:13:27 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/sunucu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos Ramdisk Oluşturma</title>
+      <link>https://www.gokhanmankara.com/2014/02/centos-ramdisk-olusturma/</link>
+      <pubDate>Tue, 25 Feb 2014 12:13:27 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/02/centos-ramdisk-olusturma/</guid>
+      <description>Sunucularda ramdisk kullanım amacı, genel olarak yoğun disk kullanıma neden olan sistemlerde, sunucunun resetlenmesinde verilerin kaybolmasının önemli olmadığı dosyaların ( tmp dizinine yazılan mysql dosyaları vb. ) ram alanında tutularak sunucunun performansını arttırmak içindir.
+Bir sunucunun en yavaş donanımı harddisktir. Özellikle yoğun kullanılan mysql sorgularında mysql, tmp dizinine yoğun şekilde okuma yazma yaptığından harddisk buna yetişemez ve sorguların birikmesine, sunucu loadlarının yükselmesine, swap alanının dolmasına, bir web sitesi barındırılıyor ise sitenin geç açılmasına varan sebeblerin önüne geçmek için mysql tmp dosyası ramdiskte tutulur.</description>
+    </item>
+    
+  </channel>
+</rss>

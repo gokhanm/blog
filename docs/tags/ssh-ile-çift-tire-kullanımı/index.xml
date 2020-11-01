@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh Ile Çift Tire Kullanımı on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/ssh-ile-%C3%A7ift-tire-kullan%C4%B1m%C4%B1/</link>
+    <description>Recent content in Ssh Ile Çift Tire Kullanımı on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jun 2014 11:01:34 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/ssh-ile-%C3%A7ift-tire-kullan%C4%B1m%C4%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Küçük Notlar - Ssh Ile Çift Tire Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2014/06/kucuk-notlar-ssh-ile-cift-tire-kullanimi/</link>
+      <pubDate>Sun, 01 Jun 2014 11:01:34 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/06/kucuk-notlar-ssh-ile-cift-tire-kullanimi/</guid>
+      <description>SSH üzerinde çalışırken, başka bir uzak sunucuda, sunucuya dosya indirmek yada bir klasörün içeriğini görmek için ssh komutundan sonra çift tire ( double dash ) koyarak, sunucuya ssh bağlantısı ile giriş yapmadan uzak sunucuda komut çalıştırabilirsiniz.
+Küçük Notlar - Ssh Ile Çift Tire Kullanımı SSH üzerinde çalışırken, başka bir uzak sunucuda, sunucuya dosya indirmek yada bir klasörün içeriğini görmek için ssh komutundan sonra çift tire ( double dash ) koyarak, sunucuya ssh bağlantısı ile giriş yapmadan uzak sunucuda komut çalıştırabilirsiniz.</description>
+    </item>
+    
+  </channel>
+</rss>

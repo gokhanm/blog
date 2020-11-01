@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unseen on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/unseen/</link>
+    <description>Recent content in Unseen on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Mar 2015 14:51:41 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/unseen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maildeki Ekli Dosyayı İndiren Python Script</title>
+      <link>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</link>
+      <pubDate>Sun, 01 Mar 2015 14:51:41 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</guid>
+      <description>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.
+#!/usr/bin/env python import email import getpass import imaplib import os detach_dir = &#39;.&#39; # directory where to save attachments (default: current) user = &amp;quot;username&amp;quot; pwd = &amp;quot;password&amp;quot; # connecting to the gmail imap server m = imaplib.IMAP4_SSL(&amp;quot;mail.domain.com&amp;quot;) m.login(user, pwd) m.select(&amp;quot;INBOX&amp;quot;) # here you a can choose a mail box like INBOX instead # use m.</description>
+    </item>
+    
+  </channel>
+</rss>

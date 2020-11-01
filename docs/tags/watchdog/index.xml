@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Watchdog on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/watchdog/</link>
+    <description>Recent content in Watchdog on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Mar 2015 14:01:11 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/watchdog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Watchdog İle Dizin İzleme</title>
+      <link>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</link>
+      <pubDate>Sat, 28 Mar 2015 14:01:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</guid>
+      <description>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti. Cron’a ekleyerekte arka planda sürekli çalışmasını sağlayabilirsiniz. Cron kullanımı hakkında bilginiz yok ise, bu yazımı inceleyebilirsiniz.
+./check_dir.py /home/gokhan/Desktop  Mail içeriği,
+/home/gokhan/Desktop/file-5.22-1.fc22.src.rpm deleted: file-5.22-1.fc22.src.rpm  #!/usr/bin/env python3.4 __author__ = &#39;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;gt;&#39; import time import sys import smtplib import socket from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText from watchdog.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python Gitlab Hook on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/python-gitlab-hook/</link>
+    <description>Recent content in Python Gitlab Hook on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 May 2015 13:45:47 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/python-gitlab-hook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python - Gitlab Email Sender</title>
+      <link>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</link>
+      <pubDate>Sun, 31 May 2015 13:45:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</guid>
+      <description>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.
+#!/usr/bin/env python __author__ = &amp;quot;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;quot; import gitlab import sqlite3 as sql import requests import smtplib import os import email.</description>
+    </item>
+    
+  </channel>
+</rss>

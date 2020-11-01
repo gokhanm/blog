@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/python/</link>
+    <description>Recent content in Python on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 May 2015 13:45:47 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.gokhanmankara.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python - Gitlab Email Sender</title>
+      <link>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</link>
+      <pubDate>Sun, 31 May 2015 13:45:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</guid>
+      <description>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.
+#!/usr/bin/env python __author__ = &amp;quot;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;quot; import gitlab import sqlite3 as sql import requests import smtplib import os import email.</description>
+    </item>
+    
+    <item>
+      <title>Python Watchdog İle Dizin İzleme</title>
+      <link>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</link>
+      <pubDate>Sat, 28 Mar 2015 14:01:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</guid>
+      <description>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti. Cron’a ekleyerekte arka planda sürekli çalışmasını sağlayabilirsiniz. Cron kullanımı hakkında bilginiz yok ise, bu yazımı inceleyebilirsiniz.
+./check_dir.py /home/gokhan/Desktop  Mail içeriği,
+/home/gokhan/Desktop/file-5.22-1.fc22.src.rpm deleted: file-5.22-1.fc22.src.rpm  #!/usr/bin/env python3.4 __author__ = &#39;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;gt;&#39; import time import sys import smtplib import socket from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText from watchdog.</description>
+    </item>
+    
+    <item>
+      <title>Maildeki Ekli Dosyayı İndiren Python Script</title>
+      <link>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</link>
+      <pubDate>Sun, 01 Mar 2015 14:51:41 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</guid>
+      <description>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.
+#!/usr/bin/env python import email import getpass import imaplib import os detach_dir = &#39;.&#39; # directory where to save attachments (default: current) user = &amp;quot;username&amp;quot; pwd = &amp;quot;password&amp;quot; # connecting to the gmail imap server m = imaplib.IMAP4_SSL(&amp;quot;mail.domain.com&amp;quot;) m.login(user, pwd) m.select(&amp;quot;INBOX&amp;quot;) # here you a can choose a mail box like INBOX instead # use m.</description>
+    </item>
+    
+    <item>
+      <title>Python Scripti İle Backup Tarihi Kontrolü</title>
+      <link>https://www.gokhanmankara.com/2013/07/python-scripti-ile-backup-tarihi-kontrolu/</link>
+      <pubDate>Fri, 26 Jul 2013 10:46:41 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/07/python-scripti-ile-backup-tarihi-kontrolu/</guid>
+      <description>Sunucu yedeklerinin locale alınması gerektiği ve uzun süre takip edilemedi durumlarda, gereksiz disk kullanımının önüne geçmek ve ek önlem olarak backupların sunucunun localinin dışarısında başka bir yerde de tutmak ( sunucunun çökmesine, disklerin erişilemeyecek şekilde sorun olması durumuna karşın ) için, belli bir günden sonra birikmiş backupları belirlediğim mail adresine mail göndererek, backupları başka bir alana indirmem gerektiğini hatırlatan bir script yazmak istedim.
+Script kısaca belirlediğiniz dizindeki dosyaların oluşturulma tarihleri ve bugünün tarihine bakıp, aradan 7 gün geçmiş ise scriptte belirtilen mail adresine bilgilendirme maili gönderiyor.</description>
+    </item>
+    
+  </channel>
+</rss>
