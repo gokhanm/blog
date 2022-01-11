@@ -1,26 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Epel on Gökhan MANKARA</title>
+    <title>epel on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/epel/</link>
-    <description>Recent content in Epel on Gökhan MANKARA</description>
+    <description>Recent content in epel on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jun 2013 10:57:10 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/epel/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 19 Jun 2013 10:57:10 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/epel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openvpn Kurulumu Ve Yapılandırması</title>
       <link>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</link>
       <pubDate>Wed, 19 Jun 2013 10:57:10 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</guid>
-      <description>Kurulum scripti için tıklayınız.
- Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda sizde farklı olarak görünebilir.
+      <description>Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda sizde farklı olarak görünebilir.
 RPM üzerinden OpenVPN kurmak için EPEL reposunu sunucuya yüklemeniz gerekiyor.
-#wget http://mirror.vit.com.tr/mirror/Epel/6/x86_64/epel-release-6-8.noarch.rpm #rpm -Uvh epel-release-6-8.noarch.rpm #yum install openvpn  OpenVPN kurulumu tamamlandıktan sonra sample-config olarak gelen conf dosyalarını /etc/openvpn altına kopyalayacağız.</description>
+#wget http://mirror.vit.com.tr/mirror/Epel/6/x86_64/epel-release-6-8.noarch.rpm #rpm -Uvh epel-release-6-8.noarch.rpm #yum install openvpn OpenVPN kurulumu tamamlandıktan sonra sample-config olarak gelen conf dosyalarını /etc/openvpn altına kopyalayacağız.</description>
     </item>
     
   </channel>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Centos on Gökhan MANKARA</title>
+    <title>centos on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/centos/</link>
-    <description>Recent content in Centos on Gökhan MANKARA</description>
+    <description>Recent content in centos on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openvpn Kurulum Scripti</title>
       <link>https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/</link>
@@ -20,7 +16,7 @@
       <description>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.
 Bu işlemleri uzun uzun uğraşmayıp, hazır bir script ile yapmak isteyenler için, centos,fedora ve debian için openvpn kurulum scriptini kullanarak kolayca openvpn, eas-rsa ayarlarını yapıp, belirlediği bir isimde ovpn dosyasını elde edebilir.
 Aşağıdaki komutlar ile scripti indirip, çalıştırdığınızda size birkaç soru soracaktır,
-# wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh # chmod +x openvpn-install.sh # ./openvpn-install.sh  İlk önce OpenVPN nin dinleyeceği ip adresini belirtiyorsunuz.</description>
+# wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh # chmod +x openvpn-install.sh # ./openvpn-install.sh İlk önce OpenVPN nin dinleyeceği ip adresini belirtiyorsunuz. ( birden fazla ip adresi tanımlı interface olması durumunda)</description>
     </item>
     
     <item>
@@ -29,8 +25,7 @@ Aşağıdaki komutlar ile scripti indirip, çalıştırdığınızda size birka�
       <pubDate>Mon, 24 Mar 2014 11:25:01 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama/</guid>
-      <description>OpenVPN kurulum scripti için tıklayınız.
- Vpn seçenekleri içerisinde ücretli, ücretsiz bir çok vpn seçeneği bulunmakta. Bunlardan ücretsiz olanlar insanın gözünde bilgilerimi ( şifre vb. ) kaydediyor mu acaba endişesi yaratırken, ücretli olanlar da ücretsizler gibi aynı endişeleri yaratabilir. Ek olarak bu hizmetler de bir çok müşteriye hizmet verdikleri için trafik vb. limitlemeler mevcut.
+      <description>Vpn seçenekleri içerisinde ücretli, ücretsiz bir çok vpn seçeneği bulunmakta. Bunlardan ücretsiz olanlar insanın gözünde bilgilerimi ( şifre vb. ) kaydediyor mu acaba endişesi yaratırken, ücretli olanlar da ücretsizler gibi aynı endişeleri yaratabilir. Ek olarak bu hizmetler de bir çok müşteriye hizmet verdikleri için trafik vb. limitlemeler mevcut.
 Bu tür endişeleri taşımamak ve herhangi bir limitlemeden etkilenmemek için, 5 dolara alacağınız bir sanal sunucuya ( vds ) openvpn kurarak, akıllı telefonunuzdan, bilgisayarınızdan farklı sertifikalar ile endişe duymadan bağlanabilirsiniz.</description>
     </item>
     
@@ -51,9 +46,9 @@ Bir sunucunun en yavaş donanımı harddisktir. Özellikle yoğun kullanılan my
       
       <guid>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</guid>
       <description>Centos’da değişik amaçlar için adduser komutu ile başka bir parametre girmeden oluşturduğunuz kullanıcılarda, home dizinini varsayılan olarak oluşturmak istemiyor iseniz, aşağıdaki yöntem ile bunu sağlayabilirsiniz.
-# vi /etc/login.defs  login.defs dosyasında CREATE_HOME satırı varsayılan olarak yes şeklindedir. CREATE_HOME no diyerek kaydederseniz, varsayıılan olarak home dizini yaratılmayacaktır.
-CREATE_HOME no  Klasik olarak parametre kullanarak aşağıdaki komut ile “login.defs” dosyasında değişiklik yapmadan, home dizini oluşturmayabilir, ayrıca kullanıcının login olmasını da engelleyebilirsiniz.
-# adduser -M -s /sbin/nologin gokhan  </description>
+# vi /etc/login.defs login.defs dosyasında CREATE_HOME satırı varsayılan olarak yes şeklindedir. CREATE_HOME no diyerek kaydederseniz, varsayıılan olarak home dizini yaratılmayacaktır.
+CREATE_HOME no Klasik olarak parametre kullanarak aşağıdaki komut ile “login.defs” dosyasında değişiklik yapmadan, home dizini oluşturmayabilir, ayrıca kullanıcının login olmasını da engelleyebilirsiniz.
+# adduser -M -s /sbin/nologin gokhan </description>
     </item>
     
     <item>
@@ -64,10 +59,9 @@ CREATE_HOME no  Klasik olarak parametre kullanarak aşağıdaki komut ile “log
       <guid>https://www.gokhanmankara.com/2014/02/shc-ile-bash-shell-script-sifreleme/</guid>
       <description>SHC, binary formatında scriptlerinizi şifrelemeye yarayan bir programcık. Yazdığınız bash scriptleri şifreleyerek kodların okunamamasını sağlayabilirsiniz.
 SHC’nin kurulumuna bakacak olursak,
-Sisteminizde “make” kurulu değilse, kurmanız gerekecektir.
- # wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz # tar -xvf shc-3.8.9.tgz # cd shc-3.8.9 # make  SHC kullanımı;
-shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f script  Basit bir script oluşturarak shc ile scripti şifreleyelim,
-#!/bin/bash echo -n &amp;quot;İsminiz nedir?</description>
+# wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz # tar -xvf shc-3.8.9.tgz # cd shc-3.8.9 # make SHC kullanımı;
+shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f script Basit bir script oluşturarak shc ile scripti şifreleyelim,
+#!/bin/bash  echo -n &amp;#34;İsminiz nedir?: &amp;#34; read name echo &amp;#34;Merhaba $name&amp;#34; # .</description>
     </item>
     
     <item>
@@ -76,10 +70,9 @@ shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f s
       <pubDate>Wed, 19 Jun 2013 10:57:10 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</guid>
-      <description>Kurulum scripti için tıklayınız.
- Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda sizde farklı olarak görünebilir.
+      <description>Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda sizde farklı olarak görünebilir.
 RPM üzerinden OpenVPN kurmak için EPEL reposunu sunucuya yüklemeniz gerekiyor.
-#wget http://mirror.vit.com.tr/mirror/Epel/6/x86_64/epel-release-6-8.noarch.rpm #rpm -Uvh epel-release-6-8.noarch.rpm #yum install openvpn  OpenVPN kurulumu tamamlandıktan sonra sample-config olarak gelen conf dosyalarını /etc/openvpn altına kopyalayacağız.</description>
+#wget http://mirror.vit.com.tr/mirror/Epel/6/x86_64/epel-release-6-8.noarch.rpm #rpm -Uvh epel-release-6-8.noarch.rpm #yum install openvpn OpenVPN kurulumu tamamlandıktan sonra sample-config olarak gelen conf dosyalarını /etc/openvpn altına kopyalayacağız.</description>
     </item>
     
     <item>

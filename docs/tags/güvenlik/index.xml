@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Güvenlik on Gökhan MANKARA</title>
+    <title>güvenlik on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/g%C3%BCvenlik/</link>
-    <description>Recent content in Güvenlik on Gökhan MANKARA</description>
+    <description>Recent content in güvenlik on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Apr 2013 11:33:31 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/g%C3%BCvenlik/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Apr 2013 11:33:31 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/g%C3%BCvenlik/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nix Sistemlerde Single Mod Şifre Koruması</title>
       <link>https://www.gokhanmankara.com/2013/04/nix-sistemlerde-single-mod-sifre-korumasi/</link>
@@ -31,7 +27,7 @@ Centos/RedHat/SL için;
       <guid>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</guid>
       <description>Apachenin sunduğu güzel imkanlardan biride belirlediğiniz bir dosyadaki klasörlere uzaktan kullanıcıların parolalı bir şekilde erişmesini sağlayabilmesidir.
 Bunu yapmak için yapmanız gerekenler çok basit ;
- Bu klasöre girecek olan bir kullanıcının parolasının tutulduğu bir dizin yaratmanız gerekiyor. Bu dizin sistemde herhangi bir yerde olabilir yalnız çoğu makalede /usr/local altında tutulmasını öneriyor. Bu dizini önceden oluşturmak şart.  # mkdir /usr/local/parola/parolalar   Hangi dizine erişilecek ise ( bu apache hiyerarşisi içinde olmalı ) o dizin altında bir .</description>
+ Bu klasöre girecek olan bir kullanıcının parolasının tutulduğu bir dizin yaratmanız gerekiyor. Bu dizin sistemde herhangi bir yerde olabilir yalnız çoğu makalede /usr/local altında tutulmasını öneriyor. Bu dizini önceden oluşturmak şart.  # mkdir /usr/local/parola/parolalar  Hangi dizine erişilecek ise ( bu apache hiyerarşisi içinde olmalı ) o dizin altında bir .</description>
     </item>
     
   </channel>

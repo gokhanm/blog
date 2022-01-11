@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Postfix on Gökhan MANKARA</title>
+    <title>postfix on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/postfix/</link>
-    <description>Recent content in Postfix on Gökhan MANKARA</description>
+    <description>Recent content in postfix on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jun 2012 11:56:10 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/postfix/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 26 Jun 2012 11:56:10 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/postfix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Postfix - Mail Başlığına Göre Filtreleme</title>
       <link>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</link>
@@ -21,7 +17,7 @@
 Mail sunucularının hemen hemen hepsinde spam mailleri engellemek için RBL ( Realtime Blockhole List ) ler kullanılır. Bunlara örnek olarak Spamhaus , Spamcop ve ayrıca greylist olarak postgrey verilebilir.
 Postfix’de mail başlığına göre filtreleme yapmak için,
 main.cf dosyasının içerisinde bulunan aşağıdaki satırın başındaki “#” işareti kaldırarak aktfi etmeniz gerekir.
-header_checks = regexp:/etc/postfix/maps/header_checks  Daha sonra postfix dizininin ( elle derleme esnasında başka bir yere kurulum yapmadı iseniz /etc/postfix in altındadır ) içinde bulunan header_checks dosyasını açarak engellemek istediğiniz mail başlığını yazmanız gerekmektedir.</description>
+header_checks = regexp:/etc/postfix/maps/header_checks Daha sonra postfix dizininin ( elle derleme esnasında başka bir yere kurulum yapmadı iseniz /etc/postfix in altındadır ) içinde bulunan header_checks dosyasını açarak engellemek istediğiniz mail başlığını yazmanız gerekmektedir.</description>
     </item>
     
     <item>
@@ -32,10 +28,10 @@ header_checks = regexp:/etc/postfix/maps/header_checks  Daha sonra postfix dizin
       <guid>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</guid>
       <description>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.
 Bunun için;
-# cd /etc/postfix # vi sender_access  sender_access dosyasına engelemek istediğiniz mail adresini aşağıdaki formatta yazıyorsunuz.
-info@domain.com REJECT  Daha sonra postmap komutu ile database ini oluşturuyorsunuz.
-# postmap hash:sender_access  Main.cf dosyasına mail geldiğinde sender_access dosyasını kontrol etmesi için ;
-submission_recipient_restrictions = check_sender_access hash:/etc/postfix/sender_access,permit  kuralını yazıyoruz.
+# cd /etc/postfix # vi sender_access sender_access dosyasına engelemek istediğiniz mail adresini aşağıdaki formatta yazıyorsunuz.
+info@domain.com REJECT Daha sonra postmap komutu ile database ini oluşturuyorsunuz.
+# postmap hash:sender_access Main.cf dosyasına mail geldiğinde sender_access dosyasını kontrol etmesi için ;
+submission_recipient_restrictions = check_sender_access hash:/etc/postfix/sender_access,permit kuralını yazıyoruz.
 Değişikliğini yaptığımız main.cf dosyasını kaydedip postfix’e restart atıyoruz.</description>
     </item>
     
@@ -46,7 +42,7 @@ Değişikliğini yaptığımız main.cf dosyasını kaydedip postfix’e restart
       
       <guid>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</guid>
       <description>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.
-Postfix Kurulumu # yum install postfix  komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.</description>
+Postfix Kurulumu # yum install postfix komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.</description>
     </item>
     
   </channel>

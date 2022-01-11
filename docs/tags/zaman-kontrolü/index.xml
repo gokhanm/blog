@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zaman Kontrolü on Gökhan MANKARA</title>
+    <title>zaman kontrolü on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/zaman-kontrol%C3%BC/</link>
-    <description>Recent content in Zaman Kontrolü on Gökhan MANKARA</description>
+    <description>Recent content in zaman kontrolü on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jul 2013 10:46:41 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/zaman-kontrol%C3%BC/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 26 Jul 2013 10:46:41 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/zaman-kontrol%C3%BC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Scripti İle Backup Tarihi Kontrolü</title>
       <link>https://www.gokhanmankara.com/2013/07/python-scripti-ile-backup-tarihi-kontrolu/</link>

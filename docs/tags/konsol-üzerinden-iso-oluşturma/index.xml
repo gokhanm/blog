@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Konsol Üzerinden Iso Oluşturma on Gökhan MANKARA</title>
+    <title>konsol üzerinden iso oluşturma on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/konsol-%C3%BCzerinden-iso-olu%C5%9Fturma/</link>
-    <description>Recent content in Konsol Üzerinden Iso Oluşturma on Gökhan MANKARA</description>
+    <description>Recent content in konsol üzerinden iso oluşturma on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Aug 2009 12:01:47 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/konsol-%C3%BCzerinden-iso-olu%C5%9Fturma/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Aug 2009 12:01:47 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/konsol-%C3%BCzerinden-iso-olu%C5%9Fturma/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linuxda Konsol Yardımı İle Iso Dosyası Yapma</title>
       <link>https://www.gokhanmankara.com/2009/08/linuxda-konsol-yardimi-ile-iso-dosyasi-yapma/</link>
@@ -19,7 +15,7 @@
       <guid>https://www.gokhanmankara.com/2009/08/linuxda-konsol-yardimi-ile-iso-dosyasi-yapma/</guid>
       <description>Virtual PC yada Vmware kullanıyorsanız hızlı bir kurulum yapmak için en iyi yol imaj kullanmaktır. Windows da imaj yapmak için yardımcı programlar kullanmak gerekir. Linux’da ise bu işlemi çok kısa bir sürede konsol yardımıyla yapmak mümkün.
 Bunun için bir klasör oluşturun ve dosyaları onun içine kopyalayın. Daha sonra oluşturduğunuz klasörün imajını almak için kısa bir komut yazmak yeterli olacaktır.
-# mkisofs -R -J -o deneme.iso /home/Gokhan/Documents/deneme  I: -input-charset not specified, using utf-8 (detected in locale settings) Using HITCH000.</description>
+# mkisofs -R -J -o deneme.iso /home/Gokhan/Documents/deneme I: -input-charset not specified, using utf-8 (detected in locale settings) Using HITCH000.</description>
     </item>
     
   </channel>

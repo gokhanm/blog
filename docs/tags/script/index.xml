@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Script on Gökhan MANKARA</title>
+    <title>script on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/script/</link>
-    <description>Recent content in Script on Gökhan MANKARA</description>
+    <description>Recent content in script on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/script/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/script/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openvpn Kurulum Scripti</title>
       <link>https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/</link>
@@ -20,7 +16,7 @@
       <description>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.
 Bu işlemleri uzun uzun uğraşmayıp, hazır bir script ile yapmak isteyenler için, centos,fedora ve debian için openvpn kurulum scriptini kullanarak kolayca openvpn, eas-rsa ayarlarını yapıp, belirlediği bir isimde ovpn dosyasını elde edebilir.
 Aşağıdaki komutlar ile scripti indirip, çalıştırdığınızda size birkaç soru soracaktır,
-# wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh # chmod +x openvpn-install.sh # ./openvpn-install.sh  İlk önce OpenVPN nin dinleyeceği ip adresini belirtiyorsunuz.</description>
+# wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh # chmod +x openvpn-install.sh # ./openvpn-install.sh İlk önce OpenVPN nin dinleyeceği ip adresini belirtiyorsunuz. ( birden fazla ip adresi tanımlı interface olması durumunda)</description>
     </item>
     
     <item>
@@ -30,7 +26,7 @@ Aşağıdaki komutlar ile scripti indirip, çalıştırdığınızda size birka�
       
       <guid>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</guid>
       <description>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.
-#!/usr/bin/env python import email import getpass import imaplib import os detach_dir = &#39;.&#39; # directory where to save attachments (default: current) user = &amp;quot;username&amp;quot; pwd = &amp;quot;password&amp;quot; # connecting to the gmail imap server m = imaplib.IMAP4_SSL(&amp;quot;mail.domain.com&amp;quot;) m.login(user, pwd) m.select(&amp;quot;INBOX&amp;quot;) # here you a can choose a mail box like INBOX instead # use m.</description>
+#!/usr/bin/env python import email import getpass import imaplib import os detach_dir = &amp;#39;.&amp;#39; # directory where to save attachments (default: current) user = &amp;#34;username&amp;#34; pwd = &amp;#34;password&amp;#34; # connecting to the gmail imap server m = imaplib.IMAP4_SSL(&amp;#34;mail.domain.com&amp;#34;) m.login(user, pwd) m.select(&amp;#34;INBOX&amp;#34;) # here you a can choose a mail box like INBOX instead # use m.</description>
     </item>
     
     <item>
@@ -51,7 +47,7 @@ Script kısaca belirlediğiniz dizindeki dosyaların oluşturulma tarihleri ve b
       <guid>https://www.gokhanmankara.com/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</guid>
       <description>Oldukça kullanışlı 3 tane Linux/Unix shell scriptlerini sizinle paylaşmak istiyorum.
 Bunlardan birincisi, arkada çalışan programların ne kadar işlemci ve ram kullandıklarını çıktı olarak ekrana veriyor.
-#! /bin/bash #List processes based on %cpu and memory usage echo &amp;quot;Start Time&amp;quot; `date` # By default, it display the list of processes based on the cpu and memory usage # if [ $# -eq 0 ] then echo &amp;quot;List of processes based on the %cpu Usage&amp;quot; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu # sorted based on %cpu echo &amp;quot;List of processes based on the memory Usage&amp;quot; ps -e -orss=,args= | sort -b -k1,1n # sorted bases rss value # If arguements are given (mem/cpu) else case &amp;quot;$1&amp;quot; in mem) echo &amp;quot;List of processes based on the memory Usage&amp;quot; ps -e -orss=,args= | sort -b -k1,1n ;; cpu) echo &amp;quot;List of processes based on the %cpu Usage&amp;quot; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu ;; *) echo &amp;quot;Invalid Argument Given \n&amp;quot; echo &amp;quot;Usage : $0 mem/cpu&amp;quot; exit 1 esac fi echo &amp;quot;End Time&amp;quot; `date` exit 0  $.</description>
+#! /bin/bash #List processes based on %cpu and memory usage echo &amp;#34;Start Time&amp;#34; `date` # By default, it display the list of processes based on the cpu and memory usage # if [ $# -eq 0 ] then echo &amp;#34;List of processes based on the %cpu Usage&amp;#34; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu # sorted based on %cpu echo &amp;#34;List of processes based on the memory Usage&amp;#34; ps -e -orss=,args= | sort -b -k1,1n # sorted bases rss value # If arguements are given (mem/cpu) else case &amp;#34;$1&amp;#34; in mem) echo &amp;#34;List of processes based on the memory Usage&amp;#34; ps -e -orss=,args= | sort -b -k1,1n ;; cpu) echo &amp;#34;List of processes based on the %cpu Usage&amp;#34; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu ;; *) echo &amp;#34;Invalid Argument Given \n&amp;#34; echo &amp;#34;Usage : $0mem/cpu&amp;#34; exit 1 esac fi echo &amp;#34;End Time&amp;#34; `date` exit 0 $.</description>
     </item>
     
     <item>
@@ -62,7 +58,7 @@ Bunlardan birincisi, arkada çalışan programların ne kadar işlemci ve ram ku
       <guid>https://www.gokhanmankara.com/2010/03/script-ile-konsolda-yazdigin-komutlari-otomatik-olarak-kaydetmek/</guid>
       <description>Bugün karşılaştığım “script” komutundan bahsetmek istiyorum size.
 Oldukça kullanışlı olan bu komut siz konsolda işlem yaparken o arka tarafta size konsolda yazdığınız komutları ve çıktı sonuçlarını belirlediğiniz bir dosyaya kaydedip daha sonra geri dönük olarak ne yapmıştım sıkıntısından kurtarıyor.
-$ script -f dosya_ismi  vermeniz yeterli.
+$ script -f dosya_ismi vermeniz yeterli.
 Script komutu arka tarafta konsolda görünen bütün sonuçları kaydederek daha sonra verdiğiniz dosya isminden okuyarak neler oluğ bittiğini görmenizi sağlıyor. Konsolda işiniz bittikten sonra Ctrl-D ye basarak scripti durdurmanız gerekiyor.</description>
     </item>
     

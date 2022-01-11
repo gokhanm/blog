@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zfs Yapılandırması on Gökhan MANKARA</title>
+    <title>zfs yapılandırması on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/zfs-yap%C4%B1land%C4%B1rmas%C4%B1/</link>
-    <description>Recent content in Zfs Yapılandırması on Gökhan MANKARA</description>
+    <description>Recent content in zfs yapılandırması on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Feb 2015 10:45:52 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/zfs-yap%C4%B1land%C4%B1rmas%C4%B1/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 10 Feb 2015 10:45:52 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/zfs-yap%C4%B1land%C4%B1rmas%C4%B1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zfsonlinux Kurulumu Ve Yapılandırması</title>
       <link>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</link>

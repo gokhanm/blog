@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Host on Gökhan MANKARA</title>
+    <title>host on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/host/</link>
-    <description>Recent content in Host on Gökhan MANKARA</description>
+    <description>Recent content in host on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2015 13:54:53 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/host/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 31 Mar 2015 13:54:53 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/host/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xenserver&#39;da Sanal Sunucuların Görünmemesi</title>
       <link>https://www.gokhanmankara.com/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/</link>

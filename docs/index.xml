@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gökhan MANKARA</title>
@@ -6,11 +6,7 @@
     <description>Recent content on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openvpn Kurulum Scripti</title>
       <link>https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/</link>
@@ -20,16 +16,16 @@
       <description>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.
 Bu işlemleri uzun uzun uğraşmayıp, hazır bir script ile yapmak isteyenler için, centos,fedora ve debian için openvpn kurulum scriptini kullanarak kolayca openvpn, eas-rsa ayarlarını yapıp, belirlediği bir isimde ovpn dosyasını elde edebilir.
 Aşağıdaki komutlar ile scripti indirip, çalıştırdığınızda size birkaç soru soracaktır,
-# wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh # chmod +x openvpn-install.sh # ./openvpn-install.sh  İlk önce OpenVPN nin dinleyeceği ip adresini belirtiyorsunuz.</description>
+# wget https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh # chmod +x openvpn-install.sh # ./openvpn-install.sh İlk önce OpenVPN nin dinleyeceği ip adresini belirtiyorsunuz. ( birden fazla ip adresi tanımlı interface olması durumunda)</description>
     </item>
     
     <item>
-      <title>Hakkımda</title>
-      <link>https://www.gokhanmankara.com/hakkimda/</link>
+      <title>About</title>
+      <link>https://www.gokhanmankara.com/about/</link>
       <pubDate>Thu, 30 Nov 2017 17:25:52 +0300</pubDate>
       
-      <guid>https://www.gokhanmankara.com/hakkimda/</guid>
-      <description>E-Posta Adresim: gokhanm [at] gmail [dot] com
+      <guid>https://www.gokhanmankara.com/about/</guid>
+      <description>E-Mail: gokhanm [at] gmail [dot] com
  Uyarı: Sitede yayınlanan yazılar, test ortamında test edilerek, çalışırlılığından emin olduktan sonra yayınlıyorum. Blogda yazılan yazıları çalışan sistemlerde uyguladığınızda karşınıza çıkan herhangi bir problemde sorumluluk size ait olacaktır.
  </description>
     </item>
@@ -41,7 +37,7 @@ Aşağıdaki komutlar ile scripti indirip, çalıştırdığınızda size birka�
       
       <guid>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</guid>
       <description>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum. Sunucuya her login olduğumda screen’nin açık oturumlarını görebilmek için .bash_profile dosyasına ( RedHat tabanlı sistemler için) aşağıdaki scripti ekledim. Bu sayede sunucuya ssh üzerinden her bağlandığımda açık oturumları görebiliyorum.
-if which screen &amp;gt;/dev/null; then screen -q -ls if [ $? -ge 10 ]; then screen -ls fi fi  Last login: Sun Aug 30 05:45:37 2015 from 192.</description>
+if which screen &amp;gt;/dev/null; then screen -q -ls if [ $? -ge 10 ]; then screen -ls fi fi Last login: Sun Aug 30 05:45:37 2015 from 192.</description>
     </item>
     
     <item>
@@ -61,7 +57,7 @@ Screen komutu en çok, uzun sürecek bir scriptin terminal kapansa bile sonlanma
       
       <guid>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</guid>
       <description>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.
-#!/usr/bin/env python __author__ = &amp;quot;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;quot; import gitlab import sqlite3 as sql import requests import smtplib import os import email.</description>
+#!/usr/bin/env python __author__ = &amp;#34;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;#34; import gitlab import sqlite3 as sql import requests import smtplib import os import email.</description>
     </item>
     
     <item>
@@ -81,8 +77,8 @@ Pool üzerindeki bir host bilgisayarın konsoluna bağlandıktan sonra “xe hos
       
       <guid>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</guid>
       <description>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti. Cron’a ekleyerekte arka planda sürekli çalışmasını sağlayabilirsiniz. Cron kullanımı hakkında bilginiz yok ise, bu yazımı inceleyebilirsiniz.
-./check_dir.py /home/gokhan/Desktop  Mail içeriği,
-/home/gokhan/Desktop/file-5.22-1.fc22.src.rpm deleted: file-5.22-1.fc22.src.rpm  #!/usr/bin/env python3.4 __author__ = &#39;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;gt;&#39; import time import sys import smtplib import socket from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText from watchdog.</description>
+./check_dir.py /home/gokhan/Desktop Mail içeriği,
+/home/gokhan/Desktop/file-5.22-1.fc22.src.rpm deleted: file-5.22-1.fc22.src.rpm #!/usr/bin/env python3.4 __author__ = &amp;#39;Gokhan MANKARA &amp;lt;gokhan@mankara.org&amp;gt;&amp;#39; import time import sys import smtplib import socket from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText from watchdog.observers import Observer from watchdog.</description>
     </item>
     
     <item>
@@ -92,7 +88,7 @@ Pool üzerindeki bir host bilgisayarın konsoluna bağlandıktan sonra “xe hos
       
       <guid>https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/</guid>
       <description>Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız. Önceki yazıda sudoers dosyasına kullanıcıyı eklemiştik, bu yazıda sudoers.d altına kullanıcıları oluşturacağız.
-# vi /etc/sudoers.d/gokhan  gokhan ALL=(ALL) NOPASSWD: LOG_INPUT: LOG_OUTPUT: ALL Defaults iolog_dir=/var/log/sudo-io/%{user}  gokhan kullanıcısına şifresiz olarak sudo komutu çalıştırma yetkisi vermiş olduk. iolog_dir dizinini oluşturmamıza gerek yok, default olarak dizin oluşacaktır.
+# vi /etc/sudoers.d/gokhan gokhan ALL=(ALL) NOPASSWD: LOG_INPUT: LOG_OUTPUT: ALL Defaults iolog_dir=/var/log/sudo-io/%{user} gokhan kullanıcısına şifresiz olarak sudo komutu çalıştırma yetkisi vermiş olduk. iolog_dir dizinini oluşturmamıza gerek yok, default olarak dizin oluşacaktır.
 sudo-io dizinine baktığınızda birden fazla dosya oluştuğunu görürsünüz.</description>
     </item>
     
@@ -104,7 +100,7 @@ sudo-io dizinine baktığınızda birden fazla dosya oluştuğunu görürsünüz
       <guid>https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/</guid>
       <description>Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.
 Modprobe.d altında zfs.conf adında bir dosya oluşturuyoruz. Bu conf dosyasına zfs’in kullanım parametlerini gireceğiz. Bu yazıda zfs’in kullanmasını istediğimi max ram miktarını 8Gb olarak ayarlayacağız.
-# vi /etc/modprobe.d/zfs.conf options zfs zfs_arc_max=8589934592  Ayarların aktif olabilmesi için sistemi yeniden başlatmamız gerekiyor.</description>
+# vi /etc/modprobe.d/zfs.conf options zfs zfs_arc_max=8589934592 Ayarların aktif olabilmesi için sistemi yeniden başlatmamız gerekiyor.</description>
     </item>
     
     <item>
@@ -114,7 +110,7 @@ Modprobe.d altında zfs.conf adında bir dosya oluşturuyoruz. Bu conf dosyasın
       
       <guid>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</guid>
       <description>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.
-#!/usr/bin/env python import email import getpass import imaplib import os detach_dir = &#39;.&#39; # directory where to save attachments (default: current) user = &amp;quot;username&amp;quot; pwd = &amp;quot;password&amp;quot; # connecting to the gmail imap server m = imaplib.IMAP4_SSL(&amp;quot;mail.domain.com&amp;quot;) m.login(user, pwd) m.select(&amp;quot;INBOX&amp;quot;) # here you a can choose a mail box like INBOX instead # use m.</description>
+#!/usr/bin/env python import email import getpass import imaplib import os detach_dir = &amp;#39;.&amp;#39; # directory where to save attachments (default: current) user = &amp;#34;username&amp;#34; pwd = &amp;#34;password&amp;#34; # connecting to the gmail imap server m = imaplib.IMAP4_SSL(&amp;#34;mail.domain.com&amp;#34;) m.login(user, pwd) m.select(&amp;#34;INBOX&amp;#34;) # here you a can choose a mail box like INBOX instead # use m.</description>
     </item>
     
     <item>
@@ -136,7 +132,7 @@ Zfsonlinux Kurulumu Redhat tabanlı işletim sistemi için zfsonlinux download s
       <guid>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</guid>
       <description>RedHat tabanlı işletim sistemlerinde iki veya daha fazla ethernet interface olması durumunda bonding network interface kullanarak, ethernetlerin load balance bond, round-robin bond ya da fault tolerant bond şeklinde çalışması sağlanabilmektedir. Bu sayede bir interface down olması durumunda sunucuya erişim ikinci interface üzerinden devam edecektir.
 Sunucumuzun bond interface ayarlarını aşağıdaki ip adresine göre yapacağız.
- Bond Interface Oluşturma # vi /etc/sysconfig/network-scripts/ifcfg-bond0  DEVICE=bond0 IPADDR=172.16.41.10 NETMASK=255.255.255.0 GATEWAY=172.16.41.1 ONBOOT=yes BOOTPROTO=none USERCTL=no  Eth0 ve Eth1 Interfacelerin Düzenlenmesi #vi /etc/sysconfig/network-scripts/ifcfg-eth0  DEVICE=eth0 ONBOOT=yes BOOTPROTO=none HWADDR=00:1F:29:E6:EB:2A USERCTL=no MASTER=bond0 SLAVE=yes  #vi /etc/sysconfig/network-scripts/ifcfg-eth1  DEVICE=eth1 ONBOOT=yes BOOTPROTO=none HWADDR=00:26:55:35:24:FF USERCTL=no MASTER=bond0 SLAVE=yes  eth0 e eth1 interfacelerindeki mac adreslerinin bulunması, hangi interface’in down olduğunu anlamanız açısından faydalı olacaktır.</description>
+ Bond Interface Oluşturma # vi /etc/sysconfig/network-scripts/ifcfg-bond0 DEVICE=bond0 IPADDR=172.16.41.10 NETMASK=255.255.255.0 GATEWAY=172.16.41.1 ONBOOT=yes BOOTPROTO=none USERCTL=no Eth0 ve Eth1 Interfacelerin Düzenlenmesi #vi /etc/sysconfig/network-scripts/ifcfg-eth0 DEVICE=eth0 ONBOOT=yes BOOTPROTO=none HWADDR=00:1F:29:E6:EB:2A USERCTL=no MASTER=bond0 SLAVE=yes #vi /etc/sysconfig/network-scripts/ifcfg-eth1 DEVICE=eth1 ONBOOT=yes BOOTPROTO=none HWADDR=00:26:55:35:24:FF USERCTL=no MASTER=bond0 SLAVE=yes Fault Tolerant ( Aktif/Pasif Mod ) Ben bond çalışma modunu aktif/pasif moda göre düzenleyeceğim.</description>
     </item>
     
     <item>
@@ -157,7 +153,7 @@ Sunucumuzun bond interface ayarlarını aşağıdaki ip adresine göre yapacağ�
       <description>Ngxtop, nginx web serverın loglarını gerçek zamanlı okuyarak, tanımlanan değişkenlere göre sitenize gelen sorguları hızlı ve kolay şekilde terminal üzerinden yorumlamanızı sağlayan bir programdır.
 Python ile yazıldığından, python paketlerinin kurulumunda kullanılan pip aracı ile yada easy_install ile kolayca kurulumunu yapabilirsiniz.
 Ngxtop Kurulumu Sisteminizde pip kurulu değil ise, ilk önce epel reposunda bulunan python-pip paketini kurmanız gerekiyor.
-# rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm # yum install python-pip  Python-pip paketinin kurulumundan sonra artık pip komutu ile ngxtop programını kurabiliriz.</description>
+# rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm # yum install python-pip Python-pip paketinin kurulumundan sonra artık pip komutu ile ngxtop programını kurabiliriz.</description>
     </item>
     
     <item>
@@ -198,8 +194,7 @@ Geçiçi olarak kullanıcıya sudo izinleri verip, kurulumdan sonra bu izni ipta
       <pubDate>Mon, 24 Mar 2014 11:25:01 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama/</guid>
-      <description>OpenVPN kurulum scripti için tıklayınız.
- Vpn seçenekleri içerisinde ücretli, ücretsiz bir çok vpn seçeneği bulunmakta. Bunlardan ücretsiz olanlar insanın gözünde bilgilerimi ( şifre vb. ) kaydediyor mu acaba endişesi yaratırken, ücretli olanlar da ücretsizler gibi aynı endişeleri yaratabilir. Ek olarak bu hizmetler de bir çok müşteriye hizmet verdikleri için trafik vb. limitlemeler mevcut.
+      <description>Vpn seçenekleri içerisinde ücretli, ücretsiz bir çok vpn seçeneği bulunmakta. Bunlardan ücretsiz olanlar insanın gözünde bilgilerimi ( şifre vb. ) kaydediyor mu acaba endişesi yaratırken, ücretli olanlar da ücretsizler gibi aynı endişeleri yaratabilir. Ek olarak bu hizmetler de bir çok müşteriye hizmet verdikleri için trafik vb. limitlemeler mevcut.
 Bu tür endişeleri taşımamak ve herhangi bir limitlemeden etkilenmemek için, 5 dolara alacağınız bir sanal sunucuya ( vds ) openvpn kurarak, akıllı telefonunuzdan, bilgisayarınızdan farklı sertifikalar ile endişe duymadan bağlanabilirsiniz.</description>
     </item>
     
@@ -220,9 +215,9 @@ Bir sunucunun en yavaş donanımı harddisktir. Özellikle yoğun kullanılan my
       
       <guid>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</guid>
       <description>Centos’da değişik amaçlar için adduser komutu ile başka bir parametre girmeden oluşturduğunuz kullanıcılarda, home dizinini varsayılan olarak oluşturmak istemiyor iseniz, aşağıdaki yöntem ile bunu sağlayabilirsiniz.
-# vi /etc/login.defs  login.defs dosyasında CREATE_HOME satırı varsayılan olarak yes şeklindedir. CREATE_HOME no diyerek kaydederseniz, varsayıılan olarak home dizini yaratılmayacaktır.
-CREATE_HOME no  Klasik olarak parametre kullanarak aşağıdaki komut ile “login.defs” dosyasında değişiklik yapmadan, home dizini oluşturmayabilir, ayrıca kullanıcının login olmasını da engelleyebilirsiniz.
-# adduser -M -s /sbin/nologin gokhan  </description>
+# vi /etc/login.defs login.defs dosyasında CREATE_HOME satırı varsayılan olarak yes şeklindedir. CREATE_HOME no diyerek kaydederseniz, varsayıılan olarak home dizini yaratılmayacaktır.
+CREATE_HOME no Klasik olarak parametre kullanarak aşağıdaki komut ile “login.defs” dosyasında değişiklik yapmadan, home dizini oluşturmayabilir, ayrıca kullanıcının login olmasını da engelleyebilirsiniz.
+# adduser -M -s /sbin/nologin gokhan </description>
     </item>
     
     <item>
@@ -233,10 +228,9 @@ CREATE_HOME no  Klasik olarak parametre kullanarak aşağıdaki komut ile “log
       <guid>https://www.gokhanmankara.com/2014/02/shc-ile-bash-shell-script-sifreleme/</guid>
       <description>SHC, binary formatında scriptlerinizi şifrelemeye yarayan bir programcık. Yazdığınız bash scriptleri şifreleyerek kodların okunamamasını sağlayabilirsiniz.
 SHC’nin kurulumuna bakacak olursak,
-Sisteminizde “make” kurulu değilse, kurmanız gerekecektir.
- # wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz # tar -xvf shc-3.8.9.tgz # cd shc-3.8.9 # make  SHC kullanımı;
-shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f script  Basit bir script oluşturarak shc ile scripti şifreleyelim,
-#!/bin/bash echo -n &amp;quot;İsminiz nedir?</description>
+# wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz # tar -xvf shc-3.8.9.tgz # cd shc-3.8.9 # make SHC kullanımı;
+shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f script Basit bir script oluşturarak shc ile scripti şifreleyelim,
+#!/bin/bash  echo -n &amp;#34;İsminiz nedir?: &amp;#34; read name echo &amp;#34;Merhaba $name&amp;#34; # .</description>
     </item>
     
     <item>
@@ -306,10 +300,9 @@ Script kısaca belirlediğiniz dizindeki dosyaların oluşturulma tarihleri ve b
       <pubDate>Wed, 19 Jun 2013 10:57:10 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</guid>
-      <description>Kurulum scripti için tıklayınız.
- Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda sizde farklı olarak görünebilir.
+      <description>Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda sizde farklı olarak görünebilir.
 RPM üzerinden OpenVPN kurmak için EPEL reposunu sunucuya yüklemeniz gerekiyor.
-#wget http://mirror.vit.com.tr/mirror/Epel/6/x86_64/epel-release-6-8.noarch.rpm #rpm -Uvh epel-release-6-8.noarch.rpm #yum install openvpn  OpenVPN kurulumu tamamlandıktan sonra sample-config olarak gelen conf dosyalarını /etc/openvpn altına kopyalayacağız.</description>
+#wget http://mirror.vit.com.tr/mirror/Epel/6/x86_64/epel-release-6-8.noarch.rpm #rpm -Uvh epel-release-6-8.noarch.rpm #yum install openvpn OpenVPN kurulumu tamamlandıktan sonra sample-config olarak gelen conf dosyalarını /etc/openvpn altına kopyalayacağız.</description>
     </item>
     
     <item>
@@ -363,7 +356,7 @@ Selfoss Kendi rss’imi kendim yönetmek istiyorum diyenler için oldukça güze
       <guid>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</guid>
       <description>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir. Bu durumda mailleriniz kuyrukta birikmekte, göndermiş olduğunuz maillerin geç gitmesi gibi sorunlarla karşılaşılmakta.
 Kuyrukta biriken mailleri görmek için,
-# mailq  Kuyrukta biriken maillerin çokluğu acaba sunucudan spam mı yapılıyor endişesi doğurabilir. Bu durumda kuyrukta biriken maillerin id lerini görerek içeriklerini okuyabiliriz.</description>
+# mailq Kuyrukta biriken maillerin çokluğu acaba sunucudan spam mı yapılıyor endişesi doğurabilir. Bu durumda kuyrukta biriken maillerin id lerini görerek içeriklerini okuyabiliriz.</description>
     </item>
     
     <item>
@@ -376,7 +369,7 @@ Kuyrukta biriken mailleri görmek için,
 Mail sunucularının hemen hemen hepsinde spam mailleri engellemek için RBL ( Realtime Blockhole List ) ler kullanılır. Bunlara örnek olarak Spamhaus , Spamcop ve ayrıca greylist olarak postgrey verilebilir.
 Postfix’de mail başlığına göre filtreleme yapmak için,
 main.cf dosyasının içerisinde bulunan aşağıdaki satırın başındaki “#” işareti kaldırarak aktfi etmeniz gerekir.
-header_checks = regexp:/etc/postfix/maps/header_checks  Daha sonra postfix dizininin ( elle derleme esnasında başka bir yere kurulum yapmadı iseniz /etc/postfix in altındadır ) içinde bulunan header_checks dosyasını açarak engellemek istediğiniz mail başlığını yazmanız gerekmektedir.</description>
+header_checks = regexp:/etc/postfix/maps/header_checks Daha sonra postfix dizininin ( elle derleme esnasında başka bir yere kurulum yapmadı iseniz /etc/postfix in altındadır ) içinde bulunan header_checks dosyasını açarak engellemek istediğiniz mail başlığını yazmanız gerekmektedir.</description>
     </item>
     
     <item>
@@ -397,10 +390,10 @@ Masaüstünü göster kısayolu ayarlamaz iseniz başlangıçta kapalı olarak g
       <guid>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</guid>
       <description>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.
 Bunun için;
-# cd /etc/postfix # vi sender_access  sender_access dosyasına engelemek istediğiniz mail adresini aşağıdaki formatta yazıyorsunuz.
-info@domain.com REJECT  Daha sonra postmap komutu ile database ini oluşturuyorsunuz.
-# postmap hash:sender_access  Main.cf dosyasına mail geldiğinde sender_access dosyasını kontrol etmesi için ;
-submission_recipient_restrictions = check_sender_access hash:/etc/postfix/sender_access,permit  kuralını yazıyoruz.
+# cd /etc/postfix # vi sender_access sender_access dosyasına engelemek istediğiniz mail adresini aşağıdaki formatta yazıyorsunuz.
+info@domain.com REJECT Daha sonra postmap komutu ile database ini oluşturuyorsunuz.
+# postmap hash:sender_access Main.cf dosyasına mail geldiğinde sender_access dosyasını kontrol etmesi için ;
+submission_recipient_restrictions = check_sender_access hash:/etc/postfix/sender_access,permit kuralını yazıyoruz.
 Değişikliğini yaptığımız main.cf dosyasını kaydedip postfix’e restart atıyoruz.</description>
     </item>
     
@@ -411,7 +404,7 @@ Değişikliğini yaptığımız main.cf dosyasını kaydedip postfix’e restart
       
       <guid>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</guid>
       <description>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.
-Postfix Kurulumu # yum install postfix  komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.</description>
+Postfix Kurulumu # yum install postfix komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır.</description>
     </item>
     
     <item>
@@ -422,7 +415,7 @@ Postfix Kurulumu # yum install postfix  komutu ile postfixi çok rahat bir şeki
       <guid>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</guid>
       <description>Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.x deki gibi masaüstüne klasör, kısayol vb ikonları ekleyememek oluşuydu.Bunun üstesinden gelmek için Fedora depolarında olan gnome-tweak-tool adındaki küçük programı kurmanız gerekiyor.
 Gnome-tweak-tool Kurulumu Kurulum oldukça basit. Aşağıdaki komut ile fedora deposundan programı kurabiliyorsunuz.
-# su -c &amp;quot;yum install gnome-tweak-tool&amp;quot;  Program kurulumundan sonra aplications kısmından
+# su -c &amp;#34;yum install gnome-tweak-tool&amp;#34; Program kurulumundan sonra aplications kısmından
  search alanına gnome yazarak çıkan sonuçlardan Tweak Advanced Settings uygulamasını çalıştırıyoruz.</description>
     </item>
     
@@ -434,7 +427,7 @@ Gnome-tweak-tool Kurulumu Kurulum oldukça basit. Aşağıdaki komut ile fedora 
       <guid>https://www.gokhanmankara.com/2011/06/simge-durumunu-kucult-butonu-gnome-3/</guid>
       <description>Bildiğiniz gibi gnome 3 ü ilk kurduğunuzda pencerelerde simge durumunu küçük ve ekranı kapla gibi butonlar artık gelmiyor. Bu butonlardan vaz geçemiyorsanız aşağıdaki yöntemi izleyerek bu butonların tekrar aktif olmasını sağlayabilirsiniz.
 ilk yapmamız gereken gnome configuration editörünü kurmak.
-# yum install gconf-editor  Kurulum tamamlandıktan sonra system tools un altında bulunan configuration editor u açıyoruz. Editörü açtıktan sonra desktop-&amp;gt;gnome-&amp;gt;shell-&amp;gt;windows yolunu izleyerek button_layout a çift tıklamak.
+# yum install gconf-editor Kurulum tamamlandıktan sonra system tools un altında bulunan configuration editor u açıyoruz. Editörü açtıktan sonra desktop-&amp;gt;gnome-&amp;gt;shell-&amp;gt;windows yolunu izleyerek button_layout a çift tıklamak.
  Açılan pencerede :close yazan yere aşağıdaki şekilde değiştiriyoruz.</description>
     </item>
     
@@ -446,7 +439,7 @@ ilk yapmamız gereken gnome configuration editörünü kurmak.
       <guid>https://www.gokhanmankara.com/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</guid>
       <description>Oldukça kullanışlı 3 tane Linux/Unix shell scriptlerini sizinle paylaşmak istiyorum.
 Bunlardan birincisi, arkada çalışan programların ne kadar işlemci ve ram kullandıklarını çıktı olarak ekrana veriyor.
-#! /bin/bash #List processes based on %cpu and memory usage echo &amp;quot;Start Time&amp;quot; `date` # By default, it display the list of processes based on the cpu and memory usage # if [ $# -eq 0 ] then echo &amp;quot;List of processes based on the %cpu Usage&amp;quot; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu # sorted based on %cpu echo &amp;quot;List of processes based on the memory Usage&amp;quot; ps -e -orss=,args= | sort -b -k1,1n # sorted bases rss value # If arguements are given (mem/cpu) else case &amp;quot;$1&amp;quot; in mem) echo &amp;quot;List of processes based on the memory Usage&amp;quot; ps -e -orss=,args= | sort -b -k1,1n ;; cpu) echo &amp;quot;List of processes based on the %cpu Usage&amp;quot; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu ;; *) echo &amp;quot;Invalid Argument Given \n&amp;quot; echo &amp;quot;Usage : $0 mem/cpu&amp;quot; exit 1 esac fi echo &amp;quot;End Time&amp;quot; `date` exit 0  $.</description>
+#! /bin/bash #List processes based on %cpu and memory usage echo &amp;#34;Start Time&amp;#34; `date` # By default, it display the list of processes based on the cpu and memory usage # if [ $# -eq 0 ] then echo &amp;#34;List of processes based on the %cpu Usage&amp;#34; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu # sorted based on %cpu echo &amp;#34;List of processes based on the memory Usage&amp;#34; ps -e -orss=,args= | sort -b -k1,1n # sorted bases rss value # If arguements are given (mem/cpu) else case &amp;#34;$1&amp;#34; in mem) echo &amp;#34;List of processes based on the memory Usage&amp;#34; ps -e -orss=,args= | sort -b -k1,1n ;; cpu) echo &amp;#34;List of processes based on the %cpu Usage&amp;#34; ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu ;; *) echo &amp;#34;Invalid Argument Given \n&amp;#34; echo &amp;#34;Usage : $0mem/cpu&amp;#34; exit 1 esac fi echo &amp;#34;End Time&amp;#34; `date` exit 0 $.</description>
     </item>
     
     <item>
@@ -456,7 +449,7 @@ Bunlardan birincisi, arkada çalışan programların ne kadar işlemci ve ram ku
       
       <guid>https://www.gokhanmankara.com/2010/08/kucuk-notlar-wc-komutu/</guid>
       <description>Bir dosyadaki kelime, byte ve satırları saymak için “wc” komutu kullanılır. Kullanım şekli;
-wc [OPTION]... [FILE]... şeklindedir. c: Dosyadaki byteları sayar. l : Dosyadaki satırları sayar. w: Dosyadaki kelimeleri sayar. L: Dosya içindeki en uzun satırın boyutunu gösterir.  [Gokhan@localhost ~]$ wc /etc/DIR_COLORS 213 735 4439 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -c /etc/DIR_COLORS 4439 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -l /etc/DIR_COLORS 213 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -w /etc/DIR_COLORS 735 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -L /etc/DIR_COLORS 77 /etc/DIR_COLORS  </description>
+wc [OPTION]... [FILE]... şeklindedir. c: Dosyadaki byteları sayar. l : Dosyadaki satırları sayar. w: Dosyadaki kelimeleri sayar. L: Dosya içindeki en uzun satırın boyutunu gösterir. [Gokhan@localhost ~]$ wc /etc/DIR_COLORS 213 735 4439 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -c /etc/DIR_COLORS 4439 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -l /etc/DIR_COLORS 213 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -w /etc/DIR_COLORS 735 /etc/DIR_COLORS [Gokhan@localhost ~]$ wc -L /etc/DIR_COLORS 77 /etc/DIR_COLORS </description>
     </item>
     
     <item>
@@ -479,7 +472,7 @@ $head -5 /etc/DIR_COLORS # Configuration file for the color ls utility # Synchro
       <description>Bugün /tmp klasörünün şişmesinden nasıl kurtulurum diye araştırma yaparken Red Hat tarafından geliştirilen tmpwatch komutu ile karşılaştım.
 tmpwatch komutu oldukça kullanışlı /tmp klasörü içinde dosyaların belli bir zamanda oluşmuşları yada hepsini silmenize yarıyor.
 Kullanımı aşağıdaki gibidir.
-tmpwatch [-u|-m|-c] [-MUadfqtvx] [–verbose] [–force] [–all] [–nodirs] [–nosymlinks] [–test] [–quiet] [–atime|–mtime|–ctime] [–dirmtime] [–exclude ] [–exclude-user ]  $ tmpwatch –mtime –all 366 /tmp  komutu 2 hafta içinde tmp klasörünün içinde oluşmuş olan dosyaları siliyor.</description>
+tmpwatch [-u|-m|-c] [-MUadfqtvx] [–verbose] [–force] [–all] [–nodirs] [–nosymlinks] [–test] [–quiet] [–atime|–mtime|–ctime] [–dirmtime] [–exclude ] [–exclude-user ] $ tmpwatch –mtime –all 366 /tmp komutu 2 hafta içinde tmp klasörünün içinde oluşmuş olan dosyaları siliyor.(24*14 gün)</description>
     </item>
     
     <item>
@@ -501,9 +494,8 @@ Pure-ftpd sitesindeki kararlı sürüm indirip kurabilirsiniz ama benim tavisyem
       <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/</guid>
       <description>Sistemi kurduktan sonra bilgisayarınızın ismini 3 adımda kolayca değiştirebilirsiniz.
  /etc/sysconfig/network dosyasını değiştirme  vi editörü ile /etc/sysconfig/network dosyasını açıp “HOSTNAME” yazan yerdeki adı silip yenisini yazın.
-HOSTNAME = yeni.gokhanmankara.com   Konsoldan  # hostname yeni_hostname  tekrar hostname dediğimizde isminin değişmiş olduğunu görüyoruz.
- Hosts dosyasındaki eski ismi yeni ad ile değiştiriyoruz.  /etc/hosts  Bu uygulama Fedora da denenmiştir. Kullandığınız dağıtımda farklılıklar olabilir.
- </description>
+HOSTNAME = yeni.gokhanmankara.com  Konsoldan  # hostname yeni_hostname tekrar hostname dediğimizde isminin değişmiş olduğunu görüyoruz.
+ Hosts dosyasındaki eski ismi yeni ad ile değiştiriyoruz.  /etc/hosts </description>
     </item>
     
     <item>
@@ -512,7 +504,7 @@ HOSTNAME = yeni.gokhanmankara.com   Konsoldan  # hostname yeni_hostname  tekrar 
       <pubDate>Mon, 21 Jun 2010 10:45:28 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-servisleri-otomatik-calistirmak-ntsysv/</guid>
-      <description>$ntsysv  komutu ile bilgisayarın her yeniden başlangıcında otomatik olarak çalışmasını istediğiniz servisleri seçebileceğiniz arayüz.
+      <description>$ntsysv komutu ile bilgisayarın her yeniden başlangıcında otomatik olarak çalışmasını istediğiniz servisleri seçebileceğiniz arayüz.
 root kullanıcı hakkına sahip olmalısınız. Ayrıca Red Hat da çalışan bir komuttur ubuntu vb dağıtımlarda çalışmayabilir.
  </description>
     </item>
@@ -524,7 +516,7 @@ root kullanıcı hakkına sahip olmalısınız. Ayrıca Red Hat da çalışan bi
       
       <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-cat-procnetdev/</guid>
       <description>``sh $ cat /proc/net/dev
- ```sh Inter-| Receive | Transmit face |bytes packets errs drop fifo frame compressed multicast|bytes packets errs drop fifo colls carrier compressed p2p1: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 lo: 42800 516 0 0 0 0 0 0 42800 516 0 0 0 0 0 0 wlp2s0: 532613005 380157 0 0 0 0 0 0 25444897 228607 0 0 0 0 0 0  komutu ile giden ve gelen paketlerin boyutlarını öğrenebilirsiniz.</description>
+ ```sh Inter-| Receive | Transmit face |bytes packets errs drop fifo frame compressed multicast|bytes packets errs drop fifo colls carrier compressed p2p1: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 lo: 42800 516 0 0 0 0 0 0 42800 516 0 0 0 0 0 0 wlp2s0: 532613005 380157 0 0 0 0 0 0 25444897 228607 0 0 0 0 0 0 komutu ile giden ve gelen paketlerin boyutlarını öğrenebilirsiniz.</description>
     </item>
     
     <item>
@@ -533,7 +525,7 @@ root kullanıcı hakkına sahip olmalısınız. Ayrıca Red Hat da çalışan bi
       <pubDate>Sun, 20 Jun 2010 10:50:07 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-etcservices/</guid>
-      <description>$cat /etc/services  Servislerin port numaraları, protokolleri, takma isimleri ve açıklamaları bulunur. Herhangi bir servisin portunu değiştirmek istenirse “/etc/services” dosyasındaki portu değiştirmeniz yeterlidir.</description>
+      <description>$cat /etc/services Servislerin port numaraları, protokolleri, takma isimleri ve açıklamaları bulunur. Herhangi bir servisin portunu değiştirmek istenirse “/etc/services” dosyasındaki portu değiştirmeniz yeterlidir.</description>
     </item>
     
     <item>
@@ -544,8 +536,8 @@ root kullanıcı hakkına sahip olmalısınız. Ayrıca Red Hat da çalışan bi
       <guid>https://www.gokhanmankara.com/2010/06/crontab-kullanimi-ve-ornek-crontab-uygulamasi/</guid>
       <description>Linux ve Unix sistemlerde kullanılan crontab, belirlediğiniz bir zaman yada zaman diliminde belirlediğiniz komut, script yada uygulamanın çalışmasını sağlarsınız.
 Cron girdilerinin /etc/crontab dosyasının düzenlenerek uygulanır.
- Crontab’ın editlenmesi;  $crontab -e   Crontab’da yapılacak işlerin listelenmesi;  $crontab -l   Crontab’da işlerin silinmesi;  $crontab -r  Bir crontab dosyası aşağıdaki gibi yazılır.
-* * * * * /calıstirilacak/komut/yada/script  &amp;ldquo;*&amp;rdquo; ile gösterilen yerler zaman yada tarih değerlerinin kullanılmasında kullanılır.</description>
+ Crontab’ın editlenmesi;  $crontab -e  Crontab’da yapılacak işlerin listelenmesi;  $crontab -l  Crontab’da işlerin silinmesi;  $crontab -r Bir crontab dosyası aşağıdaki gibi yazılır.
+* * * * * /calıstirilacak/komut/yada/script &amp;quot;*&amp;quot; ile gösterilen yerler zaman yada tarih değerlerinin kullanılmasında kullanılır. Crontab dosyasına yukarıdaki gibi bir örnek verirseniz.</description>
     </item>
     
     <item>
@@ -554,9 +546,9 @@ Cron girdilerinin /etc/crontab dosyasının düzenlenerek uygulanır.
       <pubDate>Tue, 08 Jun 2010 11:19:51 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2010/06/komutla-sistem-donanim-bilgisi-almak/</guid>
-      <description>Bu komutu “root” kullanıcısı ile kullanabilirsiniz.
- Ana kart üzerindeki RAM yuvası (ing. slot) sayısı, her birisine takılı RAM modülleri ve kapasiteleri, ram yuvalarına takılabilecek azami RAM kapasitesi, ana karta takılı işlemci türü, işlemcinin şu andaki hızı, ana kartın desteklediği azami işlemci saat hızı, BIOS sürümü, ana kart seri numarası, şase seri numarası, donanım bileşenlerinin üretici adları, markaları, modelleri vb uzarda gider…
-$ lspci  PCI veri yolunu listeler. PCI veri yoluna takılı bulunan tüm donanımları listeler.</description>
+      <description>Ana kart üzerindeki RAM yuvası (ing. slot) sayısı, her birisine takılı RAM modülleri ve kapasiteleri, ram yuvalarına takılabilecek azami RAM kapasitesi, ana karta takılı işlemci türü, işlemcinin şu andaki hızı, ana kartın desteklediği azami işlemci saat hızı, BIOS sürümü, ana kart seri numarası, şase seri numarası, donanım bileşenlerinin üretici adları, markaları, modelleri vb uzarda gider…
+$ lspci PCI veri yolunu listeler. PCI veri yoluna takılı bulunan tüm donanımları listeler.
+$ lsusb USB veri yoluna bağlı olan tüm aygıtları, kaç mA akım çektiklerini ayrıntılı bir şekilde dökmektedir.</description>
     </item>
     
     <item>
@@ -567,8 +559,8 @@ $ lspci  PCI veri yolunu listeler. PCI veri yoluna takılı bulunan tüm donanı
       <guid>https://www.gokhanmankara.com/2010/05/nfs-network-file-system/</guid>
       <description>NFS dosya sistemi kullanıcılardan bağımsız olarak ağdaki makinaların ağdaki başka bir makinanın hdd sini kendi hdd si gibi kullanması mantığı ile çalışır.
 Makinenizdeki bir dizini ağdaki diğer makineler ile paylaşmak için
-/etc/exports  dosyasına hangi dizini hangi makinelerin kullanacağını ve hangi hak ile üzerinde değişiklik yapılacağını belirtiyorsunuz.
-Paylaşım Dizini Makine Adı(Seçenekler) /home/Gokhan (ro) /home/Ahmet *.gokhanmankara.com (ro) /home/Veli *.gokhanmankara.com(rw)  Burada 3 tane farklı dizini paylaştırmış oldum.
+/etc/exports dosyasına hangi dizini hangi makinelerin kullanacağını ve hangi hak ile üzerinde değişiklik yapılacağını belirtiyorsunuz.
+Paylaşım Dizini Makine Adı(Seçenekler) /home/Gokhan (ro) /home/Ahmet *.gokhanmankara.com (ro) /home/Veli *.gokhanmankara.com(rw) Burada 3 tane farklı dizini paylaştırmış oldum.
 ”/home/Gokhan” dizinini ağdaki tüm makinalara read-only hakkı ile paylaştırdık.</description>
     </item>
     
@@ -580,7 +572,7 @@ Paylaşım Dizini Makine Adı(Seçenekler) /home/Gokhan (ro) /home/Ahmet *.gokha
       <guid>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</guid>
       <description>Apachenin sunduğu güzel imkanlardan biride belirlediğiniz bir dosyadaki klasörlere uzaktan kullanıcıların parolalı bir şekilde erişmesini sağlayabilmesidir.
 Bunu yapmak için yapmanız gerekenler çok basit ;
- Bu klasöre girecek olan bir kullanıcının parolasının tutulduğu bir dizin yaratmanız gerekiyor. Bu dizin sistemde herhangi bir yerde olabilir yalnız çoğu makalede /usr/local altında tutulmasını öneriyor. Bu dizini önceden oluşturmak şart.  # mkdir /usr/local/parola/parolalar   Hangi dizine erişilecek ise ( bu apache hiyerarşisi içinde olmalı ) o dizin altında bir .</description>
+ Bu klasöre girecek olan bir kullanıcının parolasının tutulduğu bir dizin yaratmanız gerekiyor. Bu dizin sistemde herhangi bir yerde olabilir yalnız çoğu makalede /usr/local altında tutulmasını öneriyor. Bu dizini önceden oluşturmak şart.  # mkdir /usr/local/parola/parolalar  Hangi dizine erişilecek ise ( bu apache hiyerarşisi içinde olmalı ) o dizin altında bir .</description>
     </item>
     
     <item>
@@ -590,9 +582,9 @@ Bunu yapmak için yapmanız gerekenler çok basit ;
       
       <guid>https://www.gokhanmankara.com/2010/04/split-dosyalari-parcalara-bolmek/</guid>
       <description>Elinizde büyük bir dosya var ve siz bunu hotfile yada rapid gibi sitelere yüklemek istiyorsunuz yalnız dosyanız çok büyük. Ne yapmanız gerekir diye düşünürken imdadınıza “split” komutu yetişiyor. Bu komut ile dosyanızı istediğiniz boyuttaki parçalara bölebilirsiniz.
-$ split -b 10000k deneme.tar blok  deneme.tar.gz dosyasını 10Mb parçalar halinde blok adı altında split komutu size parçalara bölecektir.
+$ split -b 10000k deneme.tar blok deneme.tar.gz dosyasını 10Mb parçalar halinde blok adı altında split komutu size parçalara bölecektir.
 Tekrar birleştirmek için ise
-$ cat blok* &amp;gt; deneme.tar  komutunu vererek tekrar tek parça haline getirebilirsiniz.</description>
+$ cat blok* &amp;gt; deneme.tar komutunu vererek tekrar tek parça haline getirebilirsiniz.</description>
     </item>
     
     <item>
@@ -603,7 +595,7 @@ $ cat blok* &amp;gt; deneme.tar  komutunu vererek tekrar tek parça haline getir
       <guid>https://www.gokhanmankara.com/2010/03/grep-komutu-ve-kullanimi/</guid>
       <description>Grep’in acilimi evrensel düzenli ifade yazicisi dır. (Global Regular Expression Printer). Daha aciklayici olmak gerekirse grep , verilen bir yazidan belirli kriterler dahilinde parcalar cikarir. Basitce , grep bir sablon girmenizi , ardindan yine sizin belirleyeceginiz bir metinde, bu sablona uygun yazilari arar. Belirlenen sablona uygun tüm satirlari listeler. Grep tek başına veya borularla kullanılabilir.
 Tek basina kullanıldığında
-$ grep ‘12.00’ /home/david/backup/log.txt  Bu komut basit olarak grep in nasil kullanilabilecegini gösteriyor.</description>
+$ grep ‘12.00’ /home/david/backup/log.txt Bu komut basit olarak grep in nasil kullanilabilecegini gösteriyor.</description>
     </item>
     
     <item>
@@ -614,7 +606,7 @@ $ grep ‘12.00’ /home/david/backup/log.txt  Bu komut basit olarak grep in nas
       <guid>https://www.gokhanmankara.com/2010/03/script-ile-konsolda-yazdigin-komutlari-otomatik-olarak-kaydetmek/</guid>
       <description>Bugün karşılaştığım “script” komutundan bahsetmek istiyorum size.
 Oldukça kullanışlı olan bu komut siz konsolda işlem yaparken o arka tarafta size konsolda yazdığınız komutları ve çıktı sonuçlarını belirlediğiniz bir dosyaya kaydedip daha sonra geri dönük olarak ne yapmıştım sıkıntısından kurtarıyor.
-$ script -f dosya_ismi  vermeniz yeterli.
+$ script -f dosya_ismi vermeniz yeterli.
 Script komutu arka tarafta konsolda görünen bütün sonuçları kaydederek daha sonra verdiğiniz dosya isminden okuyarak neler oluğ bittiğini görmenizi sağlıyor. Konsolda işiniz bittikten sonra Ctrl-D ye basarak scripti durdurmanız gerekiyor.</description>
     </item>
     
@@ -637,7 +629,7 @@ PID numarasını görmek için ”ps -aux” komutunu kullanırız. Daha doğrus
       <guid>https://www.gokhanmankara.com/2009/10/chmod-komutu-ve-kullanimi/</guid>
       <description>Linux sistemlerde kullanıcıların dosyalara erişim haklarını belirlemek için “chmod” komutu kullanılınır. Chmod un tam karşılığı change moddur.
 Linux Kullanıcıları 3 kullanıcı türü bulunmaktadır.
-u – user (dosya veya dizin sahibi, yaratıcısı) g – group (dosya veya dizinin ait olduğu grup) o – other (diğerleri, user ve group haricindekiler) a – all (ugo- user,group, other) (hepsi, herkes dosya ve dizinlere erişebilir.)  CHMOD izinleri ( Chmod Permissions ) Chmod erişim izinleri herzaman rwx şeklinde sıralanmaktadır.</description>
+u – user (dosya veya dizin sahibi, yaratıcısı) g – group (dosya veya dizinin ait olduğu grup) o – other (diğerleri, user ve group haricindekiler) a – all (ugo- user,group, other) (hepsi, herkes dosya ve dizinlere erişebilir.) CHMOD izinleri ( Chmod Permissions ) Chmod erişim izinleri herzaman rwx şeklinde sıralanmaktadır.</description>
     </item>
     
     <item>
@@ -647,9 +639,9 @@ u – user (dosya veya dizin sahibi, yaratıcısı) g – group (dosya veya dizi
       
       <guid>https://www.gokhanmankara.com/2009/09/kisayol-ve-kopyalama-komutu/</guid>
       <description>”ln -s” komutunu kullanarak bir dosyanın kısayolunu yaratabilirsiniz.
-$ ln -s /media/Yedek /home/Gokhan/Desktop $ ln -s /media/Film /home/Gokhan/Desktop  “cp” komutu ile bir dosyayı kopyalayabilirsiniz.
-$ cp /home/Gokhan/Desktop/yeni /media/Yedek  Klasör kopyalamak istediğinizde ise kopyalamak istediğiniz klasörün bulunduğu dizin de iken
-$ cp -r Linux_dokuman /media/Film  komutunu kullanabilirsiniz.</description>
+$ ln -s /media/Yedek /home/Gokhan/Desktop $ ln -s /media/Film /home/Gokhan/Desktop “cp” komutu ile bir dosyayı kopyalayabilirsiniz.
+$ cp /home/Gokhan/Desktop/yeni /media/Yedek Klasör kopyalamak istediğinizde ise kopyalamak istediğiniz klasörün bulunduğu dizin de iken
+$ cp -r Linux_dokuman /media/Film komutunu kullanabilirsiniz.</description>
     </item>
     
     <item>
@@ -660,7 +652,7 @@ $ cp -r Linux_dokuman /media/Film  komutunu kullanabilirsiniz.</description>
       <guid>https://www.gokhanmankara.com/2009/08/linuxda-konsol-yardimi-ile-iso-dosyasi-yapma/</guid>
       <description>Virtual PC yada Vmware kullanıyorsanız hızlı bir kurulum yapmak için en iyi yol imaj kullanmaktır. Windows da imaj yapmak için yardımcı programlar kullanmak gerekir. Linux’da ise bu işlemi çok kısa bir sürede konsol yardımıyla yapmak mümkün.
 Bunun için bir klasör oluşturun ve dosyaları onun içine kopyalayın. Daha sonra oluşturduğunuz klasörün imajını almak için kısa bir komut yazmak yeterli olacaktır.
-# mkisofs -R -J -o deneme.iso /home/Gokhan/Documents/deneme  I: -input-charset not specified, using utf-8 (detected in locale settings) Using HITCH000.</description>
+# mkisofs -R -J -o deneme.iso /home/Gokhan/Documents/deneme I: -input-charset not specified, using utf-8 (detected in locale settings) Using HITCH000.</description>
     </item>
     
   </channel>

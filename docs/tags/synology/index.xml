@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Synology on Gökhan MANKARA</title>
+    <title>synology on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/synology/</link>
-    <description>Recent content in Synology on Gökhan MANKARA</description>
+    <description>Recent content in synology on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 May 2014 11:17:18 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/synology/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 May 2014 11:17:18 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/synology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sudoers Listesine Kullanıcı Ekleme</title>
       <link>https://www.gokhanmankara.com/2014/05/sudoers-listesine-kullanici-ekleme/</link>

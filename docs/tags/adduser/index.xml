@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Adduser on Gökhan MANKARA</title>
+    <title>adduser on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/adduser/</link>
-    <description>Recent content in Adduser on Gökhan MANKARA</description>
+    <description>Recent content in adduser on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2014 13:24:30 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/adduser/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 14 Feb 2014 13:24:30 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/adduser/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kullanıcıları Varsayılan Olarak Home Dizini Olmadan Oluşturma</title>
       <link>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</link>
@@ -18,9 +14,9 @@
       
       <guid>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</guid>
       <description>Centos’da değişik amaçlar için adduser komutu ile başka bir parametre girmeden oluşturduğunuz kullanıcılarda, home dizinini varsayılan olarak oluşturmak istemiyor iseniz, aşağıdaki yöntem ile bunu sağlayabilirsiniz.
-# vi /etc/login.defs  login.defs dosyasında CREATE_HOME satırı varsayılan olarak yes şeklindedir. CREATE_HOME no diyerek kaydederseniz, varsayıılan olarak home dizini yaratılmayacaktır.
-CREATE_HOME no  Klasik olarak parametre kullanarak aşağıdaki komut ile “login.defs” dosyasında değişiklik yapmadan, home dizini oluşturmayabilir, ayrıca kullanıcının login olmasını da engelleyebilirsiniz.
-# adduser -M -s /sbin/nologin gokhan  </description>
+# vi /etc/login.defs login.defs dosyasında CREATE_HOME satırı varsayılan olarak yes şeklindedir. CREATE_HOME no diyerek kaydederseniz, varsayıılan olarak home dizini yaratılmayacaktır.
+CREATE_HOME no Klasik olarak parametre kullanarak aşağıdaki komut ile “login.defs” dosyasında değişiklik yapmadan, home dizini oluşturmayabilir, ayrıca kullanıcının login olmasını da engelleyebilirsiniz.
+# adduser -M -s /sbin/nologin gokhan </description>
     </item>
     
     <item>
@@ -31,10 +27,9 @@ CREATE_HOME no  Klasik olarak parametre kullanarak aşağıdaki komut ile “log
       <guid>https://www.gokhanmankara.com/2014/02/shc-ile-bash-shell-script-sifreleme/</guid>
       <description>SHC, binary formatında scriptlerinizi şifrelemeye yarayan bir programcık. Yazdığınız bash scriptleri şifreleyerek kodların okunamamasını sağlayabilirsiniz.
 SHC’nin kurulumuna bakacak olursak,
-Sisteminizde “make” kurulu değilse, kurmanız gerekecektir.
- # wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz # tar -xvf shc-3.8.9.tgz # cd shc-3.8.9 # make  SHC kullanımı;
-shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f script  Basit bir script oluşturarak shc ile scripti şifreleyelim,
-#!/bin/bash echo -n &amp;quot;İsminiz nedir?</description>
+# wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz # tar -xvf shc-3.8.9.tgz # cd shc-3.8.9 # make SHC kullanımı;
+shc Usage: shc [-e date] [-m addr] [-i iopt] [-x cmnd] [-l lopt] [-rvDTCAh] -f script Basit bir script oluşturarak shc ile scripti şifreleyelim,
+#!/bin/bash  echo -n &amp;#34;İsminiz nedir?: &amp;#34; read name echo &amp;#34;Merhaba $name&amp;#34; # .</description>
     </item>
     
   </channel>

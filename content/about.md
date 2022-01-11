@@ -1,5 +1,5 @@
 ---
-title: "Hakkımda"
+title: "About"
 date: 2017-11-30T17:25:52+03:00
 comments: false
 showTags: false
@@ -9,7 +9,7 @@ showDate: false
 showActions: false
 ---
 
-E-Posta Adresim:  gokhanm [at] gmail [dot] com
+E-Mail:  gokhanm [at] gmail [dot] com
 
 > Uyarı: Sitede yayınlanan yazılar, test ortamında test edilerek, 
 > çalışırlılığından emin olduktan sonra yayınlıyorum. 

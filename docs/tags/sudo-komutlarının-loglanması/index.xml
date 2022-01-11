@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sudo Komutlarının Loglanması on Gökhan MANKARA</title>
+    <title>sudo komutlarının loglanması on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/sudo-komutlar%C4%B1n%C4%B1n-loglanmas%C4%B1/</link>
-    <description>Recent content in Sudo Komutlarının Loglanması on Gökhan MANKARA</description>
+    <description>Recent content in sudo komutlarının loglanması on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Mar 2015 14:15:19 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/sudo-komutlar%C4%B1n%C4%B1n-loglanmas%C4%B1/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 22 Mar 2015 14:15:19 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/sudo-komutlar%C4%B1n%C4%B1n-loglanmas%C4%B1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sudo Komutlarının Loglanması</title>
       <link>https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/</guid>
       <description>Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız. Önceki yazıda sudoers dosyasına kullanıcıyı eklemiştik, bu yazıda sudoers.d altına kullanıcıları oluşturacağız.
-# vi /etc/sudoers.d/gokhan  gokhan ALL=(ALL) NOPASSWD: LOG_INPUT: LOG_OUTPUT: ALL Defaults iolog_dir=/var/log/sudo-io/%{user}  gokhan kullanıcısına şifresiz olarak sudo komutu çalıştırma yetkisi vermiş olduk. iolog_dir dizinini oluşturmamıza gerek yok, default olarak dizin oluşacaktır.
+# vi /etc/sudoers.d/gokhan gokhan ALL=(ALL) NOPASSWD: LOG_INPUT: LOG_OUTPUT: ALL Defaults iolog_dir=/var/log/sudo-io/%{user} gokhan kullanıcısına şifresiz olarak sudo komutu çalıştırma yetkisi vermiş olduk. iolog_dir dizinini oluşturmamıza gerek yok, default olarak dizin oluşacaktır.
 sudo-io dizinine baktığınızda birden fazla dosya oluştuğunu görürsünüz.</description>
     </item>
     

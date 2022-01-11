@@ -1,5 +1,5 @@
 ---
-title: "Arşiv"
+title: "Archive"
 date: 2017-11-30T17:33:22+03:00
 ---
 

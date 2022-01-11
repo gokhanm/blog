@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gnome 3 on Gökhan MANKARA</title>
+    <title>gnome 3 on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/gnome-3/</link>
-    <description>Recent content in Gnome 3 on Gökhan MANKARA</description>
+    <description>Recent content in gnome 3 on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Dec 2011 13:55:47 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/gnome-3/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 25 Dec 2011 13:55:47 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/gnome-3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gnome 3 - Masaüstünü Göster Kısayolu</title>
       <link>https://www.gokhanmankara.com/2011/12/gnome-3-masaustunu-goster-kisayolu/</link>
@@ -29,7 +25,7 @@ Masaüstünü göster kısayolu ayarlamaz iseniz başlangıçta kapalı olarak g
       <guid>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</guid>
       <description>Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.x deki gibi masaüstüne klasör, kısayol vb ikonları ekleyememek oluşuydu.Bunun üstesinden gelmek için Fedora depolarında olan gnome-tweak-tool adındaki küçük programı kurmanız gerekiyor.
 Gnome-tweak-tool Kurulumu Kurulum oldukça basit. Aşağıdaki komut ile fedora deposundan programı kurabiliyorsunuz.
-# su -c &amp;quot;yum install gnome-tweak-tool&amp;quot;  Program kurulumundan sonra aplications kısmından
+# su -c &amp;#34;yum install gnome-tweak-tool&amp;#34; Program kurulumundan sonra aplications kısmından
  search alanına gnome yazarak çıkan sonuçlardan Tweak Advanced Settings uygulamasını çalıştırıyoruz.</description>
     </item>
     
@@ -41,7 +37,7 @@ Gnome-tweak-tool Kurulumu Kurulum oldukça basit. Aşağıdaki komut ile fedora 
       <guid>https://www.gokhanmankara.com/2011/06/simge-durumunu-kucult-butonu-gnome-3/</guid>
       <description>Bildiğiniz gibi gnome 3 ü ilk kurduğunuzda pencerelerde simge durumunu küçük ve ekranı kapla gibi butonlar artık gelmiyor. Bu butonlardan vaz geçemiyorsanız aşağıdaki yöntemi izleyerek bu butonların tekrar aktif olmasını sağlayabilirsiniz.
 ilk yapmamız gereken gnome configuration editörünü kurmak.
-# yum install gconf-editor  Kurulum tamamlandıktan sonra system tools un altında bulunan configuration editor u açıyoruz. Editörü açtıktan sonra desktop-&amp;gt;gnome-&amp;gt;shell-&amp;gt;windows yolunu izleyerek button_layout a çift tıklamak.
+# yum install gconf-editor Kurulum tamamlandıktan sonra system tools un altında bulunan configuration editor u açıyoruz. Editörü açtıktan sonra desktop-&amp;gt;gnome-&amp;gt;shell-&amp;gt;windows yolunu izleyerek button_layout a çift tıklamak.
  Açılan pencerede :close yazan yere aşağıdaki şekilde değiştiriyoruz.</description>
     </item>
     

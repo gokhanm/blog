@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux Kısayol Oluşturma on Gökhan MANKARA</title>
+    <title>linux kısayol oluşturma on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/linux-k%C4%B1sayol-olu%C5%9Fturma/</link>
-    <description>Recent content in Linux Kısayol Oluşturma on Gökhan MANKARA</description>
+    <description>Recent content in linux kısayol oluşturma on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2009 12:20:36 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/linux-k%C4%B1sayol-olu%C5%9Fturma/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 10 Sep 2009 12:20:36 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/linux-k%C4%B1sayol-olu%C5%9Fturma/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kisayol ve Kopyalama Komutu</title>
       <link>https://www.gokhanmankara.com/2009/09/kisayol-ve-kopyalama-komutu/</link>
@@ -18,9 +14,9 @@
       
       <guid>https://www.gokhanmankara.com/2009/09/kisayol-ve-kopyalama-komutu/</guid>
       <description>”ln -s” komutunu kullanarak bir dosyanın kısayolunu yaratabilirsiniz.
-$ ln -s /media/Yedek /home/Gokhan/Desktop $ ln -s /media/Film /home/Gokhan/Desktop  “cp” komutu ile bir dosyayı kopyalayabilirsiniz.
-$ cp /home/Gokhan/Desktop/yeni /media/Yedek  Klasör kopyalamak istediğinizde ise kopyalamak istediğiniz klasörün bulunduğu dizin de iken
-$ cp -r Linux_dokuman /media/Film  komutunu kullanabilirsiniz.</description>
+$ ln -s /media/Yedek /home/Gokhan/Desktop $ ln -s /media/Film /home/Gokhan/Desktop “cp” komutu ile bir dosyayı kopyalayabilirsiniz.
+$ cp /home/Gokhan/Desktop/yeni /media/Yedek Klasör kopyalamak istediğinizde ise kopyalamak istediğiniz klasörün bulunduğu dizin de iken
+$ cp -r Linux_dokuman /media/Film komutunu kullanabilirsiniz.</description>
     </item>
     
   </channel>

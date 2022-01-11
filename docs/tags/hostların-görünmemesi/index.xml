@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hostların Görünmemesi on Gökhan MANKARA</title>
+    <title>hostların görünmemesi on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/hostlar%C4%B1n-g%C3%B6r%C3%BCnmemesi/</link>
-    <description>Recent content in Hostların Görünmemesi on Gökhan MANKARA</description>
+    <description>Recent content in hostların görünmemesi on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2015 13:54:53 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/hostlar%C4%B1n-g%C3%B6r%C3%BCnmemesi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 31 Mar 2015 13:54:53 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/hostlar%C4%B1n-g%C3%B6r%C3%BCnmemesi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xenserver&#39;da Sanal Sunucuların Görünmemesi</title>
       <link>https://www.gokhanmankara.com/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/</link>

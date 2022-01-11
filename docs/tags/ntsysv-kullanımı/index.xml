@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ntsysv Kullanımı on Gökhan MANKARA</title>
+    <title>ntsysv kullanımı on Gökhan MANKARA</title>
     <link>https://www.gokhanmankara.com/tags/ntsysv-kullan%C4%B1m%C4%B1/</link>
-    <description>Recent content in Ntsysv Kullanımı on Gökhan MANKARA</description>
+    <description>Recent content in ntsysv kullanımı on Gökhan MANKARA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Jun 2010 10:45:28 +0300</lastBuildDate>
-    
-	<atom:link href="https://www.gokhanmankara.com/tags/ntsysv-kullan%C4%B1m%C4%B1/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 21 Jun 2010 10:45:28 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/ntsysv-kullan%C4%B1m%C4%B1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Küçük Notlar - Servisleri Otomatik Çalıştırmak - Ntsysv</title>
       <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-servisleri-otomatik-calistirmak-ntsysv/</link>
       <pubDate>Mon, 21 Jun 2010 10:45:28 +0300</pubDate>
       
       <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-servisleri-otomatik-calistirmak-ntsysv/</guid>
-      <description>$ntsysv  komutu ile bilgisayarın her yeniden başlangıcında otomatik olarak çalışmasını istediğiniz servisleri seçebileceğiniz arayüz.
+      <description>$ntsysv komutu ile bilgisayarın her yeniden başlangıcında otomatik olarak çalışmasını istediğiniz servisleri seçebileceğiniz arayüz.
 root kullanıcı hakkına sahip olmalısınız. Ayrıca Red Hat da çalışan bir komuttur ubuntu vb dağıtımlarda çalışmayabilir.
  </description>
     </item>
