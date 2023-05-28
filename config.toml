@@ -35,7 +35,7 @@ pygmentsCodefencesGuessSyntax = true
   description = "Blog - Açık Kaynak Kodlu Uygulamalar - Linux Dökümanları"
   profilePicture = "images/cover.jpg"
 
-  favicon = "favicon.png"
+  favicon = "favicons/"
   reversepagetitle = true
 
 [[params.socialIcons]]
