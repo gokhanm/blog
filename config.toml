@@ -37,6 +37,7 @@ pygmentsCodefencesGuessSyntax = true
 
   favicon = "favicon/"
   reversepagetitle = true
+  hidesidebar = true
 
 [[params.socialIcons]]
   icon = "fab fa-linkedin"
