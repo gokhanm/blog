@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chmod Komutu on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/chmod-komutu/</link>
+    <description>Recent content in Chmod Komutu on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Oct 2009 12:05:26 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/chmod-komutu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chmod Komutu ve Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2009/10/chmod-komutu-ve-kullanimi/</link>
+      <pubDate>Fri, 16 Oct 2009 12:05:26 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2009/10/chmod-komutu-ve-kullanimi/</guid>
+      
+        <description>Linux sistemlerde kullanıcıların dosyalara erişim haklarını belirlemek için “chmod” komutu kullanılınır.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

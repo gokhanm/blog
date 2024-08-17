@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Master Slave Mod on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/master-slave-mod/</link>
+    <description>Recent content in Master Slave Mod on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Oct 2014 11:05:13 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/master-slave-mod/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bonding Network Interface Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</link>
+      <pubDate>Sat, 25 Oct 2014 11:05:13 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</guid>
+      
+        <description>RedHat tabanlı işletim sistemlerinde iki veya daha fazla ethernet interface olması durumunda bonding network interface kullanarak, ethernetlerin load balance bond, round-robin bond ya da fault tolerant bond şeklinde çalışması sağlanabilmektedir.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

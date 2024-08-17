@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fedora on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/fedora/</link>
+    <description>Recent content in Fedora on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openvpn Kurulum Scripti</title>
+      <link>https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/</link>
+      <pubDate>Thu, 21 Dec 2017 17:34:24 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/</guid>
+      
+        <description>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.</description>
+      
+    </item>
+    
+    <item>
+      <title>Openvpn Kurulumu Ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Wed, 19 Jun 2013 10:57:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</guid>
+      
+        <description>Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Gnome 3 - Masaüstünü Göster Kısayolu</title>
+      <link>https://www.gokhanmankara.com/2011/12/gnome-3-masaustunu-goster-kisayolu/</link>
+      <pubDate>Sun, 25 Dec 2011 13:55:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/12/gnome-3-masaustunu-goster-kisayolu/</guid>
+      
+        <description>Gnome 3 hayatımıza girdiğinden beri Gnome 2.x kullanımın kolaylığından sonra Gnome 3 ile cebelleşir olduk çıktık.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

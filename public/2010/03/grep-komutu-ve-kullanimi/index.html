@@ -1,0 +1,565 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en-us"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Grep Komutu ve Kullanımı |
+      
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="" />
+  <meta
+    name="description"
+    content="My thoughts about random topics, Programming, and various linux stuffs"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
+      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.gokhanmankara.com/2010/03/grep-komutu-ve-kullanimi/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Grep Komutu ve Kullanımı">
+  <meta name="twitter:description" content="Grep’in acilimi evrensel düzenli ifade yazicisi dır. (Global Regular Expression Printer).">
+
+
+
+  
+  <meta property="og:url" content="https://www.gokhanmankara.com/2010/03/grep-komutu-ve-kullanimi/">
+  <meta property="og:site_name" content="Gökhan MANKARA">
+  <meta property="og:title" content="Grep Komutu ve Kullanımı">
+  <meta property="og:description" content="Grep’in acilimi evrensel düzenli ifade yazicisi dır. (Global Regular Expression Printer).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2010-03-14T11:45:48+03:00">
+    <meta property="article:modified_time" content="2010-03-14T11:45:48+03:00">
+    <meta property="article:tag" content="Grep">
+    <meta property="article:tag" content="Grep Komutu">
+    <meta property="article:tag" content="Grep Kullanımı">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Grep Komutu ve Kullanımı",
+        "headline": "Grep Komutu ve Kullanımı",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Grep’in acilimi evrensel düzenli ifade yazicisi dır. (Global Regular Expression Printer).
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.gokhanmankara.com\/2010\/03\/grep-komutu-ve-kullanimi\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightYear" : "2010",
+        "dateCreated": "2010-03-14T11:45:48.00Z",
+        "datePublished": "2010-03-14T11:45:48.00Z",
+        "dateModified": "2010-03-14T11:45:48.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name":  null ,
+            "url": "https://www.gokhanmankara.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.gokhanmankara.com\/favicon\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/www.gokhanmankara.com\/2010\/03\/grep-komutu-ve-kullanimi\/",
+        "wordCount" : "598",
+        "genre" : [ 
+      
+      "nix"
+
+    ],
+        "keywords" : [ 
+      
+      "grep"
+
+    
+      
+        ,
+
+      
+      "grep komutu"
+
+    
+      
+        ,
+
+      
+      "grep kullanımı"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar wrapper__sidebar--hidden"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/cover.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/gokhanmankara/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/gokhanm"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:gokhanm@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="/index.xml"
+            target="_blank"
+            rel="noopener me"
+            aria-label="rss"
+            title="rss"
+          >
+            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main wrapper__main--fullscreen"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/tags"
+              
+              title=""
+              >Tags</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Grep Komutu Ve Kullanımı</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Mar 14, 2010
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text"></span>
+          </li>
+        </ul>
+      <p>Grep’in acilimi evrensel düzenli ifade yazicisi dır. (Global Regular Expression Printer). Daha aciklayici olmak gerekirse grep , verilen bir yazidan belirli kriterler dahilinde parcalar cikarir. Basitce , grep bir sablon girmenizi , ardindan yine sizin belirleyeceginiz bir metinde, bu sablona uygun yazilari arar. Belirlenen sablona uygun tüm satirlari listeler. Grep tek başına veya borularla kullanılabilir.</p>
+<p>Tek basina kullanıldığında</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ grep ‘12.00’ /home/david/backup/log.txt
+</span></span></code></pre></div><p>Bu komut basit olarak grep in nasil kullanilabilecegini gösteriyor.(Metin dosyalarinin uzantisinin .txt olmasi gibi bir zorunluluk yok).Yukaridaki komut icinde 12.00 bulunan tüm satirlari listeler.
+Örnegin bu komut , 12.00 da yapilmis tüm backuplarin bulunmasi icin kullanilabilir (Tabii icinde zamanlarin oldugu log.txt dosyasinin olmasi kosuluyla)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ grep -v ‘12.00’ /home/david/backup/log.txt
+</span></span></code></pre></div><p>Bu komutla ise icinde 12.00 bulunduran satirlar disindaki tüm satirlari listeler.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ grep -l ‘delay’ /code/*.c
+</span></span></code></pre></div><p>Bu komut /code dizininde .c uzantili dosyalardan icinde <strong>“delay”</strong> yazisi bulunanlarin adlarini listeler. Bununla sadece dosya isimleri listelenir(Yani satirlar listelenmez..)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ grep -w ‘watch<span class="se">\&gt;</span>’ *
+</span></span></code></pre></div><p>Bu komut aramayi biraz daha derinlestirir. <strong>“watch”</strong> ile biten kelimelerin oldugu satirlari arar.</p>
+<p>Borularla kullanıldığında</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ ls -l <span class="p">|</span> grep rwxrwxrwx
+</span></span></code></pre></div><p>Bildiginiz gibi <strong>“ls -l”</strong> komutu dizin icerigini listeler. <strong>“grep rwxrwxrwx”</strong> kismi ise bize yazma,okuma,calistirma izinlerinin kullanici,grup,digerleri icin verildigi dizinleri listeler. Böylece tüm dizinleri görmektense sadece bu izinlerin oldugu dizinleri görürüz. (Aslinda sadece metin aramasi yapiyoruz. <strong>“ls -l”</strong> nin ciktisini grep komutuna yönlendirerek süzgecten geciriyoruz)</p>
+<p>Grep’in ciktisi diger programlara söyle yönlendirilir :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ du <span class="p">|</span> grep ‘mp3’ <span class="p">|</span> more
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">41M ./mp3/01-DANCE AROUND The WORLD/Disc One
+</span></span><span class="line"><span class="cl">44M ./mp3/01-DANCE AROUND The WORLD/Disc Two
+</span></span><span class="line"><span class="cl">84M ./mp3/01-DANCE AROUND The WORLD
+</span></span><span class="line"><span class="cl">68M ./mp3/02-TECHNO MILLENNIUM/Disc One
+</span></span><span class="line"><span class="cl">69M ./mp3/02-TECHNO MILLENNIUM/Disc Two
+</span></span><span class="line"><span class="cl">137M ./mp3/02-TECHNO MILLENNIUM
+</span></span><span class="line"><span class="cl">69M ./mp3/03-CLUB IBIZA/Disc One
+</span></span><span class="line"><span class="cl">70M ./mp3/03-CLUB IBIZA/Disc Two
+</span></span><span class="line"><span class="cl">138M ./mp3/03-CLUB IBIZA
+</span></span><span class="line"><span class="cl">65M ./mp3/04-TRANCE NON-STOP
+</span></span><span class="line"><span class="cl">64M ./mp3/05-MINISTRY ANNUAL 2000/Disc One
+</span></span><span class="line"><span class="cl">65M ./mp3/05-MINISTRY ANNUAL 2000/Disc Two
+</span></span><span class="line"><span class="cl">129M ./mp3/05-MINISTRY ANNUAL <span class="m">2000</span>
+</span></span><span class="line"><span class="cl">68M ./mp3/06-Paul Oakenfold – Travelling/Disc One
+</span></span><span class="line"><span class="cl">68M ./mp3/06-Paul Oakenfold – Travelling/Disc Two
+</span></span><span class="line"><span class="cl">136M ./mp3/06-Paul Oakenfold – Travelling
+</span></span><span class="line"><span class="cl">57M ./mp3/Depeche_Mode_all/DM <span class="m">81</span> Speak And Spell
+</span></span><span class="line"><span class="cl">38M ./mp3/Depeche_Mode_all/DM <span class="m">82</span> A Broken Frame
+</span></span><span class="line"><span class="cl">46M ./mp3/Depeche_Mode_all/DM <span class="m">83</span> Construction Time Again
+</span></span><span class="line"><span class="cl">48M ./mp3/Depeche_Mode_all/DM <span class="m">84</span> Some Great Reward
+</span></span><span class="line"><span class="cl">51M ./mp3/Depeche_Mode_all/DM <span class="m">86</span> Black Celebration
+</span></span><span class="line"><span class="cl">58M ./mp3/Depeche_Mode_all/DM <span class="m">87</span> Music For The Masses
+</span></span><span class="line"><span class="cl">39M ./mp3/Depeche_Mode_all/DM <span class="m">89</span> <span class="o">(</span>Live<span class="o">)</span> 101/Disc A
+</span></span><span class="line"><span class="cl">50M ./mp3/Depeche_Mode_all/DM <span class="m">89</span> <span class="o">(</span>Live<span class="o">)</span> 101/Disk B
+</span></span><span class="line"><span class="cl">88M ./mp3/Depeche_Mode_all/DM <span class="m">89</span> <span class="o">(</span>Live<span class="o">)</span> <span class="m">101</span>
+</span></span><span class="line"><span class="cl">44M ./mp3/Depeche_Mode_all/DM <span class="m">91</span> Violator
+</span></span><span class="line"><span class="cl">44M ./mp3/Depeche_Mode_all/DM <span class="m">93</span> Songs Of Faith And Devotion
+</span></span><span class="line"><span class="cl">54M ./mp3/Depeche_Mode_all/DM <span class="m">97</span> ULTRA
+</span></span><span class="line"><span class="cl">43M ./mp3/Depeche_Mode_all/DM <span class="m">98</span> The Singles 85-98/CD1
+</span></span><span class="line"><span class="cl">47M ./mp3/Depeche_Mode_all/DM <span class="m">98</span> The Singles 85-98/CD2
+</span></span><span class="line"><span class="cl">89M ./mp3/Depeche_Mode_all/DM <span class="m">98</span> The Singles 85-98
+</span></span><span class="line"><span class="cl">1.5M ./mp3/Depeche_Mode_all/IMAGES
+</span></span><span class="line"><span class="cl">23M ./mp3/Depeche_Mode_all/MLG <span class="m">89</span> Counterfeit e.p
+</span></span><span class="line"><span class="cl">636M ./mp3/Depeche_Mode_all
+</span></span><span class="line"><span class="cl">584M ./mp3/Dj. Alex Techno Part <span class="m">1</span> – Mp3
+</span></span><span class="line"><span class="cl">73M ./mp3/DJ_TOP_40_<span class="o">(</span>CD1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">73M ./mp3/DJ_TOP_40_<span class="o">(</span>CD2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">53M ./mp3/EARTH WIND<span class="p">&amp;</span>FIRE.THE_PROMISE
+</span></span><span class="line"><span class="cl">63M ./mp3/FUTURE_TRANCE_<span class="o">(</span>CD1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">65M ./mp3/FUTURE_TRANCE_<span class="o">(</span>CD2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">635M ./mp3/Karisik_Pop
+</span></span><span class="line"><span class="cl">823M ./mp3/mixed
+</span></span><span class="line"><span class="cl">78M ./mp3/soul_saucee
+</span></span><span class="line"><span class="cl">3.7G ./mp3
+</span></span></code></pre></div><p>Görüldügü gibi du komutunun ciktilarindan grep yardimiyla “mp3” olanları ayirdik.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ grep <span class="sb">`</span> ^ <span class="c1">#` /home/david/script1 | more</span>
+</span></span></code></pre></div><p>Bu komut /home/david/script1 dosyasindan ‘#’ ile baslayan satirlari gösterir. ‘^#’ bize , #’in ilgili satirin ilk karakteri olmasi gerekliligini anlatir.”more” kismida , ciktinin cok uzun olmasi durumunda sayfalar halinde gösterilebilmesi icindir.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ grep -v <span class="sb">`</span> ^ <span class="o">[</span>0-9<span class="o">]</span><span class="sb">`</span> /home/david/backup/log.txt <span class="p">|</span> more
+</span></span></code></pre></div><p>Bu komut , <strong>/home/david/backup/log.txt</strong> dosyasinda ilk karakteri 0-9 arasindaki sayilar olan satirlarin disindaki satirlari listeler. More yine ciktiyi sayfalara bölmek icin kullanilir.</p>
+<!-- raw HTML omitted -->
+<p>Grep icin bazi önemli parametreler</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-v komutun davranisini tersine cevirir. Örnegin , sablona uygun olanlari göstermesi gerekirken uymayanlari listeler.
+</span></span><span class="line"><span class="cl">-c Standart raporlamayi <span class="o">(</span>yani satirlarin hepsini göstermeyi<span class="o">)</span> keser ve sadece sablona uyan satirlarin sayisini gösterir.
+</span></span><span class="line"><span class="cl">-i Arama sirasinda büyük/kücük harf eslestirmesi yapmaz
+</span></span><span class="line"><span class="cl">-w sablonun baska bir kelime icinde olmayip , kendi basina bir kelime olup olmadigini denetler. Böylece , “bay” kelimesi icin arama yaptiginizda “baywatch” ile ilgili satirlar ekrana gelmez.
+</span></span><span class="line"><span class="cl">-l sablona uygun satirlarin bulundugu dosya adlarini listeler.
+</span></span><span class="line"><span class="cl">-r parametreden sonra verilen dizinin ,alt dizininlerinde de verilen sablona uygun arama yapar. <span class="o">(</span>recursive<span class="o">)</span>
+</span></span></code></pre></div></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/nix/">nix</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/grep/">grep</a><a class="tag" href="/tags/grep-komutu/">grep komutu</a><a class="tag" href="/tags/grep-kullan%C4%B1m%C4%B1/">grep kullanımı</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

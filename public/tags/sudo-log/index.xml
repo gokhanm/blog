@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sudo Log on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/sudo-log/</link>
+    <description>Recent content in Sudo Log on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Mar 2015 14:15:19 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/sudo-log/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sudo Komutlarının Loglanması</title>
+      <link>https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/</link>
+      <pubDate>Sun, 22 Mar 2015 14:15:19 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/</guid>
+      
+        <description>Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,695 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en-us"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Openvpn Kurulumu Ve Yapılandırması |
+      
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="" />
+  <meta
+    name="description"
+    content="My thoughts about random topics, Programming, and various linux stuffs"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
+      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Openvpn Kurulumu Ve Yapılandırması">
+  <meta name="twitter:description" content="Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz.">
+
+
+
+  
+  <meta property="og:url" content="https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/">
+  <meta property="og:site_name" content="Gökhan MANKARA">
+  <meta property="og:title" content="Openvpn Kurulumu Ve Yapılandırması">
+  <meta property="og:description" content="Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2013-06-19T10:57:10+03:00">
+    <meta property="article:modified_time" content="2013-06-19T10:57:10+03:00">
+    <meta property="article:tag" content="Centos">
+    <meta property="article:tag" content="Client">
+    <meta property="article:tag" content="Epel">
+    <meta property="article:tag" content="Fedora">
+    <meta property="article:tag" content="Iptables">
+    <meta property="article:tag" content="Kurulum">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Openvpn Kurulumu Ve Yapılandırması",
+        "headline": "Openvpn Kurulumu Ve Yapılandırması",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz.
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.gokhanmankara.com\/2013\/06\/openvpn-kurulumu-ve-yapilandirmasi\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightYear" : "2013",
+        "dateCreated": "2013-06-19T10:57:10.00Z",
+        "datePublished": "2013-06-19T10:57:10.00Z",
+        "dateModified": "2013-06-19T10:57:10.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name":  null ,
+            "url": "https://www.gokhanmankara.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.gokhanmankara.com\/favicon\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/www.gokhanmankara.com\/2013\/06\/openvpn-kurulumu-ve-yapilandirmasi\/",
+        "wordCount" : "755",
+        "genre" : [ 
+      
+      "nix"
+
+    ],
+        "keywords" : [ 
+      
+      "centos"
+
+    
+      
+        ,
+
+      
+      "client"
+
+    
+      
+        ,
+
+      
+      "epel"
+
+    
+      
+        ,
+
+      
+      "fedora"
+
+    
+      
+        ,
+
+      
+      "iptables"
+
+    
+      
+        ,
+
+      
+      "kurulum"
+
+    
+      
+        ,
+
+      
+      "openvpn"
+
+    
+      
+        ,
+
+      
+      "vpn"
+
+    
+      
+        ,
+
+      
+      "yapılandırma"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar wrapper__sidebar--hidden"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/cover.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/gokhanmankara/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/gokhanm"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:gokhanm@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="/index.xml"
+            target="_blank"
+            rel="noopener me"
+            aria-label="rss"
+            title="rss"
+          >
+            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main wrapper__main--fullscreen"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/tags"
+              
+              title=""
+              >Tags</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Openvpn Kurulumu Ve Yapılandırması</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Wed, Jun 19, 2013
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text"></span>
+          </li>
+        </ul>
+      <!-- raw HTML omitted -->
+<p>Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden  ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda  sizde farklı olarak görünebilir.</p>
+<p>RPM üzerinden OpenVPN kurmak için EPEL reposunu sunucuya yüklemeniz gerekiyor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#wget http://mirror.vit.com.tr/mirror/Epel/6/x86_64/epel-release-6-8.noarch.rpm</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#rpm -Uvh epel-release-6-8.noarch.rpm</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#yum install openvpn</span>
+</span></span></code></pre></div><p>OpenVPN kurulumu tamamlandıktan sonra sample-config olarak gelen conf dosyalarını /etc/openvpn altına kopyalayacağız.</p>
+<blockquote>
+<p>Bu noktada küçük bir not düşmem gerekiyor, openvpn’nin yeni versiyonlarında,
+içerisinde artık easy-rsa scriptleri gelmiyor. Bunun için git reposundan dosyaları indirip,
+openvpn dizininin içerisine kopyalamanız gerekiyor. Bu makalede easy-rsa nın eski 2x sürümü kullanılmıştır.
+Yeni 3x sürümünde sertifika oluşturulması tamamen değiştirilmiştir.</p>
+<p><del><a href="https://github.com/OpenVPN/easy-rsa/tree/master/easy-rsa">https://github.com/OpenVPN/easy-rsa/tree/master/easy-rsa</a></del></p>
+<p><a href="https://github.com/OpenVPN/easy-rsa-old">https://github.com/OpenVPN/easy-rsa-old</a>   — easy-rsa 2x sürümüdür</p>
+<p>yeni 3x sürüm için,</p>
+<p><a href="https://github.com/OpenVPN/easy-rsa">https://github.com/OpenVPN/easy-rsa</a></p>
+</blockquote>
+<p>Bu bilgilendirmeden sonra openvpn yapılandırmasına devam edelim,</p>
+<p>sample-config-files altında bulunan server.conf dosyasını openvpn dizinine kopyalıyoruz,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># cp /usr/share/doc/openvpn-2.3.1/sample/sample-config-files/server.conf /etc/openvpn</span>
+</span></span></code></pre></div><p>Server.conf dosyasında birkaç satırı düzenlememiz gerekiyor, aşağıdaki satır başlarında bulunan <strong>“;”</strong> işaretini kaldırarak satırı aktif ediyoruz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#nano /etc/openvpn/server.conf</span>
+</span></span><span class="line"><span class="cl"><span class="nb">local</span> 10.10.10.10 <span class="c1"># ip adresi openvpn’nin dinleyeceği public ip adresidir.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">push “redirect-gateway def1 bypass-dhcp”
+</span></span><span class="line"><span class="cl">push “dhcp-option DNS 8.8.8.8”
+</span></span><span class="line"><span class="cl">push “dhcp-option DNS 8.8.4.4”
+</span></span><span class="line"><span class="cl">user nobody
+</span></span><span class="line"><span class="cl">group nobody
+</span></span><span class="line"><span class="cl">comp-lzo adaptive
+</span></span></code></pre></div><p>Server.conf dosyasında sertifika satırları dışında düzenlememiz gereken satırlar bu kadar. Sertifikaları oluşturmak için gereken  easy-rsa scriptlerini git reposundan çekelim,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#mkdir -p /etc/openvpn/easy-rsa/keys</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#mkdir /usr/share/easy-rsa</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#cd /usr/share/easy-rsa</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#yum install git -y</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#git clone https://github.com/OpenVPN/easy-rsa.git</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#cp * easy-rsa/2.0 /etc/openvpn/easy-rsa</span>
+</span></span></code></pre></div><h2 id="easy-rsa-aracı-ile-sertifikaları-oluşturma">Easy-rsa aracı ile sertifikaları oluşturma</h2>
+<p>Sıra geldi easy-rsa scriptlerinde referans olarak kullanılan vars dosyasını düzenleyip, sertifikaları oluşturmaya. Bu dosyayı sertifikaların oluşturulması sırasında sorulan soruların standart olarak gelmesini sağlamak için düzenliyoruz. Sertifika bilgilerini el ile girmeyi düşünüyor iseniz vars dosyasını düzenlemeniz gerekmiyor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/openvpn/easy-rsa/vars</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_COUNTRY</span><span class="o">=</span>”TR”
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_PROVINCE</span><span class="o">=</span>”IZ”
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_CITY</span><span class="o">=</span>”Izmir”
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_ORG</span><span class="o">=</span>”Organization Name”
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_EMAIL</span><span class="o">=</span>”administrator@example.com”
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_CN</span><span class="o">=</span>example.com
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_NAME</span><span class="o">=</span>server
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_OU</span><span class="o">=</span>server
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KEY_SIZE</span><span class="o">=</span><span class="m">2048</span>
+</span></span></code></pre></div><p>easy-rsa içerisinde gelen openssl-1.0.0.cnf dosyasını openvpn dizinine kopyalıyoruz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># cp /etc/openvpn/easy-rsa/openssl-1.0.0.cnf /etc/openvpn/easy-rsa/openssl.cnf</span>
+</span></span></code></pre></div><p>Artık sertifikalarımızı oluşturabiliriz,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># cd /etc/openvpn/easy-rsa</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># source ./vars</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ./clean-all</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ./build-ca</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ./build-key-server server</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ./build-dh</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># cd /etc/openvpn/easy-rsa/keys</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># cp dh2048.pem ca.crt server.crt server.key /etc/openvpn</span>
+</span></span></code></pre></div><p>Sertifikalarımızı oluşturduğumuza göre artık OpenVPN’e sertifikalarımızın yerlerini gösterebiliriz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/openvpn/server.conf</span>
+</span></span><span class="line"><span class="cl">ca /etc/openvpn/ca.crt
+</span></span><span class="line"><span class="cl">cert /etc/openvpn/server.crt
+</span></span><span class="line"><span class="cl">key /etc/openvpn/server.key
+</span></span><span class="line"><span class="cl">dh /etc/openvpn/dh2048.pem
+</span></span></code></pre></div><p>Sıra geldi client olarak vpn’e bağlanacak olan kullanıcının sertifika bilgilerini oluşturmaya.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># cd /etc/openvpn/easy-rsa</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ./build-key client</span>
+</span></span></code></pre></div><h2 id="ip-routing-işlemi">İp Routing işlemi</h2>
+<p>Sunucu tarafında yapacağımız son bi işlem kaldı, oda vpn kullanıcısı bağlandığında almış olduğu 10.8.0.0/24 ip aralığından ip forwarding ile clientin eth0 üzerinden NAT yaparak internete çıkmasını sağlamak.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># iptables-save</span>
+</span></span></code></pre></div><p>sysctl.conf dosyasından ip forwarding özelliğini aktif ediyoruz,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/sysctl.conf</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># net.ipv4.ip_forward = 1</span>
+</span></span></code></pre></div><p>Artık openvpn’i start ederek, client tarafında yapacağımız ayarlara geçebiliriz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># sysctl -p</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># /etc/init.d/openvpn start</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># chkconfig openvpn on</span>
+</span></span></code></pre></div><h2 id="client-tarafında-openvpn-ayarları">Client tarafında OpenVPN ayarları</h2>
+<p>Buradan sonraki işlemleri Fedora client üzerinden devam edeceğiz. Standart olarak fedora üzerinde openvpn kurulumu standart olarak gelir. Bu yüzden direk sample client.conf dosyasını openvpn dizinine kopyalayarak başlayacağız.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># cp /usr/share/doc/openvpn-2.3.2/sample/sample-config-files/client.conf /etc/openvpn/</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># mkdir /etc/openvpn/keys</span>
+</span></span></code></pre></div><p>Bu aşamada server tarafında oluşturmuş olduğumuz client crt ve key sertifikalarını fedora üzerine taşımamız gerekiyor. Bu işlemi server üzerinde iken nano ile sertifikalaları açtıktan sonra kopyala-yapıştır ile yapabilir yada filezilla aracılığı ile sftp ile bağlanıp, fedora üzerine çekebilirsiniz. Server üzerinden oluşturduğumuz, fedora üzerinde kopyalamamız gereken dosyalar, ca.crt client.crt client.key şeklindedir. Bu dosyaları /etc/openvpn/keys adında oluşturduğumuz klasöre taşıyoruz. Taşıma işlemi tamamlandıktan sonra sıra openvpn client.conf dosyasına sertifika konumlarını ve bağlanacağımız sunucu bilgilerini tanımlıyoruz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/openvpn/client.conf</span>
+</span></span><span class="line"><span class="cl">remote 10.10.10.10. <span class="m">1194</span>
+</span></span><span class="line"><span class="cl">ca /etc/openvpn/keys/ca.crt
+</span></span><span class="line"><span class="cl">cert /etc/openvpn/keys/client.crt
+</span></span><span class="line"><span class="cl">key /etc/openvpn/keys/client.key
+</span></span></code></pre></div><p>Bu işlemlerden sonra aşağıdaki komut root kullanıcısı ile çalıştırıp openvpn servera bağlanmak,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># openvpn /etc/openvpn/client.conf</span>
+</span></span></code></pre></div><p>Komutu uyguladıktan sonra konsolda akan yazıların en sonunda <strong>Initialization Sequence Completed</strong> şeklinde bir satır belirdiğinde, vpn bağlantınız başarılı bir şekilde tamamlanmış demektir.</p>
+<!-- raw HTML omitted -->
+<p>Terminal üzerinden VPN bağlantıyı bu şekilde sağlayabileceğiniz gibi Fedora üzerinden GUI aracılığı ile network ayarlarına vpn bağlantı ile birlikte sertifikarı eklemeniz durumda terminal ile uğraşmadan vpn bağlantı sağlayabilirsiniz.</p>
+<p>Network ayarlarına girdiğimizde karşımıza aşağıdaki şekilde bir ekran gelir. Buradaki “+” işaretine basarak bir VPN bağlantı ekleyeceğiz,</p>
+
+<figure >
+    
+        <img src="/images/network1.png"  />
+    
+    
+</figure>
+
+
+<p><strong>“+”</strong> işaretine bastığımızda karşımıza hangi network bağlantısını ekleyeceğimizi soran ekran geliyor. Buradan VPN ni seçiyoruz.</p>
+
+<figure >
+    
+        <img src="/images/network2.png"  />
+    
+    
+</figure>
+
+
+<p>VPN seçeneğini seçtikten sonra karşımıza hangi tür vpn bağlantısı tipini kullanacağımızı soran ekran geliyor. Burada OpenVPN seçeneğini seçiyoruz.</p>
+
+<figure >
+    
+        <img src="/images/network3.png"  />
+    
+    
+</figure>
+
+
+<p>OpenVPN seçeneğini seçtikten sonra aşağıdaki şekilde karşımıza bir ekran geliyor. Burada openvpn sunucusunu kurarken oluşturduğumuz sertifikaları ve sunucumuzun ip adresini gateway bölümüne yazıyoruz.</p>
+<!-- raw HTML omitted -->
+
+<figure >
+    
+        <img src="/images/network4.png"  />
+    
+    
+</figure>
+
+
+<p>Bu ekranı openvpn serverı ayarlarken kullandığımız ayarlara göre düzenliyoruz.</p>
+
+<figure >
+    
+        <img src="/images/network5.png"  />
+    
+    
+</figure>
+
+
+<p>Advanced bölümüne tıklayarak daha az trafik harcanması için data sıkıştırmayı aktif ediyoruz.</p>
+
+<figure >
+    
+        <img src="/images/network6.png"  />
+    
+    
+</figure>
+
+
+<p>Ayarlar tamamlandıktan sonra herhangi bir problem olmaması durumunda VPN bağlantısı başarılı bir şekilde sağlandığını vpn işareti ile anlamış oluyoruz.</p>
+<h2 id="ovpn-oluşturma">OVPN Oluşturma</h2>
+<p><a href="/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama">OpenVPN Connect programı için ovpn profil dosyası hazırlama</a></p>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/nix/">nix</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/centos/">centos</a><a class="tag" href="/tags/client/">client</a><a class="tag" href="/tags/epel/">epel</a><a class="tag" href="/tags/fedora/">fedora</a><a class="tag" href="/tags/iptables/">iptables</a><a class="tag" href="/tags/kurulum/">kurulum</a><a class="tag" href="/tags/openvpn/">openvpn</a><a class="tag" href="/tags/vpn/">vpn</a><a class="tag" href="/tags/yap%C4%B1land%C4%B1rma/">yapılandırma</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

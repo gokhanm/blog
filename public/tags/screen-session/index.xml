@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Screen Session on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/screen-session/</link>
+    <description>Recent content in Screen Session on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Aug 2015 17:36:13 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/screen-session/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Login Sonrası Screen Oturumlarını Görme</title>
+      <link>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</link>
+      <pubDate>Sun, 30 Aug 2015 17:36:13 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</guid>
+      
+        <description>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bilgilendirme on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/bilgilendirme/</link>
+    <description>Recent content in Bilgilendirme on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Mar 2015 14:01:11 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/bilgilendirme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Watchdog İle Dizin İzleme</title>
+      <link>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</link>
+      <pubDate>Sat, 28 Mar 2015 14:01:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</guid>
+      
+        <description>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spam on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/spam/</link>
+    <description>Recent content in Spam on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Sep 2013 10:39:00 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/spam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postfix - Mail Çıkıs İp Adresini Değiştirme</title>
+      <link>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</link>
+      <pubDate>Sun, 15 Sep 2013 10:39:00 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</guid>
+      
+        <description>Postfix için mail çıkış ( outgoing ) ip adresini değiştirme istediğinizde, google aralamarında en çok karşınıza çıkan main.</description>
+      
+    </item>
+    
+    <item>
+      <title>Nagios Bildirimlerini Smtp Auth İle Göndermek</title>
+      <link>https://www.gokhanmankara.com/2013/04/nagios-bildirimlerini-smtp-auth-ile-gondermek/</link>
+      <pubDate>Fri, 26 Apr 2013 11:23:07 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/04/nagios-bildirimlerini-smtp-auth-ile-gondermek/</guid>
+      
+        <description>Nagios, standart olarak unix sistemlerde kullanılan mail (sembolik link olarak mailx’e bağlanmıştır) programı ile bildirimleri stmp auth özelliğini kullanmadan direk olarak commands.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Kuyruğu Queue İşlemleri</title>
+      <link>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</link>
+      <pubDate>Sat, 25 Aug 2012 11:48:02 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</guid>
+      
+        <description>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Başlığına Göre Filtreleme</title>
+      <link>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</link>
+      <pubDate>Tue, 26 Jun 2012 11:56:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</guid>
+      
+        <description>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Adres Bazlı Engelleme</title>
+      <link>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</link>
+      <pubDate>Sat, 17 Sep 2011 14:00:46 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</guid>
+      
+        <description>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -61,8 +61,8 @@ url = "/index.xml"
 # uncomment line below for temporary local development of module
 # replacements = "github.com/lxndrblz/anatole -> ../../anatole"
 [[module.imports]]
-path = "github.com/lxndrblz/anatole"
-disable = false
+# path = "github.com/lxndrblz/anatole"
+# disable = false
 
 # Menu Configuration
 [[menu.main]]

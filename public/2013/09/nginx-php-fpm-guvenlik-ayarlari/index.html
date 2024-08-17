@@ -1,0 +1,619 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en-us"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Nginx Php Fpm Güvenlik Ayarları |
+      
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="" />
+  <meta
+    name="description"
+    content="My thoughts about random topics, Programming, and various linux stuffs"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
+      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.gokhanmankara.com/2013/09/nginx-php-fpm-guvenlik-ayarlari/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nginx Php Fpm Güvenlik Ayarları">
+  <meta name="twitter:description" content="Web sunucu olarak kullandığınız nginx, php-fpm bir sunucuda, bir web sitesinde meydana gelen güvenlik açıklarından diğer sitelerinde etkilenmemesini isteyebilirsiniz.">
+
+
+
+  
+  <meta property="og:url" content="https://www.gokhanmankara.com/2013/09/nginx-php-fpm-guvenlik-ayarlari/">
+  <meta property="og:site_name" content="Gökhan MANKARA">
+  <meta property="og:title" content="Nginx Php Fpm Güvenlik Ayarları">
+  <meta property="og:description" content="Web sunucu olarak kullandığınız nginx, php-fpm bir sunucuda, bir web sitesinde meydana gelen güvenlik açıklarından diğer sitelerinde etkilenmemesini isteyebilirsiniz.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2013-09-22T15:40:11+03:00">
+    <meta property="article:modified_time" content="2013-09-22T15:40:11+03:00">
+    <meta property="article:tag" content="Centos 6.4">
+    <meta property="article:tag" content="Fastcgi_param">
+    <meta property="article:tag" content="Güvenlik Ayarı">
+    <meta property="article:tag" content="Nginx">
+    <meta property="article:tag" content="Nginx Güvenlik Ayarı">
+    <meta property="article:tag" content="Nginx Ve Php-Fpm Güvenlik">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Nginx Php Fpm Güvenlik Ayarları",
+        "headline": "Nginx Php Fpm Güvenlik Ayarları",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Web sunucu olarak kullandığınız nginx, php-fpm bir sunucuda, bir web sitesinde meydana gelen güvenlik açıklarından diğer sitelerinde etkilenmemesini isteyebilirsiniz.
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.gokhanmankara.com\/2013\/09\/nginx-php-fpm-guvenlik-ayarlari\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightYear" : "2013",
+        "dateCreated": "2013-09-22T15:40:11.00Z",
+        "datePublished": "2013-09-22T15:40:11.00Z",
+        "dateModified": "2013-09-22T15:40:11.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name":  null ,
+            "url": "https://www.gokhanmankara.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.gokhanmankara.com\/favicon\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/www.gokhanmankara.com\/2013\/09\/nginx-php-fpm-guvenlik-ayarlari\/",
+        "wordCount" : "544",
+        "genre" : [ 
+      
+      "nix"
+
+    ],
+        "keywords" : [ 
+      
+      "centos 6.4"
+
+    
+      
+        ,
+
+      
+      "fastcgi_param"
+
+    
+      
+        ,
+
+      
+      "güvenlik ayarı"
+
+    
+      
+        ,
+
+      
+      "nginx"
+
+    
+      
+        ,
+
+      
+      "nginx güvenlik ayarı"
+
+    
+      
+        ,
+
+      
+      "nginx ve php-fpm güvenlik"
+
+    
+      
+        ,
+
+      
+      "open_basedir"
+
+    
+      
+        ,
+
+      
+      "php-fpm"
+
+    
+      
+        ,
+
+      
+      "php-fpm pool yapılandırması"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar wrapper__sidebar--hidden"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/cover.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/gokhanmankara/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/gokhanm"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:gokhanm@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="/index.xml"
+            target="_blank"
+            rel="noopener me"
+            aria-label="rss"
+            title="rss"
+          >
+            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main wrapper__main--fullscreen"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/tags"
+              
+              title=""
+              >Tags</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Nginx Php Fpm Güvenlik Ayarları</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Sep 22, 2013
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text"></span>
+          </li>
+        </ul>
+      <p>Web sunucu olarak kullandığınız nginx, php-fpm bir sunucuda, bir web sitesinde meydana gelen güvenlik açıklarından diğer sitelerinde etkilenmemesini isteyebilirsiniz. Bu durumda Apache’de kullanılan suphp yada suexec benzeri bir yapıyı php-fpm’de de kullanabilirsiniz. Bu yapı Apache/PHP deki gibi php’yi suphp/suexec olarak derlemek yerine, php-fpm’de kullanıcıyı bir pool içine hapsederek, domain kullanıcısını kısıtlamış oluyorsunuz.</p>
+<p>Centos 6.4 sistemde anlatacak olursak,</p>
+<p>PHP-FPM servisinde default pool conf dosyası www.conf şeklinde geçiyor. Biz sitelerimiz için anımsatıcı bir conf dosyası kullanacağız.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#cd /etc/php-fpm.d/</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#cp www.conf domain.conf</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#vi domain.conf</span>
+</span></span></code></pre></div><p>domain.conf dosyasını php-fpm.conf içerisine ek olarak tanımlamamıza gerek yok. php-fpm.conf içerinde default olarak php-fpm.d içerisindeki dosyalar include edilmiştir.</p>
+<p>domain.conf içeriğini aşağıdaki şekilde düzenliyoruz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">[</span>domain.com<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">listen</span> <span class="o">=</span> 127.0.0.1:9001
+</span></span><span class="line"><span class="cl">listen.allowed_clients <span class="o">=</span> 127.0.0.1
+</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> gokhan
+</span></span><span class="line"><span class="cl"><span class="nv">group</span> <span class="o">=</span> gokhan
+</span></span><span class="line"><span class="cl"><span class="nv">pm</span> <span class="o">=</span> dynamic
+</span></span><span class="line"><span class="cl">pm.max_children <span class="o">=</span> <span class="m">9</span>
+</span></span><span class="line"><span class="cl">pm.start_servers <span class="o">=</span> <span class="m">3</span>
+</span></span><span class="line"><span class="cl">pm.min_spare_servers <span class="o">=</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">pm.max_spare_servers <span class="o">=</span> <span class="m">4</span>
+</span></span><span class="line"><span class="cl"><span class="nv">chdir</span> <span class="o">=</span> /
+</span></span><span class="line"><span class="cl">php_admin_value<span class="o">[</span>open_basedir<span class="o">]</span> <span class="o">=</span> /var/www/html/domain.com:/usr/share/php5:/tmp:/usr/share/phpmyadmin:/etc/phpmyadmin:/var/lib/phpmyadmin
+</span></span><span class="line"><span class="cl">php_admin_value<span class="o">[</span>disable_functions<span class="o">]</span> <span class="o">=</span> dl,exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
+</span></span></code></pre></div><p>user kısmını gokhan olarak belirledik. Eğer gokhan diye bir kullanıcı tanımlı değilse, php-fpm’i restart ettiğinizde kullanıcı idsini alamıyorum şeklinde bir hata ile karşılaşırsınız. Bu yüzden kullanıcıyı oluşturmamız gerekiyor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#adduser -M -s /sbin/nologin gokhan</span>
+</span></span></code></pre></div><p>Yaptığımız  değişikliklerdeki yerlere  değinecek olursak,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">listen</span> <span class="o">=</span> 127.0.0.1:9001
+</span></span></code></pre></div><p>Listen satırı  her pool için farklı portta çalışacak şekilde ayarlanmalı.  Kullanılan bir port tanımlamanız durumunda php-fpm’i restart ettiğinizde aşağıdaki şekilde hata alabilirsiniz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ERROR: <span class="o">[</span>pool wwww<span class="o">]</span> unable to <span class="nb">set</span> listen address as it<span class="s1">&#39;s already used in another pool &#39;</span>domain<span class="err">&#39;</span>
+</span></span></code></pre></div><p>Owner olarak tanımlayacağınız kullanıcı ve grup ismi,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> gokhan
+</span></span><span class="line"><span class="cl"><span class="nv">group</span> <span class="o">=</span> gokhan
+</span></span></code></pre></div><p>Process yöneticisinin child processleri nasıl kontrol edildiğinin tanımlandığı bölüm,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># dynamic yada static seçilebilir. Default olarak dynamic tanımlıdır.</span>
+</span></span><span class="line"><span class="cl"><span class="nv">pm</span> <span class="o">=</span> dynamic
+</span></span><span class="line"><span class="cl"><span class="c1">#Aynı anda kaç tane child processin çalışabileceği değer.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#512 Mb ramli bir sunucuda 220 Mb Php-FPM için kullanmayı düşünürsek,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#her process için 24Mb ayırsak, 220 / 24 = 9.17 </span>
+</span></span><span class="line"><span class="cl">pm.max_children <span class="o">=</span> <span class="m">9</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#değer : min_spare_servers + (max_spare_servers - min_spare_servers) / 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#olarak hesaplanır. Startup anında ne kadar child processin çalışacağını</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#belirtinr </span>
+</span></span><span class="line"><span class="cl">pm.start_servers <span class="o">=</span> <span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#min idle processi belirtir.</span>
+</span></span><span class="line"><span class="cl">pm.min_spare_servers <span class="o">=</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#max idle processi belirtir.</span>
+</span></span><span class="line"><span class="cl">pm.max_spare_servers <span class="o">=</span> <span class="m">4</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Her child process için maks. request değeri. Default değer limitsiz şeklindedir.</span>
+</span></span><span class="line"><span class="cl">pm.max_requests <span class="o">=</span> <span class="m">200</span>
+</span></span><span class="line"><span class="cl"><span class="nv">chdir</span> <span class="o">=</span> /
+</span></span><span class="line"><span class="cl">php_admin_value<span class="o">[</span>open_basedir<span class="o">]</span> <span class="o">=</span> /var/www/html/domain.com:/usr/share/php5:/tmp:/usr/share/phpmyadmin:/etc/phpmyadmin:/var/lib/phpmyadmin
+</span></span><span class="line"><span class="cl">php_admin_value<span class="o">[</span>disable_functions<span class="o">]</span> <span class="o">=</span> dl,exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
+</span></span></code></pre></div><p>Open_basedir ve çalışmasını istemediğiniz php fonksiyonlarını conf dosyasına aşağıdaki şekilde yazarak tanımlayabilirsiniz. Open_basedir oldukça önemli, php shell yada benzeri bir zararlı script yüklenmesi durumunda, home dizini dışırısına çıkmasını bu şekilde engellemiş oluyorsunuz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">php_admin_value<span class="o">[</span>open_basedir<span class="o">]</span> <span class="o">=</span> /var/www/html/domain.com:/usr/share/php5:/tmp:/usr/share/phpmyadmin:/etc/phpmyadmin:/var/lib/phpmyadmin
+</span></span><span class="line"><span class="cl">php_admin_value<span class="o">[</span>disable_functions<span class="o">]</span> <span class="o">=</span> dl,exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Conf dosyamızı düzenledikten sonra php-fpm’i restart edelim.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#/etc/init.d/php-fpm restart</span>
+</span></span></code></pre></div><p>Sıra geldi nginx domain.conf dosyasını düzenlemeye. Nginx’e domainleri daha düzenli göründüğü için conf.d dosyasından include ederek kullanıyorum. Bu yüzden domain için nginx conf dosyası domain.conf şekilde geçmekte.</p>
+<p>PHP-FPM domain.conf dosyasını düzenlerken listen portunu 9001 yapmıştık. Nginx domain.conf dosyasında düzenleyelim.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#vi /usr/local/nginx/conf.d/domain.conf</span>
+</span></span></code></pre></div><p>fastcgi_pass satırını aşağıdaki şekilde düzenliyoruz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">location ~ <span class="se">\.</span>php$ <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    include        fastcgi_params<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    fastcgi_pass   127.0.0.1:9001<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    fastcgi_index  index.php<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    fastcgi_param  SCRIPT_FILENAME  <span class="nv">$request_filename</span><span class="p">;</span>
+</span></span></code></pre></div><p>Conf dosyasını düzenledikten sonra nginx’i restart etmeden önce nginx’in conf ayarlarında bir hata varmı diye kontrol etmemiz gerekiyor. Tüm sitelerin down olmasının önüne geçmiş olursunuz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#/usr/local/nginx/sbin/nginx -t</span>
+</span></span></code></pre></div><p>Ok sonucunu aldıktan sonra nginx’i restart edebiliriz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#/usr/local/nginx/sbin/nginx -s reload</span>
+</span></span></code></pre></div><p>TCP Bağlantısı yerine socket bağlantısı kullanıyor isek;</p>
+<p>Php-fpm.d altında bulunan domain.conf dosyamızda tcp bağlantısı olarak ayarladığımız listen satırını, soket bağlantı olarak aşağıdaki şekilde ayarlayıp,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">listen</span> <span class="o">=</span> /var/run/php5-fpm/domain.com.sock
+</span></span></code></pre></div><p>daha sonra nginx domain.conf dosyamızda da fastcgi_pass satırını aşağıdaki gibi ayarlamalıyız.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">listen</span> <span class="o">=</span> /var/run/php5-fpm/domain.com.sock
+</span></span></code></pre></div><p>Artık servisleri restart edebilirsiniz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#/etc/init.d/php-fpm restart</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#/usr/local/nginx/sbin/nginx -t</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#/usr/local/nginx/sbin/nginx -s reload</span>
+</span></span></code></pre></div><p>Kaynaklar:</p>
+<p><a href="http://bit.ly/16ottn9">http://bit.ly/16ottn9</a>
+<a href="http://bit.ly/17SgJZN">http://bit.ly/17SgJZN</a>
+<a href="http://bit.ly/15jb23W">http://bit.ly/15jb23W</a></p>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/nix/">nix</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/centos-6%2e4/">centos 6.4</a><a class="tag" href="/tags/fastcgi_param/">fastcgi_param</a><a class="tag" href="/tags/g%C3%BCvenlik-ayar%C4%B1/">güvenlik ayarı</a><a class="tag" href="/tags/nginx/">nginx</a><a class="tag" href="/tags/nginx-g%C3%BCvenlik-ayar%C4%B1/">nginx güvenlik ayarı</a><a class="tag" href="/tags/nginx-ve-php-fpm-g%C3%BCvenlik/">nginx ve php-fpm güvenlik</a><a class="tag" href="/tags/open_basedir/">open_basedir</a><a class="tag" href="/tags/php-fpm/">php-fpm</a><a class="tag" href="/tags/php-fpm-pool-yap%C4%B1land%C4%B1rmas%C4%B1/">php-fpm pool yapılandırması</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

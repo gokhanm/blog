@@ -52,8 +52,6 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-          tree -d public
-          sed -ie '$s/<\/head>/ {{ partial "adsense.html" . }} \n <\/head>/g' layouts/partials/head.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

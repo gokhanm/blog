@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/apache/</link>
+    <description>Recent content in Apache on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 May 2010 11:38:04 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Web Serverda Dosyalara Parolalı Erişim</title>
+      <link>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</link>
+      <pubDate>Sun, 02 May 2010 11:38:04 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</guid>
+      
+        <description>Apachenin sunduğu güzel imkanlardan biride belirlediğiniz bir dosyadaki klasörlere uzaktan kullanıcıların parolalı bir şekilde erişmesini sağlayabilmesidir.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wc Komutu on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/wc-komutu/</link>
+    <description>Recent content in Wc Komutu on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Aug 2010 14:56:31 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/wc-komutu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Küçük Notlar - Wc Komutu</title>
+      <link>https://www.gokhanmankara.com/2010/08/kucuk-notlar-wc-komutu/</link>
+      <pubDate>Sat, 21 Aug 2010 14:56:31 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/08/kucuk-notlar-wc-komutu/</guid>
+      
+        <description>Bir dosyadaki kelime, byte ve satırları saymak için “wc” komutu kullanılır.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

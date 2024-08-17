@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/post/</link>
+    <description>Recent content in Posts on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Dec 2017 17:34:24 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openvpn Kurulum Scripti</title>
+      <link>https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/</link>
+      <pubDate>Thu, 21 Dec 2017 17:34:24 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2017/12/openvpn-kurulum-scripti/</guid>
+      
+        <description>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.</description>
+      
+    </item>
+    
+    <item>
+      <title>Login Sonrası Screen Oturumlarını Görme</title>
+      <link>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</link>
+      <pubDate>Sun, 30 Aug 2015 17:36:13 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</guid>
+      
+        <description>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum.</description>
+      
+    </item>
+    
+    <item>
+      <title>Screen Komutu Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2015/08/screen-komutu-kullanimi/</link>
+      <pubDate>Sun, 02 Aug 2015 13:37:30 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/08/screen-komutu-kullanimi/</guid>
+      
+        <description>Screen komutu, linux sunucunuza ssh bağlantısı yaptıktan sonra birden fazla shell oturumları oluşturmanızı sağlar.</description>
+      
+    </item>
+    
+    <item>
+      <title>Python - Gitlab Email Sender</title>
+      <link>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</link>
+      <pubDate>Sun, 31 May 2015 13:45:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</guid>
+      
+        <description>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.</description>
+      
+    </item>
+    
+    <item>
+      <title>Xenserver&#39;da Sanal Sunucuların Görünmemesi</title>
+      <link>https://www.gokhanmankara.com/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/</link>
+      <pubDate>Tue, 31 Mar 2015 13:54:53 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/</guid>
+      
+        <description>XenServer host sunucudaki elektrik kesintisi yada benzer fiziksel sorunlar sebebiyle, storage üzerindeki sanal makineler kapanmadan bilgisayar resetlenebilir, kapanabilir veya fiziksel arıza yüzüden hiç açılmayabilir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Python Watchdog İle Dizin İzleme</title>
+      <link>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</link>
+      <pubDate>Sat, 28 Mar 2015 14:01:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/python-watchdog-ile-dizin-izleme/</guid>
+      
+        <description>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti.</description>
+      
+    </item>
+    
+    <item>
+      <title>Sudo Komutlarının Loglanması</title>
+      <link>https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/</link>
+      <pubDate>Sun, 22 Mar 2015 14:15:19 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/sudo-komutlarinin-loglanmasi/</guid>
+      
+        <description>Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız.</description>
+      
+    </item>
+    
+    <item>
+      <title>Zfsonlinux Ram Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/</link>
+      <pubDate>Sat, 14 Mar 2015 14:42:03 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/</guid>
+      
+        <description>Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.</description>
+      
+    </item>
+    
+    <item>
+      <title>Maildeki Ekli Dosyayı İndiren Python Script</title>
+      <link>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</link>
+      <pubDate>Sun, 01 Mar 2015 14:51:41 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/03/maildeki-ekli-dosyayi-indiren-python-script/</guid>
+      
+        <description>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.</description>
+      
+    </item>
+    
+    <item>
+      <title>Zfsonlinux Kurulumu Ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Tue, 10 Feb 2015 10:45:52 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</guid>
+      
+        <description>Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Bonding Network Interface Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</link>
+      <pubDate>Sat, 25 Oct 2014 11:05:13 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</guid>
+      
+        <description>RedHat tabanlı işletim sistemlerinde iki veya daha fazla ethernet interface olması durumunda bonding network interface kullanarak, ethernetlerin load balance bond, round-robin bond ya da fault tolerant bond şeklinde çalışması sağlanabilmektedir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Vimdiff Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2014/09/vimdiff-kullanimi/</link>
+      <pubDate>Fri, 05 Sep 2014 15:04:12 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/09/vimdiff-kullanimi/</guid>
+      
+        <description>İki yada daha fazla txt dosyalarının, vim editörün diff mode özelliğini kullanarak diff farkını görmek için kullanılır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı</title>
+      <link>https://www.gokhanmankara.com/2014/07/ngxtop-gercek-zamanli-nginx-log-monitorleme-araci/</link>
+      <pubDate>Sun, 13 Jul 2014 15:15:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/07/ngxtop-gercek-zamanli-nginx-log-monitorleme-araci/</guid>
+      
+        <description>Ngxtop, nginx web serverın loglarını gerçek zamanlı okuyarak, tanımlanan değişkenlere göre sitenize gelen sorguları hızlı ve kolay şekilde terminal üzerinden yorumlamanızı sağlayan bir programdır.</description>
+      
+    </item>
+    
+    <item>
+      <title>LVM disk genişletme işlemi ve örnek uygulaması</title>
+      <link>https://www.gokhanmankara.com/2014/06/lvm-disk-genisletme-islemi-ve-ornek-uygulamasi/</link>
+      <pubDate>Wed, 04 Jun 2014 15:26:39 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/06/lvm-disk-genisletme-islemi-ve-ornek-uygulamasi/</guid>
+      
+        <description>LVM (Logical Volume Manager), mantıksal hacim yönetimi olarak çevirebileceğimiz, sistem üzerinde disk kümesi yada kümeleri oluşturmaya olanak sağlayan bir disk yönetim sistemidir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - Ssh Ile Çift Tire Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2014/06/kucuk-notlar-ssh-ile-cift-tire-kullanimi/</link>
+      <pubDate>Sun, 01 Jun 2014 11:01:34 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/06/kucuk-notlar-ssh-ile-cift-tire-kullanimi/</guid>
+      
+        <description>SSH üzerinde çalışırken, başka bir uzak sunucuda, sunucuya dosya indirmek yada bir klasörün içeriğini görmek için ssh komutundan sonra çift tire ( double dash ) koyarak, sunucuya ssh bağlantısı ile giriş yapmadan uzak sunucuda komut çalıştırabilirsiniz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Sudoers Listesine Kullanıcı Ekleme</title>
+      <link>https://www.gokhanmankara.com/2014/05/sudoers-listesine-kullanici-ekleme/</link>
+      <pubDate>Sun, 04 May 2014 11:17:18 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/05/sudoers-listesine-kullanici-ekleme/</guid>
+      
+        <description>Synology DS212j NAS kullanıyorum. Nas cihazın dropbox mantığında çalışan Cloud Station özelliği mevcut.</description>
+      
+    </item>
+    
+    <item>
+      <title>OpenVPN için ovpn profil dosyası hazırlama</title>
+      <link>https://www.gokhanmankara.com/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama/</link>
+      <pubDate>Mon, 24 Mar 2014 11:25:01 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama/</guid>
+      
+        <description>Vpn seçenekleri içerisinde ücretli, ücretsiz bir çok vpn seçeneği bulunmakta.</description>
+      
+    </item>
+    
+    <item>
+      <title>Centos Ramdisk Oluşturma</title>
+      <link>https://www.gokhanmankara.com/2014/02/centos-ramdisk-olusturma/</link>
+      <pubDate>Tue, 25 Feb 2014 12:13:27 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/02/centos-ramdisk-olusturma/</guid>
+      
+        <description>Sunucularda ramdisk kullanım amacı, genel olarak yoğun disk kullanıma neden olan sistemlerde, sunucunun resetlenmesinde verilerin kaybolmasının önemli olmadığı dosyaların ( tmp dizinine yazılan mysql dosyaları vb.</description>
+      
+    </item>
+    
+    <item>
+      <title>Kullanıcıları Varsayılan Olarak Home Dizini Olmadan Oluşturma</title>
+      <link>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</link>
+      <pubDate>Fri, 14 Feb 2014 13:24:30 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/</guid>
+      
+        <description>Centos’da değişik amaçlar için adduser komutu ile başka bir parametre girmeden oluşturduğunuz kullanıcılarda, home dizinini varsayılan olarak oluşturmak istemiyor iseniz, aşağıdaki yöntem ile bunu sağlayabilirsiniz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Shc İle Bash Shell Script Şifreleme</title>
+      <link>https://www.gokhanmankara.com/2014/02/shc-ile-bash-shell-script-sifreleme/</link>
+      <pubDate>Wed, 12 Feb 2014 13:29:40 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/02/shc-ile-bash-shell-script-sifreleme/</guid>
+      
+        <description>SHC, binary formatında scriptlerinizi şifrelemeye yarayan bir programcık. Yazdığınız bash scriptleri şifreleyerek kodların okunamamasını sağlayabilirsiniz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Asithappens Gerçek Zamanli Network Monitörleme Aracı</title>
+      <link>https://www.gokhanmankara.com/2014/01/asithappens-gercek-zamanli-network-monitorleme-araci/</link>
+      <pubDate>Fri, 03 Jan 2014 13:39:38 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2014/01/asithappens-gercek-zamanli-network-monitorleme-araci/</guid>
+      
+        <description>Windowsda çalışan stg programının linux alternatifini ararken karşılaşığım oldukça kullanışlı network monitör programı olan AsItHappens, GNU lisansı ile dağıtılan, ayrıca windows versiyonuda bulunan, gerçek zamanlı network istatistik grafiğini alabileceğiniz, java tabanlı bir network aracı.</description>
+      
+    </item>
+    
+    <item>
+      <title>Citrix Xenserver Üzerinde Hotfix Güncellemesi</title>
+      <link>https://www.gokhanmankara.com/2013/11/citrix-xenserver-uzerinde-hotfix-guncellemesi/</link>
+      <pubDate>Sun, 24 Nov 2013 15:22:04 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/11/citrix-xenserver-uzerinde-hotfix-guncellemesi/</guid>
+      
+        <description>Citrix’in XenServer 6.2 ve sonrasında open source olacağını, RedHat daki gibi, XenCenter üzerinden güvenlik güncelleştirmeleri vb işlemlerin lisans satın alınması durumunda yapılabileceğini duyurmasından itibaren, XenCenter üzerinde kullanamadığınız bir çok özelliği kullanma imkanı doğdu.</description>
+      
+    </item>
+    
+    <item>
+      <title>Ncdu Disk Alanı Kullanımı Analiz Aracı</title>
+      <link>https://www.gokhanmankara.com/2013/10/ncdu-disk-alani-kullanimi-analiz-araci/</link>
+      <pubDate>Wed, 30 Oct 2013 15:30:20 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/10/ncdu-disk-alani-kullanimi-analiz-araci/</guid>
+      
+        <description>Ncdu, komut satırı üzerinden, disk kullanımını gösteren, hızlı, yön tuşları ile dizinler içerisinde gezinebildiğiniz, komut satırı aracıdır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Nginx Php Fpm Güvenlik Ayarları</title>
+      <link>https://www.gokhanmankara.com/2013/09/nginx-php-fpm-guvenlik-ayarlari/</link>
+      <pubDate>Sun, 22 Sep 2013 15:40:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/09/nginx-php-fpm-guvenlik-ayarlari/</guid>
+      
+        <description>Web sunucu olarak kullandığınız nginx, php-fpm bir sunucuda, bir web sitesinde meydana gelen güvenlik açıklarından diğer sitelerinde etkilenmemesini isteyebilirsiniz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Çıkıs İp Adresini Değiştirme</title>
+      <link>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</link>
+      <pubDate>Sun, 15 Sep 2013 10:39:00 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/09/postfix-mail-cikis-ip-adresini-degistirme/</guid>
+      
+        <description>Postfix için mail çıkış ( outgoing ) ip adresini değiştirme istediğinizde, google aralamarında en çok karşınıza çıkan main.</description>
+      
+    </item>
+    
+    <item>
+      <title>Python Scripti İle Backup Tarihi Kontrolü</title>
+      <link>https://www.gokhanmankara.com/2013/07/python-scripti-ile-backup-tarihi-kontrolu/</link>
+      <pubDate>Fri, 26 Jul 2013 10:46:41 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/07/python-scripti-ile-backup-tarihi-kontrolu/</guid>
+      
+        <description>Sunucu yedeklerinin locale alınması gerektiği ve uzun süre takip edilemedi durumlarda, gereksiz disk kullanımının önüne geçmek ve ek önlem olarak backupların sunucunun localinin dışarısında başka bir yerde de tutmak ( sunucunun çökmesine, disklerin erişilemeyecek şekilde sorun olması durumuna karşın ) için, belli bir günden sonra birikmiş backupları belirlediğim mail adresine mail göndererek, backupları başka bir alana indirmem gerektiğini hatırlatan bir script yazmak istedim.</description>
+      
+    </item>
+    
+    <item>
+      <title>Openvpn Kurulumu Ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Wed, 19 Jun 2013 10:57:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</guid>
+      
+        <description>Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Citrix Xenserverda Iso Disk Alanı Oluşturma</title>
+      <link>https://www.gokhanmankara.com/2013/05/citrix-xenserverda-iso-disk-alani-olusturma/</link>
+      <pubDate>Thu, 02 May 2013 11:15:23 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/05/citrix-xenserverda-iso-disk-alani-olusturma/</guid>
+      
+        <description>Sürekli Vmware ESX kullanan biri, Citrix XenServer kullanmaya başladığında ilk bocalayacağı nokta, VDSe isoyu nerden mount edeceğim olacaktır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Nagios Bildirimlerini Smtp Auth İle Göndermek</title>
+      <link>https://www.gokhanmankara.com/2013/04/nagios-bildirimlerini-smtp-auth-ile-gondermek/</link>
+      <pubDate>Fri, 26 Apr 2013 11:23:07 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/04/nagios-bildirimlerini-smtp-auth-ile-gondermek/</guid>
+      
+        <description>Nagios, standart olarak unix sistemlerde kullanılan mail (sembolik link olarak mailx’e bağlanmıştır) programı ile bildirimleri stmp auth özelliğini kullanmadan direk olarak commands.</description>
+      
+    </item>
+    
+    <item>
+      <title>Nix Sistemlerde Single Mod Şifre Koruması</title>
+      <link>https://www.gokhanmankara.com/2013/04/nix-sistemlerde-single-mod-sifre-korumasi/</link>
+      <pubDate>Fri, 12 Apr 2013 11:33:31 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/04/nix-sistemlerde-single-mod-sifre-korumasi/</guid>
+      
+        <description>Single Modu çok sık kullanmasakta, sistemde bir sorun olduğunda, root şifresinin resetlenmesi gerektiğinde sıklıkla baş vurduğumuz bir çalışma seviyesidir (runlevel) Fiziksel olarak erişim sağlanabilen her sunucu single modda açılarak sunucuya izinsiz erişim sağlayıp, sunucu üzerinde her türlü müdale sağlanılabilir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Google Reader&#39;dan Sonra...</title>
+      <link>https://www.gokhanmankara.com/2013/03/google-readerdan-sonra/</link>
+      <pubDate>Sun, 24 Mar 2013 11:38:42 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2013/03/google-readerdan-sonra/</guid>
+      
+        <description>Google Reader’ın yaşam hayatına son verileceğinin duyurulmasından sonra, rss kullanıcıları birçok alternatifleri araştırmaya başladı.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Kuyruğu Queue İşlemleri</title>
+      <link>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</link>
+      <pubDate>Sat, 25 Aug 2012 11:48:02 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/08/postfix-mail-kuyrugu-queue-islemleri/</guid>
+      
+        <description>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Başlığına Göre Filtreleme</title>
+      <link>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</link>
+      <pubDate>Tue, 26 Jun 2012 11:56:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</guid>
+      
+        <description>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Gnome 3 - Masaüstünü Göster Kısayolu</title>
+      <link>https://www.gokhanmankara.com/2011/12/gnome-3-masaustunu-goster-kisayolu/</link>
+      <pubDate>Sun, 25 Dec 2011 13:55:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/12/gnome-3-masaustunu-goster-kisayolu/</guid>
+      
+        <description>Gnome 3 hayatımıza girdiğinden beri Gnome 2.x kullanımın kolaylığından sonra Gnome 3 ile cebelleşir olduk çıktık.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Adres Bazlı Engelleme</title>
+      <link>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</link>
+      <pubDate>Sat, 17 Sep 2011 14:00:46 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</guid>
+      
+        <description>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Sun, 21 Aug 2011 14:06:53 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</guid>
+      
+        <description>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız.</description>
+      
+    </item>
+    
+    <item>
+      <title>Gnome 3 - Masaüstüne İkon Ekleme</title>
+      <link>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</link>
+      <pubDate>Sat, 23 Jul 2011 14:31:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</guid>
+      
+        <description>Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.</description>
+      
+    </item>
+    
+    <item>
+      <title>Simge Durumunu Küçült Butonu - Gnome 3</title>
+      <link>https://www.gokhanmankara.com/2011/06/simge-durumunu-kucult-butonu-gnome-3/</link>
+      <pubDate>Sun, 19 Jun 2011 14:40:19 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/06/simge-durumunu-kucult-butonu-gnome-3/</guid>
+      
+        <description>Bildiğiniz gibi gnome 3 ü ilk kurduğunuzda pencerelerde simge durumunu küçük ve ekranı kapla gibi butonlar artık gelmiyor.</description>
+      
+    </item>
+    
+    <item>
+      <title>Unix Shell Script - Bağlı Kullanıcıların Durumu, İşlemci ve Ram Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</link>
+      <pubDate>Sun, 22 Aug 2010 14:51:29 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</guid>
+      
+        <description>Oldukça kullanışlı 3 tane Linux/Unix shell scriptlerini sizinle paylaşmak istiyorum.</description>
+      
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - Wc Komutu</title>
+      <link>https://www.gokhanmankara.com/2010/08/kucuk-notlar-wc-komutu/</link>
+      <pubDate>Sat, 21 Aug 2010 14:56:31 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/08/kucuk-notlar-wc-komutu/</guid>
+      
+        <description>Bir dosyadaki kelime, byte ve satırları saymak için “wc” komutu kullanılır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - Head Ve Tail Komutu</title>
+      <link>https://www.gokhanmankara.com/2010/08/kucuk-notlar-head-ve-tail-komutu/</link>
+      <pubDate>Fri, 20 Aug 2010 14:59:22 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/08/kucuk-notlar-head-ve-tail-komutu/</guid>
+      
+        <description>Bağzı durumlarda büyük boyuttaki dosyaların baştan ilk 6-7 satırını yada sondan 6-7 satırını okumamız gerekebilir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Tmpwatch İle Tmp Klasörünü Temizleme</title>
+      <link>https://www.gokhanmankara.com/2010/07/tmpwatch-ile-tmp-klasorunu-temizleme/</link>
+      <pubDate>Thu, 22 Jul 2010 15:03:11 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/07/tmpwatch-ile-tmp-klasorunu-temizleme/</guid>
+      
+        <description>Bugün /tmp klasörünün şişmesinden nasıl kurtulurum diye araştırma yaparken Red Hat tarafından geliştirilen tmpwatch komutu ile karşılaştım.</description>
+      
+    </item>
+    
+    <item>
+      <title>Pure Ftpd Yapilandırması</title>
+      <link>https://www.gokhanmankara.com/2010/06/pure-ftpd-yapilandirmasi/</link>
+      <pubDate>Sun, 27 Jun 2010 15:16:19 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/pure-ftpd-yapilandirmasi/</guid>
+      
+        <description>Bu aralar linux ağ yönetimi kitapları okuyorum ve kitap üzerinde kalmasındansa siteye yazıyorumki istediğim zaman istediğim yerden erişebileyim diye.</description>
+      
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - Bilgisayar İsmini Değiştirme</title>
+      <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/</link>
+      <pubDate>Wed, 23 Jun 2010 10:39:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/</guid>
+      
+        <description>Sistemi kurduktan sonra bilgisayarınızın ismini 3 adımda kolayca değiştirebilirsiniz.
+/etc/sysconfig/network dosyasını değiştirme vi editörü ile /etc/sysconfig/network dosyasını açıp “HOSTNAME” yazan yerdeki adı silip yenisini yazın.</description>
+      
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - Servisleri Otomatik Çalıştırmak - Ntsysv</title>
+      <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-servisleri-otomatik-calistirmak-ntsysv/</link>
+      <pubDate>Mon, 21 Jun 2010 10:45:28 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-servisleri-otomatik-calistirmak-ntsysv/</guid>
+      
+        <description>$ntsysv komutu ile bilgisayarın her yeniden başlangıcında otomatik olarak çalışmasını istediğiniz servisleri seçebileceğiniz arayüz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - $cat /proc/net/dev</title>
+      <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-cat-procnetdev/</link>
+      <pubDate>Sun, 20 Jun 2010 10:52:27 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-cat-procnetdev/</guid>
+      
+        <description>``sh $ cat /proc/net/dev
+```sh Inter-| Receive | Transmit face |bytes packets errs drop fifo frame compressed multicast|bytes packets errs drop fifo colls carrier compressed p2p1: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 lo: 42800 516 0 0 0 0 0 0 42800 516 0 0 0 0 0 0 wlp2s0: 532613005 380157 0 0 0 0 0 0 25444897 228607 0 0 0 0 0 0 komutu ile giden ve gelen paketlerin boyutlarını öğrenebilirsiniz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Küçük Notlar - /etc/services</title>
+      <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-etcservices/</link>
+      <pubDate>Sun, 20 Jun 2010 10:50:07 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-etcservices/</guid>
+      
+        <description>$cat /etc/services Servislerin port numaraları, protokolleri, takma isimleri ve açıklamaları bulunur.</description>
+      
+    </item>
+    
+    <item>
+      <title>Crontab Kullanımı ve Örnek Crontab Uygulaması</title>
+      <link>https://www.gokhanmankara.com/2010/06/crontab-kullanimi-ve-ornek-crontab-uygulamasi/</link>
+      <pubDate>Fri, 18 Jun 2010 10:55:57 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/crontab-kullanimi-ve-ornek-crontab-uygulamasi/</guid>
+      
+        <description>Linux ve Unix sistemlerde kullanılan crontab, belirlediğiniz bir zaman yada zaman diliminde belirlediğiniz komut, script yada uygulamanın çalışmasını sağlarsınız.</description>
+      
+    </item>
+    
+    <item>
+      <title>Komutla Sistem Donanim Bilgisi Almak</title>
+      <link>https://www.gokhanmankara.com/2010/06/komutla-sistem-donanim-bilgisi-almak/</link>
+      <pubDate>Tue, 08 Jun 2010 11:19:51 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/06/komutla-sistem-donanim-bilgisi-almak/</guid>
+      
+        <description>Ana kart üzerindeki RAM yuvası (ing. slot) sayısı, her birisine takılı RAM modülleri ve kapasiteleri, ram yuvalarına takılabilecek azami RAM kapasitesi, ana karta takılı işlemci türü, işlemcinin şu andaki hızı, ana kartın desteklediği azami işlemci saat hızı, BIOS sürümü, ana kart seri numarası, şase seri numarası, donanım bileşenlerinin üretici adları, markaları, modelleri vb uzarda gider…</description>
+      
+    </item>
+    
+    <item>
+      <title>Nfs - Network File System</title>
+      <link>https://www.gokhanmankara.com/2010/05/nfs-network-file-system/</link>
+      <pubDate>Thu, 06 May 2010 11:24:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/05/nfs-network-file-system/</guid>
+      
+        <description>NFS dosya sistemi kullanıcılardan bağımsız olarak ağdaki makinaların ağdaki başka bir makinanın hdd sini kendi hdd si gibi kullanması mantığı ile çalışır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Apache Web Serverda Dosyalara Parolalı Erişim</title>
+      <link>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</link>
+      <pubDate>Sun, 02 May 2010 11:38:04 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</guid>
+      
+        <description>Apachenin sunduğu güzel imkanlardan biride belirlediğiniz bir dosyadaki klasörlere uzaktan kullanıcıların parolalı bir şekilde erişmesini sağlayabilmesidir.</description>
+      
+    </item>
+    
+    <item>
+      <title>Split - Dosyalari Parçalara Bölmek</title>
+      <link>https://www.gokhanmankara.com/2010/04/split-dosyalari-parcalara-bolmek/</link>
+      <pubDate>Sun, 18 Apr 2010 11:42:35 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/04/split-dosyalari-parcalara-bolmek/</guid>
+      
+        <description>Elinizde büyük bir dosya var ve siz bunu hotfile yada rapid gibi sitelere yüklemek istiyorsunuz yalnız dosyanız çok büyük.</description>
+      
+    </item>
+    
+    <item>
+      <title>Grep Komutu ve Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2010/03/grep-komutu-ve-kullanimi/</link>
+      <pubDate>Sun, 14 Mar 2010 11:45:48 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/03/grep-komutu-ve-kullanimi/</guid>
+      
+        <description>Grep’in acilimi evrensel düzenli ifade yazicisi dır. (Global Regular Expression Printer).</description>
+      
+    </item>
+    
+    <item>
+      <title>Script İle Konsolda Yazdığın Komutlari Otomatik Olarak Kaydetmek</title>
+      <link>https://www.gokhanmankara.com/2010/03/script-ile-konsolda-yazdigin-komutlari-otomatik-olarak-kaydetmek/</link>
+      <pubDate>Sun, 07 Mar 2010 11:53:07 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2010/03/script-ile-konsolda-yazdigin-komutlari-otomatik-olarak-kaydetmek/</guid>
+      
+        <description>Bugün karşılaştığım “script” komutundan bahsetmek istiyorum size.
+Oldukça kullanışlı olan bu komut siz konsolda işlem yaparken o arka tarafta size konsolda yazdığınız komutları ve çıktı sonuçlarını belirlediğiniz bir dosyaya kaydedip daha sonra geri dönük olarak ne yapmıştım sıkıntısından kurtarıyor.</description>
+      
+    </item>
+    
+    <item>
+      <title>Çalışan Programları Görmek ve Sonlandırmak</title>
+      <link>https://www.gokhanmankara.com/2009/12/calisan-programlari-gormek-ve-sonlandirmak/</link>
+      <pubDate>Sun, 20 Dec 2009 11:57:00 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2009/12/calisan-programlari-gormek-ve-sonlandirmak/</guid>
+      
+        <description>Linux da konsoldan herhangi bir programı sonlandırmak istediğinizde çalışan uygulamanın ilk önce PID numarasını bilmeniz gerekirki uygulamayı sonlandırabilesiniz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Chmod Komutu ve Kullanımı</title>
+      <link>https://www.gokhanmankara.com/2009/10/chmod-komutu-ve-kullanimi/</link>
+      <pubDate>Fri, 16 Oct 2009 12:05:26 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2009/10/chmod-komutu-ve-kullanimi/</guid>
+      
+        <description>Linux sistemlerde kullanıcıların dosyalara erişim haklarını belirlemek için “chmod” komutu kullanılınır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Kisayol ve Kopyalama Komutu</title>
+      <link>https://www.gokhanmankara.com/2009/09/kisayol-ve-kopyalama-komutu/</link>
+      <pubDate>Thu, 10 Sep 2009 12:20:36 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2009/09/kisayol-ve-kopyalama-komutu/</guid>
+      
+        <description>”ln -s” komutunu kullanarak bir dosyanın kısayolunu yaratabilirsiniz.
+$ ln -s /media/Yedek /home/Gokhan/Desktop $ ln -s /media/Film /home/Gokhan/Desktop “cp” komutu ile bir dosyayı kopyalayabilirsiniz.</description>
+      
+    </item>
+    
+    <item>
+      <title>Linuxda Konsol Yardımı İle Iso Dosyası Yapma</title>
+      <link>https://www.gokhanmankara.com/2009/08/linuxda-konsol-yardimi-ile-iso-dosyasi-yapma/</link>
+      <pubDate>Wed, 26 Aug 2009 12:01:47 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2009/08/linuxda-konsol-yardimi-ile-iso-dosyasi-yapma/</guid>
+      
+        <description>Virtual PC yada Vmware kullanıyorsanız hızlı bir kurulum yapmak için en iyi yol imaj kullanmaktır.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Header Filter on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/header-filter/</link>
+    <description>Recent content in Header Filter on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jun 2012 11:56:10 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/header-filter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postfix - Mail Başlığına Göre Filtreleme</title>
+      <link>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</link>
+      <pubDate>Tue, 26 Jun 2012 11:56:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</guid>
+      
+        <description>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

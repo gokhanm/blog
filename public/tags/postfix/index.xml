@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postfix on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/postfix/</link>
+    <description>Recent content in Postfix on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jun 2012 11:56:10 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/postfix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postfix - Mail Başlığına Göre Filtreleme</title>
+      <link>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</link>
+      <pubDate>Tue, 26 Jun 2012 11:56:10 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2012/06/postfix-mail-basligina-gore-filtreleme/</guid>
+      
+        <description>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix - Mail Adres Bazlı Engelleme</title>
+      <link>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</link>
+      <pubDate>Sat, 17 Sep 2011 14:00:46 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</guid>
+      
+        <description>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.</description>
+      
+    </item>
+    
+    <item>
+      <title>Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması</title>
+      <link>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</link>
+      <pubDate>Sun, 21 Aug 2011 14:06:53 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/</guid>
+      
+        <description>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

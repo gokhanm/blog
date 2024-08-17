@@ -1,0 +1,607 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en-us"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı |
+      
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="" />
+  <meta
+    name="description"
+    content="My thoughts about random topics, Programming, and various linux stuffs"
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
+      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.gokhanmankara.com/2014/07/ngxtop-gercek-zamanli-nginx-log-monitorleme-araci/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı">
+  <meta name="twitter:description" content="Ngxtop, nginx web serverın loglarını gerçek zamanlı okuyarak, tanımlanan değişkenlere göre sitenize gelen sorguları hızlı ve kolay şekilde terminal üzerinden yorumlamanızı sağlayan bir programdır.">
+
+
+
+  
+  <meta property="og:url" content="https://www.gokhanmankara.com/2014/07/ngxtop-gercek-zamanli-nginx-log-monitorleme-araci/">
+  <meta property="og:site_name" content="Gökhan MANKARA">
+  <meta property="og:title" content="Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı">
+  <meta property="og:description" content="Ngxtop, nginx web serverın loglarını gerçek zamanlı okuyarak, tanımlanan değişkenlere göre sitenize gelen sorguları hızlı ve kolay şekilde terminal üzerinden yorumlamanızı sağlayan bir programdır.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2014-07-13T15:15:47+03:00">
+    <meta property="article:modified_time" content="2014-07-13T15:15:47+03:00">
+    <meta property="article:tag" content="Gerçek Zamanlı Monitörleme">
+    <meta property="article:tag" content="Nginx">
+    <meta property="article:tag" content="Nginx Log Monitorleme">
+    <meta property="article:tag" content="Nginx Web Server">
+    <meta property="article:tag" content="Ngxtop">
+    <meta property="article:tag" content="Real Time">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı",
+        "headline": "Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Ngxtop, nginx web serverın loglarını gerçek zamanlı okuyarak, tanımlanan değişkenlere göre sitenize gelen sorguları hızlı ve kolay şekilde terminal üzerinden yorumlamanızı sağlayan bir programdır.
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.gokhanmankara.com\/2014\/07\/ngxtop-gercek-zamanli-nginx-log-monitorleme-araci\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": ""
+        },
+        "copyrightYear" : "2014",
+        "dateCreated": "2014-07-13T15:15:47.00Z",
+        "datePublished": "2014-07-13T15:15:47.00Z",
+        "dateModified": "2014-07-13T15:15:47.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name":  null ,
+            "url": "https://www.gokhanmankara.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.gokhanmankara.com\/favicon\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/www.gokhanmankara.com\/2014\/07\/ngxtop-gercek-zamanli-nginx-log-monitorleme-araci\/",
+        "wordCount" : "358",
+        "genre" : [ 
+      
+      "LKD-Gezegen"
+
+    
+      
+        ,
+
+      
+      "Scripts"
+
+    ],
+        "keywords" : [ 
+      
+      "gerçek zamanlı monitörleme"
+
+    
+      
+        ,
+
+      
+      "nginx"
+
+    
+      
+        ,
+
+      
+      "nginx log monitorleme"
+
+    
+      
+        ,
+
+      
+      "nginx web server"
+
+    
+      
+        ,
+
+      
+      "ngxtop"
+
+    
+      
+        ,
+
+      
+      "real time"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar wrapper__sidebar--hidden"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/cover.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/gokhanmankara/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/gokhanm"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:gokhanm@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="/index.xml"
+            target="_blank"
+            rel="noopener me"
+            aria-label="rss"
+            title="rss"
+          >
+            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main wrapper__main--fullscreen"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/tags"
+              
+              title=""
+              >Tags</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Jul 13, 2014
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text"></span>
+          </li>
+        </ul>
+      <p><a href="https://github.com/lebinh/ngxtop">Ngxtop</a>, nginx web serverın loglarını gerçek zamanlı okuyarak, tanımlanan değişkenlere göre sitenize gelen sorguları hızlı ve kolay şekilde terminal üzerinden yorumlamanızı sağlayan bir programdır.</p>
+<p>Python ile yazıldığından, python paketlerinin kurulumunda kullanılan pip aracı ile yada easy_install ile  kolayca kurulumunu yapabilirsiniz.</p>
+<h2 id="ngxtop-kurulumu">Ngxtop Kurulumu</h2>
+<p>Sisteminizde pip kurulu değil ise, ilk önce epel reposunda bulunan python-pip paketini kurmanız gerekiyor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># yum install python-pip</span>
+</span></span></code></pre></div><p>Python-pip paketinin kurulumundan sonra artık pip komutu ile ngxtop programını kurabiliriz.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># pip install ngxtop</span>
+</span></span></code></pre></div><p>Easy_install ile kuracak iseniz, centos’un base reposunda bulunan python-setuptools paketini kurmanız gerekiyor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># yum install python-setuptools</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># easy_install ngxtop</span>
+</span></span></code></pre></div><h2 id="ngxtop-kullanımı">Ngxtop Kullanımı</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ngxtop <span class="o">[</span>options<span class="o">]</span>
+</span></span><span class="line"><span class="cl">ngxtop <span class="o">[</span>options<span class="o">]</span> <span class="o">(</span>print<span class="p">|</span>top<span class="p">|</span>avg<span class="p">|</span>sum<span class="o">)</span> &lt;var&gt; ...
+</span></span><span class="line"><span class="cl">ngxtop info
+</span></span><span class="line"><span class="cl">ngxtop <span class="o">[</span>options<span class="o">]</span> query &lt;query&gt; ...
+</span></span></code></pre></div><p>Bazı kullanım şeçeneklerine bakacak olursa,</p>
+<ul>
+<li>-l <!-- raw HTML omitted --> : Nginx access log dosyasının tam yolu ( full path )</li>
+<li>-f <!-- raw HTML omitted --> : Access log formatı ( default: combined )</li>
+<li>–no-follow : ngxtop normalde mevcut log kayıtlarını dikkate almadan anlık olarak log dosyasına yeni yazılacak olan kayıtları dikkate alır. Bu seçeneği kullanarak, ngxtop mevcut log kayıtlarada bakarak çıktıyı vermesini söleriz.</li>
+<li>-t <!-- raw HTML omitted --> : güncelleme sıklığı</li>
+<li>-n <!-- raw HTML omitted --> : Gösterilecek satır sayısı. ( default değer 10 dur )</li>
+<li>-o <!-- raw HTML omitted --> :  Sonuçları sıralama kriteri ( default olarak count şeklindedir. )</li>
+<li>-a <!-- raw HTML omitted --> …, –a <!-- raw HTML omitted --> : Çıktığı ortalama, max, min gibi seçenekler ile filtrelemenizi sağlar. ( exp: sum, avg, min, max  )</li>
+<li>– v : Ayrıntılı çıktı verir.</li>
+<li>-i <!-- raw HTML omitted --> : Sadece filter ile eşleşen kayıtları işler.</li>
+</ul>
+<p>Ngxtop ile kullanabileceğimiz  buil-in değişkenleri,</p>
+<ul>
+<li>body_bytes_send</li>
+<li>http_referer</li>
+<li>http_user_agent</li>
+<li>remote_addr</li>
+<li>remote_user</li>
+<li>request</li>
+<li>status</li>
+<li>time_local</li>
+</ul>
+<p>Eğer nginx’i yum ile kurdu iseniz default olarak conf dosyası etc nin altına kurulduğu için ( /etc/nginx/nginx.conf ) ngxtop komutu verdiğinizde direk bu conf dosyasını okuyarak access log dosyasının yerini bulacaktır.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#ngxtop</span>
+</span></span></code></pre></div><p>Nginx’i elle derleyerek kurduysanız ve etc altına kurmadıysanız,  ngxtop access log dosyasının yerini bulamadığı için ( -l ) parametresi ile log dosyasının yerini göstermeniz gerekecektir.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># ngxtop -l /usr/local/nginx/log/access.log</span>
+</span></span></code></pre></div>
+<figure >
+    
+        <img src="/images/ngxtop1.jpg"  />
+    
+    
+</figure>
+
+
+<p>Built-in değişkenlerini kullanarak çıktı elde etmek için,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># ngxtop print request http_user_agent remote_addr</span>
+</span></span></code></pre></div>
+<figure >
+    
+        <img src="/images/ngxtop2.jpg"  />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># ngxtop top remote_addr</span>
+</span></span></code></pre></div>
+<figure >
+    
+        <img src="/images/ngxtop3.jpg"  />
+    
+    
+</figure>
+
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># ngxtop -i &#39;status == 404&#39; print request status</span>
+</span></span></code></pre></div>
+<figure >
+    
+        <img src="/images/ngxtop4.jpg"  />
+    
+    
+</figure>
+
+
+<p>Ngxtop’un en becerikli diğer bir özelliği ise Apache loglarını da yorumlayabilmesi. Apache loglarını yorumlayabilmesi için ngxtop’u aşağıdaki şekilde kullanmanız gerekiyor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"> <span class="c1"># tail -f /var/log/httpd/access.log | ngxtop -f common</span>
+</span></span></code></pre></div></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/lkd-gezegen/">LKD-Gezegen</a><a class="category" href="/categories/scripts/">Scripts</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/ger%C3%A7ek-zamanl%C4%B1-monit%C3%B6rleme/">gerçek zamanlı monitörleme</a><a class="tag" href="/tags/nginx/">nginx</a><a class="tag" href="/tags/nginx-log-monitorleme/">nginx log monitorleme</a><a class="tag" href="/tags/nginx-web-server/">nginx web server</a><a class="tag" href="/tags/ngxtop/">ngxtop</a><a class="tag" href="/tags/real-time/">real time</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

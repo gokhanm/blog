@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engelleme on Gökhan MANKARA</title>
+    <link>https://www.gokhanmankara.com/tags/engelleme/</link>
+    <description>Recent content in Engelleme on Gökhan MANKARA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Sep 2011 14:00:46 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/engelleme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postfix - Mail Adres Bazlı Engelleme</title>
+      <link>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</link>
+      <pubDate>Sat, 17 Sep 2011 14:00:46 +0300</pubDate>
+      
+      <guid>https://www.gokhanmankara.com/2011/09/postfix-mail-adres-bazli-engelleme/</guid>
+      
+        <description>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
