@@ -53,7 +53,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
           ls
-          sed -ie '$s/<\/head>/ {{ partial "adsense.html" . }} \n <\/head>/g' public/layouts/partials/head.html
+          sed -ie '$s/<\/head>/ {{ partial "adsense.html" . }} \n <\/head>/g' layouts/partials/head.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
