@@ -49,6 +49,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          sed -ie '$s/<\/head>/ {{ partial "adsense.html" . }} \n <\/head>/g' head.html
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
