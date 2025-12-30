@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bağlı Kullanıcılar on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/ba%C4%9Fl%C4%B1-kullan%C4%B1c%C4%B1lar/</link>
+    <link>http://localhost:1313/tags/ba%C4%9Fl%C4%B1-kullan%C4%B1c%C4%B1lar/</link>
     <description>Recent content in Bağlı Kullanıcılar on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Aug 2010 14:51:29 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/ba%C4%9Fl%C4%B1-kullan%C4%B1c%C4%B1lar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Aug 2010 14:51:29 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ba%C4%9Fl%C4%B1-kullan%C4%B1c%C4%B1lar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unix Shell Script - Bağlı Kullanıcıların Durumu, İşlemci ve Ram Kullanımı</title>
-      <link>https://www.gokhanmankara.com/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</link>
+      <link>http://localhost:1313/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</link>
       <pubDate>Sun, 22 Aug 2010 14:51:29 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</guid>
-      
-        <description>Oldukça kullanışlı 3 tane Linux/Unix shell scriptlerini sizinle paylaşmak istiyorum.</description>
-      
+      <guid>http://localhost:1313/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/</guid>
+      <description>&lt;p&gt;Oldukça kullanışlı 3 tane Linux/Unix shell scriptlerini sizinle paylaşmak istiyorum.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

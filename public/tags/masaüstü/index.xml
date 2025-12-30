@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Masaüstü on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/masa%C3%BCst%C3%BC/</link>
+    <link>http://localhost:1313/tags/masa%C3%BCst%C3%BC/</link>
     <description>Recent content in Masaüstü on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Dec 2011 13:55:47 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/masa%C3%BCst%C3%BC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Dec 2011 13:55:47 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/masa%C3%BCst%C3%BC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gnome 3 - Masaüstünü Göster Kısayolu</title>
-      <link>https://www.gokhanmankara.com/2011/12/gnome-3-masaustunu-goster-kisayolu/</link>
+      <link>http://localhost:1313/2011/12/gnome-3-masaustunu-goster-kisayolu/</link>
       <pubDate>Sun, 25 Dec 2011 13:55:47 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2011/12/gnome-3-masaustunu-goster-kisayolu/</guid>
-      
-        <description>Gnome 3 hayatımıza girdiğinden beri Gnome 2.x kullanımın kolaylığından sonra Gnome 3 ile cebelleşir olduk çıktık.</description>
-      
+      <guid>http://localhost:1313/2011/12/gnome-3-masaustunu-goster-kisayolu/</guid>
+      <description>&lt;p&gt;Gnome 3 hayatımıza girdiğinden beri Gnome 2.x kullanımın kolaylığından sonra Gnome 3 ile cebelleşir olduk çıktık. Gnome 2.x de bütün kısayolları oluşturduğunuz paneller artık Gnome 3 de kullanılamıyor. Bunun yerine sol üst köşede duran Activities yazısına tıkladığınızda karşınıza gelen ekranın sol kenarına kısayollarınızı ekleyebiliyorsunuz. Gnome 2.x zamanlarında benim tercihim olan kısayol butonunu panele ekleme yöntemi olmayışı Gnome 3.x de klavye kısayollarını kullanmaya itti.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

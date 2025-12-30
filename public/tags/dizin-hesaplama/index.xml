@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Dizin Hesaplama on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/dizin-hesaplama/</link>
+    <link>http://localhost:1313/tags/dizin-hesaplama/</link>
     <description>Recent content in Dizin Hesaplama on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Oct 2013 15:30:20 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/dizin-hesaplama/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Oct 2013 15:30:20 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dizin-hesaplama/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ncdu Disk Alanı Kullanımı Analiz Aracı</title>
-      <link>https://www.gokhanmankara.com/2013/10/ncdu-disk-alani-kullanimi-analiz-araci/</link>
+      <link>http://localhost:1313/2013/10/ncdu-disk-alani-kullanimi-analiz-araci/</link>
       <pubDate>Wed, 30 Oct 2013 15:30:20 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2013/10/ncdu-disk-alani-kullanimi-analiz-araci/</guid>
-      
-        <description>Ncdu, komut satırı üzerinden, disk kullanımını gösteren, hızlı, yön tuşları ile dizinler içerisinde gezinebildiğiniz, komut satırı aracıdır.</description>
-      
+      <guid>http://localhost:1313/2013/10/ncdu-disk-alani-kullanimi-analiz-araci/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://dev.yorhel.nl/ncdu&#34;&gt;Ncdu&lt;/a&gt;, komut satırı üzerinden, disk kullanımını gösteren, hızlı, yön tuşları ile dizinler içerisinde gezinebildiğiniz, komut satırı aracıdır. En güzel tarafı “/” dizininde “ncdu” komutunu çalıştırdığınızda, tüm alt dizinleri de hesaplayarak, yön tuşları ile alt dizin ve üst dizinlerde tekrar dizin kullanımını hesapamaya gerek kalmadan gezebilmenize olanak vermesidir. Bu sayede “du” komutunda olduğu gibi, “/” dizinindeki dizinlerin boyutunu hesaplayıp, bir alt dizinde tekrar “du” komutunu çalıştırmanıza gerek kalmamakta.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

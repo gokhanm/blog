@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Yetkinlendirme on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/yetkinlendirme/</link>
+    <link>http://localhost:1313/tags/yetkinlendirme/</link>
     <description>Recent content in Yetkinlendirme on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 May 2014 11:17:18 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/yetkinlendirme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 May 2014 11:17:18 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/yetkinlendirme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sudoers Listesine Kullanıcı Ekleme</title>
-      <link>https://www.gokhanmankara.com/2014/05/sudoers-listesine-kullanici-ekleme/</link>
+      <link>http://localhost:1313/2014/05/sudoers-listesine-kullanici-ekleme/</link>
       <pubDate>Sun, 04 May 2014 11:17:18 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2014/05/sudoers-listesine-kullanici-ekleme/</guid>
-      
-        <description>Synology DS212j NAS kullanıyorum. Nas cihazın dropbox mantığında çalışan Cloud Station özelliği mevcut.</description>
-      
+      <guid>http://localhost:1313/2014/05/sudoers-listesine-kullanici-ekleme/</guid>
+      <description>&lt;p&gt;Synology DS212j NAS kullanıyorum. Nas cihazın dropbox mantığında çalışan &lt;a href=&#34;https://www.synology.com/en-us/support/tutorials/529#t3&#34;&gt;Cloud Station&lt;/a&gt; özelliği mevcut. Nas cihazında oluşturduğunuz bir klasöre, bilgisayarınız ve akıllı telefonunuzdan erişebiliyorsunuz.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

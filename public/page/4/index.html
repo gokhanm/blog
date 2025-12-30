@@ -1,830 +1,333 @@
-<!doctype html>
-<html
-  dir="ltr"
-  lang="en-us"
-  data-theme=""
-  
-    class="html theme--light"
-  
-><head>
-  <meta charset="utf-8" />
-  <title>
-    
-      
-        Gökhan MANKARA |
-      
+<!DOCTYPE html>
+<html lang="en-us" dir="auto" data-theme="dark">
 
-  </title>
+<head>
+	<meta name="generator" content="Hugo 0.153.4"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Gökhan MANKARA</title>
 
-  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="author" content="" />
-  <meta
-    name="description"
-    content="My thoughts about random topics, Programming, and various linux stuffs"
-  />
-  
-  
-    
-    
-    <link
-      rel="stylesheet"
-      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
-      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
-      crossorigin="anonymous"
-      type="text/css"
-    />
-  
+<meta name="description" content="My thoughts about random topics, Programming, and various linux stuff">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="rss">
+<link rel="alternate" hreflang="en-us" href="http://localhost:1313/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  
-  <link
-    rel="stylesheet"
-    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
-    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
-    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
-    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
-    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
-    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-  <link rel="canonical" href="https://www.gokhanmankara.com/" />
-
-  
-  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Gökhan MANKARA" />
-  
-  
-  
-  <script
-    type="text/javascript"
-    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
-    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
-    crossorigin="anonymous"
-  ></script>
-
-  
-    
-    
-    <script
-      type="text/javascript"
-      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
-      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
-      crossorigin="anonymous"
-    ></script>
-  
-
-  
-
-  
-
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Gökhan MANKARA">
-  <meta name="twitter:description" content="My thoughts about random topics, Programming, and various linux stuffs">
-
-
-
-  
-  <meta property="og:url" content="https://www.gokhanmankara.com/">
+</script><meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="Gökhan MANKARA">
   <meta property="og:title" content="Gökhan MANKARA">
-  <meta property="og:description" content="My thoughts about random topics, Programming, and various linux stuffs">
-  <meta property="og:locale" content="en_us">
+  <meta property="og:description" content="My thoughts about random topics, Programming, and various linux stuff">
+  <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gökhan MANKARA">
+<meta name="twitter:description" content="My thoughts about random topics, Programming, and various linux stuff">
 
-
-
-  
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": "Gökhan MANKARA",
-      "url": "https:\/\/www.gokhanmankara.com\/",
-      "description": "My thoughts about random topics, Programming, and various linux stuffs",
-      "thumbnailUrl": "https:\/\/www.gokhanmankara.com\/",
-      "license": ""
-    }
-  </script>
-
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Gökhan MANKARA",
+  "url": "http://localhost:1313/",
+  "description": "My thoughts about random topics, Programming, and various linux stuff",
+  "logo": "http://localhost:1313/favicon.ico",
+  "sameAs": [
+      "https://www.linkedin.com/in/gokhanmankara/", "https://github.com/gokhanm", "mailto:gokhanm@gmail.com", "/index.xml"
+  ]
+}
+</script>
 </head>
-<body class="body">
-    <div class="wrapper">
-      <aside
-        
-          class="wrapper__sidebar"
-        
-      ><div
-  class="sidebar
-    animated fadeInDown
-  "
->
-  <div class="sidebar__content">
-    <div class="sidebar__introduction">
-      <img
-        class="sidebar__introduction-profileimage"
-        src="/images/cover.jpg"
-        alt="profile picture"
-      />
-      
-        <div class="sidebar__introduction-title">
-          <h1>
-            <a href="/"></a>
-          </h1>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Gökhan MANKARA (Alt + H)">Gökhan MANKARA</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
-      
-      <div class="sidebar__introduction-description">
-        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
-      </div>
-    </div>
-    <ul class="sidebar__list">
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://www.linkedin.com/in/gokhanmankara/"
-            target="_blank"
-            rel="noopener me"
-            aria-label="Linkedin"
-            title="Linkedin"
-          >
-            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://github.com/gokhanm"
-            target="_blank"
-            rel="noopener me"
-            aria-label="GitHub"
-            title="GitHub"
-          >
-            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="mailto:gokhanm@gmail.com"
-            target="_blank"
-            rel="noopener me"
-            aria-label="e-mail"
-            title="e-mail"
-          >
-            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="/index.xml"
-            target="_blank"
-            rel="noopener me"
-            aria-label="rss"
-            title="rss"
-          >
-            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-    </ul>
-  </div><footer class="footer footer__sidebar">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
-    </li>
-    
-  </ul>
-</footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></div>
-</aside>
-      <main
-        
-          class="wrapper__main"
-        
-      >
-        <header class="header"><div
-  class="
-    animated fadeInDown
-  "
->
-  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-  </a>
-  <nav class="nav">
-    <ul class="nav__list" id="navMenu">
-      
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-                class="nav__link--active"
-              
-              href="/"
-              
-              title=""
-              >Home</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/post"
-              
-              title=""
-              >Posts</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/tags"
-              
-              title=""
-              >Tags</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/about"
-              
-              title=""
-              >About</a
-            >
-          </li>
-        
-
-      
-    </ul>
-    <ul class="nav__list nav__list--end">
-      
-      
-        <li class="nav__list-item">
-          <div class="themeswitch">
-            <a title="Switch Theme">
-              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a>
-          </div>
-        </li>
-      
-    </ul>
-  </nav>
-</div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/post" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-  <div
-    class="post 
-      animated fadeInDown
-    "
-  >
-    <div class="post__content">
-      
-    </div>
+<main class="main"> 
 
-    
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Google Reader&#39;dan Sonra...
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Google Reader’ın yaşam hayatına son verileceğinin duyurulmasından sonra, rss kullanıcıları birçok alternatifleri araştırmaya başladı.
+...</p>
   </div>
-
-  
-
-  
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2013/03/google-readerdan-sonra/">GOOGLE READER&#39;DAN SONRA...</a></h3>
-        
-          <p>Google Reader’ın yaşam hayatına son verileceğinin duyurulmasından sonra, rss kullanıcıları birçok alternatifleri araştırmaya başladı.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Mar 24, 2013
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/genel/">Genel</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/feed/">feed</a><a class="tag" href="/tags/feedly/">feedly</a><a class="tag" href="/tags/good-noows/">good noows</a><a class="tag" href="/tags/google/">google</a><a class="tag" href="/tags/google-currents/">google currents</a><a class="tag" href="/tags/google-reader/">google reader</a><a class="tag" href="/tags/google-reader-alternatif/">google reader alternatif</a><a class="tag" href="/tags/lilina/">lilina</a><a class="tag" href="/tags/pulse/">pulse</a><a class="tag" href="/tags/reader/">reader</a><a class="tag" href="/tags/rss/">rss</a><a class="tag" href="/tags/rss-feed/">rss feed</a><a class="tag" href="/tags/selfoss/">selfoss</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2012/08/postfix-mail-kuyrugu-queue-islemleri/">POSTFIX - MAIL KUYRUĞU QUEUE İŞLEMLERI</a></h3>
-        
-          <p>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sat, Aug 25, 2012
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/postfix/">Postfix</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/kurukta-biriken-e-mailleri-g%C3%B6rmek/">kurukta biriken e-mailleri görmek</a><a class="tag" href="/tags/kurukta-biriken-mailleri-g%C3%B6rmek/">kurukta biriken mailleri görmek</a><a class="tag" href="/tags/kurukta-birikme/">kurukta birikme</a><a class="tag" href="/tags/kuyruk-i%C5%9Flemleri/">kuyruk işlemleri</a><a class="tag" href="/tags/mail-kuyru%C4%9Fu-i%C5%9Flemleri/">mail kuyruğu işlemleri</a><a class="tag" href="/tags/mail-kuyruk/">mail kuyruk</a><a class="tag" href="/tags/mailq/">mailq</a><a class="tag" href="/tags/postcat/">postcat</a><a class="tag" href="/tags/postfix-deferred/">postfix deferred</a><a class="tag" href="/tags/postifx/">postifx</a><a class="tag" href="/tags/postqueue/">postqueue</a><a class="tag" href="/tags/postsuper/">postsuper</a><a class="tag" href="/tags/queue/">queue</a><a class="tag" href="/tags/spam/">spam</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2012/06/postfix-mail-basligina-gore-filtreleme/">POSTFIX - MAIL BAŞLIĞINA GÖRE FILTRELEME</a></h3>
-        
-          <p>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Tue, Jun 26, 2012
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/postfix/">Postfix</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/header-checks/">header checks</a><a class="tag" href="/tags/header-filter/">header filter</a><a class="tag" href="/tags/mail-ba%C5%9Fl%C4%B1%C4%9F%C4%B1na-g%C3%B6re-filtreleme/">mail başlığına göre filtreleme</a><a class="tag" href="/tags/postfix/">postfix</a><a class="tag" href="/tags/spam/">spam</a><a class="tag" href="/tags/spam-engelleme/">spam engelleme</a><a class="tag" href="/tags/spam-mailler/">spam mailler</a><a class="tag" href="/tags/subject/">subject</a><a class="tag" href="/tags/subject-filter/">subject filter</a><a class="tag" href="/tags/subject-header-checks/">subject header checks</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2011/12/gnome-3-masaustunu-goster-kisayolu/">GNOME 3 - MASAÜSTÜNÜ GÖSTER KISAYOLU</a></h3>
-        
-          <p>Gnome 3 hayatımıza girdiğinden beri Gnome 2.x kullanımın kolaylığından sonra Gnome 3 ile cebelleşir olduk çıktık.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Dec 25, 2011
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/gnome/">Gnome</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/fedora/">fedora</a><a class="tag" href="/tags/gnome-3/">gnome 3</a><a class="tag" href="/tags/g%C3%B6ster/">göster</a><a class="tag" href="/tags/k%C4%B1sayol/">kısayol</a><a class="tag" href="/tags/masa%C3%BCst%C3%BC/">masaüstü</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2011/09/postfix-mail-adres-bazli-engelleme/">POSTFIX - MAIL ADRES BAZLI ENGELLEME</a></h3>
-        
-          <p>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sat, Sep 17, 2011
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/postfix/">Postfix</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/adres/">adres</a><a class="tag" href="/tags/block/">block</a><a class="tag" href="/tags/engelleme/">engelleme</a><a class="tag" href="/tags/istenemeyen-mail/">istenemeyen mail</a><a class="tag" href="/tags/mail/">mail</a><a class="tag" href="/tags/mail-adresi/">mail adresi</a><a class="tag" href="/tags/mta/">MTA</a><a class="tag" href="/tags/postfix/">postfix</a><a class="tag" href="/tags/spam/">spam</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/">POSTFIX,MYSQL,DOVECOT,TLS,SSL POSTGREY KURULUMU VE YAPILANDIRMASI</a></h3>
-        
-          <p>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Aug 21, 2011
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/postfix/">Postfix</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/dovecot/">dovecot</a><a class="tag" href="/tags/mail-sunucusu-kurulumu/">mail sunucusu kurulumu</a><a class="tag" href="/tags/postfix/">postfix</a><a class="tag" href="/tags/postfixadmin/">postfixadmin</a><a class="tag" href="/tags/postgrey/">postgrey</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2011/07/gnome-3-masaustune-ikon-ekleme/">GNOME 3 - MASAÜSTÜNE İKON EKLEME</a></h3>
-        
-          <p>Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sat, Jul 23, 2011
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/gnome/">Gnome</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/ekleme/">ekleme</a><a class="tag" href="/tags/fedora-15/">fedora 15</a><a class="tag" href="/tags/genel/">genel</a><a class="tag" href="/tags/gnome-3/">gnome 3</a><a class="tag" href="/tags/ikon/">ikon</a><a class="tag" href="/tags/k%C3%BC%C3%A7%C3%BCk-notlar/">küçük notlar</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2011/06/simge-durumunu-kucult-butonu-gnome-3/">SIMGE DURUMUNU KÜÇÜLT BUTONU - GNOME 3</a></h3>
-        
-          <p>Bildiğiniz gibi gnome 3 ü ilk kurduğunuzda pencerelerde simge durumunu küçük ve ekranı kapla gibi butonlar artık gelmiyor.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Jun 19, 2011
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/gnome/">Gnome</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/fedora-15/">fedora 15</a><a class="tag" href="/tags/gnome-3/">gnome 3</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/">UNIX SHELL SCRIPT - BAĞLI KULLANICILARIN DURUMU, İŞLEMCI VE RAM KULLANIMI</a></h3>
-        
-          <p>Oldukça kullanışlı 3 tane Linux/Unix shell scriptlerini sizinle paylaşmak istiyorum.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Aug 22, 2010
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/script/">Script</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/ba%C4%9Fl%C4%B1-kullan%C4%B1c%C4%B1lar/">bağlı kullanıcılar</a><a class="tag" href="/tags/i%C5%9Flemci-kullan%C4%B1m%C4%B1/">işlemci kullanımı</a><a class="tag" href="/tags/ram-kullan%C4%B1m%C4%B1/">ram kullanımı</a><a class="tag" href="/tags/script/">script</a><a class="tag" href="/tags/shell/">shell</a><a class="tag" href="/tags/unix/">unix</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/2010/08/kucuk-notlar-wc-komutu/">KÜÇÜK NOTLAR - WC KOMUTU</a></h3>
-        
-          <p>Bir dosyadaki kelime, byte ve satırları saymak için “wc” komutu kullanılır.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sat, Aug 21, 2010
-            
-
-          </span
-        >
-        
-          <span><a class="category" href="/categories/notlar/">notlar</a></span>
-
-
-        
-
-        
-          <span><a class="tag" href="/tags/wc/">wc</a><a class="tag" href="/tags/wc-komutu/">wc komutu</a><a class="tag" href="/tags/wc-kullan%C4%B1m%C4%B1/">wc kullanımı</a></span>
-
-
-        
-      </div>
-    </div>
-  
-  <div class="pagination">
-    
-  <ul class="pagination__list">
-    
-    
-    
-      <li class="pagination__list-item">
-        <a class="page-link" href="/page/3/">
-          <i class="fa fa-angle-left" aria-label="Previous"></i>
-        </a>
-      </li>
-    
-    
-      
-        <li class="pagination__list-item">
-          <a class="page-link" href="/">1</a>
-        </li>
-      
-
-    
-      
-        
-          
-          <span class="page-link dots">&hellip;</span>
-        
-
-      
-
-    
-      
-        <li class="pagination__list-item">
-          <a class="page-link" href="/page/3/">3</a>
-        </li>
-      
-
-    
-      
-        <li class="pagination__list-item">
-          <span class="page-link current">4</span>
-        </li>
-      
-
-    
-      
-        <li class="pagination__list-item">
-          <a class="page-link" href="/page/5/">5</a>
-        </li>
-      
-
-    
-      
-        <li class="pagination__list-item">
-          <a class="page-link" href="/page/6/">6</a>
-        </li>
-      
-
-    
-    
-      <li class="pagination__list-item">
-        <a class="page-link" href="/page/5/">
-          <i class="fa fa-angle-right" aria-label="Next"></i>
-        </a>
-      </li>
-    
-  </ul>
-
-
+  <footer class="entry-footer"><span title='2013-03-24 11:38:42 +0300 +0300'>2013, Mar 24</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>476 words</span></footer>
+  <a class="entry-link" aria-label="post link to Google Reader&#39;dan Sonra..." href="http://localhost:1313/2013/03/google-readerdan-sonra/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Postfix - Mail Kuyruğu Queue İşlemleri
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Yoğun olarak kullanılan mail servislerinde, karşı sunucunun cevap vermemesi yada göndermeye çalıştığınız mail boyutunun büyük olmasından kaynaklanan, bunların dışında da mail servisiniz üzerinden spam yapılması sebebi ile mail kuyruğunun şişmesine neden olan sorunlarla karşılaşılabilmektedir. Bu durumda mailleriniz kuyrukta birikmekte, göndermiş olduğunuz maillerin geç gitmesi gibi sorunlarla karşılaşılmakta.
+...</p>
   </div>
+  <footer class="entry-footer"><span title='2012-08-25 11:48:02 +0300 EEST'>2012, Aug 25</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>219 words</span></footer>
+  <a class="entry-link" aria-label="post link to Postfix - Mail Kuyruğu Queue İşlemleri" href="http://localhost:1313/2012/08/postfix-mail-kuyrugu-queue-islemleri/"></a>
+</article>
 
-      </main>
-    </div><footer class="footer footer__base">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
-    </li>
-    
-  </ul>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Postfix - Mail Başlığına Göre Filtreleme
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Mail kullanımının artması ile birlikte günümüzde internet üzerindeki trafiğin büyük bir kısmını spam mailler oluşturmaktadır.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-06-26 11:56:10 +0300 EEST'>2012, Jun 26</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>166 words</span></footer>
+  <a class="entry-link" aria-label="post link to Postfix - Mail Başlığına Göre Filtreleme" href="http://localhost:1313/2012/06/postfix-mail-basligina-gore-filtreleme/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Gnome 3 - Masaüstünü Göster Kısayolu
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Gnome 3 hayatımıza girdiğinden beri Gnome 2.x kullanımın kolaylığından sonra Gnome 3 ile cebelleşir olduk çıktık. Gnome 2.x de bütün kısayolları oluşturduğunuz paneller artık Gnome 3 de kullanılamıyor. Bunun yerine sol üst köşede duran Activities yazısına tıkladığınızda karşınıza gelen ekranın sol kenarına kısayollarınızı ekleyebiliyorsunuz. Gnome 2.x zamanlarında benim tercihim olan kısayol butonunu panele ekleme yöntemi olmayışı Gnome 3.x de klavye kısayollarını kullanmaya itti.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-12-25 13:55:47 +0300 +0300'>2011, Dec 25</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>130 words</span></footer>
+  <a class="entry-link" aria-label="post link to Gnome 3 - Masaüstünü Göster Kısayolu" href="http://localhost:1313/2011/12/gnome-3-masaustunu-goster-kisayolu/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Postfix - Mail Adres Bazlı Engelleme
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Size sürekli reklam gönderen mail adresini postfix sunucusu üzerinde sizin mail kutunuza gelmeden engellemek oldukça basit.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-09-17 14:00:46 +0300 EEST'>2011, Sep 17</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>90 words</span></footer>
+  <a class="entry-link" aria-label="post link to Postfix - Mail Adres Bazlı Engelleme" href="http://localhost:1313/2011/09/postfix-mail-adres-bazli-engelleme/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-08-21 14:06:53 +0300 EEST'>2011, Aug 21</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1369 words</span></footer>
+  <a class="entry-link" aria-label="post link to Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması" href="http://localhost:1313/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Gnome 3 - Masaüstüne İkon Ekleme
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.x deki gibi masaüstüne klasör, kısayol vb ikonları ekleyememek oluşuydu.Bunun üstesinden gelmek için Fedora depolarında olan gnome-tweak-tool adındaki küçük programı kurmanız gerekiyor.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-07-23 14:31:11 +0300 EEST'>2011, Jul 23</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>137 words</span></footer>
+  <a class="entry-link" aria-label="post link to Gnome 3 - Masaüstüne İkon Ekleme" href="http://localhost:1313/2011/07/gnome-3-masaustune-ikon-ekleme/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Simge Durumunu Küçült Butonu - Gnome 3
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Bildiğiniz gibi gnome 3 ü ilk kurduğunuzda pencerelerde simge durumunu küçük ve ekranı kapla gibi butonlar artık gelmiyor. Bu butonlardan vaz geçemiyorsanız aşağıdaki yöntemi izleyerek bu butonların tekrar aktif olmasını sağlayabilirsiniz.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-06-19 14:40:19 +0300 EEST'>2011, Jun 19</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>84 words</span></footer>
+  <a class="entry-link" aria-label="post link to Simge Durumunu Küçült Butonu - Gnome 3" href="http://localhost:1313/2011/06/simge-durumunu-kucult-butonu-gnome-3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Unix Shell Script - Bağlı Kullanıcıların Durumu, İşlemci ve Ram Kullanımı
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Oldukça kullanışlı 3 tane Linux/Unix shell scriptlerini sizinle paylaşmak istiyorum.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-08-22 14:51:29 +0300 EEST'>2010, Aug 22</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>518 words</span></footer>
+  <a class="entry-link" aria-label="post link to Unix Shell Script - Bağlı Kullanıcıların Durumu, İşlemci ve Ram Kullanımı" href="http://localhost:1313/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Küçük Notlar - Wc Komutu
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Bir dosyadaki kelime, byte ve satırları saymak için “wc” komutu kullanılır. Kullanım şekli;
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2010-08-21 14:56:31 +0300 EEST'>2010, Aug 21</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>74 words</span></footer>
+  <a class="entry-link" aria-label="post link to Küçük Notlar - Wc Komutu" href="http://localhost:1313/2010/08/kucuk-notlar-wc-komutu/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/page/3/">
+      «&nbsp;&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/page/5/">&nbsp;&nbsp;»
+    </a>
+  </nav>
 </footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></body>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Gökhan MANKARA</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>

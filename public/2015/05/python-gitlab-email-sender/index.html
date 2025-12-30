@@ -1,130 +1,43 @@
-<!doctype html>
-<html
-  dir="ltr"
-  lang="en-us"
-  data-theme=""
-  
-    class="html theme--light"
-  
-><head>
-  <meta charset="utf-8" />
-  <title>
-    
-      
-        Python - Gitlab Email Sender |
-      
+<!DOCTYPE html>
+<html lang="en-us" dir="auto" data-theme="dark">
 
-  </title>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python - Gitlab Email Sender | Gökhan MANKARA</title>
+<meta name="keywords" content="gitlab, gitlab hook, gitlab send email, python, python gitlab hook">
+<meta name="description" content="Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2015/05/python-gitlab-email-sender/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en-us" href="http://localhost:1313/2015/05/python-gitlab-email-sender/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="author" content="" />
-  <meta
-    name="description"
-    content="My thoughts about random topics, Programming, and various linux stuffs"
-  />
-  
-  
-    
-    
-    <link
-      rel="stylesheet"
-      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
-      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
-      crossorigin="anonymous"
-      type="text/css"
-    />
-  
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-  
-  <link
-    rel="stylesheet"
-    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
-    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
-    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
-    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
-    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
-    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-
-  <link rel="canonical" href="https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/" />
-
-  
-  
-  
-  
-  <script
-    type="text/javascript"
-    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
-    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
-    crossorigin="anonymous"
-  ></script>
-
-  
-    
-    
-    <script
-      type="text/javascript"
-      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
-      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
-      crossorigin="anonymous"
-    ></script>
-  
-
-  
-
-  
-
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Python - Gitlab Email Sender">
-  <meta name="twitter:description" content="Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.">
-
-
-
-  
-  <meta property="og:url" content="https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/">
+</script><meta property="og:url" content="http://localhost:1313/2015/05/python-gitlab-email-sender/">
   <meta property="og:site_name" content="Gökhan MANKARA">
   <meta property="og:title" content="Python - Gitlab Email Sender">
-  <meta property="og:description" content="Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.">
-  <meta property="og:locale" content="en_us">
+  <meta property="og:description" content="Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.">
+  <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2015-05-31T13:45:47+03:00">
@@ -134,498 +47,418 @@
     <meta property="article:tag" content="Gitlab Send Email">
     <meta property="article:tag" content="Python">
     <meta property="article:tag" content="Python Gitlab Hook">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python - Gitlab Email Sender">
+<meta name="twitter:description" content="Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.">
 
 
-
-  
-  
-  
-  
-  <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "articleSection": "post",
-        "name": "Python - Gitlab Email Sender",
-        "headline": "Python - Gitlab Email Sender",
-        "alternativeHeadline": "",
-        "description": "
-      
-        Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.
-
-
-      
-
-
-    ",
-        "inLanguage": "en-us",
-        "isFamilyFriendly": "true",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/www.gokhanmankara.com\/2015\/05\/python-gitlab-email-sender\/"
-        },
-        "author" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "creator" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "accountablePerson" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "copyrightHolder" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "copyrightYear" : "2015",
-        "dateCreated": "2015-05-31T13:45:47.00Z",
-        "datePublished": "2015-05-31T13:45:47.00Z",
-        "dateModified": "2015-05-31T13:45:47.00Z",
-        "publisher":{
-            "@type":"Organization",
-            "name":  null ,
-            "url": "https://www.gokhanmankara.com/",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/www.gokhanmankara.com\/favicon\/favicon-32x32.png",
-                "width":"32",
-                "height":"32"
-            }
-        },
-        "image": 
-      [
-      ]
-
-    ,
-        "url" : "https:\/\/www.gokhanmankara.com\/2015\/05\/python-gitlab-email-sender\/",
-        "wordCount" : "426",
-        "genre" : [ 
-      
-      "LKD-Gezegen"
-
-    
-      
-        ,
-
-      
-      "Python"
-
-    ],
-        "keywords" : [ 
-      
-      "gitlab"
-
-    
-      
-        ,
-
-      
-      "gitlab hook"
-
-    
-      
-        ,
-
-      
-      "gitlab send email"
-
-    
-      
-        ,
-
-      
-      "python"
-
-    
-      
-        ,
-
-      
-      "python gitlab hook"
-
-    ]
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Python - Gitlab Email Sender",
+      "item": "http://localhost:1313/2015/05/python-gitlab-email-sender/"
     }
-  </script>
-
-
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python - Gitlab Email Sender",
+  "name": "Python - Gitlab Email Sender",
+  "description": "Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.\n",
+  "keywords": [
+    "gitlab", "gitlab hook", "gitlab send email", "python", "python gitlab hook"
+  ],
+  "articleBody": "Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.\n#!/usr/bin/env python __author__ = \"Gokhan MANKARA ",
+  "wordCount" : "426",
+  "inLanguage": "en-us",
+  "datePublished": "2015-05-31T13:45:47+03:00",
+  "dateModified": "2015-05-31T13:45:47+03:00",
+  "author":[{
+    "@type": "Person",
+    "name": {"bio":"Backend Developer|Golang|Rust|Blogger|Linux Fan","job":"Software Engineer","location":"Turkey/Istanbul","name":"Gökhan MANKARA"}
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/2015/05/python-gitlab-email-sender/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gökhan MANKARA",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body class="body">
-    <div class="wrapper">
-      <aside
-        
-          class="wrapper__sidebar wrapper__sidebar--hidden"
-        
-      ><div
-  class="sidebar
-    animated fadeInDown
-  "
->
-  <div class="sidebar__content">
-    <div class="sidebar__introduction">
-      <img
-        class="sidebar__introduction-profileimage"
-        src="/images/cover.jpg"
-        alt="profile picture"
-      />
-      
-        <div class="sidebar__introduction-title">
-          <a href="/"></a>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Gökhan MANKARA (Alt + H)">Gökhan MANKARA</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
-      
-      <div class="sidebar__introduction-description">
-        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
-      </div>
-    </div>
-    <ul class="sidebar__list">
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://www.linkedin.com/in/gokhanmankara/"
-            target="_blank"
-            rel="noopener me"
-            aria-label="Linkedin"
-            title="Linkedin"
-          >
-            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://github.com/gokhanm"
-            target="_blank"
-            rel="noopener me"
-            aria-label="GitHub"
-            title="GitHub"
-          >
-            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="mailto:gokhanm@gmail.com"
-            target="_blank"
-            rel="noopener me"
-            aria-label="e-mail"
-            title="e-mail"
-          >
-            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="/index.xml"
-            target="_blank"
-            rel="noopener me"
-            aria-label="rss"
-            title="rss"
-          >
-            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-    </ul>
-  </div><footer class="footer footer__sidebar">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
-    </li>
-    
-  </ul>
-</footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></div>
-</aside>
-      <main
-        
-          class="wrapper__main wrapper__main--fullscreen"
-        
-      >
-        <header class="header"><div
-  class="
-    animated fadeInDown
-  "
->
-  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-  </a>
-  <nav class="nav">
-    <ul class="nav__list" id="navMenu">
-      
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/"
-              
-              title=""
-              >Home</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/post"
-              
-              title=""
-              >Posts</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/tags"
-              
-              title=""
-              >Tags</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/about"
-              
-              title=""
-              >About</a
-            >
-          </li>
-        
-
-      
-    </ul>
-    <ul class="nav__list nav__list--end">
-      
-      
-        <li class="nav__list-item">
-          <div class="themeswitch">
-            <a title="Switch Theme">
-              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a>
-          </div>
-        </li>
-      
-    </ul>
-  </nav>
-</div>
-</header>
-  <div
-    class="post 
-      animated fadeInDown
-    "
-  >
-    
-    <div class="post__content">
-      
-        <h1>Python - Gitlab Email Sender</h1>
-      
-      
-        <ul class="post__meta">
-          <li class="post__meta-item">
-            <em class="fas fa-calendar-day post__meta-icon"></em>
-            <span class="post__meta-text"
-              >
-                
-                  Sun, May 31, 2015
-                
-
-              
-            </span>
-          </li>
-          <li class="post__meta-item">
-            <em class="fas fa-stopwatch post__meta-icon"></em>
-            <span class="post__meta-text"></span>
-          </li>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/post" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
         </ul>
-      <p>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu <strong>commits.db</strong> sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili <strong>‘to@domain.com’</strong> adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python</span>
-</span></span><span class="line"><span class="cl"><span class="n">__author__</span> <span class="o">=</span> <span class="s2">&#34;Gokhan MANKARA &lt;gokhan@mankara.org&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">gitlab</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sqlite3</span> <span class="k">as</span> <span class="nn">sql</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">smtplib</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">email.utils</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">gitlab_url</span> <span class="o">=</span> <span class="s2">&#34;https://gitlab.domain.com&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">gitlab_access_token</span> <span class="o">=</span> <span class="s2">&#34;ABCDEFG&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SendEmail</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">mail_to</span> <span class="o">=</span> <span class="s1">&#39;to@domain.com&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">mail_from</span> <span class="o">=</span> <span class="s1">&#39;from@domain.com&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">mail_server</span> <span class="o">=</span> <span class="s1">&#39;mail.domain.com&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">mail_subject</span> <span class="o">=</span> <span class="s1">&#39;New Commit&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">formataddr</span><span class="p">((</span><span class="s1">&#39;Recipient&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mail_to</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">formataddr</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">mail_subject</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mail_from</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mail_subject</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mail_server</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">server</span><span class="o">.</span><span class="n">set_debuglevel</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mail_from</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mail_to</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        <span class="k">finally</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Commit</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&#34;commits.db&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">con</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">git</span> <span class="o">=</span> <span class="n">gitlab</span><span class="o">.</span><span class="n">Gitlab</span><span class="p">(</span><span class="n">gitlab_url</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">gitlab_access_token</span><span class="p">,</span> <span class="n">verify_ssl</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">con</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&#34;sqlite3 commits.db &lt; commits.sql&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sql_insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">repo</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="nb">hash</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;insert into last_commit (&#39;repo&#39;, &#39;branch&#39;, &#39;hash&#39;) values (&#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;, &#39;</span><span class="si">%s</span><span class="s2">&#39;)&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sql_select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">repo</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;select hash from `last_commit` where branch=&#39;</span><span class="si">%s</span><span class="s2">&#39; and repo=&#39;</span><span class="si">%s</span><span class="s2">&#39;&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">branch</span><span class="p">,</span> <span class="n">repo</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sql_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_hash</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">repo</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;UPDATE last_commit SET hash=&#39;</span><span class="si">%s</span><span class="s2">&#39; WHERE branch=&#39;</span><span class="si">%s</span><span class="s2">&#39; and repo=&#39;</span><span class="si">%s</span><span class="s2">&#39;&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">new_hash</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">repo</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">commits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># git.getprojectsall =&gt; Returns a dictionary of all the projects for admins only</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># git.getprojects =&gt; Returns a dictionary of all the projects</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">getprojectsall</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">            <span class="n">group_name</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s2">&#34;namespace&#34;</span><span class="p">][</span><span class="s2">&#34;name&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">            <span class="n">project_name</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s2">&#34;path&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">            <span class="n">project_id</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">branches</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">getbranches</span><span class="p">(</span><span class="n">project_id</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">new_commit</span> <span class="o">=</span> <span class="n">branches</span><span class="p">[</span><span class="s2">&#34;commit&#34;</span><span class="p">][</span><span class="s2">&#34;id&#34;</span><span class="p">][:</span><span class="mi">8</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">branch_name</span> <span class="o">=</span> <span class="n">branches</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">                    <span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">commit_in_sql</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_select</span><span class="p">(</span><span class="n">branch_name</span><span class="p">,</span> <span class="n">project_name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                        <span class="bp">self</span><span class="o">.</span><span class="n">sql_insert</span><span class="p">(</span><span class="n">project_name</span><span class="p">,</span> <span class="n">branch_name</span><span class="p">,</span> <span class="n">new_commit</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">commit_in_sql</span> <span class="o">!=</span> <span class="n">new_commit</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">get_commit_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">getrepositorycommit</span><span class="p">(</span><span class="n">project_id</span><span class="p">,</span> <span class="n">new_commit</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                        <span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                            <span class="n">author_name</span> <span class="o">=</span> <span class="n">get_commit_info</span><span class="p">[</span><span class="s2">&#34;author_name&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                            <span class="n">author_email</span> <span class="o">=</span> <span class="n">get_commit_info</span><span class="p">[</span><span class="s2">&#34;author_email&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                            <span class="n">author_message</span> <span class="o">=</span> <span class="n">get_commit_info</span><span class="p">[</span><span class="s2">&#34;title&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                            <span class="n">commit_date</span> <span class="o">=</span> <span class="n">get_commit_info</span><span class="p">[</span><span class="s2">&#34;created_at&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                            <span class="k">pass</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">                        <span class="n">compare_url</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">/compare/</span><span class="si">%s</span><span class="s2">...</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span>\
-</span></span><span class="line"><span class="cl">                                      <span class="p">(</span><span class="n">gitlab_url</span><span class="p">,</span> <span class="n">group_name</span><span class="p">,</span> <span class="n">project_name</span><span class="p">,</span> <span class="n">check_commit</span><span class="p">,</span> <span class="n">new_commit</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">send_email</span> <span class="o">=</span> <span class="n">SendEmail</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Commit Repo: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">Branch Name: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">User: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">User Mail: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">Commit Message: </span><span class="si">%s</span><span class="s1">Commit Time: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s1">Diff URL: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span>\
-</span></span><span class="line"><span class="cl">                              <span class="p">(</span><span class="n">project_name</span><span class="p">,</span> <span class="n">branch_name</span><span class="p">,</span> <span class="n">author_name</span><span class="p">,</span> <span class="n">author_email</span><span class="p">,</span> <span class="n">author_message</span><span class="p">,</span> <span class="n">commit_date</span><span class="p">,</span> <span class="n">compare_url</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">send_email</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                        <span class="bp">self</span><span class="o">.</span><span class="n">sql_update</span><span class="p">(</span><span class="n">new_commit</span><span class="p">,</span> <span class="n">branch_name</span><span class="p">,</span> <span class="n">project_name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">commits</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Commit</span><span class="p">()</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Python - Gitlab Email Sender
+    </h1>
+    <div class="post-meta"><span title='2015-05-31 13:45:47 +0300 EEST'>2015, May 31</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>426 words</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu <strong>commits.db</strong> sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili <strong>‘to@domain.com’</strong> adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span>__author__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Gokhan MANKARA &lt;gokhan@mankara.org&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> gitlab
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sqlite3 <span style="color:#66d9ef">as</span> sql
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> smtplib
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> email.utils
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> email.mime.text <span style="color:#f92672">import</span> MIMEText
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gitlab_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://gitlab.domain.com&#34;</span>
+</span></span><span style="display:flex;"><span>gitlab_access_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABCDEFG&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SendEmail</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>mail_to <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;to@domain.com&#39;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>mail_from <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;from@domain.com&#39;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>mail_server <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;mail.domain.com&#39;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>mail_subject <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;New Commit&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(self, msg):
+</span></span><span style="display:flex;"><span>        msg <span style="color:#f92672">=</span> MIMEText(msg)
+</span></span><span style="display:flex;"><span>        msg[<span style="color:#e6db74">&#39;To&#39;</span>] <span style="color:#f92672">=</span> email<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>formataddr((<span style="color:#e6db74">&#39;Recipient&#39;</span>, self<span style="color:#f92672">.</span>mail_to))
+</span></span><span style="display:flex;"><span>        msg[<span style="color:#e6db74">&#39;From&#39;</span>] <span style="color:#f92672">=</span> email<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>formataddr((self<span style="color:#f92672">.</span>mail_subject, self<span style="color:#f92672">.</span>mail_from))
+</span></span><span style="display:flex;"><span>        msg[<span style="color:#e6db74">&#39;Subject&#39;</span>] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>mail_subject
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        server <span style="color:#f92672">=</span> smtplib<span style="color:#f92672">.</span>SMTP(self<span style="color:#f92672">.</span>mail_server, <span style="color:#ae81ff">25</span>)
+</span></span><span style="display:flex;"><span>        server<span style="color:#f92672">.</span>set_debuglevel(<span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            server<span style="color:#f92672">.</span>sendmail(self<span style="color:#f92672">.</span>mail_from, self<span style="color:#f92672">.</span>mail_to, msg<span style="color:#f92672">.</span>as_string())
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>            server<span style="color:#f92672">.</span>quit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Commit</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>db <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;commits.db&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>con <span style="color:#f92672">=</span> sql<span style="color:#f92672">.</span>connect(self<span style="color:#f92672">.</span>db)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>git <span style="color:#f92672">=</span> gitlab<span style="color:#f92672">.</span>Gitlab(gitlab_url, token<span style="color:#f92672">=</span>gitlab_access_token, verify_ssl<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> self<span style="color:#f92672">.</span>con:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>cur <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>con<span style="color:#f92672">.</span>cursor()
+</span></span><span style="display:flex;"><span>        requests<span style="color:#f92672">.</span>packages<span style="color:#f92672">.</span>urllib3<span style="color:#f92672">.</span>disable_warnings()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(self<span style="color:#f92672">.</span>db):
+</span></span><span style="display:flex;"><span>            os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">&#34;sqlite3 commits.db &lt; commits.sql&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sql_insert</span>(self, repo, branch, hash):
+</span></span><span style="display:flex;"><span>        sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;insert into last_commit (&#39;repo&#39;, &#39;branch&#39;, &#39;hash&#39;) values (&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;, &#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;, &#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;)&#34;</span> <span style="color:#f92672">%</span> (repo, branch, hash)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>cur<span style="color:#f92672">.</span>execute(sql)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>con<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sql_select</span>(self, branch, repo):
+</span></span><span style="display:flex;"><span>        sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select hash from `last_commit` where branch=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39; and repo=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;&#34;</span> <span style="color:#f92672">%</span> (branch, repo)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>cur<span style="color:#f92672">.</span>execute(sql)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>cur<span style="color:#f92672">.</span>fetchone()[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sql_update</span>(self, new_hash, branch, repo):
+</span></span><span style="display:flex;"><span>        sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UPDATE last_commit SET hash=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39; WHERE branch=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39; and repo=&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;&#34;</span> <span style="color:#f92672">%</span> (new_hash, branch, repo)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>cur<span style="color:#f92672">.</span>execute(sql)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>con<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">commits</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># git.getprojectsall =&gt; Returns a dictionary of all the projects for admins only</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># git.getprojects =&gt; Returns a dictionary of all the projects</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>git<span style="color:#f92672">.</span>getprojectsall():
+</span></span><span style="display:flex;"><span>            group_name <span style="color:#f92672">=</span> i[<span style="color:#e6db74">&#34;namespace&#34;</span>][<span style="color:#e6db74">&#34;name&#34;</span>]
+</span></span><span style="display:flex;"><span>            project_name <span style="color:#f92672">=</span> i[<span style="color:#e6db74">&#34;path&#34;</span>]
+</span></span><span style="display:flex;"><span>            project_id <span style="color:#f92672">=</span> i[<span style="color:#e6db74">&#34;id&#34;</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> branches <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>git<span style="color:#f92672">.</span>getbranches(project_id):
+</span></span><span style="display:flex;"><span>                    new_commit <span style="color:#f92672">=</span> branches[<span style="color:#e6db74">&#34;commit&#34;</span>][<span style="color:#e6db74">&#34;id&#34;</span>][:<span style="color:#ae81ff">8</span>]
+</span></span><span style="display:flex;"><span>                    branch_name <span style="color:#f92672">=</span> branches[<span style="color:#e6db74">&#34;name&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                        commit_in_sql <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>sql_select(branch_name, project_name)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">TypeError</span>:
+</span></span><span style="display:flex;"><span>                        self<span style="color:#f92672">.</span>sql_insert(project_name, branch_name, new_commit)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> commit_in_sql <span style="color:#f92672">!=</span> new_commit:
+</span></span><span style="display:flex;"><span>                        get_commit_info <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>git<span style="color:#f92672">.</span>getrepositorycommit(project_id, new_commit)
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                            author_name <span style="color:#f92672">=</span> get_commit_info[<span style="color:#e6db74">&#34;author_name&#34;</span>]
+</span></span><span style="display:flex;"><span>                            author_email <span style="color:#f92672">=</span> get_commit_info[<span style="color:#e6db74">&#34;author_email&#34;</span>]
+</span></span><span style="display:flex;"><span>                            author_message <span style="color:#f92672">=</span> get_commit_info[<span style="color:#e6db74">&#34;title&#34;</span>]
+</span></span><span style="display:flex;"><span>                            commit_date <span style="color:#f92672">=</span> get_commit_info[<span style="color:#e6db74">&#34;created_at&#34;</span>]
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">TypeError</span>:
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                        compare_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">/compare/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">...</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span>\
+</span></span><span style="display:flex;"><span>                                      (gitlab_url, group_name, project_name, check_commit, new_commit)
+</span></span><span style="display:flex;"><span>                        send_email <span style="color:#f92672">=</span> SendEmail()
+</span></span><span style="display:flex;"><span>                        msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Commit Repo: </span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Branch Name: </span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">User: </span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">User Mail: </span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Commit Message: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">Commit Time: </span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Diff URL: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>\
+</span></span><span style="display:flex;"><span>                              (project_name, branch_name, author_name, author_email, author_message, commit_date, compare_url)
+</span></span><span style="display:flex;"><span>                        send_email<span style="color:#f92672">.</span>main(msg)
+</span></span><span style="display:flex;"><span>                        self<span style="color:#f92672">.</span>sql_update(new_commit, branch_name, project_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>commits()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    Commit()<span style="color:#f92672">.</span>main()
 </span></span></code></pre></div><p>Python scripti ile aynı yerde oluşturmanız gereken <strong>commits.sql</strong> dosyası dosyası.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">Commit Repo: githlab-email-repo
-</span></span><span class="line"><span class="cl">Branch Name: master
-</span></span><span class="line"><span class="cl">User: gokhan
-</span></span><span class="line"><span class="cl">User Mail: gokhan@mankara.org
-</span></span><span class="line"><span class="cl">Commit Message: First Test Email Commit
-</span></span><span class="line"><span class="cl">Commit Time: 2015-05-30T13:58:42.000+03:00
-</span></span><span class="line"><span class="cl"> 
-</span></span><span class="line"><span class="cl">Diff URL: https://gitlab.domain.com/gokhan/gitlab-email-repo/compare/s1ws93...1ex4ng59
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Commit Repo: githlab-email-repo
+</span></span><span style="display:flex;"><span>Branch Name: master
+</span></span><span style="display:flex;"><span>User: gokhan
+</span></span><span style="display:flex;"><span>User Mail: gokhan@mankara.org
+</span></span><span style="display:flex;"><span>Commit Message: First Test Email Commit
+</span></span><span style="display:flex;"><span>Commit Time: 2015-05-30T13:58:42.000+03:00
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>Diff URL: https://gitlab.domain.com/gokhan/gitlab-email-repo/compare/s1ws93...1ex4ng59
 </span></span></code></pre></div><p>Gitlab server’da post-receive hook scriptine, başına <strong>/usr/bin/python</strong> koyarak scripti kullanabilirsiniz. Başına python path’ini koymamızın sebebi, gitlab’ın kendi python binary si olduğundan import ettiğimiz modüller gitlab’ın kendi lib’inde olmadığı için remote gitlab server’a push ettiğinizde “modül bulunamadı” şeklinde hata verecektir.</p>
 <p><a href="https://github.com/gokhanm/gitlab-email-hook">Gitlab Repo</a></p>
-</div>
-    <div class="post__footer">
-      
-        <span><a class="category" href="/categories/lkd-gezegen/">LKD-Gezegen</a><a class="category" href="/categories/python/">Python</a></span>
 
 
-      
-
-      
-        <span><a class="tag" href="/tags/gitlab/">gitlab</a><a class="tag" href="/tags/gitlab-hook/">gitlab hook</a><a class="tag" href="/tags/gitlab-send-email/">gitlab send email</a><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/python-gitlab-hook/">python gitlab hook</a></span>
-
-
-      
-    </div>
-
-    
   </div>
 
-      </main>
-    </div><footer class="footer footer__base">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/gitlab/">Gitlab</a></li>
+      <li><a href="http://localhost:1313/tags/gitlab-hook/">Gitlab Hook</a></li>
+      <li><a href="http://localhost:1313/tags/gitlab-send-email/">Gitlab Send Email</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/python-gitlab-hook/">Python Gitlab Hook</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2015/08/screen-komutu-kullanimi/">
+    <span class="title">« </span>
+    <br>
+    <span>Screen Komutu Kullanımı</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/">
+    <span class="title"> »</span>
+    <br>
+    <span>Xenserver&#39;da Sanal Sunucuların Görünmemesi</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python - Gitlab Email Sender on x"
+            href="https://x.com/intent/tweet/?text=Python%20-%20Gitlab%20Email%20Sender&amp;url=http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f&amp;hashtags=gitlab%2cgitlabhook%2cgitlabsendemail%2cpython%2cpythongitlabhook">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
     </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python - Gitlab Email Sender on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f&amp;title=Python%20-%20Gitlab%20Email%20Sender&amp;summary=Python%20-%20Gitlab%20Email%20Sender&amp;source=http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python - Gitlab Email Sender on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f&title=Python%20-%20Gitlab%20Email%20Sender">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python - Gitlab Email Sender on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python - Gitlab Email Sender on whatsapp"
+            href="https://api.whatsapp.com/send?text=Python%20-%20Gitlab%20Email%20Sender%20-%20http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python - Gitlab Email Sender on telegram"
+            href="https://telegram.me/share/url?text=Python%20-%20Gitlab%20Email%20Sender&amp;url=http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python - Gitlab Email Sender on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Python%20-%20Gitlab%20Email%20Sender&u=http%3a%2f%2flocalhost%3a1313%2f2015%2f05%2fpython-gitlab-email-sender%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
     
-  </ul>
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Gökhan MANKARA</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></body>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>

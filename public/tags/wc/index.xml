@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Wc on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/wc/</link>
+    <link>http://localhost:1313/tags/wc/</link>
     <description>Recent content in Wc on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Aug 2010 14:56:31 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/wc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2010 14:56:31 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/wc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Küçük Notlar - Wc Komutu</title>
-      <link>https://www.gokhanmankara.com/2010/08/kucuk-notlar-wc-komutu/</link>
+      <link>http://localhost:1313/2010/08/kucuk-notlar-wc-komutu/</link>
       <pubDate>Sat, 21 Aug 2010 14:56:31 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2010/08/kucuk-notlar-wc-komutu/</guid>
-      
-        <description>Bir dosyadaki kelime, byte ve satırları saymak için “wc” komutu kullanılır.</description>
-      
+      <guid>http://localhost:1313/2010/08/kucuk-notlar-wc-komutu/</guid>
+      <description>&lt;p&gt;Bir dosyadaki  kelime, byte ve satırları saymak için &lt;strong&gt;“wc”&lt;/strong&gt; komutu kullanılır.  Kullanım şekli;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

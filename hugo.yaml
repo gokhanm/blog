@@ -1,0 +1,86 @@
+baseURL: "https://www.gokhanmankara.com"
+languageCode: "en-us"
+defaultContentLanguage: "en-us"
+title: "Gökhan MANKARA"
+theme: "PaperMod"
+# disqusShortname: "gokhanblog"
+googleAnalytics: "UA-10446851-2"
+summarylength: 10
+enableEmoji: true
+enableRobotsTXT: true
+
+permalinks:
+  post: "/:year/:month/:slug/"
+
+taxonomies:
+  tag: "tags"
+  category: "category"
+  archive: "archive"
+
+params:
+  env: production
+  defaultTheme: dark # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+  dateFormat: "2006, Jan 02"
+  listDateFormat: "2006, Jan 02"
+  description: "My thoughts about random topics, Programming, and various linux stuff"
+  profilePicture: "images/cover.jpg"
+  favicon: "favicon/"
+  reversepagetitle: true
+  hidesidebar: true
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
+  author:
+    - name: "Gökhan MANKARA"
+      bio: "Backend Developer|Golang|Rust|Blogger|Linux Fan"
+      job: "Software Engineer"
+      location: "Turkey/Istanbul"
+  socialIcons:
+    - name: "linkedin"
+      title: "Linkedin"
+      url: "https://www.linkedin.com/in/gokhanmankara/"
+    - name: "github"
+      title: "GitHub"
+      url: "https://github.com/gokhanm"
+    - name: "email"
+      title: "e-mail"
+      url: "mailto:gokhanm@gmail.com"
+    - name: "fas fa-rss"
+      title: "rss"
+      url: "/index.xml"
+
+menu:
+  main:
+    - weight: 1
+      identifier: "home"
+      name: "Home"
+      url: "/"
+    - weight: 2
+      identifier: "posts"
+      name: "Posts"
+      url: "/post"
+    - weight: 3
+      identifier: "tags"
+      name: "Tags"
+      url: "/tags"
+    - weight: 4
+      identifier: "about"
+      name: "About"
+      url: "/about"

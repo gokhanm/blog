@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ikon on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/ikon/</link>
+    <link>http://localhost:1313/tags/ikon/</link>
     <description>Recent content in Ikon on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Jul 2011 14:31:11 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/ikon/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2011 14:31:11 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ikon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gnome 3 - Masaüstüne İkon Ekleme</title>
-      <link>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</link>
+      <link>http://localhost:1313/2011/07/gnome-3-masaustune-ikon-ekleme/</link>
       <pubDate>Sat, 23 Jul 2011 14:31:11 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2011/07/gnome-3-masaustune-ikon-ekleme/</guid>
-      
-        <description>Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.</description>
-      
+      <guid>http://localhost:1313/2011/07/gnome-3-masaustune-ikon-ekleme/</guid>
+      <description>&lt;p&gt;Bildiğiniz gibi Fedora 15 ile birlikte Gnome 3 gelmekte. Gnome 3 kullanırken en sıkıntı çektiğim nokta Gnome 2.x deki gibi masaüstüne klasör, kısayol vb ikonları ekleyememek oluşuydu.Bunun üstesinden gelmek için Fedora depolarında olan &lt;strong&gt;gnome-tweak-tool&lt;/strong&gt; adındaki küçük programı kurmanız gerekiyor.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux Donanım Bilgisi on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/linux-donan%C4%B1m-bilgisi/</link>
+    <link>http://localhost:1313/tags/linux-donan%C4%B1m-bilgisi/</link>
     <description>Recent content in Linux Donanım Bilgisi on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jun 2010 11:19:51 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/linux-donan%C4%B1m-bilgisi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2010 11:19:51 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux-donan%C4%B1m-bilgisi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Komutla Sistem Donanim Bilgisi Almak</title>
-      <link>https://www.gokhanmankara.com/2010/06/komutla-sistem-donanim-bilgisi-almak/</link>
+      <link>http://localhost:1313/2010/06/komutla-sistem-donanim-bilgisi-almak/</link>
       <pubDate>Tue, 08 Jun 2010 11:19:51 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2010/06/komutla-sistem-donanim-bilgisi-almak/</guid>
-      
-        <description>Ana kart üzerindeki RAM yuvası (ing. slot) sayısı, her birisine takılı RAM modülleri ve kapasiteleri, ram yuvalarına takılabilecek azami RAM kapasitesi, ana karta takılı işlemci türü, işlemcinin şu andaki hızı, ana kartın desteklediği azami işlemci saat hızı, BIOS sürümü, ana kart seri numarası, şase seri numarası, donanım bileşenlerinin üretici adları, markaları, modelleri vb uzarda gider…</description>
-      
+      <guid>http://localhost:1313/2010/06/komutla-sistem-donanim-bilgisi-almak/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Ana kart üzerindeki RAM yuvası (ing. slot) sayısı, her birisine takılı RAM modülleri ve kapasiteleri, ram yuvalarına takılabilecek azami RAM kapasitesi, ana karta takılı işlemci türü, işlemcinin şu andaki hızı, ana kartın desteklediği azami işlemci saat hızı, BIOS sürümü, ana kart seri numarası, şase seri numarası, donanım bileşenlerinin üretici adları, markaları, modelleri vb uzarda gider…&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

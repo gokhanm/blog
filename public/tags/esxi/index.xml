@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Esxi on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/esxi/</link>
+    <link>http://localhost:1313/tags/esxi/</link>
     <description>Recent content in Esxi on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2014 15:26:39 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jun 2014 15:26:39 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LVM disk genişletme işlemi ve örnek uygulaması</title>
-      <link>https://www.gokhanmankara.com/2014/06/lvm-disk-genisletme-islemi-ve-ornek-uygulamasi/</link>
+      <link>http://localhost:1313/2014/06/lvm-disk-genisletme-islemi-ve-ornek-uygulamasi/</link>
       <pubDate>Wed, 04 Jun 2014 15:26:39 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2014/06/lvm-disk-genisletme-islemi-ve-ornek-uygulamasi/</guid>
-      
-        <description>LVM (Logical Volume Manager), mantıksal hacim yönetimi olarak çevirebileceğimiz, sistem üzerinde disk kümesi yada kümeleri oluşturmaya olanak sağlayan bir disk yönetim sistemidir.</description>
-      
+      <guid>http://localhost:1313/2014/06/lvm-disk-genisletme-islemi-ve-ornek-uygulamasi/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)&#34;&gt;LVM&lt;/a&gt; (Logical Volume Manager), mantıksal hacim yönetimi olarak çevirebileceğimiz, sistem üzerinde disk kümesi yada kümeleri oluşturmaya olanak sağlayan bir disk yönetim sistemidir. LVM kullanarak mevcut disk sistemi üzerinde online olarak yeniden boyutlandırmaya olanak sağlamaktadır.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

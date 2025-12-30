@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hostname Değiştirme on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/hostname-de%C4%9Fi%C5%9Ftirme/</link>
+    <link>http://localhost:1313/tags/hostname-de%C4%9Fi%C5%9Ftirme/</link>
     <description>Recent content in Hostname Değiştirme on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Jun 2010 10:39:10 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/hostname-de%C4%9Fi%C5%9Ftirme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Jun 2010 10:39:10 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hostname-de%C4%9Fi%C5%9Ftirme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Küçük Notlar - Bilgisayar İsmini Değiştirme</title>
-      <link>https://www.gokhanmankara.com/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/</link>
+      <link>http://localhost:1313/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/</link>
       <pubDate>Wed, 23 Jun 2010 10:39:10 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/</guid>
-      
-        <description>Sistemi kurduktan sonra bilgisayarınızın ismini 3 adımda kolayca değiştirebilirsiniz.
-/etc/sysconfig/network dosyasını değiştirme vi editörü ile /etc/sysconfig/network dosyasını açıp “HOSTNAME” yazan yerdeki adı silip yenisini yazın.</description>
-      
+      <guid>http://localhost:1313/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/</guid>
+      <description>&lt;p&gt;Sistemi kurduktan sonra bilgisayarınızın ismini 3 adımda kolayca değiştirebilirsiniz.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/etc/sysconfig/network dosyasını değiştirme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;vi editörü ile &lt;strong&gt;/etc/sysconfig/network&lt;/strong&gt; dosyasını açıp “HOSTNAME” yazan yerdeki adı silip yenisini yazın.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

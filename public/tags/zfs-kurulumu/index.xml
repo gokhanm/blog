@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Zfs Kurulumu on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/zfs-kurulumu/</link>
+    <link>http://localhost:1313/tags/zfs-kurulumu/</link>
     <description>Recent content in Zfs Kurulumu on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Feb 2015 10:45:52 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/zfs-kurulumu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Feb 2015 10:45:52 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/zfs-kurulumu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zfsonlinux Kurulumu Ve Yapılandırması</title>
-      <link>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</link>
+      <link>http://localhost:1313/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</link>
       <pubDate>Tue, 10 Feb 2015 10:45:52 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</guid>
-      
-        <description>Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.</description>
-      
+      <guid>http://localhost:1313/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/ZFS&#34;&gt;Zfs&lt;/a&gt;, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

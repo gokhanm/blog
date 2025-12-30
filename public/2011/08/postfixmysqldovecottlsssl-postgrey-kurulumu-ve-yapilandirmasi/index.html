@@ -1,130 +1,43 @@
-<!doctype html>
-<html
-  dir="ltr"
-  lang="en-us"
-  data-theme=""
-  
-    class="html theme--light"
-  
-><head>
-  <meta charset="utf-8" />
-  <title>
-    
-      
-        Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması |
-      
+<!DOCTYPE html>
+<html lang="en-us" dir="auto" data-theme="dark">
 
-  </title>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması | Gökhan MANKARA</title>
+<meta name="keywords" content="dovecot, mail sunucusu kurulumu, postfix, postfixadmin, postgrey">
+<meta name="description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en-us" href="http://localhost:1313/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="author" content="" />
-  <meta
-    name="description"
-    content="My thoughts about random topics, Programming, and various linux stuffs"
-  />
-  
-  
-    
-    
-    <link
-      rel="stylesheet"
-      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
-      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
-      crossorigin="anonymous"
-      type="text/css"
-    />
-  
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-  
-  <link
-    rel="stylesheet"
-    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
-    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
-    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
-    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
-    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
-    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-
-  <link rel="canonical" href="https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/" />
-
-  
-  
-  
-  
-  <script
-    type="text/javascript"
-    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
-    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
-    crossorigin="anonymous"
-  ></script>
-
-  
-    
-    
-    <script
-      type="text/javascript"
-      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
-      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
-      crossorigin="anonymous"
-    ></script>
-  
-
-  
-
-  
-
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması">
-  <meta name="twitter:description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız.">
-
-
-
-  
-  <meta property="og:url" content="https://www.gokhanmankara.com/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/">
+</script><meta property="og:url" content="http://localhost:1313/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/">
   <meta property="og:site_name" content="Gökhan MANKARA">
   <meta property="og:title" content="Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması">
-  <meta property="og:description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız.">
-  <meta property="og:locale" content="en_us">
+  <meta property="og:description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.">
+  <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2011-08-21T14:06:53+03:00">
@@ -134,690 +47,617 @@
     <meta property="article:tag" content="Postfix">
     <meta property="article:tag" content="Postfixadmin">
     <meta property="article:tag" content="Postgrey">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması">
+<meta name="twitter:description" content="Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.">
 
 
-
-  
-  
-  
-  
-  <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "articleSection": "post",
-        "name": "Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması",
-        "headline": "Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması",
-        "alternativeHeadline": "",
-        "description": "
-      
-        Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız.
-
-
-      
-
-
-    ",
-        "inLanguage": "en-us",
-        "isFamilyFriendly": "true",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/www.gokhanmankara.com\/2011\/08\/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi\/"
-        },
-        "author" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "creator" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "accountablePerson" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "copyrightHolder" : {
-            "@type": "Person",
-            "name": ""
-        },
-        "copyrightYear" : "2011",
-        "dateCreated": "2011-08-21T14:06:53.00Z",
-        "datePublished": "2011-08-21T14:06:53.00Z",
-        "dateModified": "2011-08-21T14:06:53.00Z",
-        "publisher":{
-            "@type":"Organization",
-            "name":  null ,
-            "url": "https://www.gokhanmankara.com/",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/www.gokhanmankara.com\/favicon\/favicon-32x32.png",
-                "width":"32",
-                "height":"32"
-            }
-        },
-        "image": 
-      [
-      ]
-
-    ,
-        "url" : "https:\/\/www.gokhanmankara.com\/2011\/08\/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi\/",
-        "wordCount" : "1369",
-        "genre" : [ 
-      
-      "Postfix"
-
-    ],
-        "keywords" : [ 
-      
-      "dovecot"
-
-    
-      
-        ,
-
-      
-      "mail sunucusu kurulumu"
-
-    
-      
-        ,
-
-      
-      "postfix"
-
-    
-      
-        ,
-
-      
-      "postfixadmin"
-
-    
-      
-        ,
-
-      
-      "postgrey"
-
-    ]
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması",
+      "item": "http://localhost:1313/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/"
     }
-  </script>
-
-
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması",
+  "name": "Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması",
+  "description": "Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.\n",
+  "keywords": [
+    "dovecot", "mail sunucusu kurulumu", "postfix", "postfixadmin", "postgrey"
+  ],
+  "articleBody": "Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.\nPostfix Kurulumu # yum install postfix komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır. Sonuçta herşey tamam olsa bile postfixin mysqle bağlanamamasından dolayı mail sunucusu çalışmayacaktır.\nPostfixi mysql desteği ile kurmak için yum.repo.d üzerinde bir kaç düzenleme yapmamız gerekiyor.CentOS-Base.repo dosyasının base,update ve centosplus kısımlarını aşağıdaki gibi düzenledikten sonra postfix kurulumu yapıldığında mysql desteği gelmiş olacaktır.\n# nano /etc/yum.repos.d/CentOS-Base.repo [base] exclude=postfix [update] exclude=postfix [centosplus] enabled=1 includepkgs=postfix # yum install postfix # postconf -m btree cidr environ hash ldap mysql nis pcre pgsql proxy regexp static unix Postfix kurulumumuz tamam şimdi main.cf dosyasını düzenlememiz gerekiyor.\n# nano /etc/postfix/main.cf smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU) append_dot_mydomain = no #delay_warning_time = 4h myhostname = mail.domain.com myorigin = domain.com mydestination = localhost mynetworks = 127.0.0.0/8 mailbox_size_limit = 0 recipient_delimiter = + inet_interfaces = all myhostname ve myorigin kısımlarını kendi domaininize göre düzenlemeyi unutmayınız.\nMySQL Yapılandırması Birçok sunucuda mysql kurulu olarak gelmektedir. İlk kez kuracak iseniz;\n# yum install mysql-server mysql-client Artık database oluşturmaya geldi. Postfix,dovecot ve postfix admin için sadece bir db oluşturmanız yeterli. Oluşturulan databasede postfix ve dovecot sql komutu olan SELECT, postfix admin ise SELECT, UPDATE ve INSERT komutlarını kullanacak.\n# mysql -uroot -p mysql\u003e CREATE DATABASE db_ismi; mysql\u003e GRANT ALL PRIVILEGES ON db_ismi.* TO ‘kullanıcı_adı’@’localhost’ IDENTIFIED BY ‘şifre’; mysql\u003e quit; Sanal Kullanıcılar Yazının en başında da dediğimiz gibi sanal kullanıcıları mysql üzerinde tutacağız. Bunun postfix main.cf dosyasına bir kaç satır eklememiz gerekiyor.\n# Virtual mailbox settings virtual_mailbox_domains = mysql:$config_directory/mysql_virtual_domains_maps.cf virtual_mailbox_base = /var/vmail virtual_mailbox_maps = mysql:$config_directory/mysql_virtual_mailbox_maps.cf virtual_alias_maps = mysql:$config_directory/mysql_virtual_alias_maps.cf virtual_minimum_uid = 150 virtual_uid_maps = static:150 virtual_gid_maps = static:8 virtual_transport = dovecot dovecot_destination_recipient_limit = 1 # SASL Authentication smtpd_sasl_auth_enable = yes smtpd_sasl_exceptions_networks = $mynetworks smtpd_sasl_security_options = noanonymous broken_sasl_auth_clients = yes smtpd_sasl_type = dovecot smtpd_sasl_path = private/auth Sanal kullanıcıların mailbox larını /var/vmail altında tutacağız bunun için vmail kullanıcısı ve mail adında bir group oluşturmamız gerekiyor.\n# useradd -r -u 150 -g mail -d /var/vmail -s /sbin/nologin -c “Virtual mailbox” vmail # mkdir /var/vmail # chmod 770 /var/vmail/ # chown vmail:mail /var/vmail/ Ayrıca sadece izin verilmiş kullanıcıların mail atabilmesi için main.cf dosyasına rule yazmamız gerekiyor.\nsmtpd_recipient_restrictions = permit_mynetworks permit_sasl_authenticated reject_unauth_destination permit Postfix Mysql Ayarları Postfixin mysql de kayıtlı bulunan bilgilerin nerede ve nasıl okuması gerektiğini tanımlamamız gerekiyor. Bunun için /etc/postfix altına birkaç dosya oluşturup düzenlememiz gerekiyor.\n# nano /etc/postfix/mysql_virtual_alias_maps.cf user = db_kullanıcı_adi password = şifre hosts = localhost dbname = db_ismi query = SELECT goto FROM alias WHERE address=’%s’ AND active = ’1′ # nano /etc/postfix/mysql_virtual_domains_maps.cf user = db_kullanıcı_adi password = şifre hosts = localhost dbname = db_ismi query = SELECT domain FROM domain WHERE domain=’%s’ AND backupmx = ’0′ AND active = ’1′ # nano /etc/postfix/mysql_virtual_mailbox_limit_maps.cf user = db_kullanıcı_adi password = şifre hosts = localhost dbname = db_ismi query = SELECT quota FROM mailbox WHERE username=’%s’ AND active = ’1′ # nano /etc/postfix/mysql_virtual_mailbox_maps.cf user = db_kullanıcı_adi password = şifre hosts = localhost dbname = db_ismi query = SELECT CONCAT(domain,’/’,maildir) FROM mailbox WHERE username=’%s’ AND active = ’1′ Dovecot Kurulumu ve Ayarları IMAP ve Pop için dovecot kullanacağız.\n# yum install dovecot Postfix in dovecot ile anlaşa bilmesi için postfix master.cf dosyasının en altına aşağıdaki satırı eklememiz gerekiyor.\ndovecot unix – n n – – pipe flags=DRhu user=vmail:mail argv=/usr/lib/dovecot/deliver -d $(recipient) Dovecot kurulumundan sonra /etc/dovecot.conf dosyasını aşağıdaki şekilde düzenlememiz gerekiyor.\nDovecot.conf dosyasında ssl ve dovecot-sql.conf ayarlamalarını bilerleyen kısımlarda anlatacağım.\n## Dovecot configuration file # # # imap imaps pop3 pop3s (use imaps and pop3s if configured for SSL) protocols = imap pop3 # # Uncomment the ssl_listen statements and comment out listen if using SSL protocol imap { listen = *:143 # ssl_listen = *:993 } protocol pop3 { listen = *:110 # ssl_listen = *:995 } # log_timestamp = “%Y-%m-%d %H:%M:%S ” syslog_facility = mail # # Uncomment these if using SSL ssl_cert_file = /etc/ssl/domain.com/mailserver/mail-cert.pem ssl_key_file = /etc/ssl/domain.com/mailserver/mail-key.pem ssl_ca_file = /etc/ssl/domain.com/ca/mycompany.pem ssl_verify_client_cert = yes ssl_parameters_regenerate = 168 verbose_ssl = no # # Where the mailboxes are located mail_location = maildir:/var/vmail/%d/%u # mail_extra_groups = mail mail_debug = no first_valid_uid = 150 last_valid_uid = 150 maildir_copy_with_hardlinks = yes # protocol imap { login_executable = /usr/libexec/dovecot/imap-login mail_executable = /usr/libexec/dovecot/imap imap_max_line_length = 65536 } protocol pop3 { login_executable = /usr/libexec/dovecot/pop3-login mail_executable = /usr/libexec/dovecot/pop3 pop3_uidl_format = %08Xu%08Xv } # auth_verbose = no auth_debug = no auth_debug_passwords = no # auth default { mechanisms = plain passdb sql { args = /etc/dovecot-sql.conf } userdb sql { args = /etc/dovecot-sql.conf } user = nobody socket listen { master { path = /var/run/dovecot/auth-master mode = 0660 user = vmail group = mail } client { path = /var/spool/postfix/private/auth mode = 0660 user = postfix group = postfix } } # # If you want client certificates, use these lines # ssl_require_client_cert = yes # ssl_username_from_cert = yes } Dovecotun sql ile konuşabilmesi için dovecot-sql.conf adında bir dosya oluştup içeriğini aşağıdaki gibi ayarlıyoruz.\n# nano /etc/dovecot-sql.conf driver = mysql connect = host=localhost dbname=db_ismi user=db_kullanıcı_ismi password=şifre default_pass_scheme = MD5 user_query = SELECT ‘/var/vmail/%d/%n’ as home, ‘maildir:/var/vmail/%d/%n’ as mail, 150 AS uid, 8 AS gid, concat(‘dirsize:storage=’, quota) AS quota FROM mailbox WHERE username = ‘%u’ AND active = ’1′ password_query = SELECT username as user, password, ‘/var/vmail/%d/%n’ as userdb_home, ‘maildir:/var/vmail/%d/%n’ as userdb_mail, 150 as userdb_uid, 8 as userdb_gid FROM mailbox WHERE username = ‘%u’ AND active = ’1′ # chmod 600 /etc/dovecot-sql.conf # chown vmail /etc/dovecot-sql.conf dovecot ayarları bitti SSL için düzenlemeyi daha sonra yapacağız.\nPostfix admin Kurulumu ve Yapılandırması Postfix adminin düzgün çalışabilmesi için bir web sunucusuna ( apache vb.) ve php kurulumuna ihtiyacınız bulunuyor. Bunların olduğunu düşünerek postfix admin kurulumunun ardından imap hatası aırsanız aşağıdaki komutu çalıştırarak php-imap I kurmanız gerekiyor.\n# yum install php-imap Ben postfixadmini bir domainin altında çalıştıracağım için postfixadmin kurulum dosyalarını /var/www/html/domain.com altında barındıracağım.\nArtık postfix admini kurabiliriz.\nhttp://sourceforge.net/projects/postfixadmin/\nYukarıdaki adres yardımıyla postfixadminin son sürümünü indirin.\n# tar xvfz postfixadmin-2.3.3.tgz Sıkıştırılmış dosyayı açtıktan sonra config.inc.php dosyasını düzenlememiz gerekiyor.\n$CONF[‘postfix_admin_url’] = ‘/var/www/domain.com/postfixadmin/’; $CONF[‘postfix_admin_path’] = ‘http://localhost/postfixadmin’; $CONF[‘database_host] = ‘localhost’; $CONF[‘database_user’] = ‘db_kullanıcı_adi’; $CONF[‘database_password’] = ‘şifre’; $CONF[‘database_name’] = ‘db_ismi’; TLS ve SSL kurulumu self-signed sertifikas kurulumu anlatılacak olup. Mail programları üzerinden ilk bağlantınızda güvenilmeyen ssl uyarısı almanız kaçılımazdır.\nİlk once ssl sertifikasını tutacağımız yeri belirleyip. Bu klasörün içerisine pem dosyalarını oluşturacağız.\n# mkdir -p /etc/ssl/domain.com/mailserver/ # cd /etc/ssl/domain.com/mailserver/ # openssl genrsa 1024 \u003e mail-key.pem # chmod 400 mail-key.pem # openssl req -new -x509 -nodes -sha1 -days 365 -key mail-key.pem \u003e mail-cert.pem Mail-cert.pem sertifikası için bir kaç soru soracak bunların içerisinden Common Name (eg, YOUR name) için istenen bilgi sunucu bilginiz ile aynı yapmanız tavsite ediliyor. Örneğin mail.domain.com\nDovecot SSL yapılandırması SSL tanımlamaları bittikten sonra bu bilgileri dovecot ve postfix e tanımlamamız gerekiyor. Ki bunu daha önceden dovecot.conf dosyasını düzenlerken ssl bilgilerinide düzenlemiştik.\nprotocols ssl_listen ssl_cert_file ssl_key_file ssl_parameters_regenerate = 168 verbose_ssl = no Dovecot şu an 993 ssl port isteklerine cevap verecektir.Aşağıdaki gibi bir log çıktısı görünecektir.\ndovecot: imap-login: Login: user=, method=PLAIN, rip=127.0.1.1, lip=127.0.1.1, TLS Postfix TLS ayarları için main.cf dosyasına aşağıdaki bilgileri girmemiz gerekiyor.\nsmtpd_tls_cert_file = /etc/ssl/domain.com/mailserver/mail-cert.pem smtpd_tls_key_file = /etc/ssl/domain.com/mailserver/mail-key.pem smtpd_tls_session_cache_database = btree:/var/spool/postfix/smtpd_tls_session_cache smtpd_tls_security_level = may smtpd_tls_received_header = no smtpd_tls_loglevel = 0 tls_random_source = dev:/dev/urandom Postgrey Yapılandırması ve Kurulumu Herkez spamlardan nefret eder ve bunları engellemek için bir çok yöntem denemektedir. Postfix ile en çok kullanılan spam engelleme aracı olan postgreyi kurup, yapılandıracağız.\n# yum install postgrey Postfrey için postfixe smtpd_recipient_restrictions kuralı yazarken son kural olan permit ten önce yazmaya dikkat ediyoruz. Buda postfix mailleri dovecota iletmeden once postgreyin elinden geçerek spam olarak iletilmesini engelleyecektir.\ncheck_policy_service inet:127.0.0.1:60000 main.cf dosyasına ekleyeceğimiz rule; smtpd_recipient_restrictions = permit_mynetworks permit_tls_all_clientcerts #permit_sasl_authenticated reject_non_fqdn_hostname reject_non_fqdn_sender reject_non_fqdn_recipient reject_unauth_destination reject_unauth_pipelining reject_invalid_hostname #reject_unknown_sender_domain #reject_unknown_hostname reject_rbl_client zen.spamhaus.org reject_rbl_client bl.spamcop.net reject_rbl_client cbl.abuseat.org reject_rbl_client dnsbl.njabl.org reject_rbl_client dnsbl.sorbs.net reject_rhsbl_sender dsn.rfc-ignorant.org check_policy_service inet:127.0.0.1:60000 permit # smtpd_data_restrictions = reject_unauth_pipelining, reject_multi_recipient_bounce, permit Burada reject_non_fqdn kısımlarını isterseniz kullanmaya bilirsiniz. Bu kurallar ters isim güncellemesi olmayan domainlerden mail gelmesini engelleyecektir. Buda mail spam olmasa bile engellenmesi demektir.\nmain.cf dosyasına yazdığımız check_policy_service inet:127.0.0.1:60000 kuralının çalışabilmesi için postgreye inet:127.0.0.1:60000 i dinlemesini sölememiz gerekiyor. Bunu içinde aşağıdaki adımı uygulayabilirsiniz.\n# nano /etc/init.d/postgrey Dosyasını açarak,\nOPTIONS=”–unix=$SOCKET” şeklinde yazılmış satırı OPTIONS=”–inet=127.0.0.1:60000 -d” şekilde değiştirmeniz gerekiyor.\n# /etc/init.d/postgrey restart ",
+  "wordCount" : "1369",
+  "inLanguage": "en-us",
+  "datePublished": "2011-08-21T14:06:53+03:00",
+  "dateModified": "2011-08-21T14:06:53+03:00",
+  "author":[{
+    "@type": "Person",
+    "name": {"bio":"Backend Developer|Golang|Rust|Blogger|Linux Fan","job":"Software Engineer","location":"Turkey/Istanbul","name":"Gökhan MANKARA"}
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gökhan MANKARA",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body class="body">
-    <div class="wrapper">
-      <aside
-        
-          class="wrapper__sidebar wrapper__sidebar--hidden"
-        
-      ><div
-  class="sidebar
-    animated fadeInDown
-  "
->
-  <div class="sidebar__content">
-    <div class="sidebar__introduction">
-      <img
-        class="sidebar__introduction-profileimage"
-        src="/images/cover.jpg"
-        alt="profile picture"
-      />
-      
-        <div class="sidebar__introduction-title">
-          <a href="/"></a>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Gökhan MANKARA (Alt + H)">Gökhan MANKARA</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
-      
-      <div class="sidebar__introduction-description">
-        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
-      </div>
-    </div>
-    <ul class="sidebar__list">
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://www.linkedin.com/in/gokhanmankara/"
-            target="_blank"
-            rel="noopener me"
-            aria-label="Linkedin"
-            title="Linkedin"
-          >
-            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://github.com/gokhanm"
-            target="_blank"
-            rel="noopener me"
-            aria-label="GitHub"
-            title="GitHub"
-          >
-            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="mailto:gokhanm@gmail.com"
-            target="_blank"
-            rel="noopener me"
-            aria-label="e-mail"
-            title="e-mail"
-          >
-            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="/index.xml"
-            target="_blank"
-            rel="noopener me"
-            aria-label="rss"
-            title="rss"
-          >
-            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-    </ul>
-  </div><footer class="footer footer__sidebar">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
-    </li>
-    
-  </ul>
-</footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></div>
-</aside>
-      <main
-        
-          class="wrapper__main wrapper__main--fullscreen"
-        
-      >
-        <header class="header"><div
-  class="
-    animated fadeInDown
-  "
->
-  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-  </a>
-  <nav class="nav">
-    <ul class="nav__list" id="navMenu">
-      
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/"
-              
-              title=""
-              >Home</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/post"
-              
-              title=""
-              >Posts</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/tags"
-              
-              title=""
-              >Tags</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/about"
-              
-              title=""
-              >About</a
-            >
-          </li>
-        
-
-      
-    </ul>
-    <ul class="nav__list nav__list--end">
-      
-      
-        <li class="nav__list-item">
-          <div class="themeswitch">
-            <a title="Switch Theme">
-              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a>
-          </div>
-        </li>
-      
-    </ul>
-  </nav>
-</div>
-</header>
-  <div
-    class="post 
-      animated fadeInDown
-    "
-  >
-    
-    <div class="post__content">
-      
-        <h1>Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu Ve Yapılandırması</h1>
-      
-      
-        <ul class="post__meta">
-          <li class="post__meta-item">
-            <em class="fas fa-calendar-day post__meta-icon"></em>
-            <span class="post__meta-text"
-              >
-                
-                  Sun, Aug 21, 2011
-                
-
-              
-            </span>
-          </li>
-          <li class="post__meta-item">
-            <em class="fas fa-stopwatch post__meta-icon"></em>
-            <span class="post__meta-text"></span>
-          </li>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/post" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
         </ul>
-      <p>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.</p>
-<h2 id="postfix-kurulumu">Postfix Kurulumu</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># yum install postfix</span>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması
+    </h1>
+    <div class="post-meta"><span title='2011-08-21 14:06:53 +0300 EEST'>2011, Aug 21</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>1369 words</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Bu yazıda postfix mail server ile birlikte Dovecot kurulumunu deneyeceğiz. Bunun yanında sanal kullanıcıların saklanması için mysql serverını kullanacağız. Sanal domainleri ve kullanıcıları oluşturabilmeniz için postfix admin den yararlanacağız. Bütün bu kurulumlar RedHat,Centos 5.x için anlatılacaktır.</p>
+<h2 id="postfix-kurulumu">Postfix Kurulumu<a hidden class="anchor" aria-hidden="true" href="#postfix-kurulumu">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># yum install postfix</span>
 </span></span></code></pre></div><p>komutu ile postfixi çok rahat bir şekilde kurabilirsiniz. Yalnız biz mail server kurulumumuzda mysql üzerinde sanal kullanıcıları tutacağımız için yukarıdaki komut ile kurmanız halinde postfix mysql desteği ile kurulmamış olacaktır. Sonuçta herşey tamam olsa bile postfixin mysqle bağlanamamasından dolayı mail sunucusu çalışmayacaktır.</p>
 <p>Postfixi mysql desteği ile kurmak için yum.repo.d üzerinde bir kaç düzenleme yapmamız gerekiyor.CentOS-Base.repo dosyasının base,update ve centosplus kısımlarını aşağıdaki gibi düzenledikten sonra postfix kurulumu yapıldığında mysql desteği gelmiş olacaktır.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/yum.repos.d/CentOS-Base.repo</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>base<span class="o">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">exclude</span><span class="o">=</span>postfix
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>update<span class="o">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">exclude</span><span class="o">=</span>postfix
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>centosplus<span class="o">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">includepkgs</span><span class="o">=</span>postfix
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># yum install postfix</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># postconf -m</span>
-</span></span><span class="line"><span class="cl">btree
-</span></span><span class="line"><span class="cl">cidr
-</span></span><span class="line"><span class="cl">environ
-</span></span><span class="line"><span class="cl"><span class="nb">hash</span>
-</span></span><span class="line"><span class="cl">ldap
-</span></span><span class="line"><span class="cl">mysql
-</span></span><span class="line"><span class="cl">nis
-</span></span><span class="line"><span class="cl">pcre
-</span></span><span class="line"><span class="cl">pgsql
-</span></span><span class="line"><span class="cl">proxy
-</span></span><span class="line"><span class="cl">regexp
-</span></span><span class="line"><span class="cl">static
-</span></span><span class="line"><span class="cl">unix
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/yum.repos.d/CentOS-Base.repo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>base<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exclude<span style="color:#f92672">=</span>postfix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>update<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exclude<span style="color:#f92672">=</span>postfix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>centosplus<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>includepkgs<span style="color:#f92672">=</span>postfix
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># yum install postfix</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># postconf -m</span>
+</span></span><span style="display:flex;"><span>btree
+</span></span><span style="display:flex;"><span>cidr
+</span></span><span style="display:flex;"><span>environ
+</span></span><span style="display:flex;"><span>hash
+</span></span><span style="display:flex;"><span>ldap
+</span></span><span style="display:flex;"><span>mysql
+</span></span><span style="display:flex;"><span>nis
+</span></span><span style="display:flex;"><span>pcre
+</span></span><span style="display:flex;"><span>pgsql
+</span></span><span style="display:flex;"><span>proxy
+</span></span><span style="display:flex;"><span>regexp
+</span></span><span style="display:flex;"><span>static
+</span></span><span style="display:flex;"><span>unix
 </span></span></code></pre></div><p>Postfix kurulumumuz tamam şimdi main.cf dosyasını düzenlememiz gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/postfix/main.cf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_banner</span> <span class="o">=</span> <span class="nv">$myhostname</span> ESMTP <span class="nv">$mail_name</span> <span class="o">(</span>Debian/GNU<span class="o">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">append_dot_mydomain</span> <span class="o">=</span> no
-</span></span><span class="line"><span class="cl"><span class="c1">#delay_warning_time = 4h</span>
-</span></span><span class="line"><span class="cl"><span class="nv">myhostname</span> <span class="o">=</span> mail.domain.com
-</span></span><span class="line"><span class="cl"><span class="nv">myorigin</span> <span class="o">=</span> domain.com
-</span></span><span class="line"><span class="cl"><span class="nv">mydestination</span> <span class="o">=</span> localhost
-</span></span><span class="line"><span class="cl"><span class="nv">mynetworks</span> <span class="o">=</span> 127.0.0.0/8
-</span></span><span class="line"><span class="cl"><span class="nv">mailbox_size_limit</span> <span class="o">=</span> <span class="m">0</span>
-</span></span><span class="line"><span class="cl"><span class="nv">recipient_delimiter</span> <span class="o">=</span> +
-</span></span><span class="line"><span class="cl"><span class="nv">inet_interfaces</span> <span class="o">=</span> all
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/postfix/main.cf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>smtpd_banner <span style="color:#f92672">=</span> $myhostname ESMTP $mail_name <span style="color:#f92672">(</span>Debian/GNU<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>append_dot_mydomain <span style="color:#f92672">=</span> no
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#delay_warning_time = 4h</span>
+</span></span><span style="display:flex;"><span>myhostname <span style="color:#f92672">=</span> mail.domain.com
+</span></span><span style="display:flex;"><span>myorigin <span style="color:#f92672">=</span> domain.com
+</span></span><span style="display:flex;"><span>mydestination <span style="color:#f92672">=</span> localhost
+</span></span><span style="display:flex;"><span>mynetworks <span style="color:#f92672">=</span> 127.0.0.0/8
+</span></span><span style="display:flex;"><span>mailbox_size_limit <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>recipient_delimiter <span style="color:#f92672">=</span> +
+</span></span><span style="display:flex;"><span>inet_interfaces <span style="color:#f92672">=</span> all
 </span></span></code></pre></div><p>myhostname ve myorigin kısımlarını kendi domaininize göre düzenlemeyi unutmayınız.</p>
-<h2 id="mysql-yapılandırması">MySQL Yapılandırması</h2>
+<h2 id="mysql-yapılandırması">MySQL Yapılandırması<a hidden class="anchor" aria-hidden="true" href="#mysql-yapılandırması">#</a></h2>
 <p>Birçok sunucuda mysql kurulu olarak gelmektedir. İlk kez kuracak iseniz;</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># yum install mysql-server mysql-client</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># yum install mysql-server mysql-client</span>
 </span></span></code></pre></div><p>Artık database oluşturmaya geldi. Postfix,dovecot ve postfix admin için sadece bir db oluşturmanız yeterli. Oluşturulan databasede postfix ve dovecot sql komutu olan SELECT, postfix admin ise SELECT, UPDATE  ve INSERT komutlarını kullanacak.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># mysql -uroot -p</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">mysql&gt; CREATE DATABASE db_ismi<span class="p">;</span>
-</span></span><span class="line"><span class="cl">mysql&gt; GRANT ALL PRIVILEGES ON db_ismi.* TO ‘kullanıcı_adı’@’localhost’ IDENTIFIED BY ‘şifre’<span class="p">;</span>
-</span></span><span class="line"><span class="cl">mysql&gt; quit<span class="p">;</span>
-</span></span></code></pre></div><h2 id="sanal-kullanıcılar">Sanal Kullanıcılar</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># mysql -uroot -p</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mysql&gt; CREATE DATABASE db_ismi;
+</span></span><span style="display:flex;"><span>mysql&gt; GRANT ALL PRIVILEGES ON db_ismi.* TO ‘kullanıcı_adı’@’localhost’ IDENTIFIED BY ‘şifre’;
+</span></span><span style="display:flex;"><span>mysql&gt; quit;
+</span></span></code></pre></div><h2 id="sanal-kullanıcılar">Sanal Kullanıcılar<a hidden class="anchor" aria-hidden="true" href="#sanal-kullanıcılar">#</a></h2>
 <p>Yazının en başında da dediğimiz gibi sanal kullanıcıları mysql üzerinde tutacağız. Bunun postfix main.cf dosyasına bir kaç satır eklememiz gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Virtual mailbox settings</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_mailbox_domains</span> <span class="o">=</span> mysql:<span class="nv">$config_directory</span>/mysql_virtual_domains_maps.cf
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_mailbox_base</span> <span class="o">=</span> /var/vmail
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_mailbox_maps</span> <span class="o">=</span> mysql:<span class="nv">$config_directory</span>/mysql_virtual_mailbox_maps.cf
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_alias_maps</span> <span class="o">=</span> mysql:<span class="nv">$config_directory</span>/mysql_virtual_alias_maps.cf
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_minimum_uid</span> <span class="o">=</span> <span class="m">150</span>
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_uid_maps</span> <span class="o">=</span> static:150
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_gid_maps</span> <span class="o">=</span> static:8
-</span></span><span class="line"><span class="cl"><span class="nv">virtual_transport</span> <span class="o">=</span> dovecot
-</span></span><span class="line"><span class="cl"><span class="nv">dovecot_destination_recipient_limit</span> <span class="o">=</span> <span class="m">1</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># SASL Authentication</span>
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_sasl_auth_enable</span> <span class="o">=</span> yes
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_sasl_exceptions_networks</span> <span class="o">=</span> <span class="nv">$mynetworks</span>
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_sasl_security_options</span> <span class="o">=</span> noanonymous
-</span></span><span class="line"><span class="cl"><span class="nv">broken_sasl_auth_clients</span> <span class="o">=</span> yes
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_sasl_type</span> <span class="o">=</span> dovecot
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_sasl_path</span> <span class="o">=</span> private/auth
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Virtual mailbox settings</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>virtual_mailbox_domains <span style="color:#f92672">=</span> mysql:$config_directory/mysql_virtual_domains_maps.cf
+</span></span><span style="display:flex;"><span>virtual_mailbox_base <span style="color:#f92672">=</span> /var/vmail
+</span></span><span style="display:flex;"><span>virtual_mailbox_maps <span style="color:#f92672">=</span> mysql:$config_directory/mysql_virtual_mailbox_maps.cf
+</span></span><span style="display:flex;"><span>virtual_alias_maps <span style="color:#f92672">=</span> mysql:$config_directory/mysql_virtual_alias_maps.cf
+</span></span><span style="display:flex;"><span>virtual_minimum_uid <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>
+</span></span><span style="display:flex;"><span>virtual_uid_maps <span style="color:#f92672">=</span> static:150
+</span></span><span style="display:flex;"><span>virtual_gid_maps <span style="color:#f92672">=</span> static:8
+</span></span><span style="display:flex;"><span>virtual_transport <span style="color:#f92672">=</span> dovecot
+</span></span><span style="display:flex;"><span>dovecot_destination_recipient_limit <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SASL Authentication</span>
+</span></span><span style="display:flex;"><span>smtpd_sasl_auth_enable <span style="color:#f92672">=</span> yes
+</span></span><span style="display:flex;"><span>smtpd_sasl_exceptions_networks <span style="color:#f92672">=</span> $mynetworks
+</span></span><span style="display:flex;"><span>smtpd_sasl_security_options <span style="color:#f92672">=</span> noanonymous
+</span></span><span style="display:flex;"><span>broken_sasl_auth_clients <span style="color:#f92672">=</span> yes
+</span></span><span style="display:flex;"><span>smtpd_sasl_type <span style="color:#f92672">=</span> dovecot
+</span></span><span style="display:flex;"><span>smtpd_sasl_path <span style="color:#f92672">=</span> private/auth
 </span></span></code></pre></div><p>Sanal kullanıcıların mailbox larını /var/vmail altında tutacağız bunun için vmail kullanıcısı ve mail adında bir group oluşturmamız gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># useradd -r -u 150 -g mail -d /var/vmail -s /sbin/nologin -c “Virtual mailbox” vmail</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># mkdir /var/vmail</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># chmod 770 /var/vmail/</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># chown vmail:mail /var/vmail/</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># useradd -r -u 150 -g mail -d /var/vmail -s /sbin/nologin -c “Virtual mailbox” vmail</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># mkdir /var/vmail</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chmod 770 /var/vmail/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chown vmail:mail /var/vmail/</span>
 </span></span></code></pre></div><p>Ayrıca sadece izin verilmiş kullanıcıların mail atabilmesi için main.cf dosyasına rule yazmamız gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">smtpd_recipient_restrictions</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">permit_mynetworks
-</span></span><span class="line"><span class="cl">permit_sasl_authenticated
-</span></span><span class="line"><span class="cl">reject_unauth_destination
-</span></span><span class="line"><span class="cl">permit
-</span></span></code></pre></div><h2 id="postfix-mysql-ayarları">Postfix Mysql Ayarları</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>smtpd_recipient_restrictions <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>permit_mynetworks
+</span></span><span style="display:flex;"><span>permit_sasl_authenticated
+</span></span><span style="display:flex;"><span>reject_unauth_destination
+</span></span><span style="display:flex;"><span>permit
+</span></span></code></pre></div><h2 id="postfix-mysql-ayarları">Postfix Mysql Ayarları<a hidden class="anchor" aria-hidden="true" href="#postfix-mysql-ayarları">#</a></h2>
 <p>Postfixin mysql de kayıtlı bulunan bilgilerin nerede ve nasıl okuması gerektiğini tanımlamamız gerekiyor. Bunun için /etc/postfix altına birkaç dosya oluşturup düzenlememiz gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/postfix/mysql_virtual_alias_maps.cf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> db_kullanıcı_adi
-</span></span><span class="line"><span class="cl"><span class="nv">password</span> <span class="o">=</span> şifre
-</span></span><span class="line"><span class="cl"><span class="nv">hosts</span> <span class="o">=</span> localhost
-</span></span><span class="line"><span class="cl"><span class="nv">dbname</span> <span class="o">=</span> db_ismi
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">query</span> <span class="o">=</span> SELECT goto FROM <span class="nb">alias</span> WHERE <span class="nv">address</span><span class="o">=</span>’%s’ AND <span class="nv">active</span> <span class="o">=</span> ’1′
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># nano /etc/postfix/mysql_virtual_domains_maps.cf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> db_kullanıcı_adi
-</span></span><span class="line"><span class="cl"><span class="nv">password</span> <span class="o">=</span> şifre
-</span></span><span class="line"><span class="cl"><span class="nv">hosts</span> <span class="o">=</span> localhost
-</span></span><span class="line"><span class="cl"><span class="nv">dbname</span> <span class="o">=</span> db_ismi
-</span></span><span class="line"><span class="cl"><span class="nv">query</span> <span class="o">=</span> SELECT domain FROM domain WHERE <span class="nv">domain</span><span class="o">=</span>’%s’ AND <span class="nv">backupmx</span> <span class="o">=</span> ’0′ AND <span class="nv">active</span> <span class="o">=</span> ’1′
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># nano /etc/postfix/mysql_virtual_mailbox_limit_maps.cf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> db_kullanıcı_adi
-</span></span><span class="line"><span class="cl"><span class="nv">password</span> <span class="o">=</span> şifre
-</span></span><span class="line"><span class="cl"><span class="nv">hosts</span> <span class="o">=</span> localhost
-</span></span><span class="line"><span class="cl"><span class="nv">dbname</span> <span class="o">=</span> db_ismi
-</span></span><span class="line"><span class="cl"><span class="nv">query</span> <span class="o">=</span> SELECT quota FROM mailbox WHERE <span class="nv">username</span><span class="o">=</span>’%s’ AND <span class="nv">active</span> <span class="o">=</span> ’1′
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># nano /etc/postfix/mysql_virtual_mailbox_maps.cf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> db_kullanıcı_adi
-</span></span><span class="line"><span class="cl"><span class="nv">password</span> <span class="o">=</span> şifre
-</span></span><span class="line"><span class="cl"><span class="nv">hosts</span> <span class="o">=</span> localhost
-</span></span><span class="line"><span class="cl"><span class="nv">dbname</span> <span class="o">=</span> db_ismi
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">query</span> <span class="o">=</span> SELECT CONCAT<span class="o">(</span>domain,’/’,maildir<span class="o">)</span> FROM mailbox WHERE <span class="nv">username</span><span class="o">=</span>’%s’ AND <span class="nv">active</span> <span class="o">=</span> ’1′
-</span></span></code></pre></div><h2 id="dovecot-kurulumu-ve-ayarları">Dovecot Kurulumu ve Ayarları</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/postfix/mysql_virtual_alias_maps.cf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> db_kullanıcı_adi
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> şifre
+</span></span><span style="display:flex;"><span>hosts <span style="color:#f92672">=</span> localhost
+</span></span><span style="display:flex;"><span>dbname <span style="color:#f92672">=</span> db_ismi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>query <span style="color:#f92672">=</span> SELECT goto FROM alias WHERE address<span style="color:#f92672">=</span>’%s’ AND active <span style="color:#f92672">=</span> ’1′
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/postfix/mysql_virtual_domains_maps.cf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> db_kullanıcı_adi
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> şifre
+</span></span><span style="display:flex;"><span>hosts <span style="color:#f92672">=</span> localhost
+</span></span><span style="display:flex;"><span>dbname <span style="color:#f92672">=</span> db_ismi
+</span></span><span style="display:flex;"><span>query <span style="color:#f92672">=</span> SELECT domain FROM domain WHERE domain<span style="color:#f92672">=</span>’%s’ AND backupmx <span style="color:#f92672">=</span> ’0′ AND active <span style="color:#f92672">=</span> ’1′
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/postfix/mysql_virtual_mailbox_limit_maps.cf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> db_kullanıcı_adi
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> şifre
+</span></span><span style="display:flex;"><span>hosts <span style="color:#f92672">=</span> localhost
+</span></span><span style="display:flex;"><span>dbname <span style="color:#f92672">=</span> db_ismi
+</span></span><span style="display:flex;"><span>query <span style="color:#f92672">=</span> SELECT quota FROM mailbox WHERE username<span style="color:#f92672">=</span>’%s’ AND active <span style="color:#f92672">=</span> ’1′
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/postfix/mysql_virtual_mailbox_maps.cf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> db_kullanıcı_adi
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> şifre
+</span></span><span style="display:flex;"><span>hosts <span style="color:#f92672">=</span> localhost
+</span></span><span style="display:flex;"><span>dbname <span style="color:#f92672">=</span> db_ismi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>query <span style="color:#f92672">=</span> SELECT CONCAT<span style="color:#f92672">(</span>domain,’/’,maildir<span style="color:#f92672">)</span> FROM mailbox WHERE username<span style="color:#f92672">=</span>’%s’ AND active <span style="color:#f92672">=</span> ’1′
+</span></span></code></pre></div><h2 id="dovecot-kurulumu-ve-ayarları">Dovecot Kurulumu ve Ayarları<a hidden class="anchor" aria-hidden="true" href="#dovecot-kurulumu-ve-ayarları">#</a></h2>
 <p>IMAP ve Pop için dovecot kullanacağız.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># yum install dovecot</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># yum install dovecot</span>
 </span></span></code></pre></div><p>Postfix in dovecot ile anlaşa bilmesi için postfix master.cf dosyasının en altına aşağıdaki satırı eklememiz gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dovecot unix – n n – – pipe <span class="nv">flags</span><span class="o">=</span>DRhu <span class="nv">user</span><span class="o">=</span>vmail:mail <span class="nv">argv</span><span class="o">=</span>/usr/lib/dovecot/deliver -d <span class="k">$(</span>recipient<span class="k">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dovecot unix – n n – – pipe flags<span style="color:#f92672">=</span>DRhu user<span style="color:#f92672">=</span>vmail:mail argv<span style="color:#f92672">=</span>/usr/lib/dovecot/deliver -d <span style="color:#66d9ef">$(</span>recipient<span style="color:#66d9ef">)</span>
 </span></span></code></pre></div><p>Dovecot kurulumundan sonra /etc/dovecot.conf dosyasını aşağıdaki şekilde düzenlememiz gerekiyor.</p>
 <p>Dovecot.conf dosyasında ssl ve dovecot-sql.conf ayarlamalarını bilerleyen kısımlarda anlatacağım.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">## Dovecot configuration file</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># imap imaps pop3 pop3s (use imaps and pop3s if configured for SSL)</span>
-</span></span><span class="line"><span class="cl"><span class="nv">protocols</span> <span class="o">=</span> imap pop3
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Uncomment the ssl_listen statements and comment out listen if using SSL</span>
-</span></span><span class="line"><span class="cl">protocol imap <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">listen</span> <span class="o">=</span> *:143
-</span></span><span class="line"><span class="cl"><span class="c1"># ssl_listen = *:993</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">protocol pop3 <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">listen</span> <span class="o">=</span> *:110
-</span></span><span class="line"><span class="cl"><span class="c1"># ssl_listen = *:995</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="nv">log_timestamp</span> <span class="o">=</span> “%Y-%m-%d %H:%M:%S ”
-</span></span><span class="line"><span class="cl"><span class="nv">syslog_facility</span> <span class="o">=</span> mail
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Uncomment these if using SSL</span>
-</span></span><span class="line"><span class="cl"><span class="nv">ssl_cert_file</span> <span class="o">=</span> /etc/ssl/domain.com/mailserver/mail-cert.pem
-</span></span><span class="line"><span class="cl"><span class="nv">ssl_key_file</span> <span class="o">=</span> /etc/ssl/domain.com/mailserver/mail-key.pem
-</span></span><span class="line"><span class="cl"><span class="nv">ssl_ca_file</span> <span class="o">=</span> /etc/ssl/domain.com/ca/mycompany.pem
-</span></span><span class="line"><span class="cl"><span class="nv">ssl_verify_client_cert</span> <span class="o">=</span> yes
-</span></span><span class="line"><span class="cl"><span class="nv">ssl_parameters_regenerate</span> <span class="o">=</span> <span class="m">168</span>
-</span></span><span class="line"><span class="cl"><span class="nv">verbose_ssl</span> <span class="o">=</span> no
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Where the mailboxes are located</span>
-</span></span><span class="line"><span class="cl"><span class="nv">mail_location</span> <span class="o">=</span> maildir:/var/vmail/%d/%u
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="nv">mail_extra_groups</span> <span class="o">=</span> mail
-</span></span><span class="line"><span class="cl"><span class="nv">mail_debug</span> <span class="o">=</span> no
-</span></span><span class="line"><span class="cl"><span class="nv">first_valid_uid</span> <span class="o">=</span> <span class="m">150</span>
-</span></span><span class="line"><span class="cl"><span class="nv">last_valid_uid</span> <span class="o">=</span> <span class="m">150</span>
-</span></span><span class="line"><span class="cl"><span class="nv">maildir_copy_with_hardlinks</span> <span class="o">=</span> yes
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl">protocol imap <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">login_executable</span> <span class="o">=</span> /usr/libexec/dovecot/imap-login
-</span></span><span class="line"><span class="cl"><span class="nv">mail_executable</span> <span class="o">=</span> /usr/libexec/dovecot/imap
-</span></span><span class="line"><span class="cl"><span class="nv">imap_max_line_length</span> <span class="o">=</span> <span class="m">65536</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">protocol pop3 <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">login_executable</span> <span class="o">=</span> /usr/libexec/dovecot/pop3-login
-</span></span><span class="line"><span class="cl"><span class="nv">mail_executable</span> <span class="o">=</span> /usr/libexec/dovecot/pop3
-</span></span><span class="line"><span class="cl"><span class="nv">pop3_uidl_format</span> <span class="o">=</span> %08Xu%08Xv
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="nv">auth_verbose</span> <span class="o">=</span> no
-</span></span><span class="line"><span class="cl"><span class="nv">auth_debug</span> <span class="o">=</span> no
-</span></span><span class="line"><span class="cl"><span class="nv">auth_debug_passwords</span> <span class="o">=</span> no
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl">auth default <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">mechanisms</span> <span class="o">=</span> plain
-</span></span><span class="line"><span class="cl">passdb sql <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">args</span> <span class="o">=</span> /etc/dovecot-sql.conf
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">userdb sql <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">args</span> <span class="o">=</span> /etc/dovecot-sql.conf
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> nobody
-</span></span><span class="line"><span class="cl">socket listen <span class="o">{</span>
-</span></span><span class="line"><span class="cl">master <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">path</span> <span class="o">=</span> /var/run/dovecot/auth-master
-</span></span><span class="line"><span class="cl"><span class="nv">mode</span> <span class="o">=</span> <span class="m">0660</span>
-</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> vmail
-</span></span><span class="line"><span class="cl"><span class="nv">group</span> <span class="o">=</span> mail
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">client <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="nv">path</span> <span class="o">=</span> /var/spool/postfix/private/auth
-</span></span><span class="line"><span class="cl"><span class="nv">mode</span> <span class="o">=</span> <span class="m">0660</span>
-</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> postfix
-</span></span><span class="line"><span class="cl"><span class="nv">group</span> <span class="o">=</span> postfix
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># If you want client certificates, use these lines</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ssl_require_client_cert = yes</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ssl_username_from_cert = yes</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">## Dovecot configuration file</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># imap imaps pop3 pop3s (use imaps and pop3s if configured for SSL)</span>
+</span></span><span style="display:flex;"><span>protocols <span style="color:#f92672">=</span> imap pop3
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Uncomment the ssl_listen statements and comment out listen if using SSL</span>
+</span></span><span style="display:flex;"><span>protocol imap <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>listen <span style="color:#f92672">=</span> *:143
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssl_listen = *:993</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>protocol pop3 <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>listen <span style="color:#f92672">=</span> *:110
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssl_listen = *:995</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>log_timestamp <span style="color:#f92672">=</span> “%Y-%m-%d %H:%M:%S ”
+</span></span><span style="display:flex;"><span>syslog_facility <span style="color:#f92672">=</span> mail
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Uncomment these if using SSL</span>
+</span></span><span style="display:flex;"><span>ssl_cert_file <span style="color:#f92672">=</span> /etc/ssl/domain.com/mailserver/mail-cert.pem
+</span></span><span style="display:flex;"><span>ssl_key_file <span style="color:#f92672">=</span> /etc/ssl/domain.com/mailserver/mail-key.pem
+</span></span><span style="display:flex;"><span>ssl_ca_file <span style="color:#f92672">=</span> /etc/ssl/domain.com/ca/mycompany.pem
+</span></span><span style="display:flex;"><span>ssl_verify_client_cert <span style="color:#f92672">=</span> yes
+</span></span><span style="display:flex;"><span>ssl_parameters_regenerate <span style="color:#f92672">=</span> <span style="color:#ae81ff">168</span>
+</span></span><span style="display:flex;"><span>verbose_ssl <span style="color:#f92672">=</span> no
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Where the mailboxes are located</span>
+</span></span><span style="display:flex;"><span>mail_location <span style="color:#f92672">=</span> maildir:/var/vmail/%d/%u
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>mail_extra_groups <span style="color:#f92672">=</span> mail
+</span></span><span style="display:flex;"><span>mail_debug <span style="color:#f92672">=</span> no
+</span></span><span style="display:flex;"><span>first_valid_uid <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>
+</span></span><span style="display:flex;"><span>last_valid_uid <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>
+</span></span><span style="display:flex;"><span>maildir_copy_with_hardlinks <span style="color:#f92672">=</span> yes
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>protocol imap <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>login_executable <span style="color:#f92672">=</span> /usr/libexec/dovecot/imap-login
+</span></span><span style="display:flex;"><span>mail_executable <span style="color:#f92672">=</span> /usr/libexec/dovecot/imap
+</span></span><span style="display:flex;"><span>imap_max_line_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">65536</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>protocol pop3 <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>login_executable <span style="color:#f92672">=</span> /usr/libexec/dovecot/pop3-login
+</span></span><span style="display:flex;"><span>mail_executable <span style="color:#f92672">=</span> /usr/libexec/dovecot/pop3
+</span></span><span style="display:flex;"><span>pop3_uidl_format <span style="color:#f92672">=</span> %08Xu%08Xv
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>auth_verbose <span style="color:#f92672">=</span> no
+</span></span><span style="display:flex;"><span>auth_debug <span style="color:#f92672">=</span> no
+</span></span><span style="display:flex;"><span>auth_debug_passwords <span style="color:#f92672">=</span> no
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>auth default <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>mechanisms <span style="color:#f92672">=</span> plain
+</span></span><span style="display:flex;"><span>passdb sql <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>args <span style="color:#f92672">=</span> /etc/dovecot-sql.conf
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>userdb sql <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>args <span style="color:#f92672">=</span> /etc/dovecot-sql.conf
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> nobody
+</span></span><span style="display:flex;"><span>socket listen <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>master <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> /var/run/dovecot/auth-master
+</span></span><span style="display:flex;"><span>mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> vmail
+</span></span><span style="display:flex;"><span>group <span style="color:#f92672">=</span> mail
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> /var/spool/postfix/private/auth
+</span></span><span style="display:flex;"><span>mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0660</span>
+</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> postfix
+</span></span><span style="display:flex;"><span>group <span style="color:#f92672">=</span> postfix
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you want client certificates, use these lines</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssl_require_client_cert = yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ssl_username_from_cert = yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><p>Dovecotun sql ile konuşabilmesi için dovecot-sql.conf adında bir dosya oluştup içeriğini aşağıdaki gibi ayarlıyoruz.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/dovecot-sql.conf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">driver</span> <span class="o">=</span> mysql
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">connect</span> <span class="o">=</span> <span class="nv">host</span><span class="o">=</span>localhost <span class="nv">dbname</span><span class="o">=</span>db_ismi <span class="nv">user</span><span class="o">=</span>db_kullanıcı_ismi <span class="nv">password</span><span class="o">=</span>şifre
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">default_pass_scheme</span> <span class="o">=</span> MD5
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">user_query</span> <span class="o">=</span> SELECT ‘/var/vmail/%d/%n’ as home, ‘maildir:/var/vmail/%d/%n’ as mail, <span class="m">150</span> AS uid, <span class="m">8</span> AS gid, concat<span class="o">(</span>‘dirsize:storage<span class="o">=</span>’, quota<span class="o">)</span> AS quota FROM mailbox WHERE <span class="nv">username</span> <span class="o">=</span> ‘%u’ AND <span class="nv">active</span> <span class="o">=</span> ’1′
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">password_query</span> <span class="o">=</span> SELECT username as user, password, ‘/var/vmail/%d/%n’ as userdb_home, ‘maildir:/var/vmail/%d/%n’ as userdb_mail, <span class="m">150</span> as userdb_uid, <span class="m">8</span> as userdb_gid FROM mailbox WHERE <span class="nv">username</span> <span class="o">=</span> ‘%u’ AND <span class="nv">active</span> <span class="o">=</span> ’1′
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># chmod 600 /etc/dovecot-sql.conf</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># chown vmail /etc/dovecot-sql.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/dovecot-sql.conf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> mysql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>connect <span style="color:#f92672">=</span> host<span style="color:#f92672">=</span>localhost dbname<span style="color:#f92672">=</span>db_ismi user<span style="color:#f92672">=</span>db_kullanıcı_ismi password<span style="color:#f92672">=</span>şifre
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_pass_scheme <span style="color:#f92672">=</span> MD5
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user_query <span style="color:#f92672">=</span> SELECT ‘/var/vmail/%d/%n’ as home, ‘maildir:/var/vmail/%d/%n’ as mail, <span style="color:#ae81ff">150</span> AS uid, <span style="color:#ae81ff">8</span> AS gid, concat<span style="color:#f92672">(</span>‘dirsize:storage<span style="color:#f92672">=</span>’, quota<span style="color:#f92672">)</span> AS quota FROM mailbox WHERE username <span style="color:#f92672">=</span> ‘%u’ AND active <span style="color:#f92672">=</span> ’1′
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>password_query <span style="color:#f92672">=</span> SELECT username as user, password, ‘/var/vmail/%d/%n’ as userdb_home, ‘maildir:/var/vmail/%d/%n’ as userdb_mail, <span style="color:#ae81ff">150</span> as userdb_uid, <span style="color:#ae81ff">8</span> as userdb_gid FROM mailbox WHERE username <span style="color:#f92672">=</span> ‘%u’ AND active <span style="color:#f92672">=</span> ’1′
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chmod 600 /etc/dovecot-sql.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chown vmail /etc/dovecot-sql.conf</span>
 </span></span></code></pre></div><p>dovecot ayarları bitti SSL için düzenlemeyi daha sonra yapacağız.</p>
-<h2 id="postfix-admin-kurulumu-ve-yapılandırması">Postfix admin Kurulumu ve Yapılandırması</h2>
+<h2 id="postfix-admin-kurulumu-ve-yapılandırması">Postfix admin Kurulumu ve Yapılandırması<a hidden class="anchor" aria-hidden="true" href="#postfix-admin-kurulumu-ve-yapılandırması">#</a></h2>
 <p>Postfix adminin düzgün çalışabilmesi için bir web sunucusuna ( apache vb.) ve php kurulumuna ihtiyacınız bulunuyor. Bunların olduğunu düşünerek postfix admin kurulumunun ardından imap hatası aırsanız aşağıdaki komutu çalıştırarak php-imap I kurmanız gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># yum install php-imap</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># yum install php-imap</span>
 </span></span></code></pre></div><p>Ben postfixadmini bir domainin altında çalıştıracağım için postfixadmin kurulum dosyalarını /var/www/html/domain.com altında barındıracağım.</p>
 <p>Artık postfix admini kurabiliriz.</p>
 <p><a href="http://sourceforge.net/projects/postfixadmin/">http://sourceforge.net/projects/postfixadmin/</a></p>
 <p>Yukarıdaki adres yardımıyla postfixadminin son sürümünü indirin.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># tar xvfz postfixadmin-2.3.3.tgz</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># tar xvfz postfixadmin-2.3.3.tgz</span>
 </span></span></code></pre></div><p>Sıkıştırılmış  dosyayı açtıktan sonra config.inc.php dosyasını düzenlememiz gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">$CONF</span><span class="o">[</span>‘postfix_admin_url’<span class="o">]</span> <span class="o">=</span> ‘/var/www/domain.com/postfixadmin/’<span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">$CONF</span><span class="o">[</span>‘postfix_admin_path’<span class="o">]</span> <span class="o">=</span> ‘http://localhost/postfixadmin’<span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$CONF</span><span class="o">[</span>‘database_host<span class="o">]</span> <span class="o">=</span> ‘localhost’<span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$CONF</span><span class="o">[</span>‘database_user’<span class="o">]</span> <span class="o">=</span> ‘db_kullanıcı_adi’<span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$CONF</span><span class="o">[</span>‘database_password’<span class="o">]</span> <span class="o">=</span> ‘şifre’<span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$CONF</span><span class="o">[</span>‘database_name’<span class="o">]</span> <span class="o">=</span> ‘db_ismi’<span class="p">;</span>
-</span></span></code></pre></div><h2 id="tls-ve-ssl-kurulumu">TLS ve SSL kurulumu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$CONF<span style="color:#f92672">[</span>‘postfix_admin_url’<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> ‘/var/www/domain.com/postfixadmin/’;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$CONF<span style="color:#f92672">[</span>‘postfix_admin_path’<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> ‘http://localhost/postfixadmin’;
+</span></span><span style="display:flex;"><span>$CONF<span style="color:#f92672">[</span>‘database_host<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> ‘localhost’;
+</span></span><span style="display:flex;"><span>$CONF<span style="color:#f92672">[</span>‘database_user’<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> ‘db_kullanıcı_adi’;
+</span></span><span style="display:flex;"><span>$CONF<span style="color:#f92672">[</span>‘database_password’<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> ‘şifre’;
+</span></span><span style="display:flex;"><span>$CONF<span style="color:#f92672">[</span>‘database_name’<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> ‘db_ismi’;
+</span></span></code></pre></div><h2 id="tls-ve-ssl-kurulumu">TLS ve SSL kurulumu<a hidden class="anchor" aria-hidden="true" href="#tls-ve-ssl-kurulumu">#</a></h2>
 <p>self-signed sertifikas kurulumu anlatılacak olup. Mail programları üzerinden ilk bağlantınızda güvenilmeyen ssl uyarısı almanız kaçılımazdır.</p>
 <p>İlk once ssl sertifikasını tutacağımız yeri belirleyip. Bu klasörün içerisine pem dosyalarını oluşturacağız.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># mkdir -p /etc/ssl/domain.com/mailserver/</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># cd /etc/ssl/domain.com/mailserver/</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># openssl genrsa 1024 &gt; mail-key.pem</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># chmod 400 mail-key.pem</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># openssl req -new -x509 -nodes -sha1 -days 365 -key mail-key.pem &gt; mail-cert.pem</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># mkdir -p /etc/ssl/domain.com/mailserver/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># cd /etc/ssl/domain.com/mailserver/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># openssl genrsa 1024 &gt; mail-key.pem</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chmod 400 mail-key.pem</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># openssl req -new -x509 -nodes -sha1 -days 365 -key mail-key.pem &gt; mail-cert.pem</span>
 </span></span></code></pre></div><p>Mail-cert.pem sertifikası için bir kaç soru soracak bunların içerisinden Common Name (eg, YOUR name) için istenen bilgi sunucu bilginiz ile aynı yapmanız tavsite ediliyor. Örneğin mail.domain.com</p>
-<h2 id="dovecot-ssl-yapılandırması">Dovecot SSL yapılandırması</h2>
+<h2 id="dovecot-ssl-yapılandırması">Dovecot SSL yapılandırması<a hidden class="anchor" aria-hidden="true" href="#dovecot-ssl-yapılandırması">#</a></h2>
 <p>SSL tanımlamaları bittikten sonra bu bilgileri dovecot ve postfix e tanımlamamız gerekiyor. Ki bunu daha önceden dovecot.conf dosyasını düzenlerken ssl bilgilerinide düzenlemiştik.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">protocols
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ssl_listen
-</span></span><span class="line"><span class="cl">ssl_cert_file
-</span></span><span class="line"><span class="cl">ssl_key_file
-</span></span><span class="line"><span class="cl"><span class="nv">ssl_parameters_regenerate</span> <span class="o">=</span> <span class="m">168</span>
-</span></span><span class="line"><span class="cl"><span class="nv">verbose_ssl</span> <span class="o">=</span> no
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>protocols
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ssl_listen
+</span></span><span style="display:flex;"><span>ssl_cert_file
+</span></span><span style="display:flex;"><span>ssl_key_file
+</span></span><span style="display:flex;"><span>ssl_parameters_regenerate <span style="color:#f92672">=</span> <span style="color:#ae81ff">168</span>
+</span></span><span style="display:flex;"><span>verbose_ssl <span style="color:#f92672">=</span> no
 </span></span></code></pre></div><p>Dovecot şu an 993 ssl port isteklerine cevap verecektir.Aşağıdaki gibi bir log çıktısı görünecektir.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dovecot: imap-login: Login: <span class="nv">user</span><span class="o">=</span>, <span class="nv">method</span><span class="o">=</span>PLAIN, <span class="nv">rip</span><span class="o">=</span>127.0.1.1, <span class="nv">lip</span><span class="o">=</span>127.0.1.1, TLS
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dovecot: imap-login: Login: user<span style="color:#f92672">=</span>, method<span style="color:#f92672">=</span>PLAIN, rip<span style="color:#f92672">=</span>127.0.1.1, lip<span style="color:#f92672">=</span>127.0.1.1, TLS
 </span></span></code></pre></div><p>Postfix TLS ayarları için main.cf dosyasına aşağıdaki bilgileri girmemiz gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">smtpd_tls_cert_file</span> <span class="o">=</span> /etc/ssl/domain.com/mailserver/mail-cert.pem
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_tls_key_file</span> <span class="o">=</span> /etc/ssl/domain.com/mailserver/mail-key.pem
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_tls_session_cache_database</span> <span class="o">=</span> btree:/var/spool/postfix/smtpd_tls_session_cache
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_tls_security_level</span> <span class="o">=</span> may
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_tls_received_header</span> <span class="o">=</span> no
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_tls_loglevel</span> <span class="o">=</span> <span class="m">0</span>
-</span></span><span class="line"><span class="cl"><span class="nv">tls_random_source</span> <span class="o">=</span> dev:/dev/urandom
-</span></span></code></pre></div><h2 id="postgrey-yapılandırması-ve-kurulumu">Postgrey Yapılandırması ve Kurulumu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>smtpd_tls_cert_file <span style="color:#f92672">=</span> /etc/ssl/domain.com/mailserver/mail-cert.pem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>smtpd_tls_key_file <span style="color:#f92672">=</span> /etc/ssl/domain.com/mailserver/mail-key.pem
+</span></span><span style="display:flex;"><span>smtpd_tls_session_cache_database <span style="color:#f92672">=</span> btree:/var/spool/postfix/smtpd_tls_session_cache
+</span></span><span style="display:flex;"><span>smtpd_tls_security_level <span style="color:#f92672">=</span> may
+</span></span><span style="display:flex;"><span>smtpd_tls_received_header <span style="color:#f92672">=</span> no
+</span></span><span style="display:flex;"><span>smtpd_tls_loglevel <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>tls_random_source <span style="color:#f92672">=</span> dev:/dev/urandom
+</span></span></code></pre></div><h2 id="postgrey-yapılandırması-ve-kurulumu">Postgrey Yapılandırması ve Kurulumu<a hidden class="anchor" aria-hidden="true" href="#postgrey-yapılandırması-ve-kurulumu">#</a></h2>
 <p>Herkez spamlardan nefret eder ve bunları engellemek için bir çok yöntem denemektedir. Postfix ile en çok kullanılan spam engelleme aracı olan postgreyi kurup, yapılandıracağız.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># yum install postgrey</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># yum install postgrey</span>
 </span></span></code></pre></div><p>Postfrey için postfixe smtpd_recipient_restrictions kuralı yazarken son kural olan permit ten önce yazmaya dikkat ediyoruz. Buda postfix mailleri dovecota iletmeden once postgreyin elinden geçerek spam olarak iletilmesini engelleyecektir.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">check_policy_service inet:127.0.0.1:60000
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">main.cf dosyasına ekleyeceğimiz rule<span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_recipient_restrictions</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">permit_mynetworks
-</span></span><span class="line"><span class="cl">permit_tls_all_clientcerts
-</span></span><span class="line"><span class="cl"><span class="c1">#permit_sasl_authenticated</span>
-</span></span><span class="line"><span class="cl">reject_non_fqdn_hostname
-</span></span><span class="line"><span class="cl">reject_non_fqdn_sender
-</span></span><span class="line"><span class="cl">reject_non_fqdn_recipient
-</span></span><span class="line"><span class="cl">reject_unauth_destination
-</span></span><span class="line"><span class="cl">reject_unauth_pipelining
-</span></span><span class="line"><span class="cl">reject_invalid_hostname
-</span></span><span class="line"><span class="cl"><span class="c1">#reject_unknown_sender_domain</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#reject_unknown_hostname</span>
-</span></span><span class="line"><span class="cl">reject_rbl_client zen.spamhaus.org
-</span></span><span class="line"><span class="cl">reject_rbl_client bl.spamcop.net
-</span></span><span class="line"><span class="cl">reject_rbl_client cbl.abuseat.org
-</span></span><span class="line"><span class="cl">reject_rbl_client dnsbl.njabl.org
-</span></span><span class="line"><span class="cl">reject_rbl_client dnsbl.sorbs.net
-</span></span><span class="line"><span class="cl">reject_rhsbl_sender dsn.rfc-ignorant.org
-</span></span><span class="line"><span class="cl">check_policy_service inet:127.0.0.1:60000
-</span></span><span class="line"><span class="cl">permit
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
-</span></span><span class="line"><span class="cl"><span class="nv">smtpd_data_restrictions</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">reject_unauth_pipelining,
-</span></span><span class="line"><span class="cl">reject_multi_recipient_bounce,
-</span></span><span class="line"><span class="cl">permit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>check_policy_service inet:127.0.0.1:60000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main.cf dosyasına ekleyeceğimiz rule;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>smtpd_recipient_restrictions <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>permit_mynetworks
+</span></span><span style="display:flex;"><span>permit_tls_all_clientcerts
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#permit_sasl_authenticated</span>
+</span></span><span style="display:flex;"><span>reject_non_fqdn_hostname
+</span></span><span style="display:flex;"><span>reject_non_fqdn_sender
+</span></span><span style="display:flex;"><span>reject_non_fqdn_recipient
+</span></span><span style="display:flex;"><span>reject_unauth_destination
+</span></span><span style="display:flex;"><span>reject_unauth_pipelining
+</span></span><span style="display:flex;"><span>reject_invalid_hostname
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#reject_unknown_sender_domain</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#reject_unknown_hostname</span>
+</span></span><span style="display:flex;"><span>reject_rbl_client zen.spamhaus.org
+</span></span><span style="display:flex;"><span>reject_rbl_client bl.spamcop.net
+</span></span><span style="display:flex;"><span>reject_rbl_client cbl.abuseat.org
+</span></span><span style="display:flex;"><span>reject_rbl_client dnsbl.njabl.org
+</span></span><span style="display:flex;"><span>reject_rbl_client dnsbl.sorbs.net
+</span></span><span style="display:flex;"><span>reject_rhsbl_sender dsn.rfc-ignorant.org
+</span></span><span style="display:flex;"><span>check_policy_service inet:127.0.0.1:60000
+</span></span><span style="display:flex;"><span>permit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>smtpd_data_restrictions <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>reject_unauth_pipelining,
+</span></span><span style="display:flex;"><span>reject_multi_recipient_bounce,
+</span></span><span style="display:flex;"><span>permit
 </span></span></code></pre></div><p>Burada reject_non_fqdn kısımlarını isterseniz kullanmaya bilirsiniz. Bu kurallar ters isim güncellemesi olmayan domainlerden mail gelmesini engelleyecektir. Buda mail spam olmasa bile engellenmesi demektir.</p>
 <p>main.cf dosyasına yazdığımız check_policy_service inet:127.0.0.1:60000 kuralının çalışabilmesi için postgreye  inet:127.0.0.1:60000 i dinlemesini sölememiz gerekiyor. Bunu içinde aşağıdaki adımı uygulayabilirsiniz.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># nano /etc/init.d/postgrey</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># nano /etc/init.d/postgrey</span>
 </span></span></code></pre></div><p>Dosyasını açarak,</p>
 <p><strong>OPTIONS=”–unix=$SOCKET”</strong>  şeklinde yazılmış satırı <strong>OPTIONS=”–inet=127.0.0.1:60000 -d”</strong> şekilde değiştirmeniz gerekiyor.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># /etc/init.d/postgrey restart</span>
-</span></span></code></pre></div></div>
-    <div class="post__footer">
-      
-        <span><a class="category" href="/categories/postfix/">Postfix</a></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># /etc/init.d/postgrey restart</span>
+</span></span></code></pre></div>
 
-
-      
-
-      
-        <span><a class="tag" href="/tags/dovecot/">dovecot</a><a class="tag" href="/tags/mail-sunucusu-kurulumu/">mail sunucusu kurulumu</a><a class="tag" href="/tags/postfix/">postfix</a><a class="tag" href="/tags/postfixadmin/">postfixadmin</a><a class="tag" href="/tags/postgrey/">postgrey</a></span>
-
-
-      
-    </div>
-
-    
   </div>
 
-      </main>
-    </div><footer class="footer footer__base">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/dovecot/">Dovecot</a></li>
+      <li><a href="http://localhost:1313/tags/mail-sunucusu-kurulumu/">Mail Sunucusu Kurulumu</a></li>
+      <li><a href="http://localhost:1313/tags/postfix/">Postfix</a></li>
+      <li><a href="http://localhost:1313/tags/postfixadmin/">Postfixadmin</a></li>
+      <li><a href="http://localhost:1313/tags/postgrey/">Postgrey</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/2011/09/postfix-mail-adres-bazli-engelleme/">
+    <span class="title">« </span>
+    <br>
+    <span>Postfix - Mail Adres Bazlı Engelleme</span>
+  </a>
+  <a class="next" href="http://localhost:1313/2011/07/gnome-3-masaustune-ikon-ekleme/">
+    <span class="title"> »</span>
+    <br>
+    <span>Gnome 3 - Masaüstüne İkon Ekleme</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması on x"
+            href="https://x.com/intent/tweet/?text=Postfix%2cmysql%2cdovecot%2ctls%2cssl%20Postgrey%20Kurulumu%20ve%20Yap%c4%b1land%c4%b1rmas%c4%b1&amp;url=http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f&amp;hashtags=dovecot%2cmailsunucusukurulumu%2cpostfix%2cpostfixadmin%2cpostgrey">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
     </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f&amp;title=Postfix%2cmysql%2cdovecot%2ctls%2cssl%20Postgrey%20Kurulumu%20ve%20Yap%c4%b1land%c4%b1rmas%c4%b1&amp;summary=Postfix%2cmysql%2cdovecot%2ctls%2cssl%20Postgrey%20Kurulumu%20ve%20Yap%c4%b1land%c4%b1rmas%c4%b1&amp;source=http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f&title=Postfix%2cmysql%2cdovecot%2ctls%2cssl%20Postgrey%20Kurulumu%20ve%20Yap%c4%b1land%c4%b1rmas%c4%b1">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması on whatsapp"
+            href="https://api.whatsapp.com/send?text=Postfix%2cmysql%2cdovecot%2ctls%2cssl%20Postgrey%20Kurulumu%20ve%20Yap%c4%b1land%c4%b1rmas%c4%b1%20-%20http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması on telegram"
+            href="https://telegram.me/share/url?text=Postfix%2cmysql%2cdovecot%2ctls%2cssl%20Postgrey%20Kurulumu%20ve%20Yap%c4%b1land%c4%b1rmas%c4%b1&amp;url=http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Postfix%2cmysql%2cdovecot%2ctls%2cssl%20Postgrey%20Kurulumu%20ve%20Yap%c4%b1land%c4%b1rmas%c4%b1&u=http%3a%2f%2flocalhost%3a1313%2f2011%2f08%2fpostfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
     
-  </ul>
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Gökhan MANKARA</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></body>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Apache on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/apache/</link>
+    <link>http://localhost:1313/tags/apache/</link>
     <description>Recent content in Apache on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 May 2010 11:38:04 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 May 2010 11:38:04 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache Web Serverda Dosyalara Parolalı Erişim</title>
-      <link>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</link>
+      <link>http://localhost:1313/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</link>
       <pubDate>Sun, 02 May 2010 11:38:04 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</guid>
-      
-        <description>Apachenin sunduğu güzel imkanlardan biride belirlediğiniz bir dosyadaki klasörlere uzaktan kullanıcıların parolalı bir şekilde erişmesini sağlayabilmesidir.</description>
-      
+      <guid>http://localhost:1313/2010/05/apache-web-serverda-dosyalara-parolali-erisim/</guid>
+      <description>&lt;p&gt;Apachenin sunduğu güzel imkanlardan biride belirlediğiniz bir dosyadaki klasörlere uzaktan kullanıcıların parolalı bir şekilde erişmesini sağlayabilmesidir.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

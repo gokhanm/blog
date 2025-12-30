@@ -1,1318 +1,344 @@
-<!doctype html>
-<html
-  dir="ltr"
-  lang="en-us"
-  data-theme=""
-  
-    class="html theme--light"
-  
-><head>
-  <meta charset="utf-8" />
-  <title>
-    
-      
-        Posts |
-      
+<!DOCTYPE html>
+<html lang="en-us" dir="auto" data-theme="dark">
 
-  </title>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Posts | Gökhan MANKARA</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - Gökhan MANKARA">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/post/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/post/index.xml" title="rss">
+<link rel="alternate" hreflang="en-us" href="http://localhost:1313/post/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-  <meta name="generator" content="Hugo 0.132.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="author" content="" />
-  <meta
-    name="description"
-    content="My thoughts about random topics, Programming, and various linux stuffs"
-  />
-  
-  
-    
-    
-    <link
-      rel="stylesheet"
-      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
-      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
-      crossorigin="anonymous"
-      type="text/css"
-    />
-  
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-  
-  <link
-    rel="stylesheet"
-    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
-    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
-    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
-    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
-    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link
-    rel="stylesheet"
-    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
-    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-
-  <link rel="canonical" href="https://www.gokhanmankara.com/post/" />
-
-  
-  <link rel="alternate" type="application/rss+xml" href="/post/index.xml" title="Gökhan MANKARA" />
-  
-  
-  
-  <script
-    type="text/javascript"
-    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
-    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
-    crossorigin="anonymous"
-  ></script>
-
-  
-    
-    
-    <script
-      type="text/javascript"
-      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
-      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
-      crossorigin="anonymous"
-    ></script>
-  
-
-  
-
-  
-
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts">
-  <meta name="twitter:description" content="My thoughts about random topics, Programming, and various linux stuffs">
-
-
-
-  
-  <meta property="og:url" content="https://www.gokhanmankara.com/post/">
+</script><meta property="og:url" content="http://localhost:1313/post/">
   <meta property="og:site_name" content="Gökhan MANKARA">
   <meta property="og:title" content="Posts">
-  <meta property="og:description" content="My thoughts about random topics, Programming, and various linux stuffs">
-  <meta property="og:locale" content="en_us">
+  <meta property="og:description" content="My thoughts about random topics, Programming, and various linux stuff">
+  <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Posts">
+<meta name="twitter:description" content="My thoughts about random topics, Programming, and various linux stuff">
 
 
-
-  
-  
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }
+  ]
+}
+</script>
 </head>
-<body class="body">
-    <div class="wrapper">
-      <aside
-        
-          class="wrapper__sidebar wrapper__sidebar--hidden"
-        
-      ><div
-  class="sidebar
-    animated fadeInDown
-  "
->
-  <div class="sidebar__content">
-    <div class="sidebar__introduction">
-      <img
-        class="sidebar__introduction-profileimage"
-        src="/images/cover.jpg"
-        alt="profile picture"
-      />
-      
-        <div class="sidebar__introduction-title">
-          <a href="/"></a>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Gökhan MANKARA (Alt + H)">Gökhan MANKARA</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
-      
-      <div class="sidebar__introduction-description">
-        <p>My thoughts about random topics, Programming, and various linux stuffs</p>
-      </div>
-    </div>
-    <ul class="sidebar__list">
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://www.linkedin.com/in/gokhanmankara/"
-            target="_blank"
-            rel="noopener me"
-            aria-label="Linkedin"
-            title="Linkedin"
-          >
-            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="https://github.com/gokhanm"
-            target="_blank"
-            rel="noopener me"
-            aria-label="GitHub"
-            title="GitHub"
-          >
-            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="mailto:gokhanm@gmail.com"
-            target="_blank"
-            rel="noopener me"
-            aria-label="e-mail"
-            title="e-mail"
-          >
-            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-        <li class="sidebar__list-item">
-          <a
-            href="/index.xml"
-            target="_blank"
-            rel="noopener me"
-            aria-label="rss"
-            title="rss"
-          >
-            <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      
-    </ul>
-  </div><footer class="footer footer__sidebar">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
-    </li>
-    
-  </ul>
-</footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></div>
-</aside>
-      <main
-        
-          class="wrapper__main wrapper__main--fullscreen"
-        
-      >
-        <header class="header"><div
-  class="
-    animated fadeInDown
-  "
->
-  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-    <span aria-hidden="true" class="navbar-burger__line"></span>
-  </a>
-  <nav class="nav">
-    <ul class="nav__list" id="navMenu">
-      
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/"
-              
-              title=""
-              >Home</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/post"
-              
-              title=""
-              >Posts</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/tags"
-              
-              title=""
-              >Tags</a
-            >
-          </li>
-        
-
-      
-        
-        
-          <li class="nav__list-item">
-            
-            <a
-              
-              href="/about"
-              
-              title=""
-              >About</a
-            >
-          </li>
-        
-
-      
-    </ul>
-    <ul class="nav__list nav__list--end">
-      
-      
-        <li class="nav__list-item">
-          <div class="themeswitch">
-            <a title="Switch Theme">
-              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a>
-          </div>
-        </li>
-      
-    </ul>
-  </nav>
-</div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/post" title="Posts">
+                    <span class="active">Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
-  <div
-    class="archive 
-      animated fadeInDown
-    "
-  >
-    
-      <div class="archive__heading">2017</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2017/12/openvpn-kurulum-scripti/" title="Openvpn Kurulum Scripti">OPENVPN KURULUM SCRIPTI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2017, Dec 21
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
-      <div class="archive__heading">2015</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/08/login-sonrasi-screen-oturumlarini-gorme/" title="Login Sonrası Screen Oturumlarını Görme">LOGIN SONRASI SCREEN OTURUMLARINI GÖRME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Aug 30
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/08/screen-komutu-kullanimi/" title="Screen Komutu Kullanımı">SCREEN KOMUTU KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Aug 02
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/05/python-gitlab-email-sender/" title="Python - Gitlab Email Sender">PYTHON - GITLAB EMAIL SENDER</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, May 31
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/" title="Xenserver&#39;da Sanal Sunucuların Görünmemesi">XENSERVER&#39;DA SANAL SUNUCULARIN GÖRÜNMEMESI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Mar 31
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/03/python-watchdog-ile-dizin-izleme/" title="Python Watchdog İle Dizin İzleme">PYTHON WATCHDOG İLE DIZIN İZLEME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Mar 28
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/03/sudo-komutlarinin-loglanmasi/" title="Sudo Komutlarının Loglanması">SUDO KOMUTLARININ LOGLANMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Mar 22
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/03/zfsonlinux-ram-kullanimi/" title="Zfsonlinux Ram Kullanımı">ZFSONLINUX RAM KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Mar 14
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/03/maildeki-ekli-dosyayi-indiren-python-script/" title="Maildeki Ekli Dosyayı İndiren Python Script">MAILDEKI EKLI DOSYAYI İNDIREN PYTHON SCRIPT</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Mar 01
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/" title="Zfsonlinux Kurulumu Ve Yapılandırması">ZFSONLINUX KURULUMU VE YAPILANDIRMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2015, Feb 10
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
-      <div class="archive__heading">2014</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/10/bonding-network-interface-kullanimi/" title="Bonding Network Interface Kullanımı">BONDING NETWORK INTERFACE KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Oct 25
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/09/vimdiff-kullanimi/" title="Vimdiff Kullanımı">VIMDIFF KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Sep 05
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/07/ngxtop-gercek-zamanli-nginx-log-monitorleme-araci/" title="Ngxtop Gercek Zamanlı Nginx Log Monitorleme Aracı">NGXTOP GERCEK ZAMANLI NGINX LOG MONITORLEME ARACI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Jul 13
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/06/lvm-disk-genisletme-islemi-ve-ornek-uygulamasi/" title="LVM disk genişletme işlemi ve örnek uygulaması">LVM DISK GENIŞLETME IŞLEMI VE ÖRNEK UYGULAMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Jun 04
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/06/kucuk-notlar-ssh-ile-cift-tire-kullanimi/" title="Küçük Notlar - Ssh Ile Çift Tire Kullanımı">KÜÇÜK NOTLAR - SSH ILE ÇIFT TIRE KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Jun 01
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/05/sudoers-listesine-kullanici-ekleme/" title="Sudoers Listesine Kullanıcı Ekleme">SUDOERS LISTESINE KULLANICI EKLEME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, May 04
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/03/openvpn-icin-ovpn-profil-dosyasi-hazirlama/" title="OpenVPN için ovpn profil dosyası hazırlama">OPENVPN IÇIN OVPN PROFIL DOSYASI HAZIRLAMA</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Mar 24
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/02/centos-ramdisk-olusturma/" title="Centos Ramdisk Oluşturma">CENTOS RAMDISK OLUŞTURMA</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Feb 25
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/02/kullanicilari-varsayilan-olarak-home-dizini-olmadan-olusturma/" title="Kullanıcıları Varsayılan Olarak Home Dizini Olmadan Oluşturma">KULLANICILARI VARSAYILAN OLARAK HOME DIZINI OLMADAN OLUŞTURMA</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Feb 14
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/02/shc-ile-bash-shell-script-sifreleme/" title="Shc İle Bash Shell Script Şifreleme">SHC İLE BASH SHELL SCRIPT ŞIFRELEME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Feb 12
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2014/01/asithappens-gercek-zamanli-network-monitorleme-araci/" title="Asithappens Gerçek Zamanli Network Monitörleme Aracı">ASITHAPPENS GERÇEK ZAMANLI NETWORK MONITÖRLEME ARACI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2014, Jan 03
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
-      <div class="archive__heading">2013</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/11/citrix-xenserver-uzerinde-hotfix-guncellemesi/" title="Citrix Xenserver Üzerinde Hotfix Güncellemesi">CITRIX XENSERVER ÜZERINDE HOTFIX GÜNCELLEMESI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Nov 24
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/10/ncdu-disk-alani-kullanimi-analiz-araci/" title="Ncdu Disk Alanı Kullanımı Analiz Aracı">NCDU DISK ALANI KULLANIMI ANALIZ ARACI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Oct 30
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/09/nginx-php-fpm-guvenlik-ayarlari/" title="Nginx Php Fpm Güvenlik Ayarları">NGINX PHP FPM GÜVENLIK AYARLARI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Sep 22
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/09/postfix-mail-cikis-ip-adresini-degistirme/" title="Postfix - Mail Çıkıs İp Adresini Değiştirme">POSTFIX - MAIL ÇIKIS İP ADRESINI DEĞIŞTIRME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Sep 15
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/07/python-scripti-ile-backup-tarihi-kontrolu/" title="Python Scripti İle Backup Tarihi Kontrolü">PYTHON SCRIPTI İLE BACKUP TARIHI KONTROLÜ</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Jul 26
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/06/openvpn-kurulumu-ve-yapilandirmasi/" title="Openvpn Kurulumu Ve Yapılandırması">OPENVPN KURULUMU VE YAPILANDIRMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Jun 19
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/05/citrix-xenserverda-iso-disk-alani-olusturma/" title="Citrix Xenserverda Iso Disk Alanı Oluşturma">CITRIX XENSERVERDA ISO DISK ALANI OLUŞTURMA</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, May 02
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/04/nagios-bildirimlerini-smtp-auth-ile-gondermek/" title="Nagios Bildirimlerini Smtp Auth İle Göndermek">NAGIOS BILDIRIMLERINI SMTP AUTH İLE GÖNDERMEK</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Apr 26
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/04/nix-sistemlerde-single-mod-sifre-korumasi/" title="Nix Sistemlerde Single Mod Şifre Koruması">NIX SISTEMLERDE SINGLE MOD ŞIFRE KORUMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Apr 12
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2013/03/google-readerdan-sonra/" title="Google Reader&#39;dan Sonra...">GOOGLE READER&#39;DAN SONRA...</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2013, Mar 24
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
-      <div class="archive__heading">2012</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2012/08/postfix-mail-kuyrugu-queue-islemleri/" title="Postfix - Mail Kuyruğu Queue İşlemleri">POSTFIX - MAIL KUYRUĞU QUEUE İŞLEMLERI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2012, Aug 25
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2012/06/postfix-mail-basligina-gore-filtreleme/" title="Postfix - Mail Başlığına Göre Filtreleme">POSTFIX - MAIL BAŞLIĞINA GÖRE FILTRELEME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2012, Jun 26
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
-      <div class="archive__heading">2011</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2011/12/gnome-3-masaustunu-goster-kisayolu/" title="Gnome 3 - Masaüstünü Göster Kısayolu">GNOME 3 - MASAÜSTÜNÜ GÖSTER KISAYOLU</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2011, Dec 25
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2011/09/postfix-mail-adres-bazli-engelleme/" title="Postfix - Mail Adres Bazlı Engelleme">POSTFIX - MAIL ADRES BAZLI ENGELLEME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2011, Sep 17
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2011/08/postfixmysqldovecottlsssl-postgrey-kurulumu-ve-yapilandirmasi/" title="Postfix,mysql,dovecot,tls,ssl Postgrey Kurulumu ve Yapılandırması">POSTFIX,MYSQL,DOVECOT,TLS,SSL POSTGREY KURULUMU VE YAPILANDIRMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2011, Aug 21
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2011/07/gnome-3-masaustune-ikon-ekleme/" title="Gnome 3 - Masaüstüne İkon Ekleme">GNOME 3 - MASAÜSTÜNE İKON EKLEME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2011, Jul 23
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2011/06/simge-durumunu-kucult-butonu-gnome-3/" title="Simge Durumunu Küçült Butonu - Gnome 3">SIMGE DURUMUNU KÜÇÜLT BUTONU - GNOME 3</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2011, Jun 19
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
-      <div class="archive__heading">2010</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/08/unix-shell-script-bagli-kullanicilarin-durumu-islemci-ve-ram-kullanimi/" title="Unix Shell Script - Bağlı Kullanıcıların Durumu, İşlemci ve Ram Kullanımı">UNIX SHELL SCRIPT - BAĞLI KULLANICILARIN DURUMU, İŞLEMCI VE RAM KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Aug 22
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/08/kucuk-notlar-wc-komutu/" title="Küçük Notlar - Wc Komutu">KÜÇÜK NOTLAR - WC KOMUTU</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Aug 21
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/08/kucuk-notlar-head-ve-tail-komutu/" title="Küçük Notlar - Head Ve Tail Komutu">KÜÇÜK NOTLAR - HEAD VE TAIL KOMUTU</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Aug 20
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/07/tmpwatch-ile-tmp-klasorunu-temizleme/" title="Tmpwatch İle Tmp Klasörünü Temizleme">TMPWATCH İLE TMP KLASÖRÜNÜ TEMIZLEME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jul 22
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/06/pure-ftpd-yapilandirmasi/" title="Pure Ftpd Yapilandırması">PURE FTPD YAPILANDIRMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jun 27
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/06/kucuk-notlar-bilgisayar-ismini-degistirme/" title="Küçük Notlar - Bilgisayar İsmini Değiştirme">KÜÇÜK NOTLAR - BILGISAYAR İSMINI DEĞIŞTIRME</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jun 23
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/06/kucuk-notlar-servisleri-otomatik-calistirmak-ntsysv/" title="Küçük Notlar - Servisleri Otomatik Çalıştırmak - Ntsysv">KÜÇÜK NOTLAR - SERVISLERI OTOMATIK ÇALIŞTIRMAK - NTSYSV</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jun 21
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/06/kucuk-notlar-cat-procnetdev/" title="Küçük Notlar - $cat /proc/net/dev">KÜÇÜK NOTLAR - $CAT /PROC/NET/DEV</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jun 20
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/06/kucuk-notlar-etcservices/" title="Küçük Notlar - /etc/services">KÜÇÜK NOTLAR - /ETC/SERVICES</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jun 20
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/06/crontab-kullanimi-ve-ornek-crontab-uygulamasi/" title="Crontab Kullanımı ve Örnek Crontab Uygulaması">CRONTAB KULLANIMI VE ÖRNEK CRONTAB UYGULAMASI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jun 18
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/06/komutla-sistem-donanim-bilgisi-almak/" title="Komutla Sistem Donanim Bilgisi Almak">KOMUTLA SISTEM DONANIM BILGISI ALMAK</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Jun 08
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/05/nfs-network-file-system/" title="Nfs - Network File System">NFS - NETWORK FILE SYSTEM</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, May 06
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/05/apache-web-serverda-dosyalara-parolali-erisim/" title="Apache Web Serverda Dosyalara Parolalı Erişim">APACHE WEB SERVERDA DOSYALARA PAROLALI ERIŞIM</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, May 02
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/04/split-dosyalari-parcalara-bolmek/" title="Split - Dosyalari Parçalara Bölmek">SPLIT - DOSYALARI PARÇALARA BÖLMEK</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Apr 18
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/03/grep-komutu-ve-kullanimi/" title="Grep Komutu ve Kullanımı">GREP KOMUTU VE KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Mar 14
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2010/03/script-ile-konsolda-yazdigin-komutlari-otomatik-olarak-kaydetmek/" title="Script İle Konsolda Yazdığın Komutlari Otomatik Olarak Kaydetmek">SCRIPT İLE KONSOLDA YAZDIĞIN KOMUTLARI OTOMATIK OLARAK KAYDETMEK</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2010, Mar 07
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
-      <div class="archive__heading">2009</div>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2009/12/calisan-programlari-gormek-ve-sonlandirmak/" title="Çalışan Programları Görmek ve Sonlandırmak">ÇALIŞAN PROGRAMLARI GÖRMEK VE SONLANDIRMAK</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2009, Dec 20
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2009/10/chmod-komutu-ve-kullanimi/" title="Chmod Komutu ve Kullanımı">CHMOD KOMUTU VE KULLANIMI</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2009, Oct 16
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2009/09/kisayol-ve-kopyalama-komutu/" title="Kisayol ve Kopyalama Komutu">KISAYOL VE KOPYALAMA KOMUTU</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2009, Sep 10
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            
-            <a class="archive__list-title" href="/2009/08/linuxda-konsol-yardimi-ile-iso-dosyasi-yapma/" title="Linuxda Konsol Yardımı İle Iso Dosyası Yapma">LINUXDA KONSOL YARDIMI İLE ISO DOSYASI YAPMA</a>
-            
-            <div class="archive__list-date">
-              
-                
-                  2009, Aug 26
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-
-    
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a></div>
+  <h1>
+    Posts
+    <a href="/post/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Openvpn Kurulum Scripti
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.
+...</p>
   </div>
+  <footer class="entry-footer"><span title='2017-12-21 17:34:24 +0300 +03'>2017, Dec 21</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>322 words</span></footer>
+  <a class="entry-link" aria-label="post link to Openvpn Kurulum Scripti" href="http://localhost:1313/2017/12/openvpn-kurulum-scripti/"></a>
+</article>
 
-      </main>
-    </div><footer class="footer footer__base">
-  <ul class="footer__list">
-    <li class="footer__item">
-      &copy;
-      
-        
-        2024
-      
-    </li>
-    
-  </ul>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Login Sonrası Screen Oturumlarını Görme
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum. Sunucuya her login olduğumda screen’nin açık oturumlarını görebilmek için .bash_profile dosyasına ( RedHat tabanlı sistemler için) aşağıdaki scripti ekledim. Bu sayede sunucuya ssh üzerinden her bağlandığımda açık oturumları görebiliyorum.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-08-30 17:36:13 +0300 EEST'>2015, Aug 30</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>102 words</span></footer>
+  <a class="entry-link" aria-label="post link to Login Sonrası Screen Oturumlarını Görme" href="http://localhost:1313/2015/08/login-sonrasi-screen-oturumlarini-gorme/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Screen Komutu Kullanımı
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Screen komutu, linux sunucunuza ssh bağlantısı yaptıktan sonra birden fazla shell oturumları oluşturmanızı sağlar. Screen komutu kullanarak yeni bir shell oturumu açtığınızda, screen arkada yeni bir process oluşturur, eğer siz oturumdan Ctrl &#43; a &#43; d kombinasyonu ile ayrılsanız (detached ) bile screen komutu arkada oturumu çalıştırmaya devam eder ve daha sonra sizin aynı oturuma bağlanmasınıza olanak sağlar.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-08-02 13:37:30 +0300 EEST'>2015, Aug 02</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>248 words</span></footer>
+  <a class="entry-link" aria-label="post link to Screen Komutu Kullanımı" href="http://localhost:1313/2015/08/screen-komutu-kullanimi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Python - Gitlab Email Sender
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-05-31 13:45:47 +0300 EEST'>2015, May 31</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>426 words</span></footer>
+  <a class="entry-link" aria-label="post link to Python - Gitlab Email Sender" href="http://localhost:1313/2015/05/python-gitlab-email-sender/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Xenserver&#39;da Sanal Sunucuların Görünmemesi
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>XenServer host sunucudaki elektrik kesintisi yada benzer fiziksel sorunlar sebebiyle, storage üzerindeki sanal makineler kapanmadan bilgisayar resetlenebilir, kapanabilir veya fiziksel arıza yüzüden hiç açılmayabilir. Bu durumda ilgili host bilgisayar kapanmadan önce üzerinde çalışan sanal makineler Xencenter arayüzünde kaybolur. Haliyle sanal makineyi başka bir host bilgisayara taşımak da mümkün olmaz. Peki bu durumdan nasıl kurtulunur.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-31 13:54:53 +0300 EEST'>2015, Mar 31</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>215 words</span></footer>
+  <a class="entry-link" aria-label="post link to Xenserver&#39;da Sanal Sunucuların Görünmemesi" href="http://localhost:1313/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Python Watchdog İle Dizin İzleme
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti. Cron’a ekleyerekte arka planda sürekli çalışmasını sağlayabilirsiniz. Cron kullanımı hakkında bilginiz yok ise, bu yazımı inceleyebilirsiniz.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-28 14:01:11 +0300 +0300'>2015, Mar 28</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>190 words</span></footer>
+  <a class="entry-link" aria-label="post link to Python Watchdog İle Dizin İzleme" href="http://localhost:1313/2015/03/python-watchdog-ile-dizin-izleme/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Sudo Komutlarının Loglanması
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız. Önceki yazıda sudoers dosyasına kullanıcıyı eklemiştik, bu yazıda sudoers.d altına kullanıcıları oluşturacağız.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-22 14:15:19 +0300 +0300'>2015, Mar 22</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>350 words</span></footer>
+  <a class="entry-link" aria-label="post link to Sudo Komutlarının Loglanması" href="http://localhost:1313/2015/03/sudo-komutlarinin-loglanmasi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Zfsonlinux Ram Kullanımı
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-14 14:42:03 +0300 +0300'>2015, Mar 14</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>240 words</span></footer>
+  <a class="entry-link" aria-label="post link to Zfsonlinux Ram Kullanımı" href="http://localhost:1313/2015/03/zfsonlinux-ram-kullanimi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Maildeki Ekli Dosyayı İndiren Python Script
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-01 14:51:41 +0300 +0300'>2015, Mar 01</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>301 words</span></footer>
+  <a class="entry-link" aria-label="post link to Maildeki Ekli Dosyayı İndiren Python Script" href="http://localhost:1313/2015/03/maildeki-ekli-dosyayi-indiren-python-script/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Zfsonlinux Kurulumu Ve Yapılandırması
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-02-10 10:45:52 +0300 +0300'>2015, Feb 10</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>582 words</span></footer>
+  <a class="entry-link" aria-label="post link to Zfsonlinux Kurulumu Ve Yapılandırması" href="http://localhost:1313/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="http://localhost:1313/post/page/2/">&nbsp;&nbsp;»
+    </a>
+  </nav>
 </footer>
-  
-  <script
-    type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
-    crossorigin="anonymous"
-  ></script></body>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Gökhan MANKARA</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
 </html>

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Gitlab Send Email on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/gitlab-send-email/</link>
+    <link>http://localhost:1313/tags/gitlab-send-email/</link>
     <description>Recent content in Gitlab Send Email on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 May 2015 13:45:47 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/gitlab-send-email/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 May 2015 13:45:47 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gitlab-send-email/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python - Gitlab Email Sender</title>
-      <link>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</link>
+      <link>http://localhost:1313/2015/05/python-gitlab-email-sender/</link>
       <pubDate>Sun, 31 May 2015 13:45:47 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2015/05/python-gitlab-email-sender/</guid>
-      
-        <description>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.</description>
-      
+      <guid>http://localhost:1313/2015/05/python-gitlab-email-sender/</guid>
+      <description>&lt;p&gt;Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu &lt;strong&gt;commits.db&lt;/strong&gt; sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili &lt;strong&gt;‘to@domain.com’&lt;/strong&gt; adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

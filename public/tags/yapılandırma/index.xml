@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Yapılandırma on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/yap%C4%B1land%C4%B1rma/</link>
+    <link>http://localhost:1313/tags/yap%C4%B1land%C4%B1rma/</link>
     <description>Recent content in Yapılandırma on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jun 2013 10:57:10 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/yap%C4%B1land%C4%B1rma/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jun 2013 10:57:10 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/yap%C4%B1land%C4%B1rma/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openvpn Kurulumu Ve Yapılandırması</title>
-      <link>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</link>
+      <link>http://localhost:1313/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</link>
       <pubDate>Wed, 19 Jun 2013 10:57:10 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</guid>
-      
-        <description>Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz.</description>
-      
+      <guid>http://localhost:1313/2013/06/openvpn-kurulumu-ve-yapilandirmasi/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden  ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda  sizde farklı olarak görünebilir.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

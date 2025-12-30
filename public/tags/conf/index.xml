@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Conf on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/conf/</link>
+    <link>http://localhost:1313/tags/conf/</link>
     <description>Recent content in Conf on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Mar 2015 14:42:03 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/conf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Mar 2015 14:42:03 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/conf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zfsonlinux Ram Kullanımı</title>
-      <link>https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/</link>
+      <link>http://localhost:1313/2015/03/zfsonlinux-ram-kullanimi/</link>
       <pubDate>Sat, 14 Mar 2015 14:42:03 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2015/03/zfsonlinux-ram-kullanimi/</guid>
-      
-        <description>Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.</description>
-      
+      <guid>http://localhost:1313/2015/03/zfsonlinux-ram-kullanimi/</guid>
+      <description>&lt;p&gt;Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda &lt;a href=&#34;http://localhost:1313/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi&#34;&gt;değinmiştim&lt;/a&gt;. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

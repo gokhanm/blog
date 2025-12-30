@@ -1,729 +1,377 @@
-<!doctype html>
-<html dir="ltr" lang="en-us" data-theme="" class="html theme--light">
+<!DOCTYPE html>
+<html lang="en-us" dir="auto" data-theme="dark">
 
 <head>
-  <meta charset="utf-8" />
-  <title>
+	<meta name="generator" content="Hugo 0.153.4"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Gökhan MANKARA</title>
 
+<meta name="description" content="My thoughts about random topics, Programming, and various linux stuff">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="rss">
+<link rel="alternate" hreflang="en-us" href="http://localhost:1313/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-    Gökhan MANKARA |
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-
-  </title>
-
-  <meta name="generator" content="Hugo 0.132.1">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="author" content="" />
-  <meta name="description" content="My thoughts about random topics, Programming, and various linux stuffs" />
-
-
-
-
-  <link rel="stylesheet" href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
-    integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs=" crossorigin="anonymous" type="text/css" />
-
-
-
-  <link rel="stylesheet"
-    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
-    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA=" crossorigin="anonymous" type="text/css" />
-
-
-  <link rel="stylesheet"
-    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
-    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk=" crossorigin="anonymous" type="text/css" />
-
-  <link rel="stylesheet"
-    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
-    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM=" crossorigin="anonymous" type="text/css" />
-
-  <link rel="stylesheet"
-    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
-    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8=" crossorigin="anonymous" type="text/css" />
-
-  <link rel="stylesheet"
-    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
-    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4=" crossorigin="anonymous" type="text/css" />
-
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-
-  <link rel="canonical" href="https://www.gokhanmankara.com/" />
-
-
-  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Gökhan MANKARA" />
-
-
-
-  <script type="text/javascript"
-    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
-    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI=" crossorigin="anonymous"></script>
-
-
-
-
-  <script type="text/javascript"
-    src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
-    integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc=" crossorigin="anonymous"></script>
-
-
-
-
-
-
-
-
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Gökhan MANKARA">
-  <meta name="twitter:description" content="My thoughts about random topics, Programming, and various linux stuffs">
-
-
-
-
-  <meta property="og:url" content="https://www.gokhanmankara.com/">
+</script><meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="Gökhan MANKARA">
   <meta property="og:title" content="Gökhan MANKARA">
-  <meta property="og:description" content="My thoughts about random topics, Programming, and various linux stuffs">
-  <meta property="og:locale" content="en_us">
+  <meta property="og:description" content="My thoughts about random topics, Programming, and various linux stuff">
+  <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gökhan MANKARA">
+<meta name="twitter:description" content="My thoughts about random topics, Programming, and various linux stuff">
 
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": "Gökhan MANKARA",
-      "url": "https:\/\/www.gokhanmankara.com\/",
-      "description": "My thoughts about random topics, Programming, and various linux stuffs",
-      "thumbnailUrl": "https:\/\/www.gokhanmankara.com\/",
-      "license": ""
-    }
-  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Gökhan MANKARA",
+  "url": "http://localhost:1313/",
+  "description": "My thoughts about random topics, Programming, and various linux stuff",
+  "logo": "http://localhost:1313/favicon.ico",
+  "sameAs": [
+      "https://www.linkedin.com/in/gokhanmankara/", "https://github.com/gokhanm", "mailto:gokhanm@gmail.com", "/index.xml"
+  ]
+}
+</script>
 </head>
-
-<body class="body">
-  <div class="wrapper">
-    <aside class="wrapper__sidebar">
-      <div class="sidebar
-    animated fadeInDown
-  ">
-        <div class="sidebar__content">
-          <div class="sidebar__introduction">
-            <img class="sidebar__introduction-profileimage" src="/images/cover.jpg" alt="profile picture" />
-
-            <div class="sidebar__introduction-title">
-              <h1>
-                <a href="/"></a>
-              </h1>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Gökhan MANKARA (Alt + H)">Gökhan MANKARA</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </div>
-
-            <div class="sidebar__introduction-description">
-              <p>My thoughts about random topics, Programming, and various linux stuffs</p>
-            </div>
-          </div>
-          <ul class="sidebar__list">
-
-            <li class="sidebar__list-item">
-              <a href="https://www.linkedin.com/in/gokhanmankara/" target="_blank" rel="noopener me"
-                aria-label="Linkedin" title="Linkedin">
-                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-              </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span class="active">Home</span>
+                </a>
             </li>
-
-            <li class="sidebar__list-item">
-              <a href="https://github.com/gokhanm" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub">
-                <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-              </a>
+            <li>
+                <a href="http://localhost:1313/post" title="Posts">
+                    <span>Posts</span>
+                </a>
             </li>
-
-            <li class="sidebar__list-item">
-              <a href="mailto:gokhanm@gmail.com" target="_blank" rel="noopener me" aria-label="e-mail" title="e-mail">
-                <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
-              </a>
+            <li>
+                <a href="http://localhost:1313/tags" title="Tags">
+                    <span>Tags</span>
+                </a>
             </li>
-
-            <li class="sidebar__list-item">
-              <a href="/index.xml" target="_blank" rel="noopener me" aria-label="rss" title="rss">
-                <i class="fas fa-rss fa-2x" aria-hidden="true"></i>
-              </a>
+            <li>
+                <a href="http://localhost:1313/about" title="About">
+                    <span>About</span>
+                </a>
             </li>
-
-          </ul>
-        </div>
-        <footer class="footer footer__sidebar">
-          <ul class="footer__list">
-            <li class="footer__item">
-              &copy;
-
-
-              2024
-
-            </li>
-
-          </ul>
-        </footer>
-
-        <script type="text/javascript"
-          src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-          integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin="anonymous"></script>
-      </div>
-    </aside>
-    <main class="wrapper__main">
-      <header class="header">
-        <div class="
-    animated fadeInDown
-  ">
-          <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true" class="navbar-burger__line"></span>
-            <span aria-hidden="true" class="navbar-burger__line"></span>
-            <span aria-hidden="true" class="navbar-burger__line"></span>
-          </a>
-          <nav class="nav">
-            <ul class="nav__list" id="navMenu">
-
-
-
-
-              <li class="nav__list-item">
-
-                <a class="nav__link--active" href="/" title="">Home</a>
-              </li>
-
-
-
-
-
-              <li class="nav__list-item">
-
-                <a href="/post" title="">Posts</a>
-              </li>
-
-
-
-
-
-              <li class="nav__list-item">
-
-                <a href="/tags" title="">Tags</a>
-              </li>
-
-
-
-
-
-              <li class="nav__list-item">
-
-                <a href="/about" title="">About</a>
-              </li>
-
-
-
-            </ul>
-            <ul class="nav__list nav__list--end">
-
-
-              <li class="nav__list-item">
-                <div class="themeswitch">
-                  <a title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </li>
-
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <div class="post 
-      animated fadeInDown
-    ">
-        <div class="post__content">
-
-        </div>
-
-
-      </div>
-
-
-
-
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2017/12/openvpn-kurulum-scripti/">OPENVPN KURULUM SCRIPTI</a></h3>
-
-          <p>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Thu, Dec 21, 2017
-
-
-          </span>
-
-          <span><a class="category" href="/categories/nix/">nix</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/openvpn-kurulum/">openvpn kurulum</a><a class="tag"
-              href="/tags/openvpn/">openvpn</a><a class="tag" href="/tags/openvpn-kurulum-scripti/">openvpn kurulum
-              scripti</a><a class="tag" href="/tags/script/">script</a><a class="tag" href="/tags/vpn/">vpn</a><a
-              class="tag" href="/tags/fedora/">fedora</a><a class="tag" href="/tags/centos/">centos</a><a class="tag"
-              href="/tags/debian/">debian</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/08/login-sonrasi-screen-oturumlarini-gorme/">LOGIN SONRASI SCREEN OTURUMLARINI GÖRME</a>
-          </h3>
-
-          <p>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için,
-            kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Sun, Aug 30, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/notlar/">notlar</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/bash/">bash</a><a class="tag" href="/tags/bash-script/">bash script</a><a
-              class="tag" href="/tags/bash_profile/">bash_profile</a><a class="tag" href="/tags/login/">login</a><a
-              class="tag" href="/tags/screen/">screen</a><a class="tag" href="/tags/screen-list/">screen list</a><a
-              class="tag" href="/tags/screen-session/">screen session</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/08/screen-komutu-kullanimi/">SCREEN KOMUTU KULLANIMI</a></h3>
-
-          <p>Screen komutu, linux sunucunuza ssh bağlantısı yaptıktan sonra birden fazla shell oturumları oluşturmanızı
-            sağlar.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Sun, Aug 2, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/notlar/">notlar</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/linux-screen/">linux screen</a><a class="tag"
-              href="/tags/linux-screen-komutu/">linux screen komutu</a><a class="tag" href="/tags/rpm/">rpm</a><a
-              class="tag" href="/tags/screen/">screen</a><a class="tag" href="/tags/screen-komutu/">screen komutu</a><a
-              class="tag" href="/tags/screen-kullan%C4%B1m%C4%B1/">screen kullanımı</a><a class="tag"
-              href="/tags/screen-kurulumu/">screen kurulumu</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/05/python-gitlab-email-sender/">PYTHON - GITLAB EMAIL SENDER</a></h3>
-
-          <p>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python
-            scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında
-            oluşturduğu commits.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Sun, May 31, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/lkd-gezegen/">LKD-Gezegen</a><a class="category"
-              href="/categories/python/">Python</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/gitlab/">gitlab</a><a class="tag" href="/tags/gitlab-hook/">gitlab hook</a><a
-              class="tag" href="/tags/gitlab-send-email/">gitlab send email</a><a class="tag"
-              href="/tags/python/">python</a><a class="tag" href="/tags/python-gitlab-hook/">python gitlab
-              hook</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/">XENSERVER&#39;DA SANAL SUNUCULARIN
-              GÖRÜNMEMESI</a></h3>
-
-          <p>XenServer host sunucudaki elektrik kesintisi yada benzer fiziksel sorunlar sebebiyle, storage üzerindeki
-            sanal makineler kapanmadan bilgisayar resetlenebilir, kapanabilir veya fiziksel arıza yüzüden hiç
-            açılmayabilir.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Tue, Mar 31, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/sanallastirma/">Sanallastirma</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/host/">host</a><a class="tag"
-              href="/tags/hostlar%C4%B1n-g%C3%B6r%C3%BCnmemesi/">hostların görünmemesi</a><a class="tag"
-              href="/tags/xen/">xen</a><a class="tag" href="/tags/xenserver/">xenserver</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/03/python-watchdog-ile-dizin-izleme/">PYTHON WATCHDOG İLE DIZIN İZLEME</a></h3>
-
-          <p>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen
-            dosyaları bilgilendirme maili gönderen python scripti.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Sat, Mar 28, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/python/">Python</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/bilgilendirme/">bilgilendirme</a><a class="tag" href="/tags/mail/">mail</a><a
-              class="tag" href="/tags/notification/">notification</a><a class="tag" href="/tags/python/">python</a><a
-              class="tag" href="/tags/python-ile-mail-g%C3%B6nderimi/">python ile mail gönderimi</a><a class="tag"
-              href="/tags/watchdog/">watchdog</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/03/sudo-komutlarinin-loglanmasi/">SUDO KOMUTLARININ LOGLANMASI</a></h3>
-
-          <p>Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo
-            yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Sun, Mar 22, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/notlar/">notlar</a><a class="category"
-              href="/categories/lkd-gezegen/">LKD-Gezegen</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/sudo/">sudo</a><a class="tag"
-              href="/tags/sudo-komutlar%C4%B1n%C4%B1n-loglanmas%C4%B1/">sudo komutlarının loglanması</a><a class="tag"
-              href="/tags/sudo-log/">sudo log</a><a class="tag" href="/tags/sudoers/">sudoers</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/03/zfsonlinux-ram-kullanimi/">ZFSONLINUX RAM KULLANIMI</a></h3>
-
-          <p>Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki
-            boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına
-            geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Sat, Mar 14, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/notlar/">notlar</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/conf/">conf</a><a class="tag" href="/tags/conf-parametreleri/">conf
-              parametreleri</a><a class="tag" href="/tags/modprobe%2ed/">modprobe.d</a><a class="tag"
-              href="/tags/ram/">ram</a><a class="tag" href="/tags/ram-kullan%C4%B1m%C4%B1/">ram kullanımı</a><a
-              class="tag" href="/tags/yap%C4%B1land%C4%B1rma-parametreleri/">yapılandırma parametreleri</a><a
-              class="tag" href="/tags/zfs/">zfs</a><a class="tag" href="/tags/zfs%2econf/">zfs.conf</a><a class="tag"
-              href="/tags/zfsonlinux/">zfsonlinux</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/03/maildeki-ekli-dosyayi-indiren-python-script/">MAILDEKI EKLI DOSYAYI İNDIREN PYTHON
-              SCRIPT</a></h3>
-
-          <p>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak
-            işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Sun, Mar 1, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/python/">Python</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/attachment/">attachment</a><a class="tag" href="/tags/ekli-dosya/">ekli
-              dosya</a><a class="tag" href="/tags/mail-silme/">mail silme</a><a class="tag"
-              href="/tags/maildeki-ekli-dosyalar%C4%B1-indiren-script/">maildeki ekli dosyaları indiren script</a><a
-              class="tag" href="/tags/okunan-mailleri-silen-script/">okunan mailleri silen script</a><a class="tag"
-              href="/tags/python/">python</a><a class="tag" href="/tags/script/">script</a><a class="tag"
-              href="/tags/seen/">seen</a><a class="tag" href="/tags/unseen/">unseen</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="post 
-        animated fadeInDown
-      ">
-
-        <div class="post__content">
-          <h3><a href="/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/">ZFSONLINUX KURULUMU VE YAPILANDIRMASI</a></h3>
-
-          <p>Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve
-            mantıksal hacim yöneticidir.</p>
-
-        </div>
-
-
-        <div class="post__footer">
-          <em class="fas fa-calendar-day"></em>
-          <span class="post__footer-date">
-
-            Tue, Feb 10, 2015
-
-
-          </span>
-
-          <span><a class="category" href="/categories/nix/">nix</a><a class="category"
-              href="/categories/lkd-gezegen/">LKD-Gezegen</a></span>
-
-
-
-
-
-          <span><a class="tag" href="/tags/zfs/">zfs</a><a class="tag" href="/tags/zfs-kurulumu/">zfs kurulumu</a><a
-              class="tag" href="/tags/zfs-pool/">zfs pool</a><a class="tag"
-              href="/tags/zfs-yap%C4%B1land%C4%B1rmas%C4%B1/">zfs yapılandırması</a><a class="tag"
-              href="/tags/zfsonlinux/">zfsonlinux</a><a class="tag" href="/tags/zpool/">zpool</a></span>
-
-
-
-        </div>
-      </div>
-
-      <div class="pagination">
-
-        <ul class="pagination__list">
-
-
-
-
-
-          <li class="pagination__list-item">
-            <span class="page-link current">1</span>
-          </li>
-
-
-
-
-          <li class="pagination__list-item">
-            <a class="page-link" href="/page/2/">2</a>
-          </li>
-
-
-
-
-
-
-          <span class="page-link dots">&hellip;</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <li class="pagination__list-item">
-            <a class="page-link" href="/page/6/">6</a>
-          </li>
-
-
-
-
-          <li class="pagination__list-item">
-            <a class="page-link" href="/page/2/">
-              <i class="fa fa-angle-right" aria-label="Next"></i>
-            </a>
-          </li>
-
         </ul>
+    </nav>
+</header>
+<main class="main"> 
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>Hi there 👋</h1>
+    </header>
+    <div class="entry-content">
+        Welcome to my blog
+    </div>
+    <footer class="entry-footer">
+        <div class="social-icons" >
+    <a href="https://www.linkedin.com/in/gokhanmankara/" target="_blank" rel="noopener noreferrer me"
+        title="Linkedin">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+    </a>
+    <a href="https://github.com/gokhanm" target="_blank" rel="noopener noreferrer me"
+        title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+    </a>
+    <a href="mailto:gokhanm@gmail.com" target="_blank" rel="noopener noreferrer me"
+        title="E-Mail">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+    </a>
+    <a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+        title="Rss">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+    </a>
+</div>
 
+    </footer>
+</article>
 
-      </div>
-
-    </main>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Openvpn Kurulum Scripti
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Daha önceki makalemde uzun uzun openvpn kurulumunu ve eas-rsa yapılandırmasını anlatmıştım.
+...</p>
   </div>
-  <footer class="footer footer__base">
-    <ul class="footer__list">
-      <li class="footer__item">
-        &copy;
+  <footer class="entry-footer"><span title='2017-12-21 17:34:24 +0300 +03'>2017, Dec 21</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>322 words</span></footer>
+  <a class="entry-link" aria-label="post link to Openvpn Kurulum Scripti" href="http://localhost:1313/2017/12/openvpn-kurulum-scripti/"></a>
+</article>
 
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Login Sonrası Screen Oturumlarını Görme
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum. Sunucuya her login olduğumda screen’nin açık oturumlarını görebilmek için .bash_profile dosyasına ( RedHat tabanlı sistemler için) aşağıdaki scripti ekledim. Bu sayede sunucuya ssh üzerinden her bağlandığımda açık oturumları görebiliyorum.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-08-30 17:36:13 +0300 EEST'>2015, Aug 30</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>102 words</span></footer>
+  <a class="entry-link" aria-label="post link to Login Sonrası Screen Oturumlarını Görme" href="http://localhost:1313/2015/08/login-sonrasi-screen-oturumlarini-gorme/"></a>
+</article>
 
-        2024
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Screen Komutu Kullanımı
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Screen komutu, linux sunucunuza ssh bağlantısı yaptıktan sonra birden fazla shell oturumları oluşturmanızı sağlar. Screen komutu kullanarak yeni bir shell oturumu açtığınızda, screen arkada yeni bir process oluşturur, eğer siz oturumdan Ctrl &#43; a &#43; d kombinasyonu ile ayrılsanız (detached ) bile screen komutu arkada oturumu çalıştırmaya devam eder ve daha sonra sizin aynı oturuma bağlanmasınıza olanak sağlar.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-08-02 13:37:30 +0300 EEST'>2015, Aug 02</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>248 words</span></footer>
+  <a class="entry-link" aria-label="post link to Screen Komutu Kullanımı" href="http://localhost:1313/2015/08/screen-komutu-kullanimi/"></a>
+</article>
 
-      </li>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Python - Gitlab Email Sender
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Gitlab kullanıyor iseniz, gitlab sunucunuzdaki post-receive hook scriptinin içerisine, aşağıdaki python scriptini her push işleminden sonra çalıştıracak şekilde ayarlamanız durumunda, script her çalıştığında oluşturduğu commits.db sqlite database’indeki short commit’i ile karşılaştırıp, değişikli var ise aşağıdaki mail gönderim formatında maili ‘to@domain.com’ adresine gönderir. Eğer db’de bulunmayan bir repo ile karşılaşması durumunda db’ye repo’yu insert eder.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-05-31 13:45:47 +0300 EEST'>2015, May 31</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>426 words</span></footer>
+  <a class="entry-link" aria-label="post link to Python - Gitlab Email Sender" href="http://localhost:1313/2015/05/python-gitlab-email-sender/"></a>
+</article>
 
-    </ul>
-  </footer>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Xenserver&#39;da Sanal Sunucuların Görünmemesi
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>XenServer host sunucudaki elektrik kesintisi yada benzer fiziksel sorunlar sebebiyle, storage üzerindeki sanal makineler kapanmadan bilgisayar resetlenebilir, kapanabilir veya fiziksel arıza yüzüden hiç açılmayabilir. Bu durumda ilgili host bilgisayar kapanmadan önce üzerinde çalışan sanal makineler Xencenter arayüzünde kaybolur. Haliyle sanal makineyi başka bir host bilgisayara taşımak da mümkün olmaz. Peki bu durumdan nasıl kurtulunur.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-31 13:54:53 +0300 EEST'>2015, Mar 31</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>215 words</span></footer>
+  <a class="entry-link" aria-label="post link to Xenserver&#39;da Sanal Sunucuların Görünmemesi" href="http://localhost:1313/2015/03/xenserverda-sanal-sunucularin-gorunmemesi/"></a>
+</article>
 
-  <script type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin="anonymous"></script>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Python Watchdog İle Dizin İzleme
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Script real time olarak, arguman verdiğiniz path’i ve alt klasörlerini izleyerek, yeni oluşan yada silinen dosyaları bilgilendirme maili gönderen python scripti. Cron’a ekleyerekte arka planda sürekli çalışmasını sağlayabilirsiniz. Cron kullanımı hakkında bilginiz yok ise, bu yazımı inceleyebilirsiniz.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-28 14:01:11 +0300 +0300'>2015, Mar 28</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>190 words</span></footer>
+  <a class="entry-link" aria-label="post link to Python Watchdog İle Dizin İzleme" href="http://localhost:1313/2015/03/python-watchdog-ile-dizin-izleme/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Sudo Komutlarının Loglanması
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Daha önceki yazımda kullanıcıya nasıl sudo yetkisi verilebileceğinden bahsetmiştim. Bu yazıda da sudo yetkisi verdiğiniz kullanıcının uyguladığı komutları nasıl loglayacağımıza bakacağız. Önceki yazıda sudoers dosyasına kullanıcıyı eklemiştik, bu yazıda sudoers.d altına kullanıcıları oluşturacağız.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-22 14:15:19 +0300 +0300'>2015, Mar 22</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>350 words</span></footer>
+  <a class="entry-link" aria-label="post link to Sudo Komutlarının Loglanması" href="http://localhost:1313/2015/03/sudo-komutlarinin-loglanmasi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Zfsonlinux Ram Kullanımı
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zfsonlinux kurulumunu ve yapılandırmasını önceki yazımda değinmiştim. Bu yazıda da zfs’in tüm sistemdeki boş rami kullanmaması ( yoğun olarak diske yazma işleminin gerçekleşmesi durumunda, sistem swap kullanımına geçebiliyor ) için yapılması gereken düzenlemeden bahsedeceğim.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-14 14:42:03 +0300 +0300'>2015, Mar 14</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>240 words</span></footer>
+  <a class="entry-link" aria-label="post link to Zfsonlinux Ram Kullanımı" href="http://localhost:1313/2015/03/zfsonlinux-ram-kullanimi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Maildeki Ekli Dosyayı İndiren Python Script
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Mail içerisinde gelen ekli dosyayı IMAP SSL bağlantısı sağlayarak indirdikten sonra, okundu olarak işaretleyip, okundu olarak işaretlenen maillerin deleted olarak etiketlenmesini sağlayan python scripti.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-03-01 14:51:41 +0300 +0300'>2015, Mar 01</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>301 words</span></footer>
+  <a class="entry-link" aria-label="post link to Maildeki Ekli Dosyayı İndiren Python Script" href="http://localhost:1313/2015/03/maildeki-ekli-dosyayi-indiren-python-script/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Zfsonlinux Kurulumu Ve Yapılandırması
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zfs, yüksek ölçeklenebilirliğe uyumlu, aşağıdaki kriterleri dikkate alarak dizayn edilmiş dosya sistemi ve mantıksal hacim yöneticidir.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-02-10 10:45:52 +0300 +0300'>2015, Feb 10</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>582 words</span></footer>
+  <a class="entry-link" aria-label="post link to Zfsonlinux Kurulumu Ve Yapılandırması" href="http://localhost:1313/2015/02/zfsonlinux-kurulumu-ve-yapilandirmasi/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="http://localhost:1313/page/2/">&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Gökhan MANKARA</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
 
 </html>

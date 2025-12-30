@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Master Slave Mod on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/master-slave-mod/</link>
+    <link>http://localhost:1313/tags/master-slave-mod/</link>
     <description>Recent content in Master Slave Mod on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Oct 2014 11:05:13 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/master-slave-mod/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Oct 2014 11:05:13 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/master-slave-mod/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bonding Network Interface Kullanımı</title>
-      <link>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</link>
+      <link>http://localhost:1313/2014/10/bonding-network-interface-kullanimi/</link>
       <pubDate>Sat, 25 Oct 2014 11:05:13 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2014/10/bonding-network-interface-kullanimi/</guid>
-      
-        <description>RedHat tabanlı işletim sistemlerinde iki veya daha fazla ethernet interface olması durumunda bonding network interface kullanarak, ethernetlerin load balance bond, round-robin bond ya da fault tolerant bond şeklinde çalışması sağlanabilmektedir.</description>
-      
+      <guid>http://localhost:1313/2014/10/bonding-network-interface-kullanimi/</guid>
+      <description>&lt;p&gt;RedHat tabanlı  işletim sistemlerinde iki veya daha fazla ethernet interface olması durumunda bonding network interface kullanarak, ethernetlerin load balance bond, round-robin bond ya da  fault tolerant bond şeklinde çalışması sağlanabilmektedir. Bu sayede bir interface down olması durumunda sunucuya erişim ikinci interface üzerinden devam edecektir.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

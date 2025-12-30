@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Login on Gökhan MANKARA</title>
-    <link>https://www.gokhanmankara.com/tags/login/</link>
+    <link>http://localhost:1313/tags/login/</link>
     <description>Recent content in Login on Gökhan MANKARA</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.153.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Aug 2015 17:36:13 +0300</lastBuildDate><atom:link href="https://www.gokhanmankara.com/tags/login/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Aug 2015 17:36:13 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/login/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Login Sonrası Screen Oturumlarını Görme</title>
-      <link>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</link>
+      <link>http://localhost:1313/2015/08/login-sonrasi-screen-oturumlarini-gorme/</link>
       <pubDate>Sun, 30 Aug 2015 17:36:13 +0300</pubDate>
-      
-      <guid>https://www.gokhanmankara.com/2015/08/login-sonrasi-screen-oturumlarini-gorme/</guid>
-      
-        <description>Daha önceki yazımda screen komutu kullanımından bahsetmiştim. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum.</description>
-      
+      <guid>http://localhost:1313/2015/08/login-sonrasi-screen-oturumlarini-gorme/</guid>
+      <description>&lt;p&gt;Daha önceki yazımda screen komutu kullanımından &lt;a href=&#34;http://localhost:1313/2015/08/screen-komutu-kullanimi/&#34;&gt;bahsetmiştim&lt;/a&gt;. Screen komutunu çok kullandığım için, kapatılmamış birden fazla screen oturumu olabiliyor, çoğunluklada unutuyorum. Sunucuya her login olduğumda screen’nin açık oturumlarını görebilmek için &lt;strong&gt;.bash_profile&lt;/strong&gt; dosyasına ( RedHat tabanlı sistemler için)  aşağıdaki scripti ekledim. Bu sayede sunucuya ssh üzerinden her bağlandığımda açık oturumları görebiliyorum.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
