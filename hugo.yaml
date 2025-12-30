@@ -62,7 +62,7 @@ params:
     - name: "email"
       title: "e-mail"
       url: "mailto:gokhanm@gmail.com"
-    - name: "fas fa-rss"
+    - name: "rss"
       title: "rss"
       url: "/index.xml"
 
