@@ -123,6 +123,7 @@ w ( Yazma izni ) = 2
 x ( Çalıştırma izni ) = 1
 ```
 
+```sh
 000 : r (Okuma hakkı yok), w (Yazma hakkı yok), x (Çalıştırma hakkı yok)
 :- – : chmod değeri 0
 
@@ -146,10 +147,9 @@ x ( Çalıştırma izni ) = 1
 
 111 : r (Okuma hakkı var), w (Yazma hakkı var), x (Çalıştırma hakkı var)
 : rwx : chmod değeri 7
+```
 
-{{% notice note %}}
-Bir dosya ve dizinin chmod erişim iznini dosya sahibi [owner] , üst kullanıcı yetkisine sahip [superuser] ve root hakkına sahip kullanıcılar değiştirebilmektedir.
-{{% /notice %}}
+Bir dosya ve dizinin chmod erişim iznini dosya sahibi **[owner]** , üst kullanıcı yetkisine sahip **[superuser]** ve root hakkına sahip kullanıcılar değiştirebilmektedir.
 
 ## Chmod izinleri için Operatörler
 

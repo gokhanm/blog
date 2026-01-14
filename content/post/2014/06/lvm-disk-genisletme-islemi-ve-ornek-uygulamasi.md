@@ -98,11 +98,10 @@ Disk identifier: 0x00000000
 
 Yeni disk boyutumuz 50 Gb olarak görünüyor. Yeni düzenlemeden sonra yaklaşık olarak 34 Gb lık bir alan boşta duruyor. Bunun için yapmamız gereken işlem sırasıyla, önce yeni bir disk bölümü (partition) oluşturacağız  sonra bu disk bölümü için yeni bir fiziksel volüm oluşturacağız ve bu fiziksel bölümü volume group’a dahil etmeceğiz. Sonrasında da var olan LVM yapısını yeni disk bölümünü kapsayacak şekilde genişleteceğiz.
 
-{{% notice note %}}
+
 * Volume Group (Hacim Gurubu): En üstte bulunan bu katman, fiziksel ve mantıksal volüm’leri içine almaktadır. Yani fiziksel disklerin bulunduğu gruptur.
 * Physical Volume (Fiziksel Hacim): PV ise fiziksel aygıtlardan (disk) ve disk bölümlerinden oluşan kısımdır.
 * Logical Volume (Mantıksal Hacim): LV, disk ve ya disk bölümlerinin formatlanmasından sonra ortaya çıkan dosya sistemi içeren ( ext3 ile formatlanmış kök dizini  / ) yapıya verilen isimdir.
-{{% /notice %}}
 
 Fdisk ile 8e dosya sisteminde ( LVM ) bir partition oluşturuyoruz.
 

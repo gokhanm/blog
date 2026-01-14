@@ -64,9 +64,7 @@ MASTER=bond0
 SLAVE=yes
 ```
 
-{{% notice info %}}
 eth0 e eth1 interfacelerindeki mac adreslerinin bulunması, hangi interface’in down olduğunu anlamanız açısından faydalı olacaktır.
-{{% /notice %}}
 
 ## Fault Tolerant ( Aktif/Pasif Mod )
 
@@ -81,11 +79,10 @@ alias bond0 bonding
     options bond0 miimon=80 mode=1
 ```
 
-{{% notice info %}}
 * bond0 = Oluşturduğumuz bond interface ismi.
 * miimon = Ne kadar milisaniyede interface durumunu kontrol etsin.
 * mode = Bond interface’in çalışma prensibi
-{{% /notice %}}
+
 
 Yukardaki şekilde düzenlemelerimizi yaptıktan sonra network servisini  yeniden başlatıyoruz.
 

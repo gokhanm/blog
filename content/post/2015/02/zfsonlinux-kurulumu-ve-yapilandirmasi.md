@@ -25,9 +25,7 @@ Bsd sistemlerde default olarak gelen zfs dosya sistemini, zfsonlinux kurarak lin
 
 Redhat tabanlı işletim sistemi için zfsonlinux [download](http://zfsonlinux.org/epel.html) sayfasından 6 ve 7 dağıtımları için gerekli rpm repolarını indirebilirsiniz. Bu yazıda Centos 6 için kurulum yapılacaktır.
 
-{{% notice warning %}}
 Zfsonlinux, 64bit kernel üzerinde kullanmanızı öneriyor. 32bit kernel üzerinde henuz stabil olarak çalışmadığı için önerilmiyor.
-{{% /notice %}}
 
 ```sh
 # rpm -ivh https://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
@@ -35,9 +33,8 @@ Zfsonlinux, 64bit kernel üzerinde kullanmanızı öneriyor. 32bit kernel üzeri
 # yum install kernel-devel zfs
 ```
 
-{{% notice info %}}
 Oracle Linux kullanıyor iseniz, paket kurulumları ardından kernel üzerinde gerekli düzenlemenin yapılabilmesi için sunucuyu yeniden başlatmak gerekiyor. Sistemin boot olduğu sırada işlem gerçekleştiği için sunucunun açılışı uzun sürmekte. Sanal test ortamında, Centos 6 da derlenme işlemi yapmadan hızlı şekilde açılıyor.
-{{% /notice %}}
+
 
 ```sh
 # reboot
@@ -69,11 +66,9 @@ NAME    USED  AVAIL  REFER  MOUNTPOINT
 tank0   108K  19.6G    30K  /tank0
 ```
 
-{{% notice info %}}
 zpool create sırasında aşağıdaki şekilde EFI label hata alırsanız “-f ” parametresi ile komutu tekrar çalıştırın.
 invalid vdev specificationuse ‘-f’ to override the following errors:
 /dev/sdb does not contain an EFI label but it may contain partitioninformation in the MBR.
-{{% /notice %}}
 
 tank0 poolunun yanında aynı disk üzerinde birden fazla poollar da oluşturabilirsiniz.
 

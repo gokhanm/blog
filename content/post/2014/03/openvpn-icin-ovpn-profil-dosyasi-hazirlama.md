@@ -14,9 +14,7 @@ tags:
   - ovpn profil dosyası
   - vpn
 ---
-{{% notice info %}}
 OpenVPN kurulum scripti için [tıklayınız](/2017/12/openvpn-kurulum-scripti).
-{{% /notice %}}
 
 Vpn seçenekleri içerisinde ücretli, ücretsiz bir çok vpn seçeneği bulunmakta. Bunlardan ücretsiz olanlar insanın gözünde bilgilerimi ( şifre vb. ) kaydediyor mu acaba endişesi yaratırken, ücretli olanlar da ücretsizler gibi aynı endişeleri yaratabilir. Ek olarak bu hizmetler de bir çok müşteriye hizmet verdikleri için trafik vb. limitlemeler mevcut.
 
@@ -26,9 +24,7 @@ Bu tür endişeleri taşımamak ve herhangi bir limitlemeden etkilenmemek için,
 
 CentOS sunucusuna openvpn kurulumu anlatırken kullanıcı adı ve şifre ile bağlantı gerektirmeden sadece sertifikaları kullanılarak fedora ( openvpn connect programı ile windows için de geçerlidir. ) üzerinden vpn bağlantısını anlatmıştım. Burada ek olarak android akıllı telefonundan bağlanırken ovpn dosyasına kullanıcı adı ve şifreyi de ekleyeceğim. Siz isterseniz bu satırı silerek kullanıcı adı ve şifre istemeden bağlanmasını sağlayabilirsiniz.
 
-{{% notice note %}}
 Android telefonlar sadece tun bağlantıyı destekler.
-{{% /notice %}}
 
 ## Telefonunuz için sertifika oluşturma
 
@@ -105,11 +101,9 @@ ns-cert-type server
 
 android.ovpn dosyasını telefonumuzun SD kartına yükledikten sonra aşağıdaki resimdeki gibi ekliyoruz.
 
-{{< img src="/images/ovpnimport.png" >}}
-{{< img src="/images/ovpnimport2.png" >}}
+[ovpnimport](/images/ovpnimport.png)
+[ovpnimport2](/images/ovpnimport2.png)
 
 .ovpn dosyasını yüklediğiniz konumdan seçtikten sonra eğer kullanıcı adı ve şifre aktif ise kullanıcı adı ve şifreyi girdikten sonra connect demeniz yeterlidir.
-
-{{% notice note %}}
 SD kartınızdan ovpn dosyasını güvenlik sebebi ile silmenizi tavsiye ederim. Ayrıca şifreleme olduğundan çok fazla data alışverişi mevcut. Bu yüzden mobil bağlantı yapmanız durumunda paket limitlerini aşabilirsiniz. Wifi kullanmanızı tavsiye ederim.
-{{% /notice %}}
+

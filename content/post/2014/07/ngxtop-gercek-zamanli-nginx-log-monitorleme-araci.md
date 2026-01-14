@@ -83,7 +83,7 @@ Nginx’i elle derleyerek kurduysanız ve etc altına kurmadıysanız,  ngxtop a
 # ngxtop -l /usr/local/nginx/log/access.log
 ```
 
-{{< img src="/images/ngxtop1.jpg" >}}
+![ngxtop1](/images/ngxtop1.jpg)
 
 Built-in değişkenlerini kullanarak çıktı elde etmek için,
 
@@ -91,19 +91,19 @@ Built-in değişkenlerini kullanarak çıktı elde etmek için,
 # ngxtop print request http_user_agent remote_addr
 ```
 
-{{< img src="/images/ngxtop2.jpg" >}}
+![ngxtop2](/images/ngxtop2.jpg)
 
 ```sh
 # ngxtop top remote_addr
 ```
 
-{{< img src="/images/ngxtop3.jpg" >}}
+![ngxtop3](/images/ngxtop3.jpg)
 
 ```sh
 # ngxtop -i 'status == 404' print request status
 ```
 
-{{< img src="/images/ngxtop4.jpg" >}}
+![ngxtop4](/images/ngxtop4.jpg)
 
 Ngxtop’un en becerikli diğer bir özelliği ise Apache loglarını da yorumlayabilmesi. Apache loglarını yorumlayabilmesi için ngxtop’u aşağıdaki şekilde kullanmanız gerekiyor.
 
