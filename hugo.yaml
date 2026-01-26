@@ -4,7 +4,6 @@ defaultContentLanguage: "en-us"
 title: "Gökhan MANKARA"
 theme: "PaperMod"
 # disqusShortname: "gokhanblog"
-googleAnalytics: "UA-10446851-2"
 summarylength: 10
 enableEmoji: true
 enableRobotsTXT: true
@@ -66,6 +65,9 @@ params:
     - name: "rss"
       title: "rss"
       url: "/index.xml"
+  analytics:
+    google:
+      SiteVerificationTag: "G-MTGBM9NWB5"
 
 menu:
   main:
