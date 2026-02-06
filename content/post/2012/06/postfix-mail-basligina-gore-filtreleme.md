@@ -37,9 +37,10 @@ Daha sonra postfix dizininin ( elle derleme esnasında başka bir yere kurulum y
 ```sh
 /^Subject: .*10 Günde 10 Kilo Verin/ REJECT
 ```
-{{% notice note %}}
+
+```sh
 Not: header_checks içerisinde düzenlediğiniz reject kelimeleri büyük harf ve küçük harfe duyarlıdır. Yukarıda yazmış olduğunuz kural eğer mail göndericisi tarafından aşağıki şekilde yazılmışsa postfix bunu engellemeyecektir.
-{{% /notice %}}
+```
 
 ```sh
 10 günde 10 kilo verin

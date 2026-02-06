@@ -21,9 +21,9 @@ tags:
 
 SHC’nin kurulumuna bakacak olursak,
 
-{{% notice note %}}
+```sh
 Sisteminizde “make” kurulu değilse, kurmanız gerekecektir.
-{{% /notice %}}
+```
 
 ```sh
 # wget http://www.datsi.fi.upm.es/~frosal/sources/shc-3.8.9.tgz

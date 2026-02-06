@@ -21,9 +21,9 @@ Local diskinizde bir klasör oluşturup, bu klasörü iso depo alanı olarak nas
 İlk olarak ssh üzerinden XenServerımıza bağlanıp disk dosya sisteminin nasıl mount edilerek kullanıldığına bakalım.
 
 
-{{% notice note %}}
+```sh
 Ssh üzerinden bağlanmak için, XenServerı kurduktan sonra ssh remote connection özelliğini aktif etmeniz gerekiyor.
-{{% /notice %}}
+```
 
 {{< img src="/images/xenserver_partition_view.png" >}}
 
@@ -51,8 +51,8 @@ Herşey hazır, artık iso dosyalarınızı filezilla yada başka bir program ar
 
 {{< img src="/images/Screenshot-from-2013-05-02-205232.png" >}}
 
-{{% notice note %}}
+```sh
 Yüklediğiniz isoların ISO_Alanı bölümünde isolar görünmüyor ise, Rescan diyerek görünmesini sağlayabilirsiniz.
-{{% /notice %}}
+```
 
 {{< img src="/images/iso_alani_rescan.png" >}}

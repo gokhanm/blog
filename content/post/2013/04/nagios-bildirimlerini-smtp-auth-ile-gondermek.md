@@ -85,9 +85,9 @@ $SERVICEDESC$\nHost: $HOSTALIAS$\nAddress: $HOSTADDRESS$\nState: $SERVICESTATE$\
 
 **-o tls=yes** kullanmadığınız zaman aşağıdaki şeklinde hata alabilirsiniz,
 
-{{% notice warning %}}
+```sh
 sendEmail[13416]: NOTICE => Authentication not supported by the remote SMTP server!
-{{% /notice %}}
+```
 
 ## Örnek SendEmail Kullanımı
 ```sh

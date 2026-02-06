@@ -103,13 +103,13 @@ php_admin_value[open_basedir] = /var/www/html/domain.com:/usr/share/php5:/tmp:/u
 php_admin_value[disable_functions] = dl,exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
 ```
 
-{{% notice note %}}
+```sh
 Burada ki open_basedir path’i, örnek olması açısından bu şekilde verilmiştir. Sunucudaki sitenin yapısına göre düzenlemeniz gerekebilir.
-{{% /notice %}}
+```
 
-{{% notice note %}}
+```sh
 Mutlaka php’yi safe_mod açık  olaracak şekilde ayarlayın.
-{{% /notice %}}
+```
 
 Conf dosyamızı düzenledikten sonra php-fpm’i restart edelim.
 

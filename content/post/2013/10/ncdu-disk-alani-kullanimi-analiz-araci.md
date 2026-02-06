@@ -58,7 +58,7 @@ ya da
 {{< img src="/images/ncdudone.png" >}}
 {{< img src="/images/ncduinfo.png" >}}
 
-{{% notice note %}}
+```sh
 ncdu, du komutunda olduğu gibi, çalıştırdığınız dizin ve alt dizinlere doğru hesapladığını göz ardı etmeyiniz.
-{{% /notice %}}
+```
 

@@ -15,9 +15,9 @@ tags:
   - vpn
   - yapılandırma
 ---
-{{% notice info %}}
+```sh
 Kurulum scripti için [tıklayınız](/2017/12/openvpn-kurulum-scripti).
-{{% /notice %}}
+```
 
 Bu makalede CentOS 6 üzerinde openvpn kurulumunu, yapılandırılmasını ve vpn’e client olarak bağlanacak olan Fedora üzerinden  ssh ile vpn’e client olarak nasıl bağlanabileceğinize değineceğiz. Kurulumu yaptığım sırada openvpn versiyonu 2.3.1 şeklinde idi. Makalenin devamında göreceğiniz openvpn-2.3.1 dizini, openvpn sürümünün değişmesi durumunda  sizde farklı olarak görünebilir.
 
@@ -178,9 +178,9 @@ Bu işlemlerden sonra aşağıdaki komut root kullanıcısı ile çalıştırıp
 
 Komutu uyguladıktan sonra konsolda akan yazıların en sonunda **Initialization Sequence Completed** şeklinde bir satır belirdiğinde, vpn bağlantınız başarılı bir şekilde tamamlanmış demektir.
 
-{{% notice note %}}
+```sh
 Burada küçük bir not düşmem gerekiyor, vpn bağlantısını ssh üzerinden sağladığımız için, çalıştırdığımız komutu iptal ettiğinizde ( Ctrl + x ) vpn bağlantınız kopacaktır.
-{{% /notice %}}
+```
 
 Terminal üzerinden VPN bağlantıyı bu şekilde sağlayabileceğiniz gibi Fedora üzerinden GUI aracılığı ile network ayarlarına vpn bağlantı ile birlikte sertifikarı eklemeniz durumda terminal ile uğraşmadan vpn bağlantı sağlayabilirsiniz.
 
@@ -198,9 +198,9 @@ VPN seçeneğini seçtikten sonra karşımıza hangi tür vpn bağlantısı tipi
 
 OpenVPN seçeneğini seçtikten sonra aşağıdaki şekilde karşımıza bir ekran geliyor. Burada openvpn sunucusunu kurarken oluşturduğumuz sertifikaları ve sunucumuzun ip adresini gateway bölümüne yazıyoruz.
 
-{{% notice note %}}
+```sh
 Burada bir not düşmem gerekiyor. Sunucudan bilgisayarınıza çektiğiniz sertifikaları home yada başka bir dizinden eklemek istediğinizde izin hatası alabilirsiniz. Bu yüzden sertifikaları “/etc/openvpn” altına taşıyın.
-{{% /notice %}}
+```
 
 {{< img src="/images/network4.png" >}}
 

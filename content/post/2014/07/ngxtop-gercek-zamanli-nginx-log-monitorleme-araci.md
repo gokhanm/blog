@@ -50,15 +50,15 @@ ngxtop [options] query <query> ...
 
 Bazı kullanım şeçeneklerine bakacak olursa,
 
-* -l <file> : Nginx access log dosyasının tam yolu ( full path )
-* -f <format> : Access log formatı ( default: combined )
+* -l         : Nginx access log dosyasının tam yolu ( full path )
+* -f         : Access log formatı ( default: combined )
 * –no-follow : ngxtop normalde mevcut log kayıtlarını dikkate almadan anlık olarak log dosyasına yeni yazılacak olan kayıtları dikkate alır. Bu seçeneği kullanarak, ngxtop mevcut log kayıtlarada bakarak çıktıyı vermesini söleriz.
-* -t <seconds> : güncelleme sıklığı
-* -n <number> : Gösterilecek satır sayısı. ( default değer 10 dur )
-* -o <var> :  Sonuçları sıralama kriteri ( default olarak count şeklindedir. )
-* -a <exp> …, –a <exp> : Çıktığı ortalama, max, min gibi seçenekler ile filtrelemenizi sağlar. ( exp: sum, avg, min, max  )
-* – v : Ayrıntılı çıktı verir.
-* -i <filter-expression> : Sadece filter ile eşleşen kayıtları işler.
+* -t         : güncelleme sıklığı
+* -n         : Gösterilecek satır sayısı. ( default değer 10 dur )
+* -o         : Sonuçları sıralama kriteri ( default olarak count şeklindedir. )
+* -a, –a     : Çıktığı ortalama, max, min gibi seçenekler ile filtrelemenizi sağlar. ( exp: sum, avg, min, max  )
+* – v        : Ayrıntılı çıktı verir.
+* -i         : Sadece filter ile eşleşen kayıtları işler.
 
 Ngxtop ile kullanabileceğimiz  buil-in değişkenleri,
 

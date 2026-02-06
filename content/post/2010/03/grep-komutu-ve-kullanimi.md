@@ -112,9 +112,9 @@ $ grep -v ` ^ [0-9]` /home/david/backup/log.txt | more
 
 Bu komut , **/home/david/backup/log.txt** dosyasinda ilk karakteri 0-9 arasindaki sayilar olan satirlarin disindaki satirlari listeler. More yine ciktiyi sayfalara bölmek icin kullanilir.
 
-{{% notice warning %}}
+```sh
 sablon ifadelerinin tekli tirnak ile kapatilmasi (yukaridaki örneklerde oldugu gibi), yorumlayicinin dogru calismasi icin önemlidir.
-{{% /notice %}}
+```
 
 Grep icin bazi önemli parametreler
 

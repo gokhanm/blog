@@ -32,6 +32,6 @@ tekrar hostname dediğimizde isminin değişmiş olduğunu görüyoruz.
 /etc/hosts
 ```
 
-{{% notice note %}}
+```sh
 Bu uygulama Fedora da denenmiştir. Kullandığınız dağıtımda farklılıklar olabilir.
-{{% /notice %}}
+```

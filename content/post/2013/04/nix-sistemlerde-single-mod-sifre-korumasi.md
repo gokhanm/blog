@@ -43,8 +43,8 @@ Bu sayede freebsd yi single modda açmak istediğinizde sizden root şifresini i
 
 {{< img src="/images/freebsd_single_mod.png" >}}
 
-{{% notice warning %}}
+```sh
 Şunuda unutmamak gerekir ki, ne kadar şifre koruması yapsanızda, fiziksel olarak erişilebilen bir sunucuya, başka yöntemlerle giriş yapmak her zaman mümkündür.
-{{% /notice %}}
+```
 
 

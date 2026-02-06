@@ -10,9 +10,9 @@ tags:
   - dmidecode kullanımı
   - dmidecode
 ---
-{{% notice info %}}
+```sh
 Bu komutu “root” kullanıcısı ile kullanabilirsiniz.
-{{% /notice %}}
+```
 
 Ana kart üzerindeki RAM yuvası (ing. slot) sayısı, her birisine takılı RAM modülleri ve kapasiteleri, ram yuvalarına takılabilecek azami RAM kapasitesi, ana karta takılı işlemci türü, işlemcinin şu andaki hızı, ana kartın desteklediği azami işlemci saat hızı, BIOS sürümü, ana kart seri numarası, şase seri numarası, donanım bileşenlerinin üretici adları, markaları, modelleri vb uzarda gider…
 
